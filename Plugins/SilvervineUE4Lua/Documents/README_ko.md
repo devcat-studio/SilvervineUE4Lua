@@ -6,7 +6,7 @@ SilvervineUE4Lua(이하 SUE4Lua)는 UE4에서 Lua를 사용하여 게임을 개�
 
 저희는 이 플러그인을 사용해서 [드래곤하운드](https://www.youtube.com/watch?v=m-AS21f7Rao) 라는 게임을 개발하고 있습니다.
 
-프로그래밍 가이드는 [여기](https://github.com/henjeon/SilvervineUE4Lua/blob/master/Plugins/SilvervineUE4Lua/Documents/ProgrammingGuide_ko.md)에 있습니다.
+프로그래밍 가이드는 [여기](ProgrammingGuide_ko.md)에 있습니다.
 
 개발 동기
 --------
