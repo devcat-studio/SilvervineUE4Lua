@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"name": "SilvervineUE4Lua",
+			"path": "Plugins/SilvervineUE4Lua/Source/SilvervineUE4Lua/Private/Scripts"
+		},
+		{
+			"name": "SUE4LuaSample",
+			"path": "Source/SUE4LuaSample/Scripts",
+		},		
+		{
+			"name": "Documents",
+			"path": "Plugins/SilvervineUE4Lua/Documents",
+		}
+	],
+	"settings": {},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "lua-wait-for-debuggee",
+				"type": "lua",
+				"request": "attach",
+				"workingDirectory": "${fileDirname}",
+				"sourceBasePath": "${fileDirname}",
+				"listenPublicly": false,
+				"listenPort": 56789,
+				"encoding": "UTF-8"
+			}
+		]
+	}
+}

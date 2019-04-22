@@ -1,0 +1,36 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1.0",
+  "FriendlyName": "Silvervine Lua Script Plugin for UE4",
+  "Description": "",
+  "Category": "Scripting",
+  "CreatedBy": "ProjectDH, devCAT, NEXON",
+  "CreatedByURL": "https://devcat.com",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "EnabledByDefault": false,
+  "CanContainContent": false,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "CanBeUsedWithUnrealHeaderTool" : true,
+
+  "Modules": [
+    {
+      "Name": "SilvervineUE4Lua",
+      "Type": "Runtime",
+      "LoadingPhase": "PreDefault"
+    },
+    {
+      "Name": "SilvervineUE4LuaEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name" : "SilvervineUE4LuaCodeGen",
+      "Type" : "Program",
+      "LoadingPhase" : "PostConfigInit"
+    }
+  ]
+}

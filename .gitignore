@@ -1,0 +1,24 @@
+#### project folders
+
+/Binaries/
+/Intermediate/
+/Saved/
+/Plugins/*/Binaries/
+/Plugins/*/Intermediate/
+
+#### SUE4LuaCodeGen
+
+# Commented for debugging purpose(easy to see the difference)
+#/Plugins/SilvervineUE4Lua/Source/SilvervineUE4Lua/Private/Scripts/Framework/CodeGen/*.g.lua
+
+
+#### vs
+
+*.sln
+*.sdf
+*.VC.db
+*.VC.opendb
+**/.vs/
+
+#### etc
+
