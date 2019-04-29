@@ -5,4 +5,4 @@ SilvervineUE4Lua
 * README(English) : SOON
 
 Presentations:
-* NDC2019(한국어) : SOON
+* NDC2019(한국어) : [SilvervineUE4Lua: UE4에서 Lua 사용하기](https://www.slideshare.net/devcatpublications/silvervineue4lua-ue4-lua-ndc2019)
