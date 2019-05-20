@@ -111,7 +111,7 @@ function SUE4LuaBinding.FindDispatchHandler(functionName, dispatchObject)
 
 	local class = dispatchObject:GetClass()
 	if class == nil then
-		SUE4Lua.Error("GetDispatchHandler(): Invalid dispatch object class.")
+		SUE4Lua.Error("FindDispatchHandler(): Invalid dispatch object class.")
 		return nil
 	end
 
@@ -119,16 +119,25 @@ function SUE4LuaBinding.FindDispatchHandler(functionName, dispatchObject)
 	local handlerData = SUE4LuaBinding.dispatchHandlers[className]
 	
 	if handlerData == nil then
-		SUE4Lua.Error("GetDispatchHandler(): Unregistered class name: ", className)
+		SUE4Lua.Error("FindDispatchHandler(): Unregistered class name: ", className)
 		return nil
 	end
 
-	local func = handlerData.handler and handlerData.handler[functionName] or nil
-	if func ~= nil then
-		if type(func) == 'function' then
-			return func
+	if handlerData.handler then
+		local func
+
+		if handlerData.handler.__dispatchHandler then
+			func = handlerData.handler.__dispatchHandler(functionName, dispatchObject)
 		else
-			SUE4Lua.Error("GetDispatchHandler(): Dispatch Handler must be a function type:", className .. '.' .. functionName)
+			func= handlerData.handler[functionName] or nil
+		end
+		
+		if func ~= nil then
+			if type(func) == 'function' then
+				return func
+			else
+				SUE4Lua.Error("FindDispatchHandler(): Dispatch Handler must be a function type:", className .. '.' .. functionName)
+			end
 		end
 	end
 
