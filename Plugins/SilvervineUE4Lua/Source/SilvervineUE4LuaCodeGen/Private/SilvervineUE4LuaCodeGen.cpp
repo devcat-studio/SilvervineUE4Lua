@@ -124,7 +124,7 @@ bool FSilvervineUE4LuaCodeGenModule::LoadConfig()
 	// PluginManager가 Load해주는 ini 정보 또한 UHT 프로젝트 기준이라 사용할 수 없습니다.
 	// 캐시로 저장하지 않는 임시 ConfigFile을 만들어 사용합니다.
 	FConfigFile ConfigFile;
-	if (!FConfigCacheIni::LoadExternalIniFile(ConfigFile, TEXT("SilvervineUE4Lua"), *FPaths::EngineConfigDir(), *SourceConfigDir, true, *PlatformName, false, true, *GeneratedConfigDir))
+	if (!FConfigCacheIni::LoadExternalIniFile(ConfigFile, TEXT("SilvervineUE4Lua"), *FPaths::EngineConfigDir(), *SourceConfigDir, true, *PlatformName, false, true, true, *GeneratedConfigDir))
 	{
 		UE_LOG(LogTemp, Error, TEXT("[SUE4LuaCodeGen] Ini file is not found."), );
 		return false;
