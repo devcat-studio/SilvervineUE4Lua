@@ -14,2726 +14,2726 @@ local function INVTEXT(...) return ... end
 
 --AssetRegistryHelpers
 do
-    DefaultParameters.AssetRegistryHelpers = DefaultParameters.AssetRegistryHelpers or {}
+    DefaultParameters.assetregistryhelpers = DefaultParameters.assetregistryhelpers or {}
     
     --CreateAssetData
-    DefaultParameters.AssetRegistryHelpers.CreateAssetData = Class(DefaultParameterClass)
-    DefaultParameters.AssetRegistryHelpers.CreateAssetData.bAllowBlueprintClass = false
+    DefaultParameters.assetregistryhelpers.createassetdata = Class(DefaultParameterClass)
+    DefaultParameters.assetregistryhelpers.createassetdata.ballowblueprintclass = false
 end
 
 --Actor
 do
-    DefaultParameters.Actor = DefaultParameters.Actor or {}
+    DefaultParameters.actor = DefaultParameters.actor or {}
     
     --MakeNoise
-    DefaultParameters.Actor.MakeNoise = Class(DefaultParameterClass)
-    DefaultParameters.Actor.MakeNoise.Loudness = 1.000000
-    DefaultParameters.Actor.MakeNoise.MaxRange = 0.000000
-    DefaultParameters.Actor.MakeNoise.Tag = "None"
+    DefaultParameters.actor.makenoise = Class(DefaultParameterClass)
+    DefaultParameters.actor.makenoise.loudness = 1.000000
+    DefaultParameters.actor.makenoise.maxrange = 0.000000
+    DefaultParameters.actor.makenoise.tag = "None"
     --PrestreamTextures
-    DefaultParameters.Actor.PrestreamTextures = Class(DefaultParameterClass)
-    DefaultParameters.Actor.PrestreamTextures.CinematicTextureGroups = 0
+    DefaultParameters.actor.prestreamtextures = Class(DefaultParameterClass)
+    DefaultParameters.actor.prestreamtextures.cinematictexturegroups = 0
     --WasRecentlyRendered
-    DefaultParameters.Actor.WasRecentlyRendered = Class(DefaultParameterClass)
-    DefaultParameters.Actor.WasRecentlyRendered.Tolerance = 0.200000
+    DefaultParameters.actor.wasrecentlyrendered = Class(DefaultParameterClass)
+    DefaultParameters.actor.wasrecentlyrendered.tolerance = 0.200000
     --GetAllChildActors
-    DefaultParameters.Actor.GetAllChildActors = Class(DefaultParameterClass)
-    DefaultParameters.Actor.GetAllChildActors.bIncludeDescendants = true
+    DefaultParameters.actor.getallchildactors = Class(DefaultParameterClass)
+    DefaultParameters.actor.getallchildactors.bincludedescendants = true
     --SetActorLabel
-    DefaultParameters.Actor.SetActorLabel = Class(DefaultParameterClass)
-    DefaultParameters.Actor.SetActorLabel.bMarkDirty = true
+    DefaultParameters.actor.setactorlabel = Class(DefaultParameterClass)
+    DefaultParameters.actor.setactorlabel.bmarkdirty = true
     --IsTemporarilyHiddenInEditor
-    DefaultParameters.Actor.IsTemporarilyHiddenInEditor = Class(DefaultParameterClass)
-    DefaultParameters.Actor.IsTemporarilyHiddenInEditor.bIncludeParent = false
+    DefaultParameters.actor.istemporarilyhiddenineditor = Class(DefaultParameterClass)
+    DefaultParameters.actor.istemporarilyhiddenineditor.bincludeparent = false
     --K2_DetachFromActor
-    DefaultParameters.Actor.K2_DetachFromActor = Class(DefaultParameterClass)
-    DefaultParameters.Actor.K2_DetachFromActor.LocationRule = 0 --EDetachmentRule::KeepRelative
-    DefaultParameters.Actor.K2_DetachFromActor.RotationRule = 0 --EDetachmentRule::KeepRelative
-    DefaultParameters.Actor.K2_DetachFromActor.ScaleRule = 0 --EDetachmentRule::KeepRelative
+    DefaultParameters.actor.k2_detachfromactor = Class(DefaultParameterClass)
+    DefaultParameters.actor.k2_detachfromactor.locationrule = 0 --EDetachmentRule::KeepRelative
+    DefaultParameters.actor.k2_detachfromactor.rotationrule = 0 --EDetachmentRule::KeepRelative
+    DefaultParameters.actor.k2_detachfromactor.scalerule = 0 --EDetachmentRule::KeepRelative
     --DetachRootComponentFromParent
-    DefaultParameters.Actor.DetachRootComponentFromParent = Class(DefaultParameterClass)
-    DefaultParameters.Actor.DetachRootComponentFromParent.bMaintainWorldPosition = true
+    DefaultParameters.actor.detachrootcomponentfromparent = Class(DefaultParameterClass)
+    DefaultParameters.actor.detachrootcomponentfromparent.bmaintainworldposition = true
     --K2_AttachRootComponentToActor
-    DefaultParameters.Actor.K2_AttachRootComponentToActor = Class(DefaultParameterClass)
-    DefaultParameters.Actor.K2_AttachRootComponentToActor.InSocketName = "None"
-    DefaultParameters.Actor.K2_AttachRootComponentToActor.AttachLocationType = 0 --EAttachLocation::Type::KeepRelativeOffset
-    DefaultParameters.Actor.K2_AttachRootComponentToActor.bWeldSimulatedBodies = true
+    DefaultParameters.actor.k2_attachrootcomponenttoactor = Class(DefaultParameterClass)
+    DefaultParameters.actor.k2_attachrootcomponenttoactor.insocketname = "None"
+    DefaultParameters.actor.k2_attachrootcomponenttoactor.attachlocationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
+    DefaultParameters.actor.k2_attachrootcomponenttoactor.bweldsimulatedbodies = true
     --K2_AttachRootComponentTo
-    DefaultParameters.Actor.K2_AttachRootComponentTo = Class(DefaultParameterClass)
-    DefaultParameters.Actor.K2_AttachRootComponentTo.InSocketName = "None"
-    DefaultParameters.Actor.K2_AttachRootComponentTo.AttachLocationType = 0 --EAttachLocation::Type::KeepRelativeOffset
-    DefaultParameters.Actor.K2_AttachRootComponentTo.bWeldSimulatedBodies = true
+    DefaultParameters.actor.k2_attachrootcomponentto = Class(DefaultParameterClass)
+    DefaultParameters.actor.k2_attachrootcomponentto.insocketname = "None"
+    DefaultParameters.actor.k2_attachrootcomponentto.attachlocationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
+    DefaultParameters.actor.k2_attachrootcomponentto.bweldsimulatedbodies = true
 end
 
 --ActorComponent
 do
-    DefaultParameters.ActorComponent = DefaultParameters.ActorComponent or {}
+    DefaultParameters.actorcomponent = DefaultParameters.actorcomponent or {}
     
     --SetActive
-    DefaultParameters.ActorComponent.SetActive = Class(DefaultParameterClass)
-    DefaultParameters.ActorComponent.SetActive.bReset = false
+    DefaultParameters.actorcomponent.setactive = Class(DefaultParameterClass)
+    DefaultParameters.actorcomponent.setactive.breset = false
     --Activate
-    DefaultParameters.ActorComponent.Activate = Class(DefaultParameterClass)
-    DefaultParameters.ActorComponent.Activate.bReset = false
+    DefaultParameters.actorcomponent.activate = Class(DefaultParameterClass)
+    DefaultParameters.actorcomponent.activate.breset = false
 end
 
 --AnimInstance
 do
-    DefaultParameters.AnimInstance = DefaultParameters.AnimInstance or {}
+    DefaultParameters.animinstance = DefaultParameters.animinstance or {}
     
     --IsSyncGroupBetweenMarkers
-    DefaultParameters.AnimInstance.IsSyncGroupBetweenMarkers = Class(DefaultParameterClass)
-    DefaultParameters.AnimInstance.IsSyncGroupBetweenMarkers.bRespectMarkerOrder = true
+    DefaultParameters.animinstance.issyncgroupbetweenmarkers = Class(DefaultParameterClass)
+    DefaultParameters.animinstance.issyncgroupbetweenmarkers.brespectmarkerorder = true
     --Montage_SetPlayRate
-    DefaultParameters.AnimInstance.Montage_SetPlayRate = Class(DefaultParameterClass)
-    DefaultParameters.AnimInstance.Montage_SetPlayRate.NewPlayRate = 1.000000
+    DefaultParameters.animinstance.montage_setplayrate = Class(DefaultParameterClass)
+    DefaultParameters.animinstance.montage_setplayrate.newplayrate = 1.000000
     --Montage_Play
-    DefaultParameters.AnimInstance.Montage_Play = Class(DefaultParameterClass)
-    DefaultParameters.AnimInstance.Montage_Play.InPlayRate = 1.000000
-    DefaultParameters.AnimInstance.Montage_Play.ReturnValueType = 0 --EMontagePlayReturnType::MontageLength
-    DefaultParameters.AnimInstance.Montage_Play.InTimeToStartMontageAt = 0.000000
-    DefaultParameters.AnimInstance.Montage_Play.bStopAllMontages = true
+    DefaultParameters.animinstance.montage_play = Class(DefaultParameterClass)
+    DefaultParameters.animinstance.montage_play.inplayrate = 1.000000
+    DefaultParameters.animinstance.montage_play.returnvaluetype = 0 --EMontagePlayReturnType::MontageLength
+    DefaultParameters.animinstance.montage_play.intimetostartmontageat = 0.000000
+    DefaultParameters.animinstance.montage_play.bstopallmontages = true
     --StopSlotAnimation
-    DefaultParameters.AnimInstance.StopSlotAnimation = Class(DefaultParameterClass)
-    DefaultParameters.AnimInstance.StopSlotAnimation.InBlendOutTime = 0.250000
-    DefaultParameters.AnimInstance.StopSlotAnimation.SlotNodeName = "None"
+    DefaultParameters.animinstance.stopslotanimation = Class(DefaultParameterClass)
+    DefaultParameters.animinstance.stopslotanimation.inblendouttime = 0.250000
+    DefaultParameters.animinstance.stopslotanimation.slotnodename = "None"
     --PlaySlotAnimationAsDynamicMontage
-    DefaultParameters.AnimInstance.PlaySlotAnimationAsDynamicMontage = Class(DefaultParameterClass)
-    DefaultParameters.AnimInstance.PlaySlotAnimationAsDynamicMontage.BlendInTime = 0.250000
-    DefaultParameters.AnimInstance.PlaySlotAnimationAsDynamicMontage.BlendOutTime = 0.250000
-    DefaultParameters.AnimInstance.PlaySlotAnimationAsDynamicMontage.InPlayRate = 1.000000
-    DefaultParameters.AnimInstance.PlaySlotAnimationAsDynamicMontage.LoopCount = 1
-    DefaultParameters.AnimInstance.PlaySlotAnimationAsDynamicMontage.BlendOutTriggerTime = -1.000000
-    DefaultParameters.AnimInstance.PlaySlotAnimationAsDynamicMontage.InTimeToStartMontageAt = 0.000000
+    DefaultParameters.animinstance.playslotanimationasdynamicmontage = Class(DefaultParameterClass)
+    DefaultParameters.animinstance.playslotanimationasdynamicmontage.blendintime = 0.250000
+    DefaultParameters.animinstance.playslotanimationasdynamicmontage.blendouttime = 0.250000
+    DefaultParameters.animinstance.playslotanimationasdynamicmontage.inplayrate = 1.000000
+    DefaultParameters.animinstance.playslotanimationasdynamicmontage.loopcount = 1
+    DefaultParameters.animinstance.playslotanimationasdynamicmontage.blendouttriggertime = -1.000000
+    DefaultParameters.animinstance.playslotanimationasdynamicmontage.intimetostartmontageat = 0.000000
     --PlaySlotAnimation
-    DefaultParameters.AnimInstance.PlaySlotAnimation = Class(DefaultParameterClass)
-    DefaultParameters.AnimInstance.PlaySlotAnimation.BlendInTime = 0.250000
-    DefaultParameters.AnimInstance.PlaySlotAnimation.BlendOutTime = 0.250000
-    DefaultParameters.AnimInstance.PlaySlotAnimation.InPlayRate = 1.000000
-    DefaultParameters.AnimInstance.PlaySlotAnimation.LoopCount = 1
+    DefaultParameters.animinstance.playslotanimation = Class(DefaultParameterClass)
+    DefaultParameters.animinstance.playslotanimation.blendintime = 0.250000
+    DefaultParameters.animinstance.playslotanimation.blendouttime = 0.250000
+    DefaultParameters.animinstance.playslotanimation.inplayrate = 1.000000
+    DefaultParameters.animinstance.playslotanimation.loopcount = 1
 end
 
 --AvoidanceManager
 do
-    DefaultParameters.AvoidanceManager = DefaultParameters.AvoidanceManager or {}
+    DefaultParameters.avoidancemanager = DefaultParameters.avoidancemanager or {}
     
     --RegisterMovementComponent
-    DefaultParameters.AvoidanceManager.RegisterMovementComponent = Class(DefaultParameterClass)
-    DefaultParameters.AvoidanceManager.RegisterMovementComponent.AvoidanceWeight = 0.500000
+    DefaultParameters.avoidancemanager.registermovementcomponent = Class(DefaultParameterClass)
+    DefaultParameters.avoidancemanager.registermovementcomponent.avoidanceweight = 0.500000
 end
 
 --CameraAnimInst
 do
-    DefaultParameters.CameraAnimInst = DefaultParameters.CameraAnimInst or {}
+    DefaultParameters.cameraaniminst = DefaultParameters.cameraaniminst or {}
     
     --Stop
-    DefaultParameters.CameraAnimInst.Stop = Class(DefaultParameterClass)
-    DefaultParameters.CameraAnimInst.Stop.bImmediate = false
+    DefaultParameters.cameraaniminst.stop = Class(DefaultParameterClass)
+    DefaultParameters.cameraaniminst.stop.bimmediate = false
 end
 
 --CameraModifier
 do
-    DefaultParameters.CameraModifier = DefaultParameters.CameraModifier or {}
+    DefaultParameters.cameramodifier = DefaultParameters.cameramodifier or {}
     
     --DisableModifier
-    DefaultParameters.CameraModifier.DisableModifier = Class(DefaultParameterClass)
-    DefaultParameters.CameraModifier.DisableModifier.bImmediate = false
+    DefaultParameters.cameramodifier.disablemodifier = Class(DefaultParameterClass)
+    DefaultParameters.cameramodifier.disablemodifier.bimmediate = false
 end
 
 --Canvas
 do
-    DefaultParameters.Canvas = DefaultParameters.Canvas or {}
+    DefaultParameters.canvas = DefaultParameters.canvas or {}
     
     --K2_TextSize
-    DefaultParameters.Canvas.K2_TextSize = Class(DefaultParameterClass)
-    DefaultParameters.Canvas.K2_TextSize.Scale = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.canvas.k2_textsize = Class(DefaultParameterClass)
+    DefaultParameters.canvas.k2_textsize.scale = UE4.Vector2D.new(1.000000, 1.000000)
     --K2_DrawPolygon
-    DefaultParameters.Canvas.K2_DrawPolygon = Class(DefaultParameterClass)
-    DefaultParameters.Canvas.K2_DrawPolygon.Radius = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawPolygon.NumberOfSides = 3
-    DefaultParameters.Canvas.K2_DrawPolygon.RenderColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawpolygon = Class(DefaultParameterClass)
+    DefaultParameters.canvas.k2_drawpolygon.radius = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawpolygon.numberofsides = 3
+    DefaultParameters.canvas.k2_drawpolygon.rendercolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
     --K2_DrawBox
-    DefaultParameters.Canvas.K2_DrawBox = Class(DefaultParameterClass)
-    DefaultParameters.Canvas.K2_DrawBox.Thickness = 1.000000
-    DefaultParameters.Canvas.K2_DrawBox.RenderColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawbox = Class(DefaultParameterClass)
+    DefaultParameters.canvas.k2_drawbox.thickness = 1.000000
+    DefaultParameters.canvas.k2_drawbox.rendercolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
     --K2_DrawBorder
-    DefaultParameters.Canvas.K2_DrawBorder = Class(DefaultParameterClass)
-    DefaultParameters.Canvas.K2_DrawBorder.CoordinateSize = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawBorder.RenderColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawBorder.BorderScale = UE4.Vector2D.new(0.100000, 0.100000)
-    DefaultParameters.Canvas.K2_DrawBorder.BackgroundScale = UE4.Vector2D.new(0.100000, 0.100000)
-    DefaultParameters.Canvas.K2_DrawBorder.Rotation = 0.000000
-    DefaultParameters.Canvas.K2_DrawBorder.PivotPoint = UE4.Vector2D.new(0.500000, 0.500000)
+    DefaultParameters.canvas.k2_drawborder = Class(DefaultParameterClass)
+    DefaultParameters.canvas.k2_drawborder.coordinatesize = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawborder.rendercolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawborder.borderscale = UE4.Vector2D.new(0.100000, 0.100000)
+    DefaultParameters.canvas.k2_drawborder.backgroundscale = UE4.Vector2D.new(0.100000, 0.100000)
+    DefaultParameters.canvas.k2_drawborder.rotation = 0.000000
+    DefaultParameters.canvas.k2_drawborder.pivotpoint = UE4.Vector2D.new(0.500000, 0.500000)
     --K2_DrawText
-    DefaultParameters.Canvas.K2_DrawText = Class(DefaultParameterClass)
-    DefaultParameters.Canvas.K2_DrawText.Scale = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawText.RenderColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawText.Kerning = 0.000000
-    DefaultParameters.Canvas.K2_DrawText.ShadowColor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawText.ShadowOffset = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawText.bCentreX = false
-    DefaultParameters.Canvas.K2_DrawText.bCentreY = false
-    DefaultParameters.Canvas.K2_DrawText.bOutlined = false
-    DefaultParameters.Canvas.K2_DrawText.OutlineColor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawtext = Class(DefaultParameterClass)
+    DefaultParameters.canvas.k2_drawtext.scale = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawtext.rendercolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawtext.kerning = 0.000000
+    DefaultParameters.canvas.k2_drawtext.shadowcolor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawtext.shadowoffset = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawtext.bcentrex = false
+    DefaultParameters.canvas.k2_drawtext.bcentrey = false
+    DefaultParameters.canvas.k2_drawtext.boutlined = false
+    DefaultParameters.canvas.k2_drawtext.outlinecolor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
     --K2_DrawMaterial
-    DefaultParameters.Canvas.K2_DrawMaterial = Class(DefaultParameterClass)
-    DefaultParameters.Canvas.K2_DrawMaterial.CoordinateSize = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawMaterial.Rotation = 0.000000
-    DefaultParameters.Canvas.K2_DrawMaterial.PivotPoint = UE4.Vector2D.new(0.500000, 0.500000)
+    DefaultParameters.canvas.k2_drawmaterial = Class(DefaultParameterClass)
+    DefaultParameters.canvas.k2_drawmaterial.coordinatesize = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawmaterial.rotation = 0.000000
+    DefaultParameters.canvas.k2_drawmaterial.pivotpoint = UE4.Vector2D.new(0.500000, 0.500000)
     --K2_DrawTexture
-    DefaultParameters.Canvas.K2_DrawTexture = Class(DefaultParameterClass)
-    DefaultParameters.Canvas.K2_DrawTexture.CoordinateSize = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawTexture.RenderColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.Canvas.K2_DrawTexture.BlendMode = 2 --EBlendMode::BLEND_Translucent
-    DefaultParameters.Canvas.K2_DrawTexture.Rotation = 0.000000
-    DefaultParameters.Canvas.K2_DrawTexture.PivotPoint = UE4.Vector2D.new(0.500000, 0.500000)
+    DefaultParameters.canvas.k2_drawtexture = Class(DefaultParameterClass)
+    DefaultParameters.canvas.k2_drawtexture.coordinatesize = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawtexture.rendercolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawtexture.blendmode = 2 --EBlendMode::BLEND_Translucent
+    DefaultParameters.canvas.k2_drawtexture.rotation = 0.000000
+    DefaultParameters.canvas.k2_drawtexture.pivotpoint = UE4.Vector2D.new(0.500000, 0.500000)
     --K2_DrawLine
-    DefaultParameters.Canvas.K2_DrawLine = Class(DefaultParameterClass)
-    DefaultParameters.Canvas.K2_DrawLine.Thickness = 1.000000
-    DefaultParameters.Canvas.K2_DrawLine.RenderColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.canvas.k2_drawline = Class(DefaultParameterClass)
+    DefaultParameters.canvas.k2_drawline.thickness = 1.000000
+    DefaultParameters.canvas.k2_drawline.rendercolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
 end
 
 --GameUserSettings
 do
-    DefaultParameters.GameUserSettings = DefaultParameters.GameUserSettings or {}
+    DefaultParameters.gameusersettings = DefaultParameters.gameusersettings or {}
     
     --EnableHDRDisplayOutput
-    DefaultParameters.GameUserSettings.EnableHDRDisplayOutput = Class(DefaultParameterClass)
-    DefaultParameters.GameUserSettings.EnableHDRDisplayOutput.DisplayNits = 1000
+    DefaultParameters.gameusersettings.enablehdrdisplayoutput = Class(DefaultParameterClass)
+    DefaultParameters.gameusersettings.enablehdrdisplayoutput.displaynits = 1000
     --RunHardwareBenchmark
-    DefaultParameters.GameUserSettings.RunHardwareBenchmark = Class(DefaultParameterClass)
-    DefaultParameters.GameUserSettings.RunHardwareBenchmark.WorkScale = 10
-    DefaultParameters.GameUserSettings.RunHardwareBenchmark.CPUMultiplier = 1.000000
-    DefaultParameters.GameUserSettings.RunHardwareBenchmark.GPUMultiplier = 1.000000
+    DefaultParameters.gameusersettings.runhardwarebenchmark = Class(DefaultParameterClass)
+    DefaultParameters.gameusersettings.runhardwarebenchmark.workscale = 10
+    DefaultParameters.gameusersettings.runhardwarebenchmark.cpumultiplier = 1.000000
+    DefaultParameters.gameusersettings.runhardwarebenchmark.gpumultiplier = 1.000000
     --LoadSettings
-    DefaultParameters.GameUserSettings.LoadSettings = Class(DefaultParameterClass)
-    DefaultParameters.GameUserSettings.LoadSettings.bForceReload = false
+    DefaultParameters.gameusersettings.loadsettings = Class(DefaultParameterClass)
+    DefaultParameters.gameusersettings.loadsettings.bforcereload = false
 end
 
 --InputSettings
 do
-    DefaultParameters.InputSettings = DefaultParameters.InputSettings or {}
+    DefaultParameters.inputsettings = DefaultParameters.inputsettings or {}
     
     --RemoveAxisMapping
-    DefaultParameters.InputSettings.RemoveAxisMapping = Class(DefaultParameterClass)
-    DefaultParameters.InputSettings.RemoveAxisMapping.bForceRebuildKeymaps = true
+    DefaultParameters.inputsettings.removeaxismapping = Class(DefaultParameterClass)
+    DefaultParameters.inputsettings.removeaxismapping.bforcerebuildkeymaps = true
     --AddAxisMapping
-    DefaultParameters.InputSettings.AddAxisMapping = Class(DefaultParameterClass)
-    DefaultParameters.InputSettings.AddAxisMapping.bForceRebuildKeymaps = true
+    DefaultParameters.inputsettings.addaxismapping = Class(DefaultParameterClass)
+    DefaultParameters.inputsettings.addaxismapping.bforcerebuildkeymaps = true
     --RemoveActionMapping
-    DefaultParameters.InputSettings.RemoveActionMapping = Class(DefaultParameterClass)
-    DefaultParameters.InputSettings.RemoveActionMapping.bForceRebuildKeymaps = true
+    DefaultParameters.inputsettings.removeactionmapping = Class(DefaultParameterClass)
+    DefaultParameters.inputsettings.removeactionmapping.bforcerebuildkeymaps = true
     --AddActionMapping
-    DefaultParameters.InputSettings.AddActionMapping = Class(DefaultParameterClass)
-    DefaultParameters.InputSettings.AddActionMapping.bForceRebuildKeymaps = true
+    DefaultParameters.inputsettings.addactionmapping = Class(DefaultParameterClass)
+    DefaultParameters.inputsettings.addactionmapping.bforcerebuildkeymaps = true
 end
 
 --MaterialInterface
 do
-    DefaultParameters.MaterialInterface = DefaultParameters.MaterialInterface or {}
+    DefaultParameters.materialinterface = DefaultParameters.materialinterface or {}
     
     --SetForceMipLevelsToBeResident
-    DefaultParameters.MaterialInterface.SetForceMipLevelsToBeResident = Class(DefaultParameterClass)
-    DefaultParameters.MaterialInterface.SetForceMipLevelsToBeResident.CinematicTextureGroups = 0
+    DefaultParameters.materialinterface.setforcemiplevelstoberesident = Class(DefaultParameterClass)
+    DefaultParameters.materialinterface.setforcemiplevelstoberesident.cinematictexturegroups = 0
 end
 
 --SkeletalMesh
 do
-    DefaultParameters.SkeletalMesh = DefaultParameters.SkeletalMesh or {}
+    DefaultParameters.skeletalmesh = DefaultParameters.skeletalmesh or {}
     
     --IsSectionUsingCloth
-    DefaultParameters.SkeletalMesh.IsSectionUsingCloth = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMesh.IsSectionUsingCloth.bCheckCorrespondingSections = true
+    DefaultParameters.skeletalmesh.issectionusingcloth = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmesh.issectionusingcloth.bcheckcorrespondingsections = true
 end
 
 --AmbientSound
 do
-    DefaultParameters.AmbientSound = DefaultParameters.AmbientSound or {}
+    DefaultParameters.ambientsound = DefaultParameters.ambientsound or {}
     
     --Play
-    DefaultParameters.AmbientSound.Play = Class(DefaultParameterClass)
-    DefaultParameters.AmbientSound.Play.StartTime = 0.000000
+    DefaultParameters.ambientsound.play = Class(DefaultParameterClass)
+    DefaultParameters.ambientsound.play.starttime = 0.000000
     --FadeIn
-    DefaultParameters.AmbientSound.FadeIn = Class(DefaultParameterClass)
-    DefaultParameters.AmbientSound.FadeIn.FadeVolumeLevel = 1.000000
+    DefaultParameters.ambientsound.fadein = Class(DefaultParameterClass)
+    DefaultParameters.ambientsound.fadein.fadevolumelevel = 1.000000
 end
 
 --Controller
 do
-    DefaultParameters.Controller = DefaultParameters.Controller or {}
+    DefaultParameters.controller = DefaultParameters.controller or {}
     
     --LineOfSightTo
-    DefaultParameters.Controller.LineOfSightTo = Class(DefaultParameterClass)
-    DefaultParameters.Controller.LineOfSightTo.bAlternateChecks = false
+    DefaultParameters.controller.lineofsightto = Class(DefaultParameterClass)
+    DefaultParameters.controller.lineofsightto.balternatechecks = false
 end
 
 --HUD
 do
-    DefaultParameters.HUD = DefaultParameters.HUD or {}
+    DefaultParameters.hud = DefaultParameters.hud or {}
     
     --AddHitBox
-    DefaultParameters.HUD.AddHitBox = Class(DefaultParameterClass)
-    DefaultParameters.HUD.AddHitBox.Priority = 0
+    DefaultParameters.hud.addhitbox = Class(DefaultParameterClass)
+    DefaultParameters.hud.addhitbox.priority = 0
     --GetActorsInSelectionRectangle
-    DefaultParameters.HUD.GetActorsInSelectionRectangle = Class(DefaultParameterClass)
-    DefaultParameters.HUD.GetActorsInSelectionRectangle.bIncludeNonCollidingComponents = true
-    DefaultParameters.HUD.GetActorsInSelectionRectangle.bActorMustBeFullyEnclosed = false
+    DefaultParameters.hud.getactorsinselectionrectangle = Class(DefaultParameterClass)
+    DefaultParameters.hud.getactorsinselectionrectangle.bincludenoncollidingcomponents = true
+    DefaultParameters.hud.getactorsinselectionrectangle.bactormustbefullyenclosed = false
     --DrawMaterialTriangle
-    DefaultParameters.HUD.DrawMaterialTriangle = Class(DefaultParameterClass)
-    DefaultParameters.HUD.DrawMaterialTriangle.V0_Color = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.HUD.DrawMaterialTriangle.V1_Color = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.HUD.DrawMaterialTriangle.V2_Color = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.hud.drawmaterialtriangle = Class(DefaultParameterClass)
+    DefaultParameters.hud.drawmaterialtriangle.v0_color = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.hud.drawmaterialtriangle.v1_color = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.hud.drawmaterialtriangle.v2_color = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
     --DrawMaterialSimple
-    DefaultParameters.HUD.DrawMaterialSimple = Class(DefaultParameterClass)
-    DefaultParameters.HUD.DrawMaterialSimple.Scale = 1.000000
-    DefaultParameters.HUD.DrawMaterialSimple.bScalePosition = false
+    DefaultParameters.hud.drawmaterialsimple = Class(DefaultParameterClass)
+    DefaultParameters.hud.drawmaterialsimple.scale = 1.000000
+    DefaultParameters.hud.drawmaterialsimple.bscaleposition = false
     --DrawMaterial
-    DefaultParameters.HUD.DrawMaterial = Class(DefaultParameterClass)
-    DefaultParameters.HUD.DrawMaterial.Scale = 1.000000
-    DefaultParameters.HUD.DrawMaterial.bScalePosition = false
-    DefaultParameters.HUD.DrawMaterial.Rotation = 0.000000
+    DefaultParameters.hud.drawmaterial = Class(DefaultParameterClass)
+    DefaultParameters.hud.drawmaterial.scale = 1.000000
+    DefaultParameters.hud.drawmaterial.bscaleposition = false
+    DefaultParameters.hud.drawmaterial.rotation = 0.000000
     --DrawTextureSimple
-    DefaultParameters.HUD.DrawTextureSimple = Class(DefaultParameterClass)
-    DefaultParameters.HUD.DrawTextureSimple.Scale = 1.000000
-    DefaultParameters.HUD.DrawTextureSimple.bScalePosition = false
+    DefaultParameters.hud.drawtexturesimple = Class(DefaultParameterClass)
+    DefaultParameters.hud.drawtexturesimple.scale = 1.000000
+    DefaultParameters.hud.drawtexturesimple.bscaleposition = false
     --DrawTexture
-    DefaultParameters.HUD.DrawTexture = Class(DefaultParameterClass)
-    DefaultParameters.HUD.DrawTexture.TintColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.HUD.DrawTexture.BlendMode = 2 --EBlendMode::BLEND_Translucent
-    DefaultParameters.HUD.DrawTexture.Scale = 1.000000
-    DefaultParameters.HUD.DrawTexture.bScalePosition = false
-    DefaultParameters.HUD.DrawTexture.Rotation = 0.000000
+    DefaultParameters.hud.drawtexture = Class(DefaultParameterClass)
+    DefaultParameters.hud.drawtexture.tintcolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.hud.drawtexture.blendmode = 2 --EBlendMode::BLEND_Translucent
+    DefaultParameters.hud.drawtexture.scale = 1.000000
+    DefaultParameters.hud.drawtexture.bscaleposition = false
+    DefaultParameters.hud.drawtexture.rotation = 0.000000
     --DrawLine
-    DefaultParameters.HUD.DrawLine = Class(DefaultParameterClass)
-    DefaultParameters.HUD.DrawLine.LineThickness = 0.000000
+    DefaultParameters.hud.drawline = Class(DefaultParameterClass)
+    DefaultParameters.hud.drawline.linethickness = 0.000000
     --DrawText
-    DefaultParameters.HUD.DrawText = Class(DefaultParameterClass)
-    DefaultParameters.HUD.DrawText.Scale = 1.000000
-    DefaultParameters.HUD.DrawText.bScalePosition = false
+    DefaultParameters.hud.drawtext = Class(DefaultParameterClass)
+    DefaultParameters.hud.drawtext.scale = 1.000000
+    DefaultParameters.hud.drawtext.bscaleposition = false
     --GetTextSize
-    DefaultParameters.HUD.GetTextSize = Class(DefaultParameterClass)
-    DefaultParameters.HUD.GetTextSize.Scale = 1.000000
+    DefaultParameters.hud.gettextsize = Class(DefaultParameterClass)
+    DefaultParameters.hud.gettextsize.scale = 1.000000
     --ShowDebug
-    DefaultParameters.HUD.ShowDebug = Class(DefaultParameterClass)
-    DefaultParameters.HUD.ShowDebug.DebugType = "None"
+    DefaultParameters.hud.showdebug = Class(DefaultParameterClass)
+    DefaultParameters.hud.showdebug.debugtype = "None"
 end
 
 --LevelScriptActor
 do
-    DefaultParameters.LevelScriptActor = DefaultParameters.LevelScriptActor or {}
+    DefaultParameters.levelscriptactor = DefaultParameters.levelscriptactor or {}
     
     --SetCinematicMode
-    DefaultParameters.LevelScriptActor.SetCinematicMode = Class(DefaultParameterClass)
-    DefaultParameters.LevelScriptActor.SetCinematicMode.bHidePlayer = true
-    DefaultParameters.LevelScriptActor.SetCinematicMode.bAffectsHUD = true
-    DefaultParameters.LevelScriptActor.SetCinematicMode.bAffectsMovement = false
-    DefaultParameters.LevelScriptActor.SetCinematicMode.bAffectsTurning = false
+    DefaultParameters.levelscriptactor.setcinematicmode = Class(DefaultParameterClass)
+    DefaultParameters.levelscriptactor.setcinematicmode.bhideplayer = true
+    DefaultParameters.levelscriptactor.setcinematicmode.baffectshud = true
+    DefaultParameters.levelscriptactor.setcinematicmode.baffectsmovement = false
+    DefaultParameters.levelscriptactor.setcinematicmode.baffectsturning = false
 end
 
 --MatineeActor
 do
-    DefaultParameters.MatineeActor = DefaultParameters.MatineeActor or {}
+    DefaultParameters.matineeactor = DefaultParameters.matineeactor or {}
     
     --SetPosition
-    DefaultParameters.MatineeActor.SetPosition = Class(DefaultParameterClass)
-    DefaultParameters.MatineeActor.SetPosition.bJump = false
+    DefaultParameters.matineeactor.setposition = Class(DefaultParameterClass)
+    DefaultParameters.matineeactor.setposition.bjump = false
 end
 
 --Pawn
 do
-    DefaultParameters.Pawn = DefaultParameters.Pawn or {}
+    DefaultParameters.pawn = DefaultParameters.pawn or {}
     
     --AddMovementInput
-    DefaultParameters.Pawn.AddMovementInput = Class(DefaultParameterClass)
-    DefaultParameters.Pawn.AddMovementInput.ScaleValue = 1.000000
-    DefaultParameters.Pawn.AddMovementInput.bForce = false
+    DefaultParameters.pawn.addmovementinput = Class(DefaultParameterClass)
+    DefaultParameters.pawn.addmovementinput.scalevalue = 1.000000
+    DefaultParameters.pawn.addmovementinput.bforce = false
     --SetCanAffectNavigationGeneration
-    DefaultParameters.Pawn.SetCanAffectNavigationGeneration = Class(DefaultParameterClass)
-    DefaultParameters.Pawn.SetCanAffectNavigationGeneration.bForceUpdate = false
+    DefaultParameters.pawn.setcanaffectnavigationgeneration = Class(DefaultParameterClass)
+    DefaultParameters.pawn.setcanaffectnavigationgeneration.bforceupdate = false
     --PawnMakeNoise
-    DefaultParameters.Pawn.PawnMakeNoise = Class(DefaultParameterClass)
-    DefaultParameters.Pawn.PawnMakeNoise.bUseNoiseMakerLocation = true
+    DefaultParameters.pawn.pawnmakenoise = Class(DefaultParameterClass)
+    DefaultParameters.pawn.pawnmakenoise.busenoisemakerlocation = true
 end
 
 --PlayerCameraManager
 do
-    DefaultParameters.PlayerCameraManager = DefaultParameters.PlayerCameraManager or {}
+    DefaultParameters.playercameramanager = DefaultParameters.playercameramanager or {}
     
     --StopAllCameraAnims
-    DefaultParameters.PlayerCameraManager.StopAllCameraAnims = Class(DefaultParameterClass)
-    DefaultParameters.PlayerCameraManager.StopAllCameraAnims.bImmediate = false
+    DefaultParameters.playercameramanager.stopallcameraanims = Class(DefaultParameterClass)
+    DefaultParameters.playercameramanager.stopallcameraanims.bimmediate = false
     --StopCameraAnimInst
-    DefaultParameters.PlayerCameraManager.StopCameraAnimInst = Class(DefaultParameterClass)
-    DefaultParameters.PlayerCameraManager.StopCameraAnimInst.bImmediate = false
+    DefaultParameters.playercameramanager.stopcameraaniminst = Class(DefaultParameterClass)
+    DefaultParameters.playercameramanager.stopcameraaniminst.bimmediate = false
     --StopAllInstancesOfCameraAnim
-    DefaultParameters.PlayerCameraManager.StopAllInstancesOfCameraAnim = Class(DefaultParameterClass)
-    DefaultParameters.PlayerCameraManager.StopAllInstancesOfCameraAnim.bImmediate = false
+    DefaultParameters.playercameramanager.stopallinstancesofcameraanim = Class(DefaultParameterClass)
+    DefaultParameters.playercameramanager.stopallinstancesofcameraanim.bimmediate = false
     --PlayCameraAnim
-    DefaultParameters.PlayerCameraManager.PlayCameraAnim = Class(DefaultParameterClass)
-    DefaultParameters.PlayerCameraManager.PlayCameraAnim.Rate = 1.000000
-    DefaultParameters.PlayerCameraManager.PlayCameraAnim.Scale = 1.000000
-    DefaultParameters.PlayerCameraManager.PlayCameraAnim.BlendInTime = 0.000000
-    DefaultParameters.PlayerCameraManager.PlayCameraAnim.BlendOutTime = 0.000000
-    DefaultParameters.PlayerCameraManager.PlayCameraAnim.bLoop = false
-    DefaultParameters.PlayerCameraManager.PlayCameraAnim.bRandomStartTime = false
-    DefaultParameters.PlayerCameraManager.PlayCameraAnim.Duration = 0.000000
-    DefaultParameters.PlayerCameraManager.PlayCameraAnim.PlaySpace = 0 --ECameraAnimPlaySpace::Type::CameraLocal
+    DefaultParameters.playercameramanager.playcameraanim = Class(DefaultParameterClass)
+    DefaultParameters.playercameramanager.playcameraanim.rate = 1.000000
+    DefaultParameters.playercameramanager.playcameraanim.scale = 1.000000
+    DefaultParameters.playercameramanager.playcameraanim.blendintime = 0.000000
+    DefaultParameters.playercameramanager.playcameraanim.blendouttime = 0.000000
+    DefaultParameters.playercameramanager.playcameraanim.bloop = false
+    DefaultParameters.playercameramanager.playcameraanim.brandomstarttime = false
+    DefaultParameters.playercameramanager.playcameraanim.duration = 0.000000
+    DefaultParameters.playercameramanager.playcameraanim.playspace = 0 --ECameraAnimPlaySpace::Type::CameraLocal
     --StartCameraFade
-    DefaultParameters.PlayerCameraManager.StartCameraFade = Class(DefaultParameterClass)
-    DefaultParameters.PlayerCameraManager.StartCameraFade.bShouldFadeAudio = false
-    DefaultParameters.PlayerCameraManager.StartCameraFade.bHoldWhenFinished = false
+    DefaultParameters.playercameramanager.startcamerafade = Class(DefaultParameterClass)
+    DefaultParameters.playercameramanager.startcamerafade.bshouldfadeaudio = false
+    DefaultParameters.playercameramanager.startcamerafade.bholdwhenfinished = false
     --StopAllCameraShakes
-    DefaultParameters.PlayerCameraManager.StopAllCameraShakes = Class(DefaultParameterClass)
-    DefaultParameters.PlayerCameraManager.StopAllCameraShakes.bImmediately = true
+    DefaultParameters.playercameramanager.stopallcamerashakes = Class(DefaultParameterClass)
+    DefaultParameters.playercameramanager.stopallcamerashakes.bimmediately = true
     --StopAllInstancesOfCameraShake
-    DefaultParameters.PlayerCameraManager.StopAllInstancesOfCameraShake = Class(DefaultParameterClass)
-    DefaultParameters.PlayerCameraManager.StopAllInstancesOfCameraShake.bImmediately = true
+    DefaultParameters.playercameramanager.stopallinstancesofcamerashake = Class(DefaultParameterClass)
+    DefaultParameters.playercameramanager.stopallinstancesofcamerashake.bimmediately = true
     --StopCameraShake
-    DefaultParameters.PlayerCameraManager.StopCameraShake = Class(DefaultParameterClass)
-    DefaultParameters.PlayerCameraManager.StopCameraShake.bImmediately = true
+    DefaultParameters.playercameramanager.stopcamerashake = Class(DefaultParameterClass)
+    DefaultParameters.playercameramanager.stopcamerashake.bimmediately = true
     --PlayCameraShake
-    DefaultParameters.PlayerCameraManager.PlayCameraShake = Class(DefaultParameterClass)
-    DefaultParameters.PlayerCameraManager.PlayCameraShake.Scale = 1.000000
-    DefaultParameters.PlayerCameraManager.PlayCameraShake.PlaySpace = 0 --ECameraAnimPlaySpace::Type::CameraLocal
+    DefaultParameters.playercameramanager.playcamerashake = Class(DefaultParameterClass)
+    DefaultParameters.playercameramanager.playcamerashake.scale = 1.000000
+    DefaultParameters.playercameramanager.playcamerashake.playspace = 0 --ECameraAnimPlaySpace::Type::CameraLocal
 end
 
 --PostProcessVolume
 do
-    DefaultParameters.PostProcessVolume = DefaultParameters.PostProcessVolume or {}
+    DefaultParameters.postprocessvolume = DefaultParameters.postprocessvolume or {}
     
     --AddOrUpdateBlendable
-    DefaultParameters.PostProcessVolume.AddOrUpdateBlendable = Class(DefaultParameterClass)
-    DefaultParameters.PostProcessVolume.AddOrUpdateBlendable.InWeight = 1.000000
+    DefaultParameters.postprocessvolume.addorupdateblendable = Class(DefaultParameterClass)
+    DefaultParameters.postprocessvolume.addorupdateblendable.inweight = 1.000000
 end
 
 --PlayerController
 do
-    DefaultParameters.PlayerController = DefaultParameters.PlayerController or {}
+    DefaultParameters.playercontroller = DefaultParameters.playercontroller or {}
     
     --SetViewTargetWithBlend
-    DefaultParameters.PlayerController.SetViewTargetWithBlend = Class(DefaultParameterClass)
-    DefaultParameters.PlayerController.SetViewTargetWithBlend.BlendTime = 0.000000
-    DefaultParameters.PlayerController.SetViewTargetWithBlend.BlendFunc = 0 --EViewTargetBlendFunction::VTBlend_Linear
-    DefaultParameters.PlayerController.SetViewTargetWithBlend.BlendExp = 0.000000
-    DefaultParameters.PlayerController.SetViewTargetWithBlend.bLockOutgoing = false
+    DefaultParameters.playercontroller.setviewtargetwithblend = Class(DefaultParameterClass)
+    DefaultParameters.playercontroller.setviewtargetwithblend.blendtime = 0.000000
+    DefaultParameters.playercontroller.setviewtargetwithblend.blendfunc = 0 --EViewTargetBlendFunction::VTBlend_Linear
+    DefaultParameters.playercontroller.setviewtargetwithblend.blendexp = 0.000000
+    DefaultParameters.playercontroller.setviewtargetwithblend.blockoutgoing = false
     --PlayHapticEffect
-    DefaultParameters.PlayerController.PlayHapticEffect = Class(DefaultParameterClass)
-    DefaultParameters.PlayerController.PlayHapticEffect.Scale = 1.000000
-    DefaultParameters.PlayerController.PlayHapticEffect.bLoop = false
+    DefaultParameters.playercontroller.playhapticeffect = Class(DefaultParameterClass)
+    DefaultParameters.playercontroller.playhapticeffect.scale = 1.000000
+    DefaultParameters.playercontroller.playhapticeffect.bloop = false
     --ClientStopCameraShake
-    DefaultParameters.PlayerController.ClientStopCameraShake = Class(DefaultParameterClass)
-    DefaultParameters.PlayerController.ClientStopCameraShake.bImmediately = true
+    DefaultParameters.playercontroller.clientstopcamerashake = Class(DefaultParameterClass)
+    DefaultParameters.playercontroller.clientstopcamerashake.bimmediately = true
     --ClientPlayCameraShake
-    DefaultParameters.PlayerController.ClientPlayCameraShake = Class(DefaultParameterClass)
-    DefaultParameters.PlayerController.ClientPlayCameraShake.Scale = 1.000000
-    DefaultParameters.PlayerController.ClientPlayCameraShake.PlaySpace = 0 --ECameraAnimPlaySpace::Type::CameraLocal
+    DefaultParameters.playercontroller.clientplaycamerashake = Class(DefaultParameterClass)
+    DefaultParameters.playercontroller.clientplaycamerashake.scale = 1.000000
+    DefaultParameters.playercontroller.clientplaycamerashake.playspace = 0 --ECameraAnimPlaySpace::Type::CameraLocal
     --ClientPlayCameraAnim
-    DefaultParameters.PlayerController.ClientPlayCameraAnim = Class(DefaultParameterClass)
-    DefaultParameters.PlayerController.ClientPlayCameraAnim.Scale = 1.000000
-    DefaultParameters.PlayerController.ClientPlayCameraAnim.Rate = 1.000000
-    DefaultParameters.PlayerController.ClientPlayCameraAnim.BlendInTime = 0.000000
-    DefaultParameters.PlayerController.ClientPlayCameraAnim.BlendOutTime = 0.000000
-    DefaultParameters.PlayerController.ClientPlayCameraAnim.bLoop = false
-    DefaultParameters.PlayerController.ClientPlayCameraAnim.bRandomStartTime = false
-    DefaultParameters.PlayerController.ClientPlayCameraAnim.Space = 0 --ECameraAnimPlaySpace::Type::CameraLocal
+    DefaultParameters.playercontroller.clientplaycameraanim = Class(DefaultParameterClass)
+    DefaultParameters.playercontroller.clientplaycameraanim.scale = 1.000000
+    DefaultParameters.playercontroller.clientplaycameraanim.rate = 1.000000
+    DefaultParameters.playercontroller.clientplaycameraanim.blendintime = 0.000000
+    DefaultParameters.playercontroller.clientplaycameraanim.blendouttime = 0.000000
+    DefaultParameters.playercontroller.clientplaycameraanim.bloop = false
+    DefaultParameters.playercontroller.clientplaycameraanim.brandomstarttime = false
+    DefaultParameters.playercontroller.clientplaycameraanim.space = 0 --ECameraAnimPlaySpace::Type::CameraLocal
     --StartFire
-    DefaultParameters.PlayerController.StartFire = Class(DefaultParameterClass)
-    DefaultParameters.PlayerController.StartFire.FireModeNum = 0
+    DefaultParameters.playercontroller.startfire = Class(DefaultParameterClass)
+    DefaultParameters.playercontroller.startfire.firemodenum = 0
     --ProjectWorldLocationToScreen
-    DefaultParameters.PlayerController.ProjectWorldLocationToScreen = Class(DefaultParameterClass)
-    DefaultParameters.PlayerController.ProjectWorldLocationToScreen.bPlayerViewportRelative = false
+    DefaultParameters.playercontroller.projectworldlocationtoscreen = Class(DefaultParameterClass)
+    DefaultParameters.playercontroller.projectworldlocationtoscreen.bplayerviewportrelative = false
 end
 
 --Character
 do
-    DefaultParameters.Character = DefaultParameters.Character or {}
+    DefaultParameters.character = DefaultParameters.character or {}
     
     --UnCrouch
-    DefaultParameters.Character.UnCrouch = Class(DefaultParameterClass)
-    DefaultParameters.Character.UnCrouch.bClientSimulation = false
+    DefaultParameters.character.uncrouch = Class(DefaultParameterClass)
+    DefaultParameters.character.uncrouch.bclientsimulation = false
     --Crouch
-    DefaultParameters.Character.Crouch = Class(DefaultParameterClass)
-    DefaultParameters.Character.Crouch.bClientSimulation = false
+    DefaultParameters.character.crouch = Class(DefaultParameterClass)
+    DefaultParameters.character.crouch.bclientsimulation = false
     --PlayAnimMontage
-    DefaultParameters.Character.PlayAnimMontage = Class(DefaultParameterClass)
-    DefaultParameters.Character.PlayAnimMontage.InPlayRate = 1.000000
-    DefaultParameters.Character.PlayAnimMontage.StartSectionName = "None"
+    DefaultParameters.character.playanimmontage = Class(DefaultParameterClass)
+    DefaultParameters.character.playanimmontage.inplayrate = 1.000000
+    DefaultParameters.character.playanimmontage.startsectionname = "None"
 end
 
 --MovementComponent
 do
-    DefaultParameters.MovementComponent = DefaultParameters.MovementComponent or {}
+    DefaultParameters.movementcomponent = DefaultParameters.movementcomponent or {}
     
     --K2_MoveUpdatedComponent
-    DefaultParameters.MovementComponent.K2_MoveUpdatedComponent = Class(DefaultParameterClass)
-    DefaultParameters.MovementComponent.K2_MoveUpdatedComponent.bSweep = true
-    DefaultParameters.MovementComponent.K2_MoveUpdatedComponent.bTeleport = false
+    DefaultParameters.movementcomponent.k2_moveupdatedcomponent = Class(DefaultParameterClass)
+    DefaultParameters.movementcomponent.k2_moveupdatedcomponent.bsweep = true
+    DefaultParameters.movementcomponent.k2_moveupdatedcomponent.bteleport = false
 end
 
 --PhysicalAnimationComponent
 do
-    DefaultParameters.PhysicalAnimationComponent = DefaultParameters.PhysicalAnimationComponent or {}
+    DefaultParameters.physicalanimationcomponent = DefaultParameters.physicalanimationcomponent or {}
     
     --ApplyPhysicalAnimationProfileBelow
-    DefaultParameters.PhysicalAnimationComponent.ApplyPhysicalAnimationProfileBelow = Class(DefaultParameterClass)
-    DefaultParameters.PhysicalAnimationComponent.ApplyPhysicalAnimationProfileBelow.bIncludeSelf = true
-    DefaultParameters.PhysicalAnimationComponent.ApplyPhysicalAnimationProfileBelow.bClearNotFound = false
+    DefaultParameters.physicalanimationcomponent.applyphysicalanimationprofilebelow = Class(DefaultParameterClass)
+    DefaultParameters.physicalanimationcomponent.applyphysicalanimationprofilebelow.bincludeself = true
+    DefaultParameters.physicalanimationcomponent.applyphysicalanimationprofilebelow.bclearnotfound = false
     --ApplyPhysicalAnimationSettingsBelow
-    DefaultParameters.PhysicalAnimationComponent.ApplyPhysicalAnimationSettingsBelow = Class(DefaultParameterClass)
-    DefaultParameters.PhysicalAnimationComponent.ApplyPhysicalAnimationSettingsBelow.bIncludeSelf = true
+    DefaultParameters.physicalanimationcomponent.applyphysicalanimationsettingsbelow = Class(DefaultParameterClass)
+    DefaultParameters.physicalanimationcomponent.applyphysicalanimationsettingsbelow.bincludeself = true
 end
 
 --SceneComponent
 do
-    DefaultParameters.SceneComponent = DefaultParameters.SceneComponent or {}
+    DefaultParameters.scenecomponent = DefaultParameters.scenecomponent or {}
     
     --SetAbsolute
-    DefaultParameters.SceneComponent.SetAbsolute = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.SetAbsolute.bNewAbsoluteLocation = false
-    DefaultParameters.SceneComponent.SetAbsolute.bNewAbsoluteRotation = false
-    DefaultParameters.SceneComponent.SetAbsolute.bNewAbsoluteScale = false
+    DefaultParameters.scenecomponent.setabsolute = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.setabsolute.bnewabsolutelocation = false
+    DefaultParameters.scenecomponent.setabsolute.bnewabsoluterotation = false
+    DefaultParameters.scenecomponent.setabsolute.bnewabsolutescale = false
     --SetHiddenInGame
-    DefaultParameters.SceneComponent.SetHiddenInGame = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.SetHiddenInGame.bPropagateToChildren = false
+    DefaultParameters.scenecomponent.sethiddeningame = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.sethiddeningame.bpropagatetochildren = false
     --ToggleVisibility
-    DefaultParameters.SceneComponent.ToggleVisibility = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.ToggleVisibility.bPropagateToChildren = false
+    DefaultParameters.scenecomponent.togglevisibility = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.togglevisibility.bpropagatetochildren = false
     --SetVisibility
-    DefaultParameters.SceneComponent.SetVisibility = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.SetVisibility.bPropagateToChildren = false
+    DefaultParameters.scenecomponent.setvisibility = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.setvisibility.bpropagatetochildren = false
     --GetSocketTransform
-    DefaultParameters.SceneComponent.GetSocketTransform = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.GetSocketTransform.TransformSpace = 0 --ERelativeTransformSpace::RTS_World
+    DefaultParameters.scenecomponent.getsockettransform = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.getsockettransform.transformspace = 0 --ERelativeTransformSpace::RTS_World
     --K2_DetachFromComponent
-    DefaultParameters.SceneComponent.K2_DetachFromComponent = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.K2_DetachFromComponent.LocationRule = 0 --EDetachmentRule::KeepRelative
-    DefaultParameters.SceneComponent.K2_DetachFromComponent.RotationRule = 0 --EDetachmentRule::KeepRelative
-    DefaultParameters.SceneComponent.K2_DetachFromComponent.ScaleRule = 0 --EDetachmentRule::KeepRelative
-    DefaultParameters.SceneComponent.K2_DetachFromComponent.bCallModify = true
+    DefaultParameters.scenecomponent.k2_detachfromcomponent = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.k2_detachfromcomponent.locationrule = 0 --EDetachmentRule::KeepRelative
+    DefaultParameters.scenecomponent.k2_detachfromcomponent.rotationrule = 0 --EDetachmentRule::KeepRelative
+    DefaultParameters.scenecomponent.k2_detachfromcomponent.scalerule = 0 --EDetachmentRule::KeepRelative
+    DefaultParameters.scenecomponent.k2_detachfromcomponent.bcallmodify = true
     --DetachFromParent
-    DefaultParameters.SceneComponent.DetachFromParent = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.DetachFromParent.bMaintainWorldPosition = false
-    DefaultParameters.SceneComponent.DetachFromParent.bCallModify = true
+    DefaultParameters.scenecomponent.detachfromparent = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.detachfromparent.bmaintainworldposition = false
+    DefaultParameters.scenecomponent.detachfromparent.bcallmodify = true
     --SnapTo
-    DefaultParameters.SceneComponent.SnapTo = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.SnapTo.InSocketName = "None"
+    DefaultParameters.scenecomponent.snapto = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.snapto.insocketname = "None"
     --K2_AttachTo
-    DefaultParameters.SceneComponent.K2_AttachTo = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.K2_AttachTo.InSocketName = "None"
-    DefaultParameters.SceneComponent.K2_AttachTo.AttachType = 0 --EAttachLocation::Type::KeepRelativeOffset
-    DefaultParameters.SceneComponent.K2_AttachTo.bWeldSimulatedBodies = true
+    DefaultParameters.scenecomponent.k2_attachto = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.k2_attachto.insocketname = "None"
+    DefaultParameters.scenecomponent.k2_attachto.attachtype = 0 --EAttachLocation::Type::KeepRelativeOffset
+    DefaultParameters.scenecomponent.k2_attachto.bweldsimulatedbodies = true
     --IsSimulatingPhysics
-    DefaultParameters.SceneComponent.IsSimulatingPhysics = Class(DefaultParameterClass)
-    DefaultParameters.SceneComponent.IsSimulatingPhysics.BoneName = "None"
+    DefaultParameters.scenecomponent.issimulatingphysics = Class(DefaultParameterClass)
+    DefaultParameters.scenecomponent.issimulatingphysics.bonename = "None"
 end
 
 --TimelineComponent
 do
-    DefaultParameters.TimelineComponent = DefaultParameters.TimelineComponent or {}
+    DefaultParameters.timelinecomponent = DefaultParameters.timelinecomponent or {}
     
     --SetPlaybackPosition
-    DefaultParameters.TimelineComponent.SetPlaybackPosition = Class(DefaultParameterClass)
-    DefaultParameters.TimelineComponent.SetPlaybackPosition.bFireUpdate = true
+    DefaultParameters.timelinecomponent.setplaybackposition = Class(DefaultParameterClass)
+    DefaultParameters.timelinecomponent.setplaybackposition.bfireupdate = true
 end
 
 --InterpToMovementComponent
 do
-    DefaultParameters.InterpToMovementComponent = DefaultParameters.InterpToMovementComponent or {}
+    DefaultParameters.interptomovementcomponent = DefaultParameters.interptomovementcomponent or {}
     
     --RestartMovement
-    DefaultParameters.InterpToMovementComponent.RestartMovement = Class(DefaultParameterClass)
-    DefaultParameters.InterpToMovementComponent.RestartMovement.InitialDirection = 1.000000
+    DefaultParameters.interptomovementcomponent.restartmovement = Class(DefaultParameterClass)
+    DefaultParameters.interptomovementcomponent.restartmovement.initialdirection = 1.000000
 end
 
 --PawnMovementComponent
 do
-    DefaultParameters.PawnMovementComponent = DefaultParameters.PawnMovementComponent or {}
+    DefaultParameters.pawnmovementcomponent = DefaultParameters.pawnmovementcomponent or {}
     
     --AddInputVector
-    DefaultParameters.PawnMovementComponent.AddInputVector = Class(DefaultParameterClass)
-    DefaultParameters.PawnMovementComponent.AddInputVector.bForce = false
+    DefaultParameters.pawnmovementcomponent.addinputvector = Class(DefaultParameterClass)
+    DefaultParameters.pawnmovementcomponent.addinputvector.bforce = false
 end
 
 --CharacterMovementComponent
 do
-    DefaultParameters.CharacterMovementComponent = DefaultParameters.CharacterMovementComponent or {}
+    DefaultParameters.charactermovementcomponent = DefaultParameters.charactermovementcomponent or {}
     
     --AddImpulse
-    DefaultParameters.CharacterMovementComponent.AddImpulse = Class(DefaultParameterClass)
-    DefaultParameters.CharacterMovementComponent.AddImpulse.bVelocityChange = false
+    DefaultParameters.charactermovementcomponent.addimpulse = Class(DefaultParameterClass)
+    DefaultParameters.charactermovementcomponent.addimpulse.bvelocitychange = false
     --SetMovementMode
-    DefaultParameters.CharacterMovementComponent.SetMovementMode = Class(DefaultParameterClass)
-    DefaultParameters.CharacterMovementComponent.SetMovementMode.NewCustomMode = 0
+    DefaultParameters.charactermovementcomponent.setmovementmode = Class(DefaultParameterClass)
+    DefaultParameters.charactermovementcomponent.setmovementmode.newcustommode = 0
 end
 
 --AudioComponent
 do
-    DefaultParameters.AudioComponent = DefaultParameters.AudioComponent or {}
+    DefaultParameters.audiocomponent = DefaultParameters.audiocomponent or {}
     
     --Play
-    DefaultParameters.AudioComponent.Play = Class(DefaultParameterClass)
-    DefaultParameters.AudioComponent.Play.StartTime = 0.000000
+    DefaultParameters.audiocomponent.play = Class(DefaultParameterClass)
+    DefaultParameters.audiocomponent.play.starttime = 0.000000
     --FadeIn
-    DefaultParameters.AudioComponent.FadeIn = Class(DefaultParameterClass)
-    DefaultParameters.AudioComponent.FadeIn.FadeVolumeLevel = 1.000000
-    DefaultParameters.AudioComponent.FadeIn.StartTime = 0.000000
+    DefaultParameters.audiocomponent.fadein = Class(DefaultParameterClass)
+    DefaultParameters.audiocomponent.fadein.fadevolumelevel = 1.000000
+    DefaultParameters.audiocomponent.fadein.starttime = 0.000000
 end
 
 --CameraComponent
 do
-    DefaultParameters.CameraComponent = DefaultParameters.CameraComponent or {}
+    DefaultParameters.cameracomponent = DefaultParameters.cameracomponent or {}
     
     --AddOrUpdateBlendable
-    DefaultParameters.CameraComponent.AddOrUpdateBlendable = Class(DefaultParameterClass)
-    DefaultParameters.CameraComponent.AddOrUpdateBlendable.InWeight = 1.000000
+    DefaultParameters.cameracomponent.addorupdateblendable = Class(DefaultParameterClass)
+    DefaultParameters.cameracomponent.addorupdateblendable.inweight = 1.000000
 end
 
 --DecalComponent
 do
-    DefaultParameters.DecalComponent = DefaultParameters.DecalComponent or {}
+    DefaultParameters.decalcomponent = DefaultParameters.decalcomponent or {}
     
     --SetFadeOut
-    DefaultParameters.DecalComponent.SetFadeOut = Class(DefaultParameterClass)
-    DefaultParameters.DecalComponent.SetFadeOut.DestroyOwnerAfterFade = true
+    DefaultParameters.decalcomponent.setfadeout = Class(DefaultParameterClass)
+    DefaultParameters.decalcomponent.setfadeout.destroyownerafterfade = true
 end
 
 --ForceFeedbackComponent
 do
-    DefaultParameters.ForceFeedbackComponent = DefaultParameters.ForceFeedbackComponent or {}
+    DefaultParameters.forcefeedbackcomponent = DefaultParameters.forcefeedbackcomponent or {}
     
     --Play
-    DefaultParameters.ForceFeedbackComponent.Play = Class(DefaultParameterClass)
-    DefaultParameters.ForceFeedbackComponent.Play.StartTime = 0.000000
+    DefaultParameters.forcefeedbackcomponent.play = Class(DefaultParameterClass)
+    DefaultParameters.forcefeedbackcomponent.play.starttime = 0.000000
 end
 
 --PostProcessComponent
 do
-    DefaultParameters.PostProcessComponent = DefaultParameters.PostProcessComponent or {}
+    DefaultParameters.postprocesscomponent = DefaultParameters.postprocesscomponent or {}
     
     --AddOrUpdateBlendable
-    DefaultParameters.PostProcessComponent.AddOrUpdateBlendable = Class(DefaultParameterClass)
-    DefaultParameters.PostProcessComponent.AddOrUpdateBlendable.InWeight = 1.000000
+    DefaultParameters.postprocesscomponent.addorupdateblendable = Class(DefaultParameterClass)
+    DefaultParameters.postprocesscomponent.addorupdateblendable.inweight = 1.000000
 end
 
 --PrimitiveComponent
 do
-    DefaultParameters.PrimitiveComponent = DefaultParameters.PrimitiveComponent or {}
+    DefaultParameters.primitivecomponent = DefaultParameters.primitivecomponent or {}
     
     --SetUseCCD
-    DefaultParameters.PrimitiveComponent.SetUseCCD = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetUseCCD.BoneName = "None"
+    DefaultParameters.primitivecomponent.setuseccd = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setuseccd.bonename = "None"
     --ScaleByMomentOfInertia
-    DefaultParameters.PrimitiveComponent.ScaleByMomentOfInertia = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.ScaleByMomentOfInertia.BoneName = "None"
+    DefaultParameters.primitivecomponent.scalebymomentofinertia = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.scalebymomentofinertia.bonename = "None"
     --GetInertiaTensor
-    DefaultParameters.PrimitiveComponent.GetInertiaTensor = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.GetInertiaTensor.BoneName = "None"
+    DefaultParameters.primitivecomponent.getinertiatensor = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.getinertiatensor.bonename = "None"
     --SetMassOverrideInKg
-    DefaultParameters.PrimitiveComponent.SetMassOverrideInKg = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetMassOverrideInKg.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.SetMassOverrideInKg.MassInKg = 1.000000
-    DefaultParameters.PrimitiveComponent.SetMassOverrideInKg.bOverrideMass = true
+    DefaultParameters.primitivecomponent.setmassoverrideinkg = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setmassoverrideinkg.bonename = "None"
+    DefaultParameters.primitivecomponent.setmassoverrideinkg.massinkg = 1.000000
+    DefaultParameters.primitivecomponent.setmassoverrideinkg.boverridemass = true
     --SetAllMassScale
-    DefaultParameters.PrimitiveComponent.SetAllMassScale = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetAllMassScale.InMassScale = 1.000000
+    DefaultParameters.primitivecomponent.setallmassscale = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setallmassscale.inmassscale = 1.000000
     --GetMassScale
-    DefaultParameters.PrimitiveComponent.GetMassScale = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.GetMassScale.BoneName = "None"
+    DefaultParameters.primitivecomponent.getmassscale = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.getmassscale.bonename = "None"
     --SetMassScale
-    DefaultParameters.PrimitiveComponent.SetMassScale = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetMassScale.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.SetMassScale.InMassScale = 1.000000
+    DefaultParameters.primitivecomponent.setmassscale = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setmassscale.bonename = "None"
+    DefaultParameters.primitivecomponent.setmassscale.inmassscale = 1.000000
     --SetAllPhysicsAngularVelocityInRadians
-    DefaultParameters.PrimitiveComponent.SetAllPhysicsAngularVelocityInRadians = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetAllPhysicsAngularVelocityInRadians.bAddToCurrent = false
+    DefaultParameters.primitivecomponent.setallphysicsangularvelocityinradians = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setallphysicsangularvelocityinradians.baddtocurrent = false
     --SetAllPhysicsAngularVelocityInDegrees
-    DefaultParameters.PrimitiveComponent.SetAllPhysicsAngularVelocityInDegrees = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetAllPhysicsAngularVelocityInDegrees.bAddToCurrent = false
+    DefaultParameters.primitivecomponent.setallphysicsangularvelocityindegrees = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setallphysicsangularvelocityindegrees.baddtocurrent = false
     --GetClosestPointOnCollision
-    DefaultParameters.PrimitiveComponent.GetClosestPointOnCollision = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.GetClosestPointOnCollision.BoneName = "None"
+    DefaultParameters.primitivecomponent.getclosestpointoncollision = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.getclosestpointoncollision.bonename = "None"
     --PutRigidBodyToSleep
-    DefaultParameters.PrimitiveComponent.PutRigidBodyToSleep = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.PutRigidBodyToSleep.BoneName = "None"
+    DefaultParameters.primitivecomponent.putrigidbodytosleep = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.putrigidbodytosleep.bonename = "None"
     --WakeRigidBody
-    DefaultParameters.PrimitiveComponent.WakeRigidBody = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.WakeRigidBody.BoneName = "None"
+    DefaultParameters.primitivecomponent.wakerigidbody = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.wakerigidbody.bonename = "None"
     --SetCenterOfMass
-    DefaultParameters.PrimitiveComponent.SetCenterOfMass = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetCenterOfMass.BoneName = "None"
+    DefaultParameters.primitivecomponent.setcenterofmass = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setcenterofmass.bonename = "None"
     --GetCenterOfMass
-    DefaultParameters.PrimitiveComponent.GetCenterOfMass = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.GetCenterOfMass.BoneName = "None"
+    DefaultParameters.primitivecomponent.getcenterofmass = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.getcenterofmass.bonename = "None"
     --GetPhysicsAngularVelocityInRadians
-    DefaultParameters.PrimitiveComponent.GetPhysicsAngularVelocityInRadians = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.GetPhysicsAngularVelocityInRadians.BoneName = "None"
+    DefaultParameters.primitivecomponent.getphysicsangularvelocityinradians = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.getphysicsangularvelocityinradians.bonename = "None"
     --GetPhysicsAngularVelocityInDegrees
-    DefaultParameters.PrimitiveComponent.GetPhysicsAngularVelocityInDegrees = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.GetPhysicsAngularVelocityInDegrees.BoneName = "None"
+    DefaultParameters.primitivecomponent.getphysicsangularvelocityindegrees = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.getphysicsangularvelocityindegrees.bonename = "None"
     --GetPhysicsAngularVelocity
-    DefaultParameters.PrimitiveComponent.GetPhysicsAngularVelocity = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.GetPhysicsAngularVelocity.BoneName = "None"
+    DefaultParameters.primitivecomponent.getphysicsangularvelocity = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.getphysicsangularvelocity.bonename = "None"
     --SetPhysicsMaxAngularVelocityInRadians
-    DefaultParameters.PrimitiveComponent.SetPhysicsMaxAngularVelocityInRadians = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetPhysicsMaxAngularVelocityInRadians.bAddToCurrent = false
-    DefaultParameters.PrimitiveComponent.SetPhysicsMaxAngularVelocityInRadians.BoneName = "None"
+    DefaultParameters.primitivecomponent.setphysicsmaxangularvelocityinradians = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setphysicsmaxangularvelocityinradians.baddtocurrent = false
+    DefaultParameters.primitivecomponent.setphysicsmaxangularvelocityinradians.bonename = "None"
     --SetPhysicsMaxAngularVelocityInDegrees
-    DefaultParameters.PrimitiveComponent.SetPhysicsMaxAngularVelocityInDegrees = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetPhysicsMaxAngularVelocityInDegrees.bAddToCurrent = false
-    DefaultParameters.PrimitiveComponent.SetPhysicsMaxAngularVelocityInDegrees.BoneName = "None"
+    DefaultParameters.primitivecomponent.setphysicsmaxangularvelocityindegrees = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setphysicsmaxangularvelocityindegrees.baddtocurrent = false
+    DefaultParameters.primitivecomponent.setphysicsmaxangularvelocityindegrees.bonename = "None"
     --SetPhysicsMaxAngularVelocity
-    DefaultParameters.PrimitiveComponent.SetPhysicsMaxAngularVelocity = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetPhysicsMaxAngularVelocity.bAddToCurrent = false
-    DefaultParameters.PrimitiveComponent.SetPhysicsMaxAngularVelocity.BoneName = "None"
+    DefaultParameters.primitivecomponent.setphysicsmaxangularvelocity = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setphysicsmaxangularvelocity.baddtocurrent = false
+    DefaultParameters.primitivecomponent.setphysicsmaxangularvelocity.bonename = "None"
     --SetPhysicsAngularVelocityInDegrees
-    DefaultParameters.PrimitiveComponent.SetPhysicsAngularVelocityInDegrees = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetPhysicsAngularVelocityInDegrees.bAddToCurrent = false
-    DefaultParameters.PrimitiveComponent.SetPhysicsAngularVelocityInDegrees.BoneName = "None"
+    DefaultParameters.primitivecomponent.setphysicsangularvelocityindegrees = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setphysicsangularvelocityindegrees.baddtocurrent = false
+    DefaultParameters.primitivecomponent.setphysicsangularvelocityindegrees.bonename = "None"
     --SetPhysicsAngularVelocityInRadians
-    DefaultParameters.PrimitiveComponent.SetPhysicsAngularVelocityInRadians = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetPhysicsAngularVelocityInRadians.bAddToCurrent = false
-    DefaultParameters.PrimitiveComponent.SetPhysicsAngularVelocityInRadians.BoneName = "None"
+    DefaultParameters.primitivecomponent.setphysicsangularvelocityinradians = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setphysicsangularvelocityinradians.baddtocurrent = false
+    DefaultParameters.primitivecomponent.setphysicsangularvelocityinradians.bonename = "None"
     --SetPhysicsAngularVelocity
-    DefaultParameters.PrimitiveComponent.SetPhysicsAngularVelocity = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetPhysicsAngularVelocity.bAddToCurrent = false
-    DefaultParameters.PrimitiveComponent.SetPhysicsAngularVelocity.BoneName = "None"
+    DefaultParameters.primitivecomponent.setphysicsangularvelocity = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setphysicsangularvelocity.baddtocurrent = false
+    DefaultParameters.primitivecomponent.setphysicsangularvelocity.bonename = "None"
     --SetAllPhysicsLinearVelocity
-    DefaultParameters.PrimitiveComponent.SetAllPhysicsLinearVelocity = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetAllPhysicsLinearVelocity.bAddToCurrent = false
+    DefaultParameters.primitivecomponent.setallphysicslinearvelocity = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setallphysicslinearvelocity.baddtocurrent = false
     --GetPhysicsLinearVelocityAtPoint
-    DefaultParameters.PrimitiveComponent.GetPhysicsLinearVelocityAtPoint = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.GetPhysicsLinearVelocityAtPoint.BoneName = "None"
+    DefaultParameters.primitivecomponent.getphysicslinearvelocityatpoint = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.getphysicslinearvelocityatpoint.bonename = "None"
     --GetPhysicsLinearVelocity
-    DefaultParameters.PrimitiveComponent.GetPhysicsLinearVelocity = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.GetPhysicsLinearVelocity.BoneName = "None"
+    DefaultParameters.primitivecomponent.getphysicslinearvelocity = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.getphysicslinearvelocity.bonename = "None"
     --SetPhysicsLinearVelocity
-    DefaultParameters.PrimitiveComponent.SetPhysicsLinearVelocity = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetPhysicsLinearVelocity.bAddToCurrent = false
-    DefaultParameters.PrimitiveComponent.SetPhysicsLinearVelocity.BoneName = "None"
+    DefaultParameters.primitivecomponent.setphysicslinearvelocity = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setphysicslinearvelocity.baddtocurrent = false
+    DefaultParameters.primitivecomponent.setphysicslinearvelocity.bonename = "None"
     --AddTorqueInDegrees
-    DefaultParameters.PrimitiveComponent.AddTorqueInDegrees = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddTorqueInDegrees.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.AddTorqueInDegrees.bAccelChange = false
+    DefaultParameters.primitivecomponent.addtorqueindegrees = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addtorqueindegrees.bonename = "None"
+    DefaultParameters.primitivecomponent.addtorqueindegrees.baccelchange = false
     --AddTorqueInRadians
-    DefaultParameters.PrimitiveComponent.AddTorqueInRadians = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddTorqueInRadians.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.AddTorqueInRadians.bAccelChange = false
+    DefaultParameters.primitivecomponent.addtorqueinradians = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addtorqueinradians.bonename = "None"
+    DefaultParameters.primitivecomponent.addtorqueinradians.baccelchange = false
     --AddTorque
-    DefaultParameters.PrimitiveComponent.AddTorque = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddTorque.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.AddTorque.bAccelChange = false
+    DefaultParameters.primitivecomponent.addtorque = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addtorque.bonename = "None"
+    DefaultParameters.primitivecomponent.addtorque.baccelchange = false
     --AddRadialForce
-    DefaultParameters.PrimitiveComponent.AddRadialForce = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddRadialForce.bAccelChange = false
+    DefaultParameters.primitivecomponent.addradialforce = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addradialforce.baccelchange = false
     --AddForceAtLocationLocal
-    DefaultParameters.PrimitiveComponent.AddForceAtLocationLocal = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddForceAtLocationLocal.BoneName = "None"
+    DefaultParameters.primitivecomponent.addforceatlocationlocal = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addforceatlocationlocal.bonename = "None"
     --AddForceAtLocation
-    DefaultParameters.PrimitiveComponent.AddForceAtLocation = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddForceAtLocation.BoneName = "None"
+    DefaultParameters.primitivecomponent.addforceatlocation = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addforceatlocation.bonename = "None"
     --AddForce
-    DefaultParameters.PrimitiveComponent.AddForce = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddForce.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.AddForce.bAccelChange = false
+    DefaultParameters.primitivecomponent.addforce = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addforce.bonename = "None"
+    DefaultParameters.primitivecomponent.addforce.baccelchange = false
     --AddRadialImpulse
-    DefaultParameters.PrimitiveComponent.AddRadialImpulse = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddRadialImpulse.bVelChange = false
+    DefaultParameters.primitivecomponent.addradialimpulse = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addradialimpulse.bvelchange = false
     --AddImpulseAtLocation
-    DefaultParameters.PrimitiveComponent.AddImpulseAtLocation = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddImpulseAtLocation.BoneName = "None"
+    DefaultParameters.primitivecomponent.addimpulseatlocation = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addimpulseatlocation.bonename = "None"
     --AddAngularImpulseInDegrees
-    DefaultParameters.PrimitiveComponent.AddAngularImpulseInDegrees = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddAngularImpulseInDegrees.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.AddAngularImpulseInDegrees.bVelChange = false
+    DefaultParameters.primitivecomponent.addangularimpulseindegrees = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addangularimpulseindegrees.bonename = "None"
+    DefaultParameters.primitivecomponent.addangularimpulseindegrees.bvelchange = false
     --AddAngularImpulseInRadians
-    DefaultParameters.PrimitiveComponent.AddAngularImpulseInRadians = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddAngularImpulseInRadians.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.AddAngularImpulseInRadians.bVelChange = false
+    DefaultParameters.primitivecomponent.addangularimpulseinradians = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addangularimpulseinradians.bonename = "None"
+    DefaultParameters.primitivecomponent.addangularimpulseinradians.bvelchange = false
     --AddAngularImpulse
-    DefaultParameters.PrimitiveComponent.AddAngularImpulse = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddAngularImpulse.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.AddAngularImpulse.bVelChange = false
+    DefaultParameters.primitivecomponent.addangularimpulse = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addangularimpulse.bonename = "None"
+    DefaultParameters.primitivecomponent.addangularimpulse.bvelchange = false
     --AddImpulse
-    DefaultParameters.PrimitiveComponent.AddImpulse = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.AddImpulse.BoneName = "None"
-    DefaultParameters.PrimitiveComponent.AddImpulse.bVelChange = false
+    DefaultParameters.primitivecomponent.addimpulse = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.addimpulse.bonename = "None"
+    DefaultParameters.primitivecomponent.addimpulse.bvelchange = false
     --CreateDynamicMaterialInstance
-    DefaultParameters.PrimitiveComponent.CreateDynamicMaterialInstance = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.CreateDynamicMaterialInstance.OptionalName = "None"
+    DefaultParameters.primitivecomponent.createdynamicmaterialinstance = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.createdynamicmaterialinstance.optionalname = "None"
     --SetBoundsScale
-    DefaultParameters.PrimitiveComponent.SetBoundsScale = Class(DefaultParameterClass)
-    DefaultParameters.PrimitiveComponent.SetBoundsScale.NewBoundsScale = 1.000000
+    DefaultParameters.primitivecomponent.setboundsscale = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setboundsscale.newboundsscale = 1.000000
 end
 
 --LightComponent
 do
-    DefaultParameters.LightComponent = DefaultParameters.LightComponent or {}
+    DefaultParameters.lightcomponent = DefaultParameters.lightcomponent or {}
     
     --SetLightColor
-    DefaultParameters.LightComponent.SetLightColor = Class(DefaultParameterClass)
-    DefaultParameters.LightComponent.SetLightColor.bSRGB = true
+    DefaultParameters.lightcomponent.setlightcolor = Class(DefaultParameterClass)
+    DefaultParameters.lightcomponent.setlightcolor.bsrgb = true
 end
 
 --LocalLightComponent
 do
-    DefaultParameters.LocalLightComponent = DefaultParameters.LocalLightComponent or {}
+    DefaultParameters.locallightcomponent = DefaultParameters.locallightcomponent or {}
     
     --GetUnitsConversionFactor
-    DefaultParameters.LocalLightComponent.GetUnitsConversionFactor = Class(DefaultParameterClass)
-    DefaultParameters.LocalLightComponent.GetUnitsConversionFactor.CosHalfConeAngle = -1.000000
+    DefaultParameters.locallightcomponent.getunitsconversionfactor = Class(DefaultParameterClass)
+    DefaultParameters.locallightcomponent.getunitsconversionfactor.coshalfconeangle = -1.000000
 end
 
 --MeshComponent
 do
-    DefaultParameters.MeshComponent = DefaultParameters.MeshComponent or {}
+    DefaultParameters.meshcomponent = DefaultParameters.meshcomponent or {}
     
     --PrestreamTextures
-    DefaultParameters.MeshComponent.PrestreamTextures = Class(DefaultParameterClass)
-    DefaultParameters.MeshComponent.PrestreamTextures.CinematicTextureGroups = 0
+    DefaultParameters.meshcomponent.prestreamtextures = Class(DefaultParameterClass)
+    DefaultParameters.meshcomponent.prestreamtextures.cinematictexturegroups = 0
 end
 
 --ParticleSystemComponent
 do
-    DefaultParameters.ParticleSystemComponent = DefaultParameters.ParticleSystemComponent or {}
+    DefaultParameters.particlesystemcomponent = DefaultParameters.particlesystemcomponent or {}
     
     --SetAutoAttachParams
-    DefaultParameters.ParticleSystemComponent.SetAutoAttachParams = Class(DefaultParameterClass)
-    DefaultParameters.ParticleSystemComponent.SetAutoAttachParams.SocketName = "None"
-    DefaultParameters.ParticleSystemComponent.SetAutoAttachParams.LocationType = 0 --EAttachLocation::Type::KeepRelativeOffset
+    DefaultParameters.particlesystemcomponent.setautoattachparams = Class(DefaultParameterClass)
+    DefaultParameters.particlesystemcomponent.setautoattachparams.socketname = "None"
+    DefaultParameters.particlesystemcomponent.setautoattachparams.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
 end
 
 --SplineComponent
 do
-    DefaultParameters.SplineComponent = DefaultParameters.SplineComponent or {}
+    DefaultParameters.splinecomponent = DefaultParameters.splinecomponent or {}
     
     --FindTransformClosestToWorldLocation
-    DefaultParameters.SplineComponent.FindTransformClosestToWorldLocation = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.FindTransformClosestToWorldLocation.bUseScale = false
+    DefaultParameters.splinecomponent.findtransformclosesttoworldlocation = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.findtransformclosesttoworldlocation.busescale = false
     --GetScaleAtTime
-    DefaultParameters.SplineComponent.GetScaleAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetScaleAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getscaleattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getscaleattime.buseconstantvelocity = false
     --GetRollAtTime
-    DefaultParameters.SplineComponent.GetRollAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetRollAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getrollattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getrollattime.buseconstantvelocity = false
     --GetTransformAtTime
-    DefaultParameters.SplineComponent.GetTransformAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetTransformAtTime.bUseConstantVelocity = false
-    DefaultParameters.SplineComponent.GetTransformAtTime.bUseScale = false
+    DefaultParameters.splinecomponent.gettransformattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.gettransformattime.buseconstantvelocity = false
+    DefaultParameters.splinecomponent.gettransformattime.busescale = false
     --GetRightVectorAtTime
-    DefaultParameters.SplineComponent.GetRightVectorAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetRightVectorAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getrightvectorattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getrightvectorattime.buseconstantvelocity = false
     --GetUpVectorAtTime
-    DefaultParameters.SplineComponent.GetUpVectorAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetUpVectorAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getupvectorattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getupvectorattime.buseconstantvelocity = false
     --GetWorldRotationAtTime
-    DefaultParameters.SplineComponent.GetWorldRotationAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetWorldRotationAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getworldrotationattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getworldrotationattime.buseconstantvelocity = false
     --GetRotationAtTime
-    DefaultParameters.SplineComponent.GetRotationAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetRotationAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getrotationattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getrotationattime.buseconstantvelocity = false
     --GetTangentAtTime
-    DefaultParameters.SplineComponent.GetTangentAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetTangentAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.gettangentattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.gettangentattime.buseconstantvelocity = false
     --GetWorldDirectionAtTime
-    DefaultParameters.SplineComponent.GetWorldDirectionAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetWorldDirectionAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getworlddirectionattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getworlddirectionattime.buseconstantvelocity = false
     --GetDirectionAtTime
-    DefaultParameters.SplineComponent.GetDirectionAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetDirectionAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getdirectionattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getdirectionattime.buseconstantvelocity = false
     --GetWorldLocationAtTime
-    DefaultParameters.SplineComponent.GetWorldLocationAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetWorldLocationAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getworldlocationattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getworldlocationattime.buseconstantvelocity = false
     --GetLocationAtTime
-    DefaultParameters.SplineComponent.GetLocationAtTime = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetLocationAtTime.bUseConstantVelocity = false
+    DefaultParameters.splinecomponent.getlocationattime = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.getlocationattime.buseconstantvelocity = false
     --GetTransformAtDistanceAlongSpline
-    DefaultParameters.SplineComponent.GetTransformAtDistanceAlongSpline = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetTransformAtDistanceAlongSpline.bUseScale = false
+    DefaultParameters.splinecomponent.gettransformatdistancealongspline = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.gettransformatdistancealongspline.busescale = false
     --GetTransformAtSplinePoint
-    DefaultParameters.SplineComponent.GetTransformAtSplinePoint = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.GetTransformAtSplinePoint.bUseScale = false
+    DefaultParameters.splinecomponent.gettransformatsplinepoint = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.gettransformatsplinepoint.busescale = false
     --SetSplinePointType
-    DefaultParameters.SplineComponent.SetSplinePointType = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.SetSplinePointType.bUpdateSpline = true
+    DefaultParameters.splinecomponent.setsplinepointtype = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.setsplinepointtype.bupdatespline = true
     --SetUpVectorAtSplinePoint
-    DefaultParameters.SplineComponent.SetUpVectorAtSplinePoint = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.SetUpVectorAtSplinePoint.bUpdateSpline = true
+    DefaultParameters.splinecomponent.setupvectoratsplinepoint = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.setupvectoratsplinepoint.bupdatespline = true
     --SetTangentsAtSplinePoint
-    DefaultParameters.SplineComponent.SetTangentsAtSplinePoint = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.SetTangentsAtSplinePoint.bUpdateSpline = true
+    DefaultParameters.splinecomponent.settangentsatsplinepoint = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.settangentsatsplinepoint.bupdatespline = true
     --SetTangentAtSplinePoint
-    DefaultParameters.SplineComponent.SetTangentAtSplinePoint = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.SetTangentAtSplinePoint.bUpdateSpline = true
+    DefaultParameters.splinecomponent.settangentatsplinepoint = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.settangentatsplinepoint.bupdatespline = true
     --SetLocationAtSplinePoint
-    DefaultParameters.SplineComponent.SetLocationAtSplinePoint = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.SetLocationAtSplinePoint.bUpdateSpline = true
+    DefaultParameters.splinecomponent.setlocationatsplinepoint = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.setlocationatsplinepoint.bupdatespline = true
     --SetSplinePoints
-    DefaultParameters.SplineComponent.SetSplinePoints = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.SetSplinePoints.bUpdateSpline = true
+    DefaultParameters.splinecomponent.setsplinepoints = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.setsplinepoints.bupdatespline = true
     --RemoveSplinePoint
-    DefaultParameters.SplineComponent.RemoveSplinePoint = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.RemoveSplinePoint.bUpdateSpline = true
+    DefaultParameters.splinecomponent.removesplinepoint = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.removesplinepoint.bupdatespline = true
     --AddSplinePointAtIndex
-    DefaultParameters.SplineComponent.AddSplinePointAtIndex = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.AddSplinePointAtIndex.bUpdateSpline = true
+    DefaultParameters.splinecomponent.addsplinepointatindex = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.addsplinepointatindex.bupdatespline = true
     --AddSplinePoint
-    DefaultParameters.SplineComponent.AddSplinePoint = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.AddSplinePoint.bUpdateSpline = true
+    DefaultParameters.splinecomponent.addsplinepoint = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.addsplinepoint.bupdatespline = true
     --AddPoints
-    DefaultParameters.SplineComponent.AddPoints = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.AddPoints.bUpdateSpline = true
+    DefaultParameters.splinecomponent.addpoints = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.addpoints.bupdatespline = true
     --AddPoint
-    DefaultParameters.SplineComponent.AddPoint = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.AddPoint.bUpdateSpline = true
+    DefaultParameters.splinecomponent.addpoint = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.addpoint.bupdatespline = true
     --ClearSplinePoints
-    DefaultParameters.SplineComponent.ClearSplinePoints = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.ClearSplinePoints.bUpdateSpline = true
+    DefaultParameters.splinecomponent.clearsplinepoints = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.clearsplinepoints.bupdatespline = true
     --SetClosedLoopAtPosition
-    DefaultParameters.SplineComponent.SetClosedLoopAtPosition = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.SetClosedLoopAtPosition.bUpdateSpline = true
+    DefaultParameters.splinecomponent.setclosedloopatposition = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.setclosedloopatposition.bupdatespline = true
     --SetClosedLoop
-    DefaultParameters.SplineComponent.SetClosedLoop = Class(DefaultParameterClass)
-    DefaultParameters.SplineComponent.SetClosedLoop.bUpdateSpline = true
+    DefaultParameters.splinecomponent.setclosedloop = Class(DefaultParameterClass)
+    DefaultParameters.splinecomponent.setclosedloop.bupdatespline = true
 end
 
 --SkinnedMeshComponent
 do
-    DefaultParameters.SkinnedMeshComponent = DefaultParameters.SkinnedMeshComponent or {}
+    DefaultParameters.skinnedmeshcomponent = DefaultParameters.skinnedmeshcomponent or {}
     
     --FindClosestBone_K2
-    DefaultParameters.SkinnedMeshComponent.FindClosestBone_K2 = Class(DefaultParameterClass)
-    DefaultParameters.SkinnedMeshComponent.FindClosestBone_K2.IgnoreScale = 0.000000
-    DefaultParameters.SkinnedMeshComponent.FindClosestBone_K2.bRequirePhysicsAsset = false
+    DefaultParameters.skinnedmeshcomponent.findclosestbone_k2 = Class(DefaultParameterClass)
+    DefaultParameters.skinnedmeshcomponent.findclosestbone_k2.ignorescale = 0.000000
+    DefaultParameters.skinnedmeshcomponent.findclosestbone_k2.brequirephysicsasset = false
     --SetMasterPoseComponent
-    DefaultParameters.SkinnedMeshComponent.SetMasterPoseComponent = Class(DefaultParameterClass)
-    DefaultParameters.SkinnedMeshComponent.SetMasterPoseComponent.bForceUpdate = false
+    DefaultParameters.skinnedmeshcomponent.setmasterposecomponent = Class(DefaultParameterClass)
+    DefaultParameters.skinnedmeshcomponent.setmasterposecomponent.bforceupdate = false
     --GetDeltaTransformFromRefPose
-    DefaultParameters.SkinnedMeshComponent.GetDeltaTransformFromRefPose = Class(DefaultParameterClass)
-    DefaultParameters.SkinnedMeshComponent.GetDeltaTransformFromRefPose.BaseName = "None"
+    DefaultParameters.skinnedmeshcomponent.getdeltatransformfromrefpose = Class(DefaultParameterClass)
+    DefaultParameters.skinnedmeshcomponent.getdeltatransformfromrefpose.basename = "None"
     --SetSkeletalMesh
-    DefaultParameters.SkinnedMeshComponent.SetSkeletalMesh = Class(DefaultParameterClass)
-    DefaultParameters.SkinnedMeshComponent.SetSkeletalMesh.bReinitPose = true
+    DefaultParameters.skinnedmeshcomponent.setskeletalmesh = Class(DefaultParameterClass)
+    DefaultParameters.skinnedmeshcomponent.setskeletalmesh.breinitpose = true
     --SetPhysicsAsset
-    DefaultParameters.SkinnedMeshComponent.SetPhysicsAsset = Class(DefaultParameterClass)
-    DefaultParameters.SkinnedMeshComponent.SetPhysicsAsset.bForceReInit = false
+    DefaultParameters.skinnedmeshcomponent.setphysicsasset = Class(DefaultParameterClass)
+    DefaultParameters.skinnedmeshcomponent.setphysicsasset.bforcereinit = false
 end
 
 --SkeletalMeshComponent
 do
-    DefaultParameters.SkeletalMeshComponent = DefaultParameters.SkeletalMeshComponent or {}
+    DefaultParameters.skeletalmeshcomponent = DefaultParameters.skeletalmeshcomponent or {}
     
     --SetConstraintProfileForAll
-    DefaultParameters.SkeletalMeshComponent.SetConstraintProfileForAll = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetConstraintProfileForAll.bDefaultIfNotFound = false
+    DefaultParameters.skeletalmeshcomponent.setconstraintprofileforall = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setconstraintprofileforall.bdefaultifnotfound = false
     --SetConstraintProfile
-    DefaultParameters.SkeletalMeshComponent.SetConstraintProfile = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetConstraintProfile.bDefaultIfNotFound = false
+    DefaultParameters.skeletalmeshcomponent.setconstraintprofile = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setconstraintprofile.bdefaultifnotfound = false
     --SetAllMotorsAngularDriveParams
-    DefaultParameters.SkeletalMeshComponent.SetAllMotorsAngularDriveParams = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetAllMotorsAngularDriveParams.bSkipCustomPhysicsType = false
+    DefaultParameters.skeletalmeshcomponent.setallmotorsangulardriveparams = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setallmotorsangulardriveparams.bskipcustomphysicstype = false
     --SetAllMotorsAngularVelocityDrive
-    DefaultParameters.SkeletalMeshComponent.SetAllMotorsAngularVelocityDrive = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetAllMotorsAngularVelocityDrive.bSkipCustomPhysicsType = false
+    DefaultParameters.skeletalmeshcomponent.setallmotorsangularvelocitydrive = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setallmotorsangularvelocitydrive.bskipcustomphysicstype = false
     --SetAllMotorsAngularPositionDrive
-    DefaultParameters.SkeletalMeshComponent.SetAllMotorsAngularPositionDrive = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetAllMotorsAngularPositionDrive.bSkipCustomPhysicsType = false
+    DefaultParameters.skeletalmeshcomponent.setallmotorsangularpositiondrive = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setallmotorsangularpositiondrive.bskipcustomphysicstype = false
     --AccumulateAllBodiesBelowPhysicsBlendWeight
-    DefaultParameters.SkeletalMeshComponent.AccumulateAllBodiesBelowPhysicsBlendWeight = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.AccumulateAllBodiesBelowPhysicsBlendWeight.bSkipCustomPhysicsType = false
+    DefaultParameters.skeletalmeshcomponent.accumulateallbodiesbelowphysicsblendweight = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.accumulateallbodiesbelowphysicsblendweight.bskipcustomphysicstype = false
     --SetAllBodiesBelowPhysicsBlendWeight
-    DefaultParameters.SkeletalMeshComponent.SetAllBodiesBelowPhysicsBlendWeight = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetAllBodiesBelowPhysicsBlendWeight.bSkipCustomPhysicsType = false
-    DefaultParameters.SkeletalMeshComponent.SetAllBodiesBelowPhysicsBlendWeight.bIncludeSelf = true
+    DefaultParameters.skeletalmeshcomponent.setallbodiesbelowphysicsblendweight = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setallbodiesbelowphysicsblendweight.bskipcustomphysicstype = false
+    DefaultParameters.skeletalmeshcomponent.setallbodiesbelowphysicsblendweight.bincludeself = true
     --SetAllBodiesPhysicsBlendWeight
-    DefaultParameters.SkeletalMeshComponent.SetAllBodiesPhysicsBlendWeight = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetAllBodiesPhysicsBlendWeight.bSkipCustomPhysicsType = false
+    DefaultParameters.skeletalmeshcomponent.setallbodiesphysicsblendweight = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setallbodiesphysicsblendweight.bskipcustomphysicstype = false
     --SetAllBodiesBelowSimulatePhysics
-    DefaultParameters.SkeletalMeshComponent.SetAllBodiesBelowSimulatePhysics = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetAllBodiesBelowSimulatePhysics.bIncludeSelf = true
+    DefaultParameters.skeletalmeshcomponent.setallbodiesbelowsimulatephysics = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setallbodiesbelowsimulatephysics.bincludeself = true
     --AddImpulseToAllBodiesBelow
-    DefaultParameters.SkeletalMeshComponent.AddImpulseToAllBodiesBelow = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.AddImpulseToAllBodiesBelow.BoneName = "None"
-    DefaultParameters.SkeletalMeshComponent.AddImpulseToAllBodiesBelow.bVelChange = false
-    DefaultParameters.SkeletalMeshComponent.AddImpulseToAllBodiesBelow.bIncludeSelf = true
+    DefaultParameters.skeletalmeshcomponent.addimpulsetoallbodiesbelow = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.addimpulsetoallbodiesbelow.bonename = "None"
+    DefaultParameters.skeletalmeshcomponent.addimpulsetoallbodiesbelow.bvelchange = false
+    DefaultParameters.skeletalmeshcomponent.addimpulsetoallbodiesbelow.bincludeself = true
     --AddForceToAllBodiesBelow
-    DefaultParameters.SkeletalMeshComponent.AddForceToAllBodiesBelow = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.AddForceToAllBodiesBelow.BoneName = "None"
-    DefaultParameters.SkeletalMeshComponent.AddForceToAllBodiesBelow.bAccelChange = false
-    DefaultParameters.SkeletalMeshComponent.AddForceToAllBodiesBelow.bIncludeSelf = true
+    DefaultParameters.skeletalmeshcomponent.addforcetoallbodiesbelow = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.addforcetoallbodiesbelow.bonename = "None"
+    DefaultParameters.skeletalmeshcomponent.addforcetoallbodiesbelow.baccelchange = false
+    DefaultParameters.skeletalmeshcomponent.addforcetoallbodiesbelow.bincludeself = true
     --GetBoneMass
-    DefaultParameters.SkeletalMeshComponent.GetBoneMass = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.GetBoneMass.BoneName = "None"
-    DefaultParameters.SkeletalMeshComponent.GetBoneMass.bScaleMass = true
+    DefaultParameters.skeletalmeshcomponent.getbonemass = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.getbonemass.bonename = "None"
+    DefaultParameters.skeletalmeshcomponent.getbonemass.bscalemass = true
     --SetEnableGravityOnAllBodiesBelow
-    DefaultParameters.SkeletalMeshComponent.SetEnableGravityOnAllBodiesBelow = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetEnableGravityOnAllBodiesBelow.bIncludeSelf = true
+    DefaultParameters.skeletalmeshcomponent.setenablegravityonallbodiesbelow = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setenablegravityonallbodiesbelow.bincludeself = true
     --SetNotifyRigidBodyCollisionBelow
-    DefaultParameters.SkeletalMeshComponent.SetNotifyRigidBodyCollisionBelow = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetNotifyRigidBodyCollisionBelow.BoneName = "None"
-    DefaultParameters.SkeletalMeshComponent.SetNotifyRigidBodyCollisionBelow.bIncludeSelf = true
+    DefaultParameters.skeletalmeshcomponent.setnotifyrigidbodycollisionbelow = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setnotifyrigidbodycollisionbelow.bonename = "None"
+    DefaultParameters.skeletalmeshcomponent.setnotifyrigidbodycollisionbelow.bincludeself = true
     --SetBodyNotifyRigidBodyCollision
-    DefaultParameters.SkeletalMeshComponent.SetBodyNotifyRigidBodyCollision = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetBodyNotifyRigidBodyCollision.BoneName = "None"
+    DefaultParameters.skeletalmeshcomponent.setbodynotifyrigidbodycollision = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setbodynotifyrigidbodycollision.bonename = "None"
     --UnbindClothFromMasterPoseComponent
-    DefaultParameters.SkeletalMeshComponent.UnbindClothFromMasterPoseComponent = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.UnbindClothFromMasterPoseComponent.bRestoreSimulationSpace = true
+    DefaultParameters.skeletalmeshcomponent.unbindclothfrommasterposecomponent = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.unbindclothfrommasterposecomponent.brestoresimulationspace = true
     --SetMorphTarget
-    DefaultParameters.SkeletalMeshComponent.SetMorphTarget = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetMorphTarget.bRemoveZeroWeight = true
+    DefaultParameters.skeletalmeshcomponent.setmorphtarget = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setmorphtarget.bremovezeroweight = true
     --OverrideAnimationData
-    DefaultParameters.SkeletalMeshComponent.OverrideAnimationData = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.OverrideAnimationData.bIsLooping = true
-    DefaultParameters.SkeletalMeshComponent.OverrideAnimationData.bIsPlaying = true
-    DefaultParameters.SkeletalMeshComponent.OverrideAnimationData.Position = 0.000000
-    DefaultParameters.SkeletalMeshComponent.OverrideAnimationData.PlayRate = 1.000000
+    DefaultParameters.skeletalmeshcomponent.overrideanimationdata = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.overrideanimationdata.bislooping = true
+    DefaultParameters.skeletalmeshcomponent.overrideanimationdata.bisplaying = true
+    DefaultParameters.skeletalmeshcomponent.overrideanimationdata.position = 0.000000
+    DefaultParameters.skeletalmeshcomponent.overrideanimationdata.playrate = 1.000000
     --SetPosition
-    DefaultParameters.SkeletalMeshComponent.SetPosition = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.SetPosition.bFireNotifies = true
+    DefaultParameters.skeletalmeshcomponent.setposition = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.setposition.bfirenotifies = true
     --ResetAnimInstanceDynamics
-    DefaultParameters.SkeletalMeshComponent.ResetAnimInstanceDynamics = Class(DefaultParameterClass)
-    DefaultParameters.SkeletalMeshComponent.ResetAnimInstanceDynamics.InTeleportType = 2 --ETeleportType::ResetPhysics
+    DefaultParameters.skeletalmeshcomponent.resetaniminstancedynamics = Class(DefaultParameterClass)
+    DefaultParameters.skeletalmeshcomponent.resetaniminstancedynamics.inteleporttype = 2 --ETeleportType::ResetPhysics
 end
 
 --InstancedStaticMeshComponent
 do
-    DefaultParameters.InstancedStaticMeshComponent = DefaultParameters.InstancedStaticMeshComponent or {}
+    DefaultParameters.instancedstaticmeshcomponent = DefaultParameters.instancedstaticmeshcomponent or {}
     
     --GetInstancesOverlappingBox
-    DefaultParameters.InstancedStaticMeshComponent.GetInstancesOverlappingBox = Class(DefaultParameterClass)
-    DefaultParameters.InstancedStaticMeshComponent.GetInstancesOverlappingBox.bBoxInWorldSpace = true
+    DefaultParameters.instancedstaticmeshcomponent.getinstancesoverlappingbox = Class(DefaultParameterClass)
+    DefaultParameters.instancedstaticmeshcomponent.getinstancesoverlappingbox.bboxinworldspace = true
     --GetInstancesOverlappingSphere
-    DefaultParameters.InstancedStaticMeshComponent.GetInstancesOverlappingSphere = Class(DefaultParameterClass)
-    DefaultParameters.InstancedStaticMeshComponent.GetInstancesOverlappingSphere.bSphereInWorldSpace = true
+    DefaultParameters.instancedstaticmeshcomponent.getinstancesoverlappingsphere = Class(DefaultParameterClass)
+    DefaultParameters.instancedstaticmeshcomponent.getinstancesoverlappingsphere.bsphereinworldspace = true
     --UpdateInstanceTransform
-    DefaultParameters.InstancedStaticMeshComponent.UpdateInstanceTransform = Class(DefaultParameterClass)
-    DefaultParameters.InstancedStaticMeshComponent.UpdateInstanceTransform.bWorldSpace = false
-    DefaultParameters.InstancedStaticMeshComponent.UpdateInstanceTransform.bMarkRenderStateDirty = false
-    DefaultParameters.InstancedStaticMeshComponent.UpdateInstanceTransform.bTeleport = false
+    DefaultParameters.instancedstaticmeshcomponent.updateinstancetransform = Class(DefaultParameterClass)
+    DefaultParameters.instancedstaticmeshcomponent.updateinstancetransform.bworldspace = false
+    DefaultParameters.instancedstaticmeshcomponent.updateinstancetransform.bmarkrenderstatedirty = false
+    DefaultParameters.instancedstaticmeshcomponent.updateinstancetransform.bteleport = false
     --GetInstanceTransform
-    DefaultParameters.InstancedStaticMeshComponent.GetInstanceTransform = Class(DefaultParameterClass)
-    DefaultParameters.InstancedStaticMeshComponent.GetInstanceTransform.bWorldSpace = false
+    DefaultParameters.instancedstaticmeshcomponent.getinstancetransform = Class(DefaultParameterClass)
+    DefaultParameters.instancedstaticmeshcomponent.getinstancetransform.bworldspace = false
 end
 
 --SplineMeshComponent
 do
-    DefaultParameters.SplineMeshComponent = DefaultParameters.SplineMeshComponent or {}
+    DefaultParameters.splinemeshcomponent = DefaultParameters.splinemeshcomponent or {}
     
     --SetBoundaryMax
-    DefaultParameters.SplineMeshComponent.SetBoundaryMax = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetBoundaryMax.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setboundarymax = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setboundarymax.bupdatemesh = true
     --SetBoundaryMin
-    DefaultParameters.SplineMeshComponent.SetBoundaryMin = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetBoundaryMin.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setboundarymin = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setboundarymin.bupdatemesh = true
     --SetSplineUpDir
-    DefaultParameters.SplineMeshComponent.SetSplineUpDir = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetSplineUpDir.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setsplineupdir = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setsplineupdir.bupdatemesh = true
     --SetForwardAxis
-    DefaultParameters.SplineMeshComponent.SetForwardAxis = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetForwardAxis.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setforwardaxis = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setforwardaxis.bupdatemesh = true
     --SetEndOffset
-    DefaultParameters.SplineMeshComponent.SetEndOffset = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetEndOffset.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setendoffset = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setendoffset.bupdatemesh = true
     --SetEndRoll
-    DefaultParameters.SplineMeshComponent.SetEndRoll = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetEndRoll.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setendroll = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setendroll.bupdatemesh = true
     --SetEndScale
-    DefaultParameters.SplineMeshComponent.SetEndScale = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetEndScale.EndScale = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.SplineMeshComponent.SetEndScale.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setendscale = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setendscale.endscale = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.splinemeshcomponent.setendscale.bupdatemesh = true
     --SetStartOffset
-    DefaultParameters.SplineMeshComponent.SetStartOffset = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetStartOffset.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setstartoffset = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setstartoffset.bupdatemesh = true
     --SetStartRoll
-    DefaultParameters.SplineMeshComponent.SetStartRoll = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetStartRoll.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setstartroll = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setstartroll.bupdatemesh = true
     --SetStartScale
-    DefaultParameters.SplineMeshComponent.SetStartScale = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetStartScale.StartScale = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.SplineMeshComponent.SetStartScale.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setstartscale = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setstartscale.startscale = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.splinemeshcomponent.setstartscale.bupdatemesh = true
     --SetStartAndEnd
-    DefaultParameters.SplineMeshComponent.SetStartAndEnd = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetStartAndEnd.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setstartandend = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setstartandend.bupdatemesh = true
     --SetEndTangent
-    DefaultParameters.SplineMeshComponent.SetEndTangent = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetEndTangent.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setendtangent = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setendtangent.bupdatemesh = true
     --SetEndPosition
-    DefaultParameters.SplineMeshComponent.SetEndPosition = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetEndPosition.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setendposition = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setendposition.bupdatemesh = true
     --SetStartTangent
-    DefaultParameters.SplineMeshComponent.SetStartTangent = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetStartTangent.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setstarttangent = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setstarttangent.bupdatemesh = true
     --SetStartPosition
-    DefaultParameters.SplineMeshComponent.SetStartPosition = Class(DefaultParameterClass)
-    DefaultParameters.SplineMeshComponent.SetStartPosition.bUpdateMesh = true
+    DefaultParameters.splinemeshcomponent.setstartposition = Class(DefaultParameterClass)
+    DefaultParameters.splinemeshcomponent.setstartposition.bupdatemesh = true
 end
 
 --BoxComponent
 do
-    DefaultParameters.BoxComponent = DefaultParameters.BoxComponent or {}
+    DefaultParameters.boxcomponent = DefaultParameters.boxcomponent or {}
     
     --SetBoxExtent
-    DefaultParameters.BoxComponent.SetBoxExtent = Class(DefaultParameterClass)
-    DefaultParameters.BoxComponent.SetBoxExtent.bUpdateOverlaps = true
+    DefaultParameters.boxcomponent.setboxextent = Class(DefaultParameterClass)
+    DefaultParameters.boxcomponent.setboxextent.bupdateoverlaps = true
 end
 
 --CapsuleComponent
 do
-    DefaultParameters.CapsuleComponent = DefaultParameters.CapsuleComponent or {}
+    DefaultParameters.capsulecomponent = DefaultParameters.capsulecomponent or {}
     
     --SetCapsuleHalfHeight
-    DefaultParameters.CapsuleComponent.SetCapsuleHalfHeight = Class(DefaultParameterClass)
-    DefaultParameters.CapsuleComponent.SetCapsuleHalfHeight.bUpdateOverlaps = true
+    DefaultParameters.capsulecomponent.setcapsulehalfheight = Class(DefaultParameterClass)
+    DefaultParameters.capsulecomponent.setcapsulehalfheight.bupdateoverlaps = true
     --SetCapsuleRadius
-    DefaultParameters.CapsuleComponent.SetCapsuleRadius = Class(DefaultParameterClass)
-    DefaultParameters.CapsuleComponent.SetCapsuleRadius.bUpdateOverlaps = true
+    DefaultParameters.capsulecomponent.setcapsuleradius = Class(DefaultParameterClass)
+    DefaultParameters.capsulecomponent.setcapsuleradius.bupdateoverlaps = true
     --SetCapsuleSize
-    DefaultParameters.CapsuleComponent.SetCapsuleSize = Class(DefaultParameterClass)
-    DefaultParameters.CapsuleComponent.SetCapsuleSize.bUpdateOverlaps = true
+    DefaultParameters.capsulecomponent.setcapsulesize = Class(DefaultParameterClass)
+    DefaultParameters.capsulecomponent.setcapsulesize.bupdateoverlaps = true
 end
 
 --SphereComponent
 do
-    DefaultParameters.SphereComponent = DefaultParameters.SphereComponent or {}
+    DefaultParameters.spherecomponent = DefaultParameters.spherecomponent or {}
     
     --SetSphereRadius
-    DefaultParameters.SphereComponent.SetSphereRadius = Class(DefaultParameterClass)
-    DefaultParameters.SphereComponent.SetSphereRadius.bUpdateOverlaps = true
+    DefaultParameters.spherecomponent.setsphereradius = Class(DefaultParameterClass)
+    DefaultParameters.spherecomponent.setsphereradius.bupdateoverlaps = true
 end
 
 --SceneCaptureComponent2D
 do
-    DefaultParameters.SceneCaptureComponent2D = DefaultParameters.SceneCaptureComponent2D or {}
+    DefaultParameters.scenecapturecomponent2d = DefaultParameters.scenecapturecomponent2d or {}
     
     --AddOrUpdateBlendable
-    DefaultParameters.SceneCaptureComponent2D.AddOrUpdateBlendable = Class(DefaultParameterClass)
-    DefaultParameters.SceneCaptureComponent2D.AddOrUpdateBlendable.InWeight = 1.000000
+    DefaultParameters.scenecapturecomponent2d.addorupdateblendable = Class(DefaultParameterClass)
+    DefaultParameters.scenecapturecomponent2d.addorupdateblendable.inweight = 1.000000
 end
 
 --AnimSingleNodeInstance
 do
-    DefaultParameters.AnimSingleNodeInstance = DefaultParameters.AnimSingleNodeInstance or {}
+    DefaultParameters.animsinglenodeinstance = DefaultParameters.animsinglenodeinstance or {}
     
     --SetAnimationAsset
-    DefaultParameters.AnimSingleNodeInstance.SetAnimationAsset = Class(DefaultParameterClass)
-    DefaultParameters.AnimSingleNodeInstance.SetAnimationAsset.bIsLooping = true
-    DefaultParameters.AnimSingleNodeInstance.SetAnimationAsset.InPlayRate = 1.000000
+    DefaultParameters.animsinglenodeinstance.setanimationasset = Class(DefaultParameterClass)
+    DefaultParameters.animsinglenodeinstance.setanimationasset.bislooping = true
+    DefaultParameters.animsinglenodeinstance.setanimationasset.inplayrate = 1.000000
     --PlayAnim
-    DefaultParameters.AnimSingleNodeInstance.PlayAnim = Class(DefaultParameterClass)
-    DefaultParameters.AnimSingleNodeInstance.PlayAnim.bIsLooping = false
-    DefaultParameters.AnimSingleNodeInstance.PlayAnim.InPlayRate = 1.000000
-    DefaultParameters.AnimSingleNodeInstance.PlayAnim.InStartPosition = 0.000000
+    DefaultParameters.animsinglenodeinstance.playanim = Class(DefaultParameterClass)
+    DefaultParameters.animsinglenodeinstance.playanim.bislooping = false
+    DefaultParameters.animsinglenodeinstance.playanim.inplayrate = 1.000000
+    DefaultParameters.animsinglenodeinstance.playanim.instartposition = 0.000000
     --SetPositionWithPreviousTime
-    DefaultParameters.AnimSingleNodeInstance.SetPositionWithPreviousTime = Class(DefaultParameterClass)
-    DefaultParameters.AnimSingleNodeInstance.SetPositionWithPreviousTime.bFireNotifies = true
+    DefaultParameters.animsinglenodeinstance.setpositionwithprevioustime = Class(DefaultParameterClass)
+    DefaultParameters.animsinglenodeinstance.setpositionwithprevioustime.bfirenotifies = true
     --SetPosition
-    DefaultParameters.AnimSingleNodeInstance.SetPosition = Class(DefaultParameterClass)
-    DefaultParameters.AnimSingleNodeInstance.SetPosition.bFireNotifies = true
+    DefaultParameters.animsinglenodeinstance.setposition = Class(DefaultParameterClass)
+    DefaultParameters.animsinglenodeinstance.setposition.bfirenotifies = true
 end
 
 --BlueprintPathsLibrary
 do
-    DefaultParameters.BlueprintPathsLibrary = DefaultParameters.BlueprintPathsLibrary or {}
+    DefaultParameters.blueprintpathslibrary = DefaultParameters.blueprintpathslibrary or {}
     
     --CreateTempFilename
-    DefaultParameters.BlueprintPathsLibrary.CreateTempFilename = Class(DefaultParameterClass)
-    DefaultParameters.BlueprintPathsLibrary.CreateTempFilename.Extension = ".tmp"
+    DefaultParameters.blueprintpathslibrary.createtempfilename = Class(DefaultParameterClass)
+    DefaultParameters.blueprintpathslibrary.createtempfilename.extension = ".tmp"
     --GetBaseFilename
-    DefaultParameters.BlueprintPathsLibrary.GetBaseFilename = Class(DefaultParameterClass)
-    DefaultParameters.BlueprintPathsLibrary.GetBaseFilename.bRemovePath = true
+    DefaultParameters.blueprintpathslibrary.getbasefilename = Class(DefaultParameterClass)
+    DefaultParameters.blueprintpathslibrary.getbasefilename.bremovepath = true
     --GetExtension
-    DefaultParameters.BlueprintPathsLibrary.GetExtension = Class(DefaultParameterClass)
-    DefaultParameters.BlueprintPathsLibrary.GetExtension.bIncludeDot = false
+    DefaultParameters.blueprintpathslibrary.getextension = Class(DefaultParameterClass)
+    DefaultParameters.blueprintpathslibrary.getextension.bincludedot = false
 end
 
 --GameplayStatics
 do
-    DefaultParameters.GameplayStatics = DefaultParameters.GameplayStatics or {}
+    DefaultParameters.gameplaystatics = DefaultParameters.gameplaystatics or {}
     
     --ProjectWorldToScreen
-    DefaultParameters.GameplayStatics.ProjectWorldToScreen = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.ProjectWorldToScreen.bPlayerViewportRelative = false
+    DefaultParameters.gameplaystatics.projectworldtoscreen = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.projectworldtoscreen.bplayerviewportrelative = false
     --SuggestProjectileVelocity_CustomArc
-    DefaultParameters.GameplayStatics.SuggestProjectileVelocity_CustomArc = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SuggestProjectileVelocity_CustomArc.OverrideGravityZ = 0.000000
-    DefaultParameters.GameplayStatics.SuggestProjectileVelocity_CustomArc.ArcParam = 0.500000
+    DefaultParameters.gameplaystatics.suggestprojectilevelocity_customarc = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.suggestprojectilevelocity_customarc.overridegravityz = 0.000000
+    DefaultParameters.gameplaystatics.suggestprojectilevelocity_customarc.arcparam = 0.500000
     --Blueprint_PredictProjectilePath_ByTraceChannel
-    DefaultParameters.GameplayStatics.Blueprint_PredictProjectilePath_ByTraceChannel = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.Blueprint_PredictProjectilePath_ByTraceChannel.SimFrequency = 15.000000
-    DefaultParameters.GameplayStatics.Blueprint_PredictProjectilePath_ByTraceChannel.MaxSimTime = 2.000000
-    DefaultParameters.GameplayStatics.Blueprint_PredictProjectilePath_ByTraceChannel.OverrideGravityZ = 0.000000
+    DefaultParameters.gameplaystatics.blueprint_predictprojectilepath_bytracechannel = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.blueprint_predictprojectilepath_bytracechannel.simfrequency = 15.000000
+    DefaultParameters.gameplaystatics.blueprint_predictprojectilepath_bytracechannel.maxsimtime = 2.000000
+    DefaultParameters.gameplaystatics.blueprint_predictprojectilepath_bytracechannel.overridegravityz = 0.000000
     --Blueprint_PredictProjectilePath_ByObjectType
-    DefaultParameters.GameplayStatics.Blueprint_PredictProjectilePath_ByObjectType = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.Blueprint_PredictProjectilePath_ByObjectType.SimFrequency = 15.000000
-    DefaultParameters.GameplayStatics.Blueprint_PredictProjectilePath_ByObjectType.MaxSimTime = 2.000000
-    DefaultParameters.GameplayStatics.Blueprint_PredictProjectilePath_ByObjectType.OverrideGravityZ = 0.000000
+    DefaultParameters.gameplaystatics.blueprint_predictprojectilepath_byobjecttype = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.blueprint_predictprojectilepath_byobjecttype.simfrequency = 15.000000
+    DefaultParameters.gameplaystatics.blueprint_predictprojectilepath_byobjecttype.maxsimtime = 2.000000
+    DefaultParameters.gameplaystatics.blueprint_predictprojectilepath_byobjecttype.overridegravityz = 0.000000
     --SpawnDecalAttached
-    DefaultParameters.GameplayStatics.SpawnDecalAttached = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnDecalAttached.AttachPointName = "None"
-    DefaultParameters.GameplayStatics.SpawnDecalAttached.LocationType = 0 --EAttachLocation::Type::KeepRelativeOffset
-    DefaultParameters.GameplayStatics.SpawnDecalAttached.LifeSpan = 0.000000
+    DefaultParameters.gameplaystatics.spawndecalattached = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawndecalattached.attachpointname = "None"
+    DefaultParameters.gameplaystatics.spawndecalattached.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
+    DefaultParameters.gameplaystatics.spawndecalattached.lifespan = 0.000000
     --SpawnDecalAtLocation
-    DefaultParameters.GameplayStatics.SpawnDecalAtLocation = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnDecalAtLocation.Rotation = UE4.Rotator.new(-90.000000, 0.000000, 0.000000)
-    DefaultParameters.GameplayStatics.SpawnDecalAtLocation.LifeSpan = 0.000000
+    DefaultParameters.gameplaystatics.spawndecalatlocation = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawndecalatlocation.rotation = UE4.Rotator.new(-90.000000, 0.000000, 0.000000)
+    DefaultParameters.gameplaystatics.spawndecalatlocation.lifespan = 0.000000
     --ActivateReverbEffect
-    DefaultParameters.GameplayStatics.ActivateReverbEffect = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.ActivateReverbEffect.Priority = 0.000000
-    DefaultParameters.GameplayStatics.ActivateReverbEffect.Volume = 0.500000
-    DefaultParameters.GameplayStatics.ActivateReverbEffect.FadeTime = 2.000000
+    DefaultParameters.gameplaystatics.activatereverbeffect = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.activatereverbeffect.priority = 0.000000
+    DefaultParameters.gameplaystatics.activatereverbeffect.volume = 0.500000
+    DefaultParameters.gameplaystatics.activatereverbeffect.fadetime = 2.000000
     --ClearSoundMixClassOverride
-    DefaultParameters.GameplayStatics.ClearSoundMixClassOverride = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.ClearSoundMixClassOverride.FadeOutTime = 1.000000
+    DefaultParameters.gameplaystatics.clearsoundmixclassoverride = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.clearsoundmixclassoverride.fadeouttime = 1.000000
     --SetSoundMixClassOverride
-    DefaultParameters.GameplayStatics.SetSoundMixClassOverride = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SetSoundMixClassOverride.Volume = 1.000000
-    DefaultParameters.GameplayStatics.SetSoundMixClassOverride.Pitch = 1.000000
-    DefaultParameters.GameplayStatics.SetSoundMixClassOverride.FadeInTime = 1.000000
-    DefaultParameters.GameplayStatics.SetSoundMixClassOverride.bApplyToChildren = true
+    DefaultParameters.gameplaystatics.setsoundmixclassoverride = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.setsoundmixclassoverride.volume = 1.000000
+    DefaultParameters.gameplaystatics.setsoundmixclassoverride.pitch = 1.000000
+    DefaultParameters.gameplaystatics.setsoundmixclassoverride.fadeintime = 1.000000
+    DefaultParameters.gameplaystatics.setsoundmixclassoverride.bapplytochildren = true
     --SpawnForceFeedbackAttached
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAttached = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAttached.AttachPointName = "None"
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAttached.LocationType = 0 --EAttachLocation::Type::KeepRelativeOffset
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAttached.bStopWhenAttachedToDestroyed = false
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAttached.bLooping = false
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAttached.IntensityMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAttached.StartTime = 0.000000
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAttached.bAutoDestroy = true
+    DefaultParameters.gameplaystatics.spawnforcefeedbackattached = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawnforcefeedbackattached.attachpointname = "None"
+    DefaultParameters.gameplaystatics.spawnforcefeedbackattached.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
+    DefaultParameters.gameplaystatics.spawnforcefeedbackattached.bstopwhenattachedtodestroyed = false
+    DefaultParameters.gameplaystatics.spawnforcefeedbackattached.blooping = false
+    DefaultParameters.gameplaystatics.spawnforcefeedbackattached.intensitymultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawnforcefeedbackattached.starttime = 0.000000
+    DefaultParameters.gameplaystatics.spawnforcefeedbackattached.bautodestroy = true
     --SpawnForceFeedbackAtLocation
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAtLocation = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAtLocation.bLooping = false
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAtLocation.IntensityMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAtLocation.StartTime = 0.000000
-    DefaultParameters.GameplayStatics.SpawnForceFeedbackAtLocation.bAutoDestroy = true
+    DefaultParameters.gameplaystatics.spawnforcefeedbackatlocation = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawnforcefeedbackatlocation.blooping = false
+    DefaultParameters.gameplaystatics.spawnforcefeedbackatlocation.intensitymultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawnforcefeedbackatlocation.starttime = 0.000000
+    DefaultParameters.gameplaystatics.spawnforcefeedbackatlocation.bautodestroy = true
     --SpawnDialogueAttached
-    DefaultParameters.GameplayStatics.SpawnDialogueAttached = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnDialogueAttached.AttachPointName = "None"
-    DefaultParameters.GameplayStatics.SpawnDialogueAttached.LocationType = 0 --EAttachLocation::Type::KeepRelativeOffset
-    DefaultParameters.GameplayStatics.SpawnDialogueAttached.bStopWhenAttachedToDestroyed = false
-    DefaultParameters.GameplayStatics.SpawnDialogueAttached.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnDialogueAttached.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnDialogueAttached.StartTime = 0.000000
-    DefaultParameters.GameplayStatics.SpawnDialogueAttached.bAutoDestroy = true
+    DefaultParameters.gameplaystatics.spawndialogueattached = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawndialogueattached.attachpointname = "None"
+    DefaultParameters.gameplaystatics.spawndialogueattached.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
+    DefaultParameters.gameplaystatics.spawndialogueattached.bstopwhenattachedtodestroyed = false
+    DefaultParameters.gameplaystatics.spawndialogueattached.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawndialogueattached.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawndialogueattached.starttime = 0.000000
+    DefaultParameters.gameplaystatics.spawndialogueattached.bautodestroy = true
     --SpawnDialogueAtLocation
-    DefaultParameters.GameplayStatics.SpawnDialogueAtLocation = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnDialogueAtLocation.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnDialogueAtLocation.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnDialogueAtLocation.StartTime = 0.000000
-    DefaultParameters.GameplayStatics.SpawnDialogueAtLocation.bAutoDestroy = true
+    DefaultParameters.gameplaystatics.spawndialogueatlocation = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawndialogueatlocation.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawndialogueatlocation.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawndialogueatlocation.starttime = 0.000000
+    DefaultParameters.gameplaystatics.spawndialogueatlocation.bautodestroy = true
     --PlayDialogueAtLocation
-    DefaultParameters.GameplayStatics.PlayDialogueAtLocation = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.PlayDialogueAtLocation.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.PlayDialogueAtLocation.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.PlayDialogueAtLocation.StartTime = 0.000000
+    DefaultParameters.gameplaystatics.playdialogueatlocation = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.playdialogueatlocation.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.playdialogueatlocation.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.playdialogueatlocation.starttime = 0.000000
     --SpawnDialogue2D
-    DefaultParameters.GameplayStatics.SpawnDialogue2D = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnDialogue2D.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnDialogue2D.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnDialogue2D.StartTime = 0.000000
-    DefaultParameters.GameplayStatics.SpawnDialogue2D.bAutoDestroy = true
+    DefaultParameters.gameplaystatics.spawndialogue2d = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawndialogue2d.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawndialogue2d.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawndialogue2d.starttime = 0.000000
+    DefaultParameters.gameplaystatics.spawndialogue2d.bautodestroy = true
     --PlayDialogue2D
-    DefaultParameters.GameplayStatics.PlayDialogue2D = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.PlayDialogue2D.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.PlayDialogue2D.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.PlayDialogue2D.StartTime = 0.000000
+    DefaultParameters.gameplaystatics.playdialogue2d = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.playdialogue2d.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.playdialogue2d.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.playdialogue2d.starttime = 0.000000
     --SpawnSoundAttached
-    DefaultParameters.GameplayStatics.SpawnSoundAttached = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnSoundAttached.AttachPointName = "None"
-    DefaultParameters.GameplayStatics.SpawnSoundAttached.LocationType = 0 --EAttachLocation::Type::KeepRelativeOffset
-    DefaultParameters.GameplayStatics.SpawnSoundAttached.bStopWhenAttachedToDestroyed = false
-    DefaultParameters.GameplayStatics.SpawnSoundAttached.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnSoundAttached.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnSoundAttached.StartTime = 0.000000
-    DefaultParameters.GameplayStatics.SpawnSoundAttached.bAutoDestroy = true
+    DefaultParameters.gameplaystatics.spawnsoundattached = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawnsoundattached.attachpointname = "None"
+    DefaultParameters.gameplaystatics.spawnsoundattached.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
+    DefaultParameters.gameplaystatics.spawnsoundattached.bstopwhenattachedtodestroyed = false
+    DefaultParameters.gameplaystatics.spawnsoundattached.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawnsoundattached.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawnsoundattached.starttime = 0.000000
+    DefaultParameters.gameplaystatics.spawnsoundattached.bautodestroy = true
     --SpawnSoundAtLocation
-    DefaultParameters.GameplayStatics.SpawnSoundAtLocation = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnSoundAtLocation.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnSoundAtLocation.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnSoundAtLocation.StartTime = 0.000000
-    DefaultParameters.GameplayStatics.SpawnSoundAtLocation.bAutoDestroy = true
+    DefaultParameters.gameplaystatics.spawnsoundatlocation = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawnsoundatlocation.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawnsoundatlocation.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawnsoundatlocation.starttime = 0.000000
+    DefaultParameters.gameplaystatics.spawnsoundatlocation.bautodestroy = true
     --PlaySoundAtLocation
-    DefaultParameters.GameplayStatics.PlaySoundAtLocation = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.PlaySoundAtLocation.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.PlaySoundAtLocation.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.PlaySoundAtLocation.StartTime = 0.000000
+    DefaultParameters.gameplaystatics.playsoundatlocation = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.playsoundatlocation.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.playsoundatlocation.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.playsoundatlocation.starttime = 0.000000
     --CreateSound2D
-    DefaultParameters.GameplayStatics.CreateSound2D = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.CreateSound2D.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.CreateSound2D.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.CreateSound2D.StartTime = 0.000000
-    DefaultParameters.GameplayStatics.CreateSound2D.bPersistAcrossLevelTransition = false
-    DefaultParameters.GameplayStatics.CreateSound2D.bAutoDestroy = true
+    DefaultParameters.gameplaystatics.createsound2d = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.createsound2d.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.createsound2d.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.createsound2d.starttime = 0.000000
+    DefaultParameters.gameplaystatics.createsound2d.bpersistacrossleveltransition = false
+    DefaultParameters.gameplaystatics.createsound2d.bautodestroy = true
     --SpawnSound2D
-    DefaultParameters.GameplayStatics.SpawnSound2D = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnSound2D.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnSound2D.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.SpawnSound2D.StartTime = 0.000000
-    DefaultParameters.GameplayStatics.SpawnSound2D.bPersistAcrossLevelTransition = false
-    DefaultParameters.GameplayStatics.SpawnSound2D.bAutoDestroy = true
+    DefaultParameters.gameplaystatics.spawnsound2d = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawnsound2d.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawnsound2d.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.spawnsound2d.starttime = 0.000000
+    DefaultParameters.gameplaystatics.spawnsound2d.bpersistacrossleveltransition = false
+    DefaultParameters.gameplaystatics.spawnsound2d.bautodestroy = true
     --PlaySound2D
-    DefaultParameters.GameplayStatics.PlaySound2D = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.PlaySound2D.VolumeMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.PlaySound2D.PitchMultiplier = 1.000000
-    DefaultParameters.GameplayStatics.PlaySound2D.StartTime = 0.000000
+    DefaultParameters.gameplaystatics.playsound2d = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.playsound2d.volumemultiplier = 1.000000
+    DefaultParameters.gameplaystatics.playsound2d.pitchmultiplier = 1.000000
+    DefaultParameters.gameplaystatics.playsound2d.starttime = 0.000000
     --SetGlobalListenerFocusParameters
-    DefaultParameters.GameplayStatics.SetGlobalListenerFocusParameters = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SetGlobalListenerFocusParameters.FocusAzimuthScale = 1.000000
-    DefaultParameters.GameplayStatics.SetGlobalListenerFocusParameters.NonFocusAzimuthScale = 1.000000
-    DefaultParameters.GameplayStatics.SetGlobalListenerFocusParameters.FocusDistanceScale = 1.000000
-    DefaultParameters.GameplayStatics.SetGlobalListenerFocusParameters.NonFocusDistanceScale = 1.000000
-    DefaultParameters.GameplayStatics.SetGlobalListenerFocusParameters.FocusVolumeScale = 1.000000
-    DefaultParameters.GameplayStatics.SetGlobalListenerFocusParameters.NonFocusVolumeScale = 1.000000
-    DefaultParameters.GameplayStatics.SetGlobalListenerFocusParameters.FocusPriorityScale = 1.000000
-    DefaultParameters.GameplayStatics.SetGlobalListenerFocusParameters.NonFocusPriorityScale = 1.000000
+    DefaultParameters.gameplaystatics.setgloballistenerfocusparameters = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.setgloballistenerfocusparameters.focusazimuthscale = 1.000000
+    DefaultParameters.gameplaystatics.setgloballistenerfocusparameters.nonfocusazimuthscale = 1.000000
+    DefaultParameters.gameplaystatics.setgloballistenerfocusparameters.focusdistancescale = 1.000000
+    DefaultParameters.gameplaystatics.setgloballistenerfocusparameters.nonfocusdistancescale = 1.000000
+    DefaultParameters.gameplaystatics.setgloballistenerfocusparameters.focusvolumescale = 1.000000
+    DefaultParameters.gameplaystatics.setgloballistenerfocusparameters.nonfocusvolumescale = 1.000000
+    DefaultParameters.gameplaystatics.setgloballistenerfocusparameters.focuspriorityscale = 1.000000
+    DefaultParameters.gameplaystatics.setgloballistenerfocusparameters.nonfocuspriorityscale = 1.000000
     --SpawnEmitterAttached
-    DefaultParameters.GameplayStatics.SpawnEmitterAttached = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnEmitterAttached.AttachPointName = "None"
-    DefaultParameters.GameplayStatics.SpawnEmitterAttached.Scale = UE4.Vector.new(1.000000, 1.000000, 1.000000)
-    DefaultParameters.GameplayStatics.SpawnEmitterAttached.LocationType = 0 --EAttachLocation::Type::KeepRelativeOffset
-    DefaultParameters.GameplayStatics.SpawnEmitterAttached.bAutoDestroy = true
-    DefaultParameters.GameplayStatics.SpawnEmitterAttached.PoolingMethod = 0 --EPSCPoolMethod::None
+    DefaultParameters.gameplaystatics.spawnemitterattached = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawnemitterattached.attachpointname = "None"
+    DefaultParameters.gameplaystatics.spawnemitterattached.scale = UE4.Vector.new(1.000000, 1.000000, 1.000000)
+    DefaultParameters.gameplaystatics.spawnemitterattached.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
+    DefaultParameters.gameplaystatics.spawnemitterattached.bautodestroy = true
+    DefaultParameters.gameplaystatics.spawnemitterattached.poolingmethod = 0 --EPSCPoolMethod::None
     --SpawnEmitterAtLocation
-    DefaultParameters.GameplayStatics.SpawnEmitterAtLocation = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.SpawnEmitterAtLocation.Scale = UE4.Vector.new(1.000000, 1.000000, 1.000000)
-    DefaultParameters.GameplayStatics.SpawnEmitterAtLocation.bAutoDestroy = true
-    DefaultParameters.GameplayStatics.SpawnEmitterAtLocation.PoolingMethod = 0 --EPSCPoolMethod::None
+    DefaultParameters.gameplaystatics.spawnemitteratlocation = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.spawnemitteratlocation.scale = UE4.Vector.new(1.000000, 1.000000, 1.000000)
+    DefaultParameters.gameplaystatics.spawnemitteratlocation.bautodestroy = true
+    DefaultParameters.gameplaystatics.spawnemitteratlocation.poolingmethod = 0 --EPSCPoolMethod::None
     --PlayWorldCameraShake
-    DefaultParameters.GameplayStatics.PlayWorldCameraShake = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.PlayWorldCameraShake.Falloff = 1.000000
-    DefaultParameters.GameplayStatics.PlayWorldCameraShake.bOrientShakeTowardsEpicenter = false
+    DefaultParameters.gameplaystatics.playworldcamerashake = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.playworldcamerashake.falloff = 1.000000
+    DefaultParameters.gameplaystatics.playworldcamerashake.borientshaketowardsepicenter = false
     --ApplyRadialDamageWithFalloff
-    DefaultParameters.GameplayStatics.ApplyRadialDamageWithFalloff = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.ApplyRadialDamageWithFalloff.DamagePreventionChannel = 3 --ECollisionChannel::ECC_Visibility
+    DefaultParameters.gameplaystatics.applyradialdamagewithfalloff = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.applyradialdamagewithfalloff.damagepreventionchannel = 3 --ECollisionChannel::ECC_Visibility
     --ApplyRadialDamage
-    DefaultParameters.GameplayStatics.ApplyRadialDamage = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.ApplyRadialDamage.bDoFullDamage = false
-    DefaultParameters.GameplayStatics.ApplyRadialDamage.DamagePreventionChannel = 3 --ECollisionChannel::ECC_Visibility
+    DefaultParameters.gameplaystatics.applyradialdamage = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.applyradialdamage.bdofulldamage = false
+    DefaultParameters.gameplaystatics.applyradialdamage.damagepreventionchannel = 3 --ECollisionChannel::ECC_Visibility
     --GetCurrentLevelName
-    DefaultParameters.GameplayStatics.GetCurrentLevelName = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.GetCurrentLevelName.bRemovePrefixString = true
+    DefaultParameters.gameplaystatics.getcurrentlevelname = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.getcurrentlevelname.bremoveprefixstring = true
     --OpenLevel
-    DefaultParameters.GameplayStatics.OpenLevel = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.OpenLevel.bAbsolute = true
+    DefaultParameters.gameplaystatics.openlevel = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.openlevel.babsolute = true
     --CreatePlayer
-    DefaultParameters.GameplayStatics.CreatePlayer = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.CreatePlayer.ControllerId = -1
-    DefaultParameters.GameplayStatics.CreatePlayer.bSpawnPlayerController = true
+    DefaultParameters.gameplaystatics.createplayer = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.createplayer.controllerid = -1
+    DefaultParameters.gameplaystatics.createplayer.bspawnplayercontroller = true
     --BeginDeferredActorSpawnFromClass
-    DefaultParameters.GameplayStatics.BeginDeferredActorSpawnFromClass = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.BeginDeferredActorSpawnFromClass.CollisionHandlingOverride = 0 --ESpawnActorCollisionHandlingMethod::Undefined
+    DefaultParameters.gameplaystatics.begindeferredactorspawnfromclass = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.begindeferredactorspawnfromclass.collisionhandlingoverride = 0 --ESpawnActorCollisionHandlingMethod::Undefined
     --BeginSpawningActorFromClass
-    DefaultParameters.GameplayStatics.BeginSpawningActorFromClass = Class(DefaultParameterClass)
-    DefaultParameters.GameplayStatics.BeginSpawningActorFromClass.bNoCollisionFail = false
+    DefaultParameters.gameplaystatics.beginspawningactorfromclass = Class(DefaultParameterClass)
+    DefaultParameters.gameplaystatics.beginspawningactorfromclass.bnocollisionfail = false
 end
 
 --HealthSnapshotBlueprintLibrary
 do
-    DefaultParameters.HealthSnapshotBlueprintLibrary = DefaultParameters.HealthSnapshotBlueprintLibrary or {}
+    DefaultParameters.healthsnapshotblueprintlibrary = DefaultParameters.healthsnapshotblueprintlibrary or {}
     
     --LogPerformanceSnapshot
-    DefaultParameters.HealthSnapshotBlueprintLibrary.LogPerformanceSnapshot = Class(DefaultParameterClass)
-    DefaultParameters.HealthSnapshotBlueprintLibrary.LogPerformanceSnapshot.bResetStats = true
+    DefaultParameters.healthsnapshotblueprintlibrary.logperformancesnapshot = Class(DefaultParameterClass)
+    DefaultParameters.healthsnapshotblueprintlibrary.logperformancesnapshot.bresetstats = true
 end
 
 --ImportanceSamplingLibrary
 do
-    DefaultParameters.ImportanceSamplingLibrary = DefaultParameters.ImportanceSamplingLibrary or {}
+    DefaultParameters.importancesamplinglibrary = DefaultParameters.importancesamplinglibrary or {}
     
     --NextSobolCell3D
-    DefaultParameters.ImportanceSamplingLibrary.NextSobolCell3D = Class(DefaultParameterClass)
-    DefaultParameters.ImportanceSamplingLibrary.NextSobolCell3D.NumCells = 1
-    DefaultParameters.ImportanceSamplingLibrary.NextSobolCell3D.PreviousValue = UE4.Vector.new(0.000000, 0.000000, 0.000000)
+    DefaultParameters.importancesamplinglibrary.nextsobolcell3d = Class(DefaultParameterClass)
+    DefaultParameters.importancesamplinglibrary.nextsobolcell3d.numcells = 1
+    DefaultParameters.importancesamplinglibrary.nextsobolcell3d.previousvalue = UE4.Vector.new(0.000000, 0.000000, 0.000000)
     --RandomSobolCell3D
-    DefaultParameters.ImportanceSamplingLibrary.RandomSobolCell3D = Class(DefaultParameterClass)
-    DefaultParameters.ImportanceSamplingLibrary.RandomSobolCell3D.NumCells = 1
-    DefaultParameters.ImportanceSamplingLibrary.RandomSobolCell3D.Cell = UE4.Vector.new(0.000000, 0.000000, 0.000000)
-    DefaultParameters.ImportanceSamplingLibrary.RandomSobolCell3D.Seed = UE4.Vector.new(0.000000, 0.000000, 0.000000)
+    DefaultParameters.importancesamplinglibrary.randomsobolcell3d = Class(DefaultParameterClass)
+    DefaultParameters.importancesamplinglibrary.randomsobolcell3d.numcells = 1
+    DefaultParameters.importancesamplinglibrary.randomsobolcell3d.cell = UE4.Vector.new(0.000000, 0.000000, 0.000000)
+    DefaultParameters.importancesamplinglibrary.randomsobolcell3d.seed = UE4.Vector.new(0.000000, 0.000000, 0.000000)
     --NextSobolCell2D
-    DefaultParameters.ImportanceSamplingLibrary.NextSobolCell2D = Class(DefaultParameterClass)
-    DefaultParameters.ImportanceSamplingLibrary.NextSobolCell2D.NumCells = 1
-    DefaultParameters.ImportanceSamplingLibrary.NextSobolCell2D.PreviousValue = UE4.Vector2D.new(0.000000, 0.000000)
+    DefaultParameters.importancesamplinglibrary.nextsobolcell2d = Class(DefaultParameterClass)
+    DefaultParameters.importancesamplinglibrary.nextsobolcell2d.numcells = 1
+    DefaultParameters.importancesamplinglibrary.nextsobolcell2d.previousvalue = UE4.Vector2D.new(0.000000, 0.000000)
     --RandomSobolCell2D
-    DefaultParameters.ImportanceSamplingLibrary.RandomSobolCell2D = Class(DefaultParameterClass)
-    DefaultParameters.ImportanceSamplingLibrary.RandomSobolCell2D.NumCells = 1
-    DefaultParameters.ImportanceSamplingLibrary.RandomSobolCell2D.Cell = UE4.Vector2D.new(0.000000, 0.000000)
-    DefaultParameters.ImportanceSamplingLibrary.RandomSobolCell2D.Seed = UE4.Vector2D.new(0.000000, 0.000000)
+    DefaultParameters.importancesamplinglibrary.randomsobolcell2d = Class(DefaultParameterClass)
+    DefaultParameters.importancesamplinglibrary.randomsobolcell2d.numcells = 1
+    DefaultParameters.importancesamplinglibrary.randomsobolcell2d.cell = UE4.Vector2D.new(0.000000, 0.000000)
+    DefaultParameters.importancesamplinglibrary.randomsobolcell2d.seed = UE4.Vector2D.new(0.000000, 0.000000)
 end
 
 --KismetInternationalizationLibrary
 do
-    DefaultParameters.KismetInternationalizationLibrary = DefaultParameters.KismetInternationalizationLibrary or {}
+    DefaultParameters.kismetinternationalizationlibrary = DefaultParameters.kismetinternationalizationlibrary or {}
     
     --GetCultureDisplayName
-    DefaultParameters.KismetInternationalizationLibrary.GetCultureDisplayName = Class(DefaultParameterClass)
-    DefaultParameters.KismetInternationalizationLibrary.GetCultureDisplayName.Localized = true
+    DefaultParameters.kismetinternationalizationlibrary.getculturedisplayname = Class(DefaultParameterClass)
+    DefaultParameters.kismetinternationalizationlibrary.getculturedisplayname.localized = true
     --GetSuitableCulture
-    DefaultParameters.KismetInternationalizationLibrary.GetSuitableCulture = Class(DefaultParameterClass)
-    DefaultParameters.KismetInternationalizationLibrary.GetSuitableCulture.FallbackCulture = "en"
+    DefaultParameters.kismetinternationalizationlibrary.getsuitableculture = Class(DefaultParameterClass)
+    DefaultParameters.kismetinternationalizationlibrary.getsuitableculture.fallbackculture = "en"
     --GetLocalizedCultures
-    DefaultParameters.KismetInternationalizationLibrary.GetLocalizedCultures = Class(DefaultParameterClass)
-    DefaultParameters.KismetInternationalizationLibrary.GetLocalizedCultures.IncludeGame = true
-    DefaultParameters.KismetInternationalizationLibrary.GetLocalizedCultures.IncludeEngine = false
-    DefaultParameters.KismetInternationalizationLibrary.GetLocalizedCultures.IncludeEditor = false
-    DefaultParameters.KismetInternationalizationLibrary.GetLocalizedCultures.IncludeAdditional = false
+    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures = Class(DefaultParameterClass)
+    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures.includegame = true
+    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures.includeengine = false
+    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures.includeeditor = false
+    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures.includeadditional = false
     --ClearCurrentAssetGroupCulture
-    DefaultParameters.KismetInternationalizationLibrary.ClearCurrentAssetGroupCulture = Class(DefaultParameterClass)
-    DefaultParameters.KismetInternationalizationLibrary.ClearCurrentAssetGroupCulture.SaveToConfig = false
+    DefaultParameters.kismetinternationalizationlibrary.clearcurrentassetgroupculture = Class(DefaultParameterClass)
+    DefaultParameters.kismetinternationalizationlibrary.clearcurrentassetgroupculture.savetoconfig = false
     --SetCurrentAssetGroupCulture
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentAssetGroupCulture = Class(DefaultParameterClass)
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentAssetGroupCulture.SaveToConfig = false
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentassetgroupculture = Class(DefaultParameterClass)
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentassetgroupculture.savetoconfig = false
     --SetCurrentLanguageAndLocale
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentLanguageAndLocale = Class(DefaultParameterClass)
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentLanguageAndLocale.SaveToConfig = false
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentlanguageandlocale = Class(DefaultParameterClass)
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentlanguageandlocale.savetoconfig = false
     --SetCurrentLocale
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentLocale = Class(DefaultParameterClass)
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentLocale.SaveToConfig = false
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentlocale = Class(DefaultParameterClass)
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentlocale.savetoconfig = false
     --SetCurrentLanguage
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentLanguage = Class(DefaultParameterClass)
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentLanguage.SaveToConfig = false
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentlanguage = Class(DefaultParameterClass)
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentlanguage.savetoconfig = false
     --SetCurrentCulture
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentCulture = Class(DefaultParameterClass)
-    DefaultParameters.KismetInternationalizationLibrary.SetCurrentCulture.SaveToConfig = false
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentculture = Class(DefaultParameterClass)
+    DefaultParameters.kismetinternationalizationlibrary.setcurrentculture.savetoconfig = false
 end
 
 --KismetMaterialLibrary
 do
-    DefaultParameters.KismetMaterialLibrary = DefaultParameters.KismetMaterialLibrary or {}
+    DefaultParameters.kismetmateriallibrary = DefaultParameters.kismetmateriallibrary or {}
     
     --CreateDynamicMaterialInstance
-    DefaultParameters.KismetMaterialLibrary.CreateDynamicMaterialInstance = Class(DefaultParameterClass)
-    DefaultParameters.KismetMaterialLibrary.CreateDynamicMaterialInstance.OptionalName = "None"
+    DefaultParameters.kismetmateriallibrary.createdynamicmaterialinstance = Class(DefaultParameterClass)
+    DefaultParameters.kismetmateriallibrary.createdynamicmaterialinstance.optionalname = "None"
 end
 
 --KismetMathLibrary
 do
-    DefaultParameters.KismetMathLibrary = DefaultParameters.KismetMathLibrary or {}
+    DefaultParameters.kismetmathlibrary = DefaultParameters.kismetmathlibrary or {}
     
     --PointsAreCoplanar
-    DefaultParameters.KismetMathLibrary.PointsAreCoplanar = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.PointsAreCoplanar.Tolerance = 0.100000
+    DefaultParameters.kismetmathlibrary.pointsarecoplanar = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.pointsarecoplanar.tolerance = 0.100000
     --MinimumAreaRectangle
-    DefaultParameters.KismetMathLibrary.MinimumAreaRectangle = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.MinimumAreaRectangle.bDebugDraw = false
+    DefaultParameters.kismetmathlibrary.minimumarearectangle = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.minimumarearectangle.bdebugdraw = false
     --FloatSpringInterp
-    DefaultParameters.KismetMathLibrary.FloatSpringInterp = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.FloatSpringInterp.Mass = 1.000000
+    DefaultParameters.kismetmathlibrary.floatspringinterp = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.floatspringinterp.mass = 1.000000
     --TEase
-    DefaultParameters.KismetMathLibrary.TEase = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.TEase.BlendExp = 2.000000
-    DefaultParameters.KismetMathLibrary.TEase.Steps = 2
+    DefaultParameters.kismetmathlibrary.tease = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.tease.blendexp = 2.000000
+    DefaultParameters.kismetmathlibrary.tease.steps = 2
     --TLerp
-    DefaultParameters.KismetMathLibrary.TLerp = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.TLerp.InterpMode = 0 --ELerpInterpolationMode::Type::QuatInterp
+    DefaultParameters.kismetmathlibrary.tlerp = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.tlerp.interpmode = 0 --ELerpInterpolationMode::Type::QuatInterp
     --NearlyEqual_TransformTransform
-    DefaultParameters.KismetMathLibrary.NearlyEqual_TransformTransform = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.NearlyEqual_TransformTransform.LocationTolerance = 0.000100
-    DefaultParameters.KismetMathLibrary.NearlyEqual_TransformTransform.RotationTolerance = 0.000100
-    DefaultParameters.KismetMathLibrary.NearlyEqual_TransformTransform.Scale3DTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform.locationtolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform.rotationtolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform.scale3dtolerance = 0.000100
     --MakeFrameRate
-    DefaultParameters.KismetMathLibrary.MakeFrameRate = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.MakeFrameRate.Denominator = 1
+    DefaultParameters.kismetmathlibrary.makeframerate = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.makeframerate.denominator = 1
     --MakeQualifiedFrameTime
-    DefaultParameters.KismetMathLibrary.MakeQualifiedFrameTime = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.MakeQualifiedFrameTime.SubFrame = 0.000000
+    DefaultParameters.kismetmathlibrary.makequalifiedframetime = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.makequalifiedframetime.subframe = 0.000000
     --MakeDateTime
-    DefaultParameters.KismetMathLibrary.MakeDateTime = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.MakeDateTime.Hour = 0
-    DefaultParameters.KismetMathLibrary.MakeDateTime.Minute = 0
-    DefaultParameters.KismetMathLibrary.MakeDateTime.Second = 0
-    DefaultParameters.KismetMathLibrary.MakeDateTime.Millisecond = 0
+    DefaultParameters.kismetmathlibrary.makedatetime = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.makedatetime.hour = 0
+    DefaultParameters.kismetmathlibrary.makedatetime.minute = 0
+    DefaultParameters.kismetmathlibrary.makedatetime.second = 0
+    DefaultParameters.kismetmathlibrary.makedatetime.millisecond = 0
     --LinearColor_IsNearEqual
-    DefaultParameters.KismetMathLibrary.LinearColor_IsNearEqual = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.LinearColor_IsNearEqual.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.linearcolor_isnearequal = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.linearcolor_isnearequal.tolerance = 0.000100
     --Conv_LinearColorToColor
-    DefaultParameters.KismetMathLibrary.Conv_LinearColorToColor = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Conv_LinearColorToColor.InUseSRGB = true
+    DefaultParameters.kismetmathlibrary.conv_linearcolortocolor = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.conv_linearcolortocolor.inusesrgb = true
     --HSVToRGB
-    DefaultParameters.KismetMathLibrary.HSVToRGB = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.HSVToRGB.A = 1.000000
+    DefaultParameters.kismetmathlibrary.hsvtorgb = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.hsvtorgb.a = 1.000000
     --LinearColor_SetFromHSV
-    DefaultParameters.KismetMathLibrary.LinearColor_SetFromHSV = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.LinearColor_SetFromHSV.A = 1.000000
+    DefaultParameters.kismetmathlibrary.linearcolor_setfromhsv = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.linearcolor_setfromhsv.a = 1.000000
     --LinearColor_SetRGBA
-    DefaultParameters.KismetMathLibrary.LinearColor_SetRGBA = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.LinearColor_SetRGBA.A = 1.000000
+    DefaultParameters.kismetmathlibrary.linearcolor_setrgba = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.linearcolor_setrgba.a = 1.000000
     --MakeColor
-    DefaultParameters.KismetMathLibrary.MakeColor = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.MakeColor.A = 1.000000
+    DefaultParameters.kismetmathlibrary.makecolor = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.makecolor.a = 1.000000
     --Quat_Normalized
-    DefaultParameters.KismetMathLibrary.Quat_Normalized = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Quat_Normalized.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.quat_normalized = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.quat_normalized.tolerance = 0.000100
     --Quat_Normalize
-    DefaultParameters.KismetMathLibrary.Quat_Normalize = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Quat_Normalize.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.quat_normalize = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.quat_normalize.tolerance = 0.000100
     --Quat_IsIdentity
-    DefaultParameters.KismetMathLibrary.Quat_IsIdentity = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Quat_IsIdentity.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.quat_isidentity = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.quat_isidentity.tolerance = 0.000100
     --NotEqual_QuatQuat
-    DefaultParameters.KismetMathLibrary.NotEqual_QuatQuat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.NotEqual_QuatQuat.ErrorTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.notequal_quatquat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.notequal_quatquat.errortolerance = 0.000100
     --EqualEqual_QuatQuat
-    DefaultParameters.KismetMathLibrary.EqualEqual_QuatQuat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.EqualEqual_QuatQuat.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.equalequal_quatquat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.equalequal_quatquat.tolerance = 0.000100
     --REase
-    DefaultParameters.KismetMathLibrary.REase = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.REase.BlendExp = 2.000000
-    DefaultParameters.KismetMathLibrary.REase.Steps = 2
+    DefaultParameters.kismetmathlibrary.rease = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.rease.blendexp = 2.000000
+    DefaultParameters.kismetmathlibrary.rease.steps = 2
     --RandomRotator
-    DefaultParameters.KismetMathLibrary.RandomRotator = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.RandomRotator.bRoll = false
+    DefaultParameters.kismetmathlibrary.randomrotator = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.randomrotator.broll = false
     --NotEqual_RotatorRotator
-    DefaultParameters.KismetMathLibrary.NotEqual_RotatorRotator = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.NotEqual_RotatorRotator.ErrorTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.notequal_rotatorrotator = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.notequal_rotatorrotator.errortolerance = 0.000100
     --EqualEqual_RotatorRotator
-    DefaultParameters.KismetMathLibrary.EqualEqual_RotatorRotator = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.EqualEqual_RotatorRotator.ErrorTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.equalequal_rotatorrotator = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.equalequal_rotatorrotator.errortolerance = 0.000100
     --Vector4_Normalize3
-    DefaultParameters.KismetMathLibrary.Vector4_Normalize3 = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Vector4_Normalize3.Tolerance = 0.000000
+    DefaultParameters.kismetmathlibrary.vector4_normalize3 = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vector4_normalize3.tolerance = 0.000000
     --Vector4_Normal3
-    DefaultParameters.KismetMathLibrary.Vector4_Normal3 = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Vector4_Normal3.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.vector4_normal3 = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vector4_normal3.tolerance = 0.000100
     --Vector4_IsUnit3
-    DefaultParameters.KismetMathLibrary.Vector4_IsUnit3 = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Vector4_IsUnit3.SquaredLenthTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.vector4_isunit3 = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vector4_isunit3.squaredlenthtolerance = 0.000100
     --Vector4_IsNearlyZero3
-    DefaultParameters.KismetMathLibrary.Vector4_IsNearlyZero3 = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Vector4_IsNearlyZero3.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.vector4_isnearlyzero3 = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vector4_isnearlyzero3.tolerance = 0.000100
     --NotEqual_Vector4Vector4
-    DefaultParameters.KismetMathLibrary.NotEqual_Vector4Vector4 = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.NotEqual_Vector4Vector4.ErrorTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.notequal_vector4vector4 = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.notequal_vector4vector4.errortolerance = 0.000100
     --EqualEqual_Vector4Vector4
-    DefaultParameters.KismetMathLibrary.EqualEqual_Vector4Vector4 = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.EqualEqual_Vector4Vector4.ErrorTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.equalequal_vector4vector4 = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.equalequal_vector4vector4.errortolerance = 0.000100
     --VectorSpringInterp
-    DefaultParameters.KismetMathLibrary.VectorSpringInterp = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.VectorSpringInterp.Mass = 1.000000
+    DefaultParameters.kismetmathlibrary.vectorspringinterp = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vectorspringinterp.mass = 1.000000
     --VEase
-    DefaultParameters.KismetMathLibrary.VEase = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.VEase.BlendExp = 2.000000
-    DefaultParameters.KismetMathLibrary.VEase.Steps = 2
+    DefaultParameters.kismetmathlibrary.vease = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vease.blendexp = 2.000000
+    DefaultParameters.kismetmathlibrary.vease.steps = 2
     --Vector_Normalize
-    DefaultParameters.KismetMathLibrary.Vector_Normalize = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Vector_Normalize.Tolerance = 0.000000
+    DefaultParameters.kismetmathlibrary.vector_normalize = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vector_normalize.tolerance = 0.000000
     --Vector_Normal2D
-    DefaultParameters.KismetMathLibrary.Vector_Normal2D = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Vector_Normal2D.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.vector_normal2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vector_normal2d.tolerance = 0.000100
     --Normal
-    DefaultParameters.KismetMathLibrary.Normal = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Normal.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.normal = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.normal.tolerance = 0.000100
     --Vector_IsUnit
-    DefaultParameters.KismetMathLibrary.Vector_IsUnit = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Vector_IsUnit.SquaredLenthTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.vector_isunit = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vector_isunit.squaredlenthtolerance = 0.000100
     --Vector_IsUniform
-    DefaultParameters.KismetMathLibrary.Vector_IsUniform = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Vector_IsUniform.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.vector_isuniform = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vector_isuniform.tolerance = 0.000100
     --Vector_IsNearlyZero
-    DefaultParameters.KismetMathLibrary.Vector_IsNearlyZero = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Vector_IsNearlyZero.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.vector_isnearlyzero = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vector_isnearlyzero.tolerance = 0.000100
     --NotEqual_VectorVector
-    DefaultParameters.KismetMathLibrary.NotEqual_VectorVector = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.NotEqual_VectorVector.ErrorTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.notequal_vectorvector = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.notequal_vectorvector.errortolerance = 0.000100
     --EqualEqual_VectorVector
-    DefaultParameters.KismetMathLibrary.EqualEqual_VectorVector = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.EqualEqual_VectorVector.ErrorTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.equalequal_vectorvector = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.equalequal_vectorvector.errortolerance = 0.000100
     --Divide_VectorInt
-    DefaultParameters.KismetMathLibrary.Divide_VectorInt = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Divide_VectorInt.B = 1
+    DefaultParameters.kismetmathlibrary.divide_vectorint = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.divide_vectorint.b = 1
     --Divide_VectorFloat
-    DefaultParameters.KismetMathLibrary.Divide_VectorFloat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Divide_VectorFloat.B = 1.000000
+    DefaultParameters.kismetmathlibrary.divide_vectorfloat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.divide_vectorfloat.b = 1.000000
     --Divide_VectorVector
-    DefaultParameters.KismetMathLibrary.Divide_VectorVector = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Divide_VectorVector.B = UE4.Vector.new(1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetmathlibrary.divide_vectorvector = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.divide_vectorvector.b = UE4.Vector.new(1.000000, 1.000000, 1.000000)
     --CreateVectorFromYawPitch
-    DefaultParameters.KismetMathLibrary.CreateVectorFromYawPitch = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.CreateVectorFromYawPitch.Length = 1.000000
+    DefaultParameters.kismetmathlibrary.createvectorfromyawpitch = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.createvectorfromyawpitch.length = 1.000000
     --Normalize2D
-    DefaultParameters.KismetMathLibrary.Normalize2D = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Normalize2D.Tolerance = 0.000000
+    DefaultParameters.kismetmathlibrary.normalize2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.normalize2d.tolerance = 0.000000
     --NormalSafe2D
-    DefaultParameters.KismetMathLibrary.NormalSafe2D = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.NormalSafe2D.Tolerance = 0.000000
+    DefaultParameters.kismetmathlibrary.normalsafe2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.normalsafe2d.tolerance = 0.000000
     --IsNearlyZero2D
-    DefaultParameters.KismetMathLibrary.IsNearlyZero2D = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.IsNearlyZero2D.Tolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.isnearlyzero2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.isnearlyzero2d.tolerance = 0.000100
     --NotEqual_Vector2DVector2D
-    DefaultParameters.KismetMathLibrary.NotEqual_Vector2DVector2D = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.NotEqual_Vector2DVector2D.ErrorTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.notequal_vector2dvector2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.notequal_vector2dvector2d.errortolerance = 0.000100
     --EqualEqual_Vector2DVector2D
-    DefaultParameters.KismetMathLibrary.EqualEqual_Vector2DVector2D = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.EqualEqual_Vector2DVector2D.ErrorTolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.equalequal_vector2dvector2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.equalequal_vector2dvector2d.errortolerance = 0.000100
     --Divide_Vector2DFloat
-    DefaultParameters.KismetMathLibrary.Divide_Vector2DFloat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Divide_Vector2DFloat.B = 1.000000
+    DefaultParameters.kismetmathlibrary.divide_vector2dfloat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.divide_vector2dfloat.b = 1.000000
     --Conv_Vector2DToVector
-    DefaultParameters.KismetMathLibrary.Conv_Vector2DToVector = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Conv_Vector2DToVector.Z = 0.000000
+    DefaultParameters.kismetmathlibrary.conv_vector2dtovector = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.conv_vector2dtovector.z = 0.000000
     --MakePulsatingValue
-    DefaultParameters.KismetMathLibrary.MakePulsatingValue = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.MakePulsatingValue.InPulsesPerSecond = 1.000000
-    DefaultParameters.KismetMathLibrary.MakePulsatingValue.InPhase = 0.000000
+    DefaultParameters.kismetmathlibrary.makepulsatingvalue = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.makepulsatingvalue.inpulsespersecond = 1.000000
+    DefaultParameters.kismetmathlibrary.makepulsatingvalue.inphase = 0.000000
     --Ease
-    DefaultParameters.KismetMathLibrary.Ease = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Ease.BlendExp = 2.000000
-    DefaultParameters.KismetMathLibrary.Ease.Steps = 2
+    DefaultParameters.kismetmathlibrary.ease = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.ease.blendexp = 2.000000
+    DefaultParameters.kismetmathlibrary.ease.steps = 2
     --Log
-    DefaultParameters.KismetMathLibrary.Log = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Log.Base = 1.000000
+    DefaultParameters.kismetmathlibrary.log = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.log.base = 1.000000
     --InRange_FloatFloat
-    DefaultParameters.KismetMathLibrary.InRange_FloatFloat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.InRange_FloatFloat.InclusiveMin = true
-    DefaultParameters.KismetMathLibrary.InRange_FloatFloat.InclusiveMax = true
+    DefaultParameters.kismetmathlibrary.inrange_floatfloat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.inrange_floatfloat.inclusivemin = true
+    DefaultParameters.kismetmathlibrary.inrange_floatfloat.inclusivemax = true
     --NearlyEqual_FloatFloat
-    DefaultParameters.KismetMathLibrary.NearlyEqual_FloatFloat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.NearlyEqual_FloatFloat.ErrorTolerance = 0.000001
+    DefaultParameters.kismetmathlibrary.nearlyequal_floatfloat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.nearlyequal_floatfloat.errortolerance = 0.000001
     --Subtract_FloatFloat
-    DefaultParameters.KismetMathLibrary.Subtract_FloatFloat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Subtract_FloatFloat.B = 1.000000
+    DefaultParameters.kismetmathlibrary.subtract_floatfloat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.subtract_floatfloat.b = 1.000000
     --Add_FloatFloat
-    DefaultParameters.KismetMathLibrary.Add_FloatFloat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Add_FloatFloat.B = 1.000000
+    DefaultParameters.kismetmathlibrary.add_floatfloat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.add_floatfloat.b = 1.000000
     --Percent_FloatFloat
-    DefaultParameters.KismetMathLibrary.Percent_FloatFloat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Percent_FloatFloat.B = 1.000000
+    DefaultParameters.kismetmathlibrary.percent_floatfloat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.percent_floatfloat.b = 1.000000
     --Divide_FloatFloat
-    DefaultParameters.KismetMathLibrary.Divide_FloatFloat = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Divide_FloatFloat.B = 1.000000
+    DefaultParameters.kismetmathlibrary.divide_floatfloat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.divide_floatfloat.b = 1.000000
     --InRange_Int64Int64
-    DefaultParameters.KismetMathLibrary.InRange_Int64Int64 = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.InRange_Int64Int64.InclusiveMin = true
-    DefaultParameters.KismetMathLibrary.InRange_Int64Int64.InclusiveMax = true
+    DefaultParameters.kismetmathlibrary.inrange_int64int64 = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.inrange_int64int64.inclusivemin = true
+    DefaultParameters.kismetmathlibrary.inrange_int64int64.inclusivemax = true
     --InRange_IntInt
-    DefaultParameters.KismetMathLibrary.InRange_IntInt = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.InRange_IntInt.InclusiveMin = true
-    DefaultParameters.KismetMathLibrary.InRange_IntInt.InclusiveMax = true
+    DefaultParameters.kismetmathlibrary.inrange_intint = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.inrange_intint.inclusivemin = true
+    DefaultParameters.kismetmathlibrary.inrange_intint.inclusivemax = true
     --Subtract_IntInt
-    DefaultParameters.KismetMathLibrary.Subtract_IntInt = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Subtract_IntInt.B = 1
+    DefaultParameters.kismetmathlibrary.subtract_intint = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.subtract_intint.b = 1
     --Add_IntInt
-    DefaultParameters.KismetMathLibrary.Add_IntInt = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Add_IntInt.B = 1
+    DefaultParameters.kismetmathlibrary.add_intint = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.add_intint.b = 1
     --Percent_IntInt
-    DefaultParameters.KismetMathLibrary.Percent_IntInt = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Percent_IntInt.B = 1
+    DefaultParameters.kismetmathlibrary.percent_intint = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.percent_intint.b = 1
     --Divide_IntInt
-    DefaultParameters.KismetMathLibrary.Divide_IntInt = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Divide_IntInt.B = 1
+    DefaultParameters.kismetmathlibrary.divide_intint = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.divide_intint.b = 1
     --Subtract_ByteByte
-    DefaultParameters.KismetMathLibrary.Subtract_ByteByte = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Subtract_ByteByte.B = 1
+    DefaultParameters.kismetmathlibrary.subtract_bytebyte = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.subtract_bytebyte.b = 1
     --Add_ByteByte
-    DefaultParameters.KismetMathLibrary.Add_ByteByte = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Add_ByteByte.B = 1
+    DefaultParameters.kismetmathlibrary.add_bytebyte = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.add_bytebyte.b = 1
     --Percent_ByteByte
-    DefaultParameters.KismetMathLibrary.Percent_ByteByte = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Percent_ByteByte.B = 1
+    DefaultParameters.kismetmathlibrary.percent_bytebyte = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.percent_bytebyte.b = 1
     --Divide_ByteByte
-    DefaultParameters.KismetMathLibrary.Divide_ByteByte = Class(DefaultParameterClass)
-    DefaultParameters.KismetMathLibrary.Divide_ByteByte.B = 1
+    DefaultParameters.kismetmathlibrary.divide_bytebyte = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.divide_bytebyte.b = 1
 end
 
 --KismetRenderingLibrary
 do
-    DefaultParameters.KismetRenderingLibrary = DefaultParameters.KismetRenderingLibrary or {}
+    DefaultParameters.kismetrenderinglibrary = DefaultParameters.kismetrenderinglibrary or {}
     
     --RenderTargetCreateStaticTexture2DEditorOnly
-    DefaultParameters.KismetRenderingLibrary.RenderTargetCreateStaticTexture2DEditorOnly = Class(DefaultParameterClass)
-    DefaultParameters.KismetRenderingLibrary.RenderTargetCreateStaticTexture2DEditorOnly.Name = "Texture"
-    DefaultParameters.KismetRenderingLibrary.RenderTargetCreateStaticTexture2DEditorOnly.CompressionSettings = 0 --TextureCompressionSettings::TC_Default
-    DefaultParameters.KismetRenderingLibrary.RenderTargetCreateStaticTexture2DEditorOnly.MipSettings = 0 --TextureMipGenSettings::TMGS_FromTextureGroup
+    DefaultParameters.kismetrenderinglibrary.rendertargetcreatestatictexture2deditoronly = Class(DefaultParameterClass)
+    DefaultParameters.kismetrenderinglibrary.rendertargetcreatestatictexture2deditoronly.name = "Texture"
+    DefaultParameters.kismetrenderinglibrary.rendertargetcreatestatictexture2deditoronly.compressionsettings = 0 --TextureCompressionSettings::TC_Default
+    DefaultParameters.kismetrenderinglibrary.rendertargetcreatestatictexture2deditoronly.mipsettings = 0 --TextureMipGenSettings::TMGS_FromTextureGroup
     --CreateRenderTarget2D
-    DefaultParameters.KismetRenderingLibrary.CreateRenderTarget2D = Class(DefaultParameterClass)
-    DefaultParameters.KismetRenderingLibrary.CreateRenderTarget2D.Width = 256
-    DefaultParameters.KismetRenderingLibrary.CreateRenderTarget2D.Height = 256
-    DefaultParameters.KismetRenderingLibrary.CreateRenderTarget2D.Format = 5 --ETextureRenderTargetFormat::RTF_RGBA16f
+    DefaultParameters.kismetrenderinglibrary.createrendertarget2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetrenderinglibrary.createrendertarget2d.width = 256
+    DefaultParameters.kismetrenderinglibrary.createrendertarget2d.height = 256
+    DefaultParameters.kismetrenderinglibrary.createrendertarget2d.format = 5 --ETextureRenderTargetFormat::RTF_RGBA16f
     --ClearRenderTarget2D
-    DefaultParameters.KismetRenderingLibrary.ClearRenderTarget2D = Class(DefaultParameterClass)
-    DefaultParameters.KismetRenderingLibrary.ClearRenderTarget2D.ClearColor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetrenderinglibrary.clearrendertarget2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetrenderinglibrary.clearrendertarget2d.clearcolor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
 end
 
 --KismetStringLibrary
 do
-    DefaultParameters.KismetStringLibrary = DefaultParameters.KismetStringLibrary or {}
+    DefaultParameters.kismetstringlibrary = DefaultParameters.kismetstringlibrary or {}
     
     --Split
-    DefaultParameters.KismetStringLibrary.Split = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.Split.SearchCase = 1 --ESearchCase::Type::IgnoreCase
-    DefaultParameters.KismetStringLibrary.Split.SearchDir = 0 --ESearchDir::Type::FromStart
+    DefaultParameters.kismetstringlibrary.split = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.split.searchcase = 1 --ESearchCase::Type::IgnoreCase
+    DefaultParameters.kismetstringlibrary.split.searchdir = 0 --ESearchDir::Type::FromStart
     --ReplaceInline
-    DefaultParameters.KismetStringLibrary.ReplaceInline = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.ReplaceInline.SearchCase = 1 --ESearchCase::Type::IgnoreCase
+    DefaultParameters.kismetstringlibrary.replaceinline = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.replaceinline.searchcase = 1 --ESearchCase::Type::IgnoreCase
     --Replace
-    DefaultParameters.KismetStringLibrary.Replace = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.Replace.SearchCase = 1 --ESearchCase::Type::IgnoreCase
+    DefaultParameters.kismetstringlibrary.replace = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.replace.searchcase = 1 --ESearchCase::Type::IgnoreCase
     --MatchesWildcard
-    DefaultParameters.KismetStringLibrary.MatchesWildcard = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.MatchesWildcard.SearchCase = 1 --ESearchCase::Type::IgnoreCase
+    DefaultParameters.kismetstringlibrary.matcheswildcard = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.matcheswildcard.searchcase = 1 --ESearchCase::Type::IgnoreCase
     --EndsWith
-    DefaultParameters.KismetStringLibrary.EndsWith = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.EndsWith.SearchCase = 1 --ESearchCase::Type::IgnoreCase
+    DefaultParameters.kismetstringlibrary.endswith = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.endswith.searchcase = 1 --ESearchCase::Type::IgnoreCase
     --StartsWith
-    DefaultParameters.KismetStringLibrary.StartsWith = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.StartsWith.SearchCase = 1 --ESearchCase::Type::IgnoreCase
+    DefaultParameters.kismetstringlibrary.startswith = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.startswith.searchcase = 1 --ESearchCase::Type::IgnoreCase
     --JoinStringArray
-    DefaultParameters.KismetStringLibrary.JoinStringArray = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.JoinStringArray.Separator = " "
+    DefaultParameters.kismetstringlibrary.joinstringarray = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.joinstringarray.separator = " "
     --ParseIntoArray
-    DefaultParameters.KismetStringLibrary.ParseIntoArray = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.ParseIntoArray.Delimiter = " "
-    DefaultParameters.KismetStringLibrary.ParseIntoArray.CullEmptyStrings = true
+    DefaultParameters.kismetstringlibrary.parseintoarray = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.parseintoarray.delimiter = " "
+    DefaultParameters.kismetstringlibrary.parseintoarray.cullemptystrings = true
     --GetCharacterAsNumber
-    DefaultParameters.KismetStringLibrary.GetCharacterAsNumber = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.GetCharacterAsNumber.Index = 0
+    DefaultParameters.kismetstringlibrary.getcharacterasnumber = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.getcharacterasnumber.index = 0
     --Contains
-    DefaultParameters.KismetStringLibrary.Contains = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.Contains.bUseCase = false
-    DefaultParameters.KismetStringLibrary.Contains.bSearchFromEnd = false
+    DefaultParameters.kismetstringlibrary.contains = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.contains.busecase = false
+    DefaultParameters.kismetstringlibrary.contains.bsearchfromend = false
     --FindSubstring
-    DefaultParameters.KismetStringLibrary.FindSubstring = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.FindSubstring.bUseCase = false
-    DefaultParameters.KismetStringLibrary.FindSubstring.bSearchFromEnd = false
-    DefaultParameters.KismetStringLibrary.FindSubstring.StartPosition = -1
+    DefaultParameters.kismetstringlibrary.findsubstring = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.findsubstring.busecase = false
+    DefaultParameters.kismetstringlibrary.findsubstring.bsearchfromend = false
+    DefaultParameters.kismetstringlibrary.findsubstring.startposition = -1
     --GetSubstring
-    DefaultParameters.KismetStringLibrary.GetSubstring = Class(DefaultParameterClass)
-    DefaultParameters.KismetStringLibrary.GetSubstring.StartIndex = 0
-    DefaultParameters.KismetStringLibrary.GetSubstring.Length = 1
+    DefaultParameters.kismetstringlibrary.getsubstring = Class(DefaultParameterClass)
+    DefaultParameters.kismetstringlibrary.getsubstring.startindex = 0
+    DefaultParameters.kismetstringlibrary.getsubstring.length = 1
 end
 
 --KismetSystemLibrary
 do
-    DefaultParameters.KismetSystemLibrary = DefaultParameters.KismetSystemLibrary or {}
+    DefaultParameters.kismetsystemlibrary = DefaultParameters.kismetsystemlibrary or {}
     
     --DrawDebugFloatHistoryLocation
-    DefaultParameters.KismetSystemLibrary.DrawDebugFloatHistoryLocation = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugFloatHistoryLocation.DrawColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugFloatHistoryLocation.Duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugfloathistorylocation = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugfloathistorylocation.drawcolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugfloathistorylocation.duration = 0.000000
     --DrawDebugFloatHistoryTransform
-    DefaultParameters.KismetSystemLibrary.DrawDebugFloatHistoryTransform = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugFloatHistoryTransform.DrawColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugFloatHistoryTransform.Duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugfloathistorytransform = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugfloathistorytransform.drawcolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugfloathistorytransform.duration = 0.000000
     --DrawDebugCamera
-    DefaultParameters.KismetSystemLibrary.DrawDebugCamera = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCamera.CameraColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCamera.Duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcamera = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugcamera.cameracolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugcamera.duration = 0.000000
     --DrawDebugFrustum
-    DefaultParameters.KismetSystemLibrary.DrawDebugFrustum = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugFrustum.FrustumColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugFrustum.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugFrustum.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugfrustum = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugfrustum.frustumcolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugfrustum.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugfrustum.thickness = 0.000000
     --DrawDebugPlane
-    DefaultParameters.KismetSystemLibrary.DrawDebugPlane = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugPlane.PlaneColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugPlane.Duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugplane = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugplane.planecolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugplane.duration = 0.000000
     --DrawDebugString
-    DefaultParameters.KismetSystemLibrary.DrawDebugString = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugString.TextColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugString.Duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugstring = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugstring.textcolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugstring.duration = 0.000000
     --DrawDebugCapsule
-    DefaultParameters.KismetSystemLibrary.DrawDebugCapsule = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCapsule.LineColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCapsule.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugCapsule.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcapsule = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugcapsule.linecolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugcapsule.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcapsule.thickness = 0.000000
     --DrawDebugConeInDegrees
-    DefaultParameters.KismetSystemLibrary.DrawDebugConeInDegrees = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugConeInDegrees.Length = 100.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugConeInDegrees.AngleWidth = 45.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugConeInDegrees.AngleHeight = 45.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugConeInDegrees.NumSides = 12
-    DefaultParameters.KismetSystemLibrary.DrawDebugConeInDegrees.LineColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugConeInDegrees.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugConeInDegrees.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugconeindegrees = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugconeindegrees.length = 100.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugconeindegrees.anglewidth = 45.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugconeindegrees.angleheight = 45.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugconeindegrees.numsides = 12
+    DefaultParameters.kismetsystemlibrary.drawdebugconeindegrees.linecolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugconeindegrees.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugconeindegrees.thickness = 0.000000
     --DrawDebugCone
-    DefaultParameters.KismetSystemLibrary.DrawDebugCone = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCone.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugCone.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcone = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugcone.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcone.thickness = 0.000000
     --DrawDebugCylinder
-    DefaultParameters.KismetSystemLibrary.DrawDebugCylinder = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCylinder.Radius = 100.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugCylinder.Segments = 12
-    DefaultParameters.KismetSystemLibrary.DrawDebugCylinder.LineColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCylinder.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugCylinder.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcylinder = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugcylinder.radius = 100.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcylinder.segments = 12
+    DefaultParameters.kismetsystemlibrary.drawdebugcylinder.linecolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugcylinder.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcylinder.thickness = 0.000000
     --DrawDebugSphere
-    DefaultParameters.KismetSystemLibrary.DrawDebugSphere = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugSphere.Radius = 100.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugSphere.Segments = 12
-    DefaultParameters.KismetSystemLibrary.DrawDebugSphere.LineColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugSphere.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugSphere.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugsphere = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugsphere.radius = 100.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugsphere.segments = 12
+    DefaultParameters.kismetsystemlibrary.drawdebugsphere.linecolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugsphere.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugsphere.thickness = 0.000000
     --DrawDebugCoordinateSystem
-    DefaultParameters.KismetSystemLibrary.DrawDebugCoordinateSystem = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCoordinateSystem.Scale = 1.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugCoordinateSystem.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugCoordinateSystem.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcoordinatesystem = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugcoordinatesystem.scale = 1.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcoordinatesystem.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcoordinatesystem.thickness = 0.000000
     --DrawDebugBox
-    DefaultParameters.KismetSystemLibrary.DrawDebugBox = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugBox.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugBox.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugbox = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugbox.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugbox.thickness = 0.000000
     --DrawDebugArrow
-    DefaultParameters.KismetSystemLibrary.DrawDebugArrow = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugArrow.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugArrow.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugarrow = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugarrow.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugarrow.thickness = 0.000000
     --DrawDebugPoint
-    DefaultParameters.KismetSystemLibrary.DrawDebugPoint = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugPoint.Duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugpoint = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugpoint.duration = 0.000000
     --DrawDebugCircle
-    DefaultParameters.KismetSystemLibrary.DrawDebugCircle = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCircle.NumSegments = 12
-    DefaultParameters.KismetSystemLibrary.DrawDebugCircle.LineColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCircle.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugCircle.Thickness = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugCircle.YAxis = UE4.Vector.new(0.000000, 1.000000, 0.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCircle.ZAxis = UE4.Vector.new(0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.DrawDebugCircle.bDrawAxis = false
+    DefaultParameters.kismetsystemlibrary.drawdebugcircle = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugcircle.numsegments = 12
+    DefaultParameters.kismetsystemlibrary.drawdebugcircle.linecolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugcircle.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcircle.thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugcircle.yaxis = UE4.Vector.new(0.000000, 1.000000, 0.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugcircle.zaxis = UE4.Vector.new(0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.drawdebugcircle.bdrawaxis = false
     --DrawDebugLine
-    DefaultParameters.KismetSystemLibrary.DrawDebugLine = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.DrawDebugLine.Duration = 0.000000
-    DefaultParameters.KismetSystemLibrary.DrawDebugLine.Thickness = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugline = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.drawdebugline.duration = 0.000000
+    DefaultParameters.kismetsystemlibrary.drawdebugline.thickness = 0.000000
     --CapsuleTraceMultiByProfile
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMultiByProfile = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMultiByProfile.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMultiByProfile.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMultiByProfile.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.capsuletracemultibyprofile = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.capsuletracemultibyprofile.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracemultibyprofile.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracemultibyprofile.drawtime = 5.000000
     --CapsuleTraceSingleByProfile
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingleByProfile = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingleByProfile.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingleByProfile.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingleByProfile.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.capsuletracesinglebyprofile = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.capsuletracesinglebyprofile.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracesinglebyprofile.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracesinglebyprofile.drawtime = 5.000000
     --BoxTraceMultiByProfile
-    DefaultParameters.KismetSystemLibrary.BoxTraceMultiByProfile = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.BoxTraceMultiByProfile.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceMultiByProfile.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceMultiByProfile.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.boxtracemultibyprofile = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.boxtracemultibyprofile.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracemultibyprofile.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracemultibyprofile.drawtime = 5.000000
     --BoxTraceSingleByProfile
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingleByProfile = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingleByProfile.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingleByProfile.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingleByProfile.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.boxtracesinglebyprofile = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.boxtracesinglebyprofile.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracesinglebyprofile.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracesinglebyprofile.drawtime = 5.000000
     --SphereTraceMultiByProfile
-    DefaultParameters.KismetSystemLibrary.SphereTraceMultiByProfile = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.SphereTraceMultiByProfile.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceMultiByProfile.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceMultiByProfile.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.spheretracemultibyprofile = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.spheretracemultibyprofile.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracemultibyprofile.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracemultibyprofile.drawtime = 5.000000
     --SphereTraceSingleByProfile
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingleByProfile = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingleByProfile.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingleByProfile.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingleByProfile.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.spheretracesinglebyprofile = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.spheretracesinglebyprofile.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracesinglebyprofile.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracesinglebyprofile.drawtime = 5.000000
     --LineTraceMultiByProfile
-    DefaultParameters.KismetSystemLibrary.LineTraceMultiByProfile = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.LineTraceMultiByProfile.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceMultiByProfile.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceMultiByProfile.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.linetracemultibyprofile = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.linetracemultibyprofile.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracemultibyprofile.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracemultibyprofile.drawtime = 5.000000
     --LineTraceSingleByProfile
-    DefaultParameters.KismetSystemLibrary.LineTraceSingleByProfile = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.LineTraceSingleByProfile.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceSingleByProfile.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceSingleByProfile.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.linetracesinglebyprofile = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.linetracesinglebyprofile.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracesinglebyprofile.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracesinglebyprofile.drawtime = 5.000000
     --CapsuleTraceMultiForObjects
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMultiForObjects = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMultiForObjects.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMultiForObjects.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMultiForObjects.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.capsuletracemultiforobjects = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.capsuletracemultiforobjects.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracemultiforobjects.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracemultiforobjects.drawtime = 5.000000
     --CapsuleTraceSingleForObjects
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingleForObjects = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingleForObjects.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingleForObjects.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingleForObjects.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.capsuletracesingleforobjects = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.capsuletracesingleforobjects.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracesingleforobjects.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracesingleforobjects.drawtime = 5.000000
     --BoxTraceMultiForObjects
-    DefaultParameters.KismetSystemLibrary.BoxTraceMultiForObjects = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.BoxTraceMultiForObjects.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceMultiForObjects.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceMultiForObjects.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.boxtracemultiforobjects = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.boxtracemultiforobjects.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracemultiforobjects.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracemultiforobjects.drawtime = 5.000000
     --BoxTraceSingleForObjects
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingleForObjects = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingleForObjects.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingleForObjects.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingleForObjects.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.boxtracesingleforobjects = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.boxtracesingleforobjects.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracesingleforobjects.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracesingleforobjects.drawtime = 5.000000
     --SphereTraceMultiForObjects
-    DefaultParameters.KismetSystemLibrary.SphereTraceMultiForObjects = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.SphereTraceMultiForObjects.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceMultiForObjects.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceMultiForObjects.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.spheretracemultiforobjects = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.spheretracemultiforobjects.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracemultiforobjects.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracemultiforobjects.drawtime = 5.000000
     --SphereTraceSingleForObjects
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingleForObjects = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingleForObjects.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingleForObjects.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingleForObjects.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.spheretracesingleforobjects = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.spheretracesingleforobjects.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracesingleforobjects.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracesingleforobjects.drawtime = 5.000000
     --LineTraceMultiForObjects
-    DefaultParameters.KismetSystemLibrary.LineTraceMultiForObjects = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.LineTraceMultiForObjects.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceMultiForObjects.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceMultiForObjects.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.linetracemultiforobjects = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.linetracemultiforobjects.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracemultiforobjects.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracemultiforobjects.drawtime = 5.000000
     --LineTraceSingleForObjects
-    DefaultParameters.KismetSystemLibrary.LineTraceSingleForObjects = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.LineTraceSingleForObjects.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceSingleForObjects.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceSingleForObjects.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.linetracesingleforobjects = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.linetracesingleforobjects.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracesingleforobjects.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracesingleforobjects.drawtime = 5.000000
     --CapsuleTraceMulti
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMulti = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMulti.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMulti.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceMulti.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.capsuletracemulti = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.capsuletracemulti.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracemulti.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracemulti.drawtime = 5.000000
     --CapsuleTraceSingle
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingle = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingle.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingle.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.CapsuleTraceSingle.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.capsuletracesingle = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.capsuletracesingle.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracesingle.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.capsuletracesingle.drawtime = 5.000000
     --BoxTraceMulti
-    DefaultParameters.KismetSystemLibrary.BoxTraceMulti = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.BoxTraceMulti.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceMulti.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceMulti.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.boxtracemulti = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.boxtracemulti.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracemulti.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracemulti.drawtime = 5.000000
     --BoxTraceSingle
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingle = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingle.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingle.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.BoxTraceSingle.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.boxtracesingle = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.boxtracesingle.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracesingle.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.boxtracesingle.drawtime = 5.000000
     --SphereTraceMulti
-    DefaultParameters.KismetSystemLibrary.SphereTraceMulti = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.SphereTraceMulti.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceMulti.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceMulti.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.spheretracemulti = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.spheretracemulti.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracemulti.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracemulti.drawtime = 5.000000
     --SphereTraceSingle
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingle = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingle.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingle.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.SphereTraceSingle.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.spheretracesingle = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.spheretracesingle.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracesingle.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.spheretracesingle.drawtime = 5.000000
     --LineTraceMulti
-    DefaultParameters.KismetSystemLibrary.LineTraceMulti = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.LineTraceMulti.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceMulti.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceMulti.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.linetracemulti = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.linetracemulti.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracemulti.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracemulti.drawtime = 5.000000
     --LineTraceSingle
-    DefaultParameters.KismetSystemLibrary.LineTraceSingle = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.LineTraceSingle.TraceColor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceSingle.TraceHitColor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.LineTraceSingle.DrawTime = 5.000000
+    DefaultParameters.kismetsystemlibrary.linetracesingle = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.linetracesingle.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracesingle.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.linetracesingle.drawtime = 5.000000
     --PrintText
-    DefaultParameters.KismetSystemLibrary.PrintText = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.PrintText.InText = INVTEXT("Hello")
-    DefaultParameters.KismetSystemLibrary.PrintText.bPrintToScreen = true
-    DefaultParameters.KismetSystemLibrary.PrintText.bPrintToLog = true
-    DefaultParameters.KismetSystemLibrary.PrintText.TextColor = UE4.LinearColor.new(0.000000, 0.660000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.PrintText.Duration = 2.000000
+    DefaultParameters.kismetsystemlibrary.printtext = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.printtext.intext = INVTEXT("Hello")
+    DefaultParameters.kismetsystemlibrary.printtext.bprinttoscreen = true
+    DefaultParameters.kismetsystemlibrary.printtext.bprinttolog = true
+    DefaultParameters.kismetsystemlibrary.printtext.textcolor = UE4.LinearColor.new(0.000000, 0.660000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.printtext.duration = 2.000000
     --PrintString
-    DefaultParameters.KismetSystemLibrary.PrintString = Class(DefaultParameterClass)
-    DefaultParameters.KismetSystemLibrary.PrintString.InString = "Hello"
-    DefaultParameters.KismetSystemLibrary.PrintString.bPrintToScreen = true
-    DefaultParameters.KismetSystemLibrary.PrintString.bPrintToLog = true
-    DefaultParameters.KismetSystemLibrary.PrintString.TextColor = UE4.LinearColor.new(0.000000, 0.660000, 1.000000, 1.000000)
-    DefaultParameters.KismetSystemLibrary.PrintString.Duration = 2.000000
+    DefaultParameters.kismetsystemlibrary.printstring = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.printstring.instring = "Hello"
+    DefaultParameters.kismetsystemlibrary.printstring.bprinttoscreen = true
+    DefaultParameters.kismetsystemlibrary.printstring.bprinttolog = true
+    DefaultParameters.kismetsystemlibrary.printstring.textcolor = UE4.LinearColor.new(0.000000, 0.660000, 1.000000, 1.000000)
+    DefaultParameters.kismetsystemlibrary.printstring.duration = 2.000000
 end
 
 --KismetTextLibrary
 do
-    DefaultParameters.KismetTextLibrary = DefaultParameters.KismetTextLibrary or {}
+    DefaultParameters.kismettextlibrary = DefaultParameters.kismettextlibrary or {}
     
     --AsPercent_Float
-    DefaultParameters.KismetTextLibrary.AsPercent_Float = Class(DefaultParameterClass)
-    DefaultParameters.KismetTextLibrary.AsPercent_Float.bAlwaysSign = false
-    DefaultParameters.KismetTextLibrary.AsPercent_Float.bUseGrouping = true
-    DefaultParameters.KismetTextLibrary.AsPercent_Float.MinimumIntegralDigits = 1
-    DefaultParameters.KismetTextLibrary.AsPercent_Float.MaximumIntegralDigits = 324
-    DefaultParameters.KismetTextLibrary.AsPercent_Float.MinimumFractionalDigits = 0
-    DefaultParameters.KismetTextLibrary.AsPercent_Float.MaximumFractionalDigits = 3
+    DefaultParameters.kismettextlibrary.aspercent_float = Class(DefaultParameterClass)
+    DefaultParameters.kismettextlibrary.aspercent_float.balwayssign = false
+    DefaultParameters.kismettextlibrary.aspercent_float.busegrouping = true
+    DefaultParameters.kismettextlibrary.aspercent_float.minimumintegraldigits = 1
+    DefaultParameters.kismettextlibrary.aspercent_float.maximumintegraldigits = 324
+    DefaultParameters.kismettextlibrary.aspercent_float.minimumfractionaldigits = 0
+    DefaultParameters.kismettextlibrary.aspercent_float.maximumfractionaldigits = 3
     --AsCurrency_Float
-    DefaultParameters.KismetTextLibrary.AsCurrency_Float = Class(DefaultParameterClass)
-    DefaultParameters.KismetTextLibrary.AsCurrency_Float.bAlwaysSign = false
-    DefaultParameters.KismetTextLibrary.AsCurrency_Float.bUseGrouping = true
-    DefaultParameters.KismetTextLibrary.AsCurrency_Float.MinimumIntegralDigits = 1
-    DefaultParameters.KismetTextLibrary.AsCurrency_Float.MaximumIntegralDigits = 324
-    DefaultParameters.KismetTextLibrary.AsCurrency_Float.MinimumFractionalDigits = 0
-    DefaultParameters.KismetTextLibrary.AsCurrency_Float.MaximumFractionalDigits = 3
+    DefaultParameters.kismettextlibrary.ascurrency_float = Class(DefaultParameterClass)
+    DefaultParameters.kismettextlibrary.ascurrency_float.balwayssign = false
+    DefaultParameters.kismettextlibrary.ascurrency_float.busegrouping = true
+    DefaultParameters.kismettextlibrary.ascurrency_float.minimumintegraldigits = 1
+    DefaultParameters.kismettextlibrary.ascurrency_float.maximumintegraldigits = 324
+    DefaultParameters.kismettextlibrary.ascurrency_float.minimumfractionaldigits = 0
+    DefaultParameters.kismettextlibrary.ascurrency_float.maximumfractionaldigits = 3
     --AsCurrency_Integer
-    DefaultParameters.KismetTextLibrary.AsCurrency_Integer = Class(DefaultParameterClass)
-    DefaultParameters.KismetTextLibrary.AsCurrency_Integer.bAlwaysSign = false
-    DefaultParameters.KismetTextLibrary.AsCurrency_Integer.bUseGrouping = true
-    DefaultParameters.KismetTextLibrary.AsCurrency_Integer.MinimumIntegralDigits = 1
-    DefaultParameters.KismetTextLibrary.AsCurrency_Integer.MaximumIntegralDigits = 324
-    DefaultParameters.KismetTextLibrary.AsCurrency_Integer.MinimumFractionalDigits = 0
-    DefaultParameters.KismetTextLibrary.AsCurrency_Integer.MaximumFractionalDigits = 3
+    DefaultParameters.kismettextlibrary.ascurrency_integer = Class(DefaultParameterClass)
+    DefaultParameters.kismettextlibrary.ascurrency_integer.balwayssign = false
+    DefaultParameters.kismettextlibrary.ascurrency_integer.busegrouping = true
+    DefaultParameters.kismettextlibrary.ascurrency_integer.minimumintegraldigits = 1
+    DefaultParameters.kismettextlibrary.ascurrency_integer.maximumintegraldigits = 324
+    DefaultParameters.kismettextlibrary.ascurrency_integer.minimumfractionaldigits = 0
+    DefaultParameters.kismettextlibrary.ascurrency_integer.maximumfractionaldigits = 3
     --Conv_FloatToText
-    DefaultParameters.KismetTextLibrary.Conv_FloatToText = Class(DefaultParameterClass)
-    DefaultParameters.KismetTextLibrary.Conv_FloatToText.bAlwaysSign = false
-    DefaultParameters.KismetTextLibrary.Conv_FloatToText.bUseGrouping = true
-    DefaultParameters.KismetTextLibrary.Conv_FloatToText.MinimumIntegralDigits = 1
-    DefaultParameters.KismetTextLibrary.Conv_FloatToText.MaximumIntegralDigits = 324
-    DefaultParameters.KismetTextLibrary.Conv_FloatToText.MinimumFractionalDigits = 0
-    DefaultParameters.KismetTextLibrary.Conv_FloatToText.MaximumFractionalDigits = 3
+    DefaultParameters.kismettextlibrary.conv_floattotext = Class(DefaultParameterClass)
+    DefaultParameters.kismettextlibrary.conv_floattotext.balwayssign = false
+    DefaultParameters.kismettextlibrary.conv_floattotext.busegrouping = true
+    DefaultParameters.kismettextlibrary.conv_floattotext.minimumintegraldigits = 1
+    DefaultParameters.kismettextlibrary.conv_floattotext.maximumintegraldigits = 324
+    DefaultParameters.kismettextlibrary.conv_floattotext.minimumfractionaldigits = 0
+    DefaultParameters.kismettextlibrary.conv_floattotext.maximumfractionaldigits = 3
     --Conv_IntToText
-    DefaultParameters.KismetTextLibrary.Conv_IntToText = Class(DefaultParameterClass)
-    DefaultParameters.KismetTextLibrary.Conv_IntToText.bAlwaysSign = false
-    DefaultParameters.KismetTextLibrary.Conv_IntToText.bUseGrouping = true
-    DefaultParameters.KismetTextLibrary.Conv_IntToText.MinimumIntegralDigits = 1
-    DefaultParameters.KismetTextLibrary.Conv_IntToText.MaximumIntegralDigits = 324
+    DefaultParameters.kismettextlibrary.conv_inttotext = Class(DefaultParameterClass)
+    DefaultParameters.kismettextlibrary.conv_inttotext.balwayssign = false
+    DefaultParameters.kismettextlibrary.conv_inttotext.busegrouping = true
+    DefaultParameters.kismettextlibrary.conv_inttotext.minimumintegraldigits = 1
+    DefaultParameters.kismettextlibrary.conv_inttotext.maximumintegraldigits = 324
 end
 
 --MeshVertexPainterKismetLibrary
 do
-    DefaultParameters.MeshVertexPainterKismetLibrary = DefaultParameters.MeshVertexPainterKismetLibrary or {}
+    DefaultParameters.meshvertexpainterkismetlibrary = DefaultParameters.meshvertexpainterkismetlibrary or {}
     
     --PaintVerticesLerpAlongAxis
-    DefaultParameters.MeshVertexPainterKismetLibrary.PaintVerticesLerpAlongAxis = Class(DefaultParameterClass)
-    DefaultParameters.MeshVertexPainterKismetLibrary.PaintVerticesLerpAlongAxis.bConvertToSRGB = true
+    DefaultParameters.meshvertexpainterkismetlibrary.paintverticeslerpalongaxis = Class(DefaultParameterClass)
+    DefaultParameters.meshvertexpainterkismetlibrary.paintverticeslerpalongaxis.bconverttosrgb = true
     --PaintVerticesSingleColor
-    DefaultParameters.MeshVertexPainterKismetLibrary.PaintVerticesSingleColor = Class(DefaultParameterClass)
-    DefaultParameters.MeshVertexPainterKismetLibrary.PaintVerticesSingleColor.bConvertToSRGB = true
+    DefaultParameters.meshvertexpainterkismetlibrary.paintverticessinglecolor = Class(DefaultParameterClass)
+    DefaultParameters.meshvertexpainterkismetlibrary.paintverticessinglecolor.bconverttosrgb = true
 end
 
 --StereoLayerFunctionLibrary
 do
-    DefaultParameters.StereoLayerFunctionLibrary = DefaultParameters.StereoLayerFunctionLibrary or {}
+    DefaultParameters.stereolayerfunctionlibrary = DefaultParameters.stereolayerfunctionlibrary or {}
     
     --SetSplashScreen
-    DefaultParameters.StereoLayerFunctionLibrary.SetSplashScreen = Class(DefaultParameterClass)
-    DefaultParameters.StereoLayerFunctionLibrary.SetSplashScreen.Scale = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.StereoLayerFunctionLibrary.SetSplashScreen.Offset = UE4.Vector.new(0.000000, 0.000000, 0.000000)
-    DefaultParameters.StereoLayerFunctionLibrary.SetSplashScreen.bShowLoadingMovie = false
-    DefaultParameters.StereoLayerFunctionLibrary.SetSplashScreen.bShowOnSet = false
+    DefaultParameters.stereolayerfunctionlibrary.setsplashscreen = Class(DefaultParameterClass)
+    DefaultParameters.stereolayerfunctionlibrary.setsplashscreen.scale = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.stereolayerfunctionlibrary.setsplashscreen.offset = UE4.Vector.new(0.000000, 0.000000, 0.000000)
+    DefaultParameters.stereolayerfunctionlibrary.setsplashscreen.bshowloadingmovie = false
+    DefaultParameters.stereolayerfunctionlibrary.setsplashscreen.bshowonset = false
 end
 
 --VisualLoggerKismetLibrary
 do
-    DefaultParameters.VisualLoggerKismetLibrary = DefaultParameters.VisualLoggerKismetLibrary or {}
+    DefaultParameters.visualloggerkismetlibrary = DefaultParameters.visualloggerkismetlibrary or {}
     
     --LogSegment
-    DefaultParameters.VisualLoggerKismetLibrary.LogSegment = Class(DefaultParameterClass)
-    DefaultParameters.VisualLoggerKismetLibrary.LogSegment.ObjectColor = UE4.LinearColor.new(0.000000, 0.000000, 1.000000, 1.000000)
-    DefaultParameters.VisualLoggerKismetLibrary.LogSegment.Thickness = 0.000000
-    DefaultParameters.VisualLoggerKismetLibrary.LogSegment.CategoryName = "VisLogBP"
-    DefaultParameters.VisualLoggerKismetLibrary.LogSegment.bAddToMessageLog = false
+    DefaultParameters.visualloggerkismetlibrary.logsegment = Class(DefaultParameterClass)
+    DefaultParameters.visualloggerkismetlibrary.logsegment.objectcolor = UE4.LinearColor.new(0.000000, 0.000000, 1.000000, 1.000000)
+    DefaultParameters.visualloggerkismetlibrary.logsegment.thickness = 0.000000
+    DefaultParameters.visualloggerkismetlibrary.logsegment.categoryname = "VisLogBP"
+    DefaultParameters.visualloggerkismetlibrary.logsegment.baddtomessagelog = false
     --LogBox
-    DefaultParameters.VisualLoggerKismetLibrary.LogBox = Class(DefaultParameterClass)
-    DefaultParameters.VisualLoggerKismetLibrary.LogBox.ObjectColor = UE4.LinearColor.new(0.000000, 0.000000, 1.000000, 1.000000)
-    DefaultParameters.VisualLoggerKismetLibrary.LogBox.LogCategory = "VisLogBP"
-    DefaultParameters.VisualLoggerKismetLibrary.LogBox.bAddToMessageLog = false
+    DefaultParameters.visualloggerkismetlibrary.logbox = Class(DefaultParameterClass)
+    DefaultParameters.visualloggerkismetlibrary.logbox.objectcolor = UE4.LinearColor.new(0.000000, 0.000000, 1.000000, 1.000000)
+    DefaultParameters.visualloggerkismetlibrary.logbox.logcategory = "VisLogBP"
+    DefaultParameters.visualloggerkismetlibrary.logbox.baddtomessagelog = false
     --LogLocation
-    DefaultParameters.VisualLoggerKismetLibrary.LogLocation = Class(DefaultParameterClass)
-    DefaultParameters.VisualLoggerKismetLibrary.LogLocation.ObjectColor = UE4.LinearColor.new(0.000000, 0.000000, 1.000000, 1.000000)
-    DefaultParameters.VisualLoggerKismetLibrary.LogLocation.Radius = 10.000000
-    DefaultParameters.VisualLoggerKismetLibrary.LogLocation.LogCategory = "VisLogBP"
-    DefaultParameters.VisualLoggerKismetLibrary.LogLocation.bAddToMessageLog = false
+    DefaultParameters.visualloggerkismetlibrary.loglocation = Class(DefaultParameterClass)
+    DefaultParameters.visualloggerkismetlibrary.loglocation.objectcolor = UE4.LinearColor.new(0.000000, 0.000000, 1.000000, 1.000000)
+    DefaultParameters.visualloggerkismetlibrary.loglocation.radius = 10.000000
+    DefaultParameters.visualloggerkismetlibrary.loglocation.logcategory = "VisLogBP"
+    DefaultParameters.visualloggerkismetlibrary.loglocation.baddtomessagelog = false
     --LogText
-    DefaultParameters.VisualLoggerKismetLibrary.LogText = Class(DefaultParameterClass)
-    DefaultParameters.VisualLoggerKismetLibrary.LogText.LogCategory = "VisLogBP"
-    DefaultParameters.VisualLoggerKismetLibrary.LogText.bAddToMessageLog = false
+    DefaultParameters.visualloggerkismetlibrary.logtext = Class(DefaultParameterClass)
+    DefaultParameters.visualloggerkismetlibrary.logtext.logcategory = "VisLogBP"
+    DefaultParameters.visualloggerkismetlibrary.logtext.baddtomessagelog = false
 end
 
 --MaterialInstanceDynamic
 do
-    DefaultParameters.MaterialInstanceDynamic = DefaultParameters.MaterialInstanceDynamic or {}
+    DefaultParameters.materialinstancedynamic = DefaultParameters.materialinstancedynamic or {}
     
     --K2_CopyMaterialInstanceParameters
-    DefaultParameters.MaterialInstanceDynamic.K2_CopyMaterialInstanceParameters = Class(DefaultParameterClass)
-    DefaultParameters.MaterialInstanceDynamic.K2_CopyMaterialInstanceParameters.bQuickParametersOnly = false
+    DefaultParameters.materialinstancedynamic.k2_copymaterialinstanceparameters = Class(DefaultParameterClass)
+    DefaultParameters.materialinstancedynamic.k2_copymaterialinstanceparameters.bquickparametersonly = false
 end
 
 --CanvasRenderTarget2D
 do
-    DefaultParameters.CanvasRenderTarget2D = DefaultParameters.CanvasRenderTarget2D or {}
+    DefaultParameters.canvasrendertarget2d = DefaultParameters.canvasrendertarget2d or {}
     
     --CreateCanvasRenderTarget2D
-    DefaultParameters.CanvasRenderTarget2D.CreateCanvasRenderTarget2D = Class(DefaultParameterClass)
-    DefaultParameters.CanvasRenderTarget2D.CreateCanvasRenderTarget2D.Width = 1024
-    DefaultParameters.CanvasRenderTarget2D.CreateCanvasRenderTarget2D.Height = 1024
+    DefaultParameters.canvasrendertarget2d.createcanvasrendertarget2d = Class(DefaultParameterClass)
+    DefaultParameters.canvasrendertarget2d.createcanvasrendertarget2d.width = 1024
+    DefaultParameters.canvasrendertarget2d.createcanvasrendertarget2d.height = 1024
 end
 
 --TimeManagementBlueprintLibrary
 do
-    DefaultParameters.TimeManagementBlueprintLibrary = DefaultParameters.TimeManagementBlueprintLibrary or {}
+    DefaultParameters.timemanagementblueprintlibrary = DefaultParameters.timemanagementblueprintlibrary or {}
     
     --Conv_TimecodeToString
-    DefaultParameters.TimeManagementBlueprintLibrary.Conv_TimecodeToString = Class(DefaultParameterClass)
-    DefaultParameters.TimeManagementBlueprintLibrary.Conv_TimecodeToString.bForceSignDisplay = false
+    DefaultParameters.timemanagementblueprintlibrary.conv_timecodetostring = Class(DefaultParameterClass)
+    DefaultParameters.timemanagementblueprintlibrary.conv_timecodetostring.bforcesigndisplay = false
 end
 
 --MovieSceneSequencePlayer
 do
-    DefaultParameters.MovieSceneSequencePlayer = DefaultParameters.MovieSceneSequencePlayer or {}
+    DefaultParameters.moviescenesequenceplayer = DefaultParameters.moviescenesequenceplayer or {}
     
     --PlayLooping
-    DefaultParameters.MovieSceneSequencePlayer.PlayLooping = Class(DefaultParameterClass)
-    DefaultParameters.MovieSceneSequencePlayer.PlayLooping.NumLoops = -1
+    DefaultParameters.moviescenesequenceplayer.playlooping = Class(DefaultParameterClass)
+    DefaultParameters.moviescenesequenceplayer.playlooping.numloops = -1
 end
 
 --PlayMontageCallbackProxy
 do
-    DefaultParameters.PlayMontageCallbackProxy = DefaultParameters.PlayMontageCallbackProxy or {}
+    DefaultParameters.playmontagecallbackproxy = DefaultParameters.playmontagecallbackproxy or {}
     
     --CreateProxyObjectForPlayMontage
-    DefaultParameters.PlayMontageCallbackProxy.CreateProxyObjectForPlayMontage = Class(DefaultParameterClass)
-    DefaultParameters.PlayMontageCallbackProxy.CreateProxyObjectForPlayMontage.PlayRate = 1.000000
-    DefaultParameters.PlayMontageCallbackProxy.CreateProxyObjectForPlayMontage.StartingPosition = 0.000000
-    DefaultParameters.PlayMontageCallbackProxy.CreateProxyObjectForPlayMontage.StartingSection = "None"
+    DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage = Class(DefaultParameterClass)
+    DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage.playrate = 1.000000
+    DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage.startingposition = 0.000000
+    DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage.startingsection = "None"
 end
 
 --WidgetBlueprintLibrary
 do
-    DefaultParameters.WidgetBlueprintLibrary = DefaultParameters.WidgetBlueprintLibrary or {}
+    DefaultParameters.widgetblueprintlibrary = DefaultParameters.widgetblueprintlibrary or {}
     
     --GetAllWidgetsOfClass
-    DefaultParameters.WidgetBlueprintLibrary.GetAllWidgetsOfClass = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.GetAllWidgetsOfClass.TopLevelOnly = true
+    DefaultParameters.widgetblueprintlibrary.getallwidgetsofclass = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.getallwidgetsofclass.toplevelonly = true
     --MakeBrushFromMaterial
-    DefaultParameters.WidgetBlueprintLibrary.MakeBrushFromMaterial = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.MakeBrushFromMaterial.Width = 32
-    DefaultParameters.WidgetBlueprintLibrary.MakeBrushFromMaterial.Height = 32
+    DefaultParameters.widgetblueprintlibrary.makebrushfrommaterial = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.makebrushfrommaterial.width = 32
+    DefaultParameters.widgetblueprintlibrary.makebrushfrommaterial.height = 32
     --MakeBrushFromTexture
-    DefaultParameters.WidgetBlueprintLibrary.MakeBrushFromTexture = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.MakeBrushFromTexture.Width = 0
-    DefaultParameters.WidgetBlueprintLibrary.MakeBrushFromTexture.Height = 0
+    DefaultParameters.widgetblueprintlibrary.makebrushfromtexture = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.makebrushfromtexture.width = 0
+    DefaultParameters.widgetblueprintlibrary.makebrushfromtexture.height = 0
     --ReleaseJoystickCapture
-    DefaultParameters.WidgetBlueprintLibrary.ReleaseJoystickCapture = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.ReleaseJoystickCapture.bInAllJoysticks = false
+    DefaultParameters.widgetblueprintlibrary.releasejoystickcapture = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.releasejoystickcapture.binalljoysticks = false
     --ClearUserFocus
-    DefaultParameters.WidgetBlueprintLibrary.ClearUserFocus = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.ClearUserFocus.bInAllUsers = false
+    DefaultParameters.widgetblueprintlibrary.clearuserfocus = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.clearuserfocus.binallusers = false
     --CaptureJoystick
-    DefaultParameters.WidgetBlueprintLibrary.CaptureJoystick = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.CaptureJoystick.bInAllJoysticks = false
+    DefaultParameters.widgetblueprintlibrary.capturejoystick = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.capturejoystick.binalljoysticks = false
     --SetUserFocus
-    DefaultParameters.WidgetBlueprintLibrary.SetUserFocus = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.SetUserFocus.bInAllUsers = false
+    DefaultParameters.widgetblueprintlibrary.setuserfocus = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.setuserfocus.binallusers = false
     --DrawTextFormatted
-    DefaultParameters.WidgetBlueprintLibrary.DrawTextFormatted = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.DrawTextFormatted.FontSize = 16
-    DefaultParameters.WidgetBlueprintLibrary.DrawTextFormatted.FontTypeFace = "Regular"
-    DefaultParameters.WidgetBlueprintLibrary.DrawTextFormatted.Tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.widgetblueprintlibrary.drawtextformatted = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.drawtextformatted.fontsize = 16
+    DefaultParameters.widgetblueprintlibrary.drawtextformatted.fonttypeface = "Regular"
+    DefaultParameters.widgetblueprintlibrary.drawtextformatted.tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
     --DrawText
-    DefaultParameters.WidgetBlueprintLibrary.DrawText = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.DrawText.Tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.widgetblueprintlibrary.drawtext = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.drawtext.tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
     --DrawLines
-    DefaultParameters.WidgetBlueprintLibrary.DrawLines = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.DrawLines.Tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.WidgetBlueprintLibrary.DrawLines.bAntiAlias = true
-    DefaultParameters.WidgetBlueprintLibrary.DrawLines.Thickness = 1.000000
+    DefaultParameters.widgetblueprintlibrary.drawlines = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.drawlines.tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.widgetblueprintlibrary.drawlines.bantialias = true
+    DefaultParameters.widgetblueprintlibrary.drawlines.thickness = 1.000000
     --DrawLine
-    DefaultParameters.WidgetBlueprintLibrary.DrawLine = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.DrawLine.Tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
-    DefaultParameters.WidgetBlueprintLibrary.DrawLine.bAntiAlias = true
-    DefaultParameters.WidgetBlueprintLibrary.DrawLine.Thickness = 1.000000
+    DefaultParameters.widgetblueprintlibrary.drawline = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.drawline.tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.widgetblueprintlibrary.drawline.bantialias = true
+    DefaultParameters.widgetblueprintlibrary.drawline.thickness = 1.000000
     --DrawBox
-    DefaultParameters.WidgetBlueprintLibrary.DrawBox = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.DrawBox.Tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.widgetblueprintlibrary.drawbox = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.drawbox.tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
     --SetInputMode_GameAndUIEx
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_GameAndUIEx = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_GameAndUIEx.InMouseLockMode = 0 --EMouseLockMode::DoNotLock
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_GameAndUIEx.bHideCursorDuringCapture = true
+    DefaultParameters.widgetblueprintlibrary.setinputmode_gameanduiex = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.setinputmode_gameanduiex.inmouselockmode = 0 --EMouseLockMode::DoNotLock
+    DefaultParameters.widgetblueprintlibrary.setinputmode_gameanduiex.bhidecursorduringcapture = true
     --SetInputMode_GameAndUI
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_GameAndUI = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_GameAndUI.bLockMouseToViewport = false
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_GameAndUI.bHideCursorDuringCapture = true
+    DefaultParameters.widgetblueprintlibrary.setinputmode_gameandui = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.setinputmode_gameandui.blockmousetoviewport = false
+    DefaultParameters.widgetblueprintlibrary.setinputmode_gameandui.bhidecursorduringcapture = true
     --SetInputMode_UIOnlyEx
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_UIOnlyEx = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_UIOnlyEx.InMouseLockMode = 0 --EMouseLockMode::DoNotLock
+    DefaultParameters.widgetblueprintlibrary.setinputmode_uionlyex = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.setinputmode_uionlyex.inmouselockmode = 0 --EMouseLockMode::DoNotLock
     --SetInputMode_UIOnly
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_UIOnly = Class(DefaultParameterClass)
-    DefaultParameters.WidgetBlueprintLibrary.SetInputMode_UIOnly.bLockMouseToViewport = false
+    DefaultParameters.widgetblueprintlibrary.setinputmode_uionly = Class(DefaultParameterClass)
+    DefaultParameters.widgetblueprintlibrary.setinputmode_uionly.blockmousetoviewport = false
 end
 
 --WidgetInteractionComponent
 do
-    DefaultParameters.WidgetInteractionComponent = DefaultParameters.WidgetInteractionComponent or {}
+    DefaultParameters.widgetinteractioncomponent = DefaultParameters.widgetinteractioncomponent or {}
     
     --SendKeyChar
-    DefaultParameters.WidgetInteractionComponent.SendKeyChar = Class(DefaultParameterClass)
-    DefaultParameters.WidgetInteractionComponent.SendKeyChar.bRepeat = false
+    DefaultParameters.widgetinteractioncomponent.sendkeychar = Class(DefaultParameterClass)
+    DefaultParameters.widgetinteractioncomponent.sendkeychar.brepeat = false
     --PressKey
-    DefaultParameters.WidgetInteractionComponent.PressKey = Class(DefaultParameterClass)
-    DefaultParameters.WidgetInteractionComponent.PressKey.bRepeat = false
+    DefaultParameters.widgetinteractioncomponent.presskey = Class(DefaultParameterClass)
+    DefaultParameters.widgetinteractioncomponent.presskey.brepeat = false
 end
 
 --Widget
 do
-    DefaultParameters.Widget = DefaultParameters.Widget or {}
+    DefaultParameters.widget = DefaultParameters.widget or {}
     
     --HasMouseCaptureByUser
-    DefaultParameters.Widget.HasMouseCaptureByUser = Class(DefaultParameterClass)
-    DefaultParameters.Widget.HasMouseCaptureByUser.PointerIndex = -1
+    DefaultParameters.widget.hasmousecapturebyuser = Class(DefaultParameterClass)
+    DefaultParameters.widget.hasmousecapturebyuser.pointerindex = -1
 end
 
 --DynamicEntryBox
 do
-    DefaultParameters.DynamicEntryBox = DefaultParameters.DynamicEntryBox or {}
+    DefaultParameters.dynamicentrybox = DefaultParameters.dynamicentrybox or {}
     
     --Reset
-    DefaultParameters.DynamicEntryBox.Reset = Class(DefaultParameterClass)
-    DefaultParameters.DynamicEntryBox.Reset.bDeleteWidgets = false
+    DefaultParameters.dynamicentrybox.reset = Class(DefaultParameterClass)
+    DefaultParameters.dynamicentrybox.reset.bdeletewidgets = false
 end
 
 --Image
 do
-    DefaultParameters.Image = DefaultParameters.Image or {}
+    DefaultParameters.image = DefaultParameters.image or {}
     
     --SetBrushFromSoftTexture
-    DefaultParameters.Image.SetBrushFromSoftTexture = Class(DefaultParameterClass)
-    DefaultParameters.Image.SetBrushFromSoftTexture.bMatchSize = false
+    DefaultParameters.image.setbrushfromsofttexture = Class(DefaultParameterClass)
+    DefaultParameters.image.setbrushfromsofttexture.bmatchsize = false
     --SetBrushFromTextureDynamic
-    DefaultParameters.Image.SetBrushFromTextureDynamic = Class(DefaultParameterClass)
-    DefaultParameters.Image.SetBrushFromTextureDynamic.bMatchSize = false
+    DefaultParameters.image.setbrushfromtexturedynamic = Class(DefaultParameterClass)
+    DefaultParameters.image.setbrushfromtexturedynamic.bmatchsize = false
     --SetBrushFromAtlasInterface
-    DefaultParameters.Image.SetBrushFromAtlasInterface = Class(DefaultParameterClass)
-    DefaultParameters.Image.SetBrushFromAtlasInterface.bMatchSize = false
+    DefaultParameters.image.setbrushfromatlasinterface = Class(DefaultParameterClass)
+    DefaultParameters.image.setbrushfromatlasinterface.bmatchsize = false
     --SetBrushFromTexture
-    DefaultParameters.Image.SetBrushFromTexture = Class(DefaultParameterClass)
-    DefaultParameters.Image.SetBrushFromTexture.bMatchSize = false
+    DefaultParameters.image.setbrushfromtexture = Class(DefaultParameterClass)
+    DefaultParameters.image.setbrushfromtexture.bmatchsize = false
 end
 
 --UserWidget
 do
-    DefaultParameters.UserWidget = DefaultParameters.UserWidget or {}
+    DefaultParameters.userwidget = DefaultParameters.userwidget or {}
     
     --SetPlaybackSpeed
-    DefaultParameters.UserWidget.SetPlaybackSpeed = Class(DefaultParameterClass)
-    DefaultParameters.UserWidget.SetPlaybackSpeed.PlaybackSpeed = 1.000000
+    DefaultParameters.userwidget.setplaybackspeed = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.setplaybackspeed.playbackspeed = 1.000000
     --PlayAnimationReverse
-    DefaultParameters.UserWidget.PlayAnimationReverse = Class(DefaultParameterClass)
-    DefaultParameters.UserWidget.PlayAnimationReverse.PlaybackSpeed = 1.000000
+    DefaultParameters.userwidget.playanimationreverse = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.playanimationreverse.playbackspeed = 1.000000
     --PlayAnimationForward
-    DefaultParameters.UserWidget.PlayAnimationForward = Class(DefaultParameterClass)
-    DefaultParameters.UserWidget.PlayAnimationForward.PlaybackSpeed = 1.000000
+    DefaultParameters.userwidget.playanimationforward = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.playanimationforward.playbackspeed = 1.000000
     --PlayAnimationTimeRange
-    DefaultParameters.UserWidget.PlayAnimationTimeRange = Class(DefaultParameterClass)
-    DefaultParameters.UserWidget.PlayAnimationTimeRange.StartAtTime = 0.000000
-    DefaultParameters.UserWidget.PlayAnimationTimeRange.EndAtTime = 0.000000
-    DefaultParameters.UserWidget.PlayAnimationTimeRange.NumLoopsToPlay = 1
-    DefaultParameters.UserWidget.PlayAnimationTimeRange.PlayMode = 0 --EUMGSequencePlayMode::Type::Forward
-    DefaultParameters.UserWidget.PlayAnimationTimeRange.PlaybackSpeed = 1.000000
+    DefaultParameters.userwidget.playanimationtimerange = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.playanimationtimerange.startattime = 0.000000
+    DefaultParameters.userwidget.playanimationtimerange.endattime = 0.000000
+    DefaultParameters.userwidget.playanimationtimerange.numloopstoplay = 1
+    DefaultParameters.userwidget.playanimationtimerange.playmode = 0 --EUMGSequencePlayMode::Type::Forward
+    DefaultParameters.userwidget.playanimationtimerange.playbackspeed = 1.000000
     --PlayAnimation
-    DefaultParameters.UserWidget.PlayAnimation = Class(DefaultParameterClass)
-    DefaultParameters.UserWidget.PlayAnimation.StartAtTime = 0.000000
-    DefaultParameters.UserWidget.PlayAnimation.NumLoopsToPlay = 1
-    DefaultParameters.UserWidget.PlayAnimation.PlayMode = 0 --EUMGSequencePlayMode::Type::Forward
-    DefaultParameters.UserWidget.PlayAnimation.PlaybackSpeed = 1.000000
+    DefaultParameters.userwidget.playanimation = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.playanimation.startattime = 0.000000
+    DefaultParameters.userwidget.playanimation.numloopstoplay = 1
+    DefaultParameters.userwidget.playanimation.playmode = 0 --EUMGSequencePlayMode::Type::Forward
+    DefaultParameters.userwidget.playanimation.playbackspeed = 1.000000
     --BindToAnimationEvent
-    DefaultParameters.UserWidget.BindToAnimationEvent = Class(DefaultParameterClass)
-    DefaultParameters.UserWidget.BindToAnimationEvent.UserTag = "None"
+    DefaultParameters.userwidget.bindtoanimationevent = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.bindtoanimationevent.usertag = "None"
     --SetPositionInViewport
-    DefaultParameters.UserWidget.SetPositionInViewport = Class(DefaultParameterClass)
-    DefaultParameters.UserWidget.SetPositionInViewport.bRemoveDPIScale = true
+    DefaultParameters.userwidget.setpositioninviewport = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.setpositioninviewport.bremovedpiscale = true
     --AddToPlayerScreen
-    DefaultParameters.UserWidget.AddToPlayerScreen = Class(DefaultParameterClass)
-    DefaultParameters.UserWidget.AddToPlayerScreen.ZOrder = 0
+    DefaultParameters.userwidget.addtoplayerscreen = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.addtoplayerscreen.zorder = 0
     --AddToViewport
-    DefaultParameters.UserWidget.AddToViewport = Class(DefaultParameterClass)
-    DefaultParameters.UserWidget.AddToViewport.ZOrder = 0
+    DefaultParameters.userwidget.addtoviewport = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.addtoviewport.zorder = 0
 end
 
 --ScrollBox
 do
-    DefaultParameters.ScrollBox = DefaultParameters.ScrollBox or {}
+    DefaultParameters.scrollbox = DefaultParameters.scrollbox or {}
     
     --ScrollWidgetIntoView
-    DefaultParameters.ScrollBox.ScrollWidgetIntoView = Class(DefaultParameterClass)
-    DefaultParameters.ScrollBox.ScrollWidgetIntoView.AnimateScroll = true
-    DefaultParameters.ScrollBox.ScrollWidgetIntoView.ScrollDestination = 0 --EDescendantScrollDestination::IntoView
+    DefaultParameters.scrollbox.scrollwidgetintoview = Class(DefaultParameterClass)
+    DefaultParameters.scrollbox.scrollwidgetintoview.animatescroll = true
+    DefaultParameters.scrollbox.scrollwidgetintoview.scrolldestination = 0 --EDescendantScrollDestination::IntoView
 end
 
 --LevelSequenceActor
 do
-    DefaultParameters.LevelSequenceActor = DefaultParameters.LevelSequenceActor or {}
+    DefaultParameters.levelsequenceactor = DefaultParameters.levelsequenceactor or {}
     
     --AddBinding
-    DefaultParameters.LevelSequenceActor.AddBinding = Class(DefaultParameterClass)
-    DefaultParameters.LevelSequenceActor.AddBinding.bAllowBindingsFromAsset = false
+    DefaultParameters.levelsequenceactor.addbinding = Class(DefaultParameterClass)
+    DefaultParameters.levelsequenceactor.addbinding.ballowbindingsfromasset = false
     --SetBinding
-    DefaultParameters.LevelSequenceActor.SetBinding = Class(DefaultParameterClass)
-    DefaultParameters.LevelSequenceActor.SetBinding.bAllowBindingsFromAsset = false
+    DefaultParameters.levelsequenceactor.setbinding = Class(DefaultParameterClass)
+    DefaultParameters.levelsequenceactor.setbinding.ballowbindingsfromasset = false
 end
 
 --AudioMixerBlueprintLibrary
 do
-    DefaultParameters.AudioMixerBlueprintLibrary = DefaultParameters.AudioMixerBlueprintLibrary or {}
+    DefaultParameters.audiomixerblueprintlibrary = DefaultParameters.audiomixerblueprintlibrary or {}
     
     --StartAnalyzingOutput
-    DefaultParameters.AudioMixerBlueprintLibrary.StartAnalyzingOutput = Class(DefaultParameterClass)
-    DefaultParameters.AudioMixerBlueprintLibrary.StartAnalyzingOutput.FFTSize = 0 --EFFTSize::DefaultSize
-    DefaultParameters.AudioMixerBlueprintLibrary.StartAnalyzingOutput.InterpolationMethod = 1 --EFFTPeakInterpolationMethod::Linear
-    DefaultParameters.AudioMixerBlueprintLibrary.StartAnalyzingOutput.WindowType = 2 --EFFTWindowType::Hann
-    DefaultParameters.AudioMixerBlueprintLibrary.StartAnalyzingOutput.HopSize = 0.000000
+    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput = Class(DefaultParameterClass)
+    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.fftsize = 0 --EFFTSize::DefaultSize
+    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.interpolationmethod = 1 --EFFTPeakInterpolationMethod::Linear
+    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.windowtype = 2 --EFFTWindowType::Hann
+    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.hopsize = 0.000000
 end
 
 --SubmixEffectReverbPreset
 do
-    DefaultParameters.SubmixEffectReverbPreset = DefaultParameters.SubmixEffectReverbPreset or {}
+    DefaultParameters.submixeffectreverbpreset = DefaultParameters.submixeffectreverbpreset or {}
     
     --SetSettingsWithReverbEffect
-    DefaultParameters.SubmixEffectReverbPreset.SetSettingsWithReverbEffect = Class(DefaultParameterClass)
-    DefaultParameters.SubmixEffectReverbPreset.SetSettingsWithReverbEffect.DryLevel = 0.000000
+    DefaultParameters.submixeffectreverbpreset.setsettingswithreverbeffect = Class(DefaultParameterClass)
+    DefaultParameters.submixeffectreverbpreset.setsettingswithreverbeffect.drylevel = 0.000000
 end
 
 --ProceduralFoliageSpawner
 do
-    DefaultParameters.ProceduralFoliageSpawner = DefaultParameters.ProceduralFoliageSpawner or {}
+    DefaultParameters.proceduralfoliagespawner = DefaultParameters.proceduralfoliagespawner or {}
     
     --Simulate
-    DefaultParameters.ProceduralFoliageSpawner.Simulate = Class(DefaultParameterClass)
-    DefaultParameters.ProceduralFoliageSpawner.Simulate.NumSteps = -1
+    DefaultParameters.proceduralfoliagespawner.simulate = Class(DefaultParameterClass)
+    DefaultParameters.proceduralfoliagespawner.simulate.numsteps = -1
 end
 
 --LandscapeProxy
 do
-    DefaultParameters.LandscapeProxy = DefaultParameters.LandscapeProxy or {}
+    DefaultParameters.landscapeproxy = DefaultParameters.landscapeproxy or {}
     
     --LandscapeExportHeightmapToRenderTarget
-    DefaultParameters.LandscapeProxy.LandscapeExportHeightmapToRenderTarget = Class(DefaultParameterClass)
-    DefaultParameters.LandscapeProxy.LandscapeExportHeightmapToRenderTarget.InExportHeightIntoRGChannel = false
+    DefaultParameters.landscapeproxy.landscapeexportheightmaptorendertarget = Class(DefaultParameterClass)
+    DefaultParameters.landscapeproxy.landscapeexportheightmaptorendertarget.inexportheightintorgchannel = false
     --LandscapeImportHeightmapFromRenderTarget
-    DefaultParameters.LandscapeProxy.LandscapeImportHeightmapFromRenderTarget = Class(DefaultParameterClass)
-    DefaultParameters.LandscapeProxy.LandscapeImportHeightmapFromRenderTarget.InImportHeightFromRGChannel = false
+    DefaultParameters.landscapeproxy.landscapeimportheightmapfromrendertarget = Class(DefaultParameterClass)
+    DefaultParameters.landscapeproxy.landscapeimportheightmapfromrendertarget.inimportheightfromrgchannel = false
     --EditorApplySpline
-    DefaultParameters.LandscapeProxy.EditorApplySpline = Class(DefaultParameterClass)
-    DefaultParameters.LandscapeProxy.EditorApplySpline.StartWidth = 200.000000
-    DefaultParameters.LandscapeProxy.EditorApplySpline.EndWidth = 200.000000
-    DefaultParameters.LandscapeProxy.EditorApplySpline.StartSideFalloff = 200.000000
-    DefaultParameters.LandscapeProxy.EditorApplySpline.EndSideFalloff = 200.000000
-    DefaultParameters.LandscapeProxy.EditorApplySpline.StartRoll = 0.000000
-    DefaultParameters.LandscapeProxy.EditorApplySpline.EndRoll = 0.000000
-    DefaultParameters.LandscapeProxy.EditorApplySpline.NumSubdivisions = 20
-    DefaultParameters.LandscapeProxy.EditorApplySpline.bRaiseHeights = true
-    DefaultParameters.LandscapeProxy.EditorApplySpline.bLowerHeights = true
+    DefaultParameters.landscapeproxy.editorapplyspline = Class(DefaultParameterClass)
+    DefaultParameters.landscapeproxy.editorapplyspline.startwidth = 200.000000
+    DefaultParameters.landscapeproxy.editorapplyspline.endwidth = 200.000000
+    DefaultParameters.landscapeproxy.editorapplyspline.startsidefalloff = 200.000000
+    DefaultParameters.landscapeproxy.editorapplyspline.endsidefalloff = 200.000000
+    DefaultParameters.landscapeproxy.editorapplyspline.startroll = 0.000000
+    DefaultParameters.landscapeproxy.editorapplyspline.endroll = 0.000000
+    DefaultParameters.landscapeproxy.editorapplyspline.numsubdivisions = 20
+    DefaultParameters.landscapeproxy.editorapplyspline.braiseheights = true
+    DefaultParameters.landscapeproxy.editorapplyspline.blowerheights = true
 end
 
 --UserDefinedImageCaptureProtocol
 do
-    DefaultParameters.UserDefinedImageCaptureProtocol = DefaultParameters.UserDefinedImageCaptureProtocol or {}
+    DefaultParameters.userdefinedimagecaptureprotocol = DefaultParameters.userdefinedimagecaptureprotocol or {}
     
     --WriteImageToDisk
-    DefaultParameters.UserDefinedImageCaptureProtocol.WriteImageToDisk = Class(DefaultParameterClass)
-    DefaultParameters.UserDefinedImageCaptureProtocol.WriteImageToDisk.bCopyImageData = false
+    DefaultParameters.userdefinedimagecaptureprotocol.writeimagetodisk = Class(DefaultParameterClass)
+    DefaultParameters.userdefinedimagecaptureprotocol.writeimagetodisk.bcopyimagedata = false
 end
 
 --NavigationPath
 do
-    DefaultParameters.NavigationPath = DefaultParameters.NavigationPath or {}
+    DefaultParameters.navigationpath = DefaultParameters.navigationpath or {}
     
     --EnableDebugDrawing
-    DefaultParameters.NavigationPath.EnableDebugDrawing = Class(DefaultParameterClass)
-    DefaultParameters.NavigationPath.EnableDebugDrawing.PathColor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.navigationpath.enabledebugdrawing = Class(DefaultParameterClass)
+    DefaultParameters.navigationpath.enabledebugdrawing.pathcolor = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
 end
 
 --NavigationSystemV1
 do
-    DefaultParameters.NavigationSystemV1 = DefaultParameters.NavigationSystemV1 or {}
+    DefaultParameters.navigationsystemv1 = DefaultParameters.navigationsystemv1 or {}
     
     --RegisterNavigationInvoker
-    DefaultParameters.NavigationSystemV1.RegisterNavigationInvoker = Class(DefaultParameterClass)
-    DefaultParameters.NavigationSystemV1.RegisterNavigationInvoker.TileGenerationRadius = 3000.000000
-    DefaultParameters.NavigationSystemV1.RegisterNavigationInvoker.TileRemovalRadius = 5000.000000
+    DefaultParameters.navigationsystemv1.registernavigationinvoker = Class(DefaultParameterClass)
+    DefaultParameters.navigationsystemv1.registernavigationinvoker.tilegenerationradius = 3000.000000
+    DefaultParameters.navigationsystemv1.registernavigationinvoker.tileremovalradius = 5000.000000
     --FindPathToActorSynchronously
-    DefaultParameters.NavigationSystemV1.FindPathToActorSynchronously = Class(DefaultParameterClass)
-    DefaultParameters.NavigationSystemV1.FindPathToActorSynchronously.TetherDistance = 50.000000
+    DefaultParameters.navigationsystemv1.findpathtoactorsynchronously = Class(DefaultParameterClass)
+    DefaultParameters.navigationsystemv1.findpathtoactorsynchronously.tetherdistance = 50.000000
 end
 
 --GameplayTask_ClaimResource
 do
-    DefaultParameters.GameplayTask_ClaimResource = DefaultParameters.GameplayTask_ClaimResource or {}
+    DefaultParameters.gameplaytask_claimresource = DefaultParameters.gameplaytask_claimresource or {}
     
     --ClaimResources
-    DefaultParameters.GameplayTask_ClaimResource.ClaimResources = Class(DefaultParameterClass)
-    DefaultParameters.GameplayTask_ClaimResource.ClaimResources.Priority = 192
-    DefaultParameters.GameplayTask_ClaimResource.ClaimResources.TaskInstanceName = "None"
+    DefaultParameters.gameplaytask_claimresource.claimresources = Class(DefaultParameterClass)
+    DefaultParameters.gameplaytask_claimresource.claimresources.priority = 192
+    DefaultParameters.gameplaytask_claimresource.claimresources.taskinstancename = "None"
     --ClaimResource
-    DefaultParameters.GameplayTask_ClaimResource.ClaimResource = Class(DefaultParameterClass)
-    DefaultParameters.GameplayTask_ClaimResource.ClaimResource.Priority = 192
-    DefaultParameters.GameplayTask_ClaimResource.ClaimResource.TaskInstanceName = "None"
+    DefaultParameters.gameplaytask_claimresource.claimresource = Class(DefaultParameterClass)
+    DefaultParameters.gameplaytask_claimresource.claimresource.priority = 192
+    DefaultParameters.gameplaytask_claimresource.claimresource.taskinstancename = "None"
 end
 
 --GameplayTask_SpawnActor
 do
-    DefaultParameters.GameplayTask_SpawnActor = DefaultParameters.GameplayTask_SpawnActor or {}
+    DefaultParameters.gameplaytask_spawnactor = DefaultParameters.gameplaytask_spawnactor or {}
     
     --SpawnActor
-    DefaultParameters.GameplayTask_SpawnActor.SpawnActor = Class(DefaultParameterClass)
-    DefaultParameters.GameplayTask_SpawnActor.SpawnActor.bSpawnOnlyOnAuthority = false
+    DefaultParameters.gameplaytask_spawnactor.spawnactor = Class(DefaultParameterClass)
+    DefaultParameters.gameplaytask_spawnactor.spawnactor.bspawnonlyonauthority = false
 end
 
 --GameplayTask_WaitDelay
 do
-    DefaultParameters.GameplayTask_WaitDelay = DefaultParameters.GameplayTask_WaitDelay or {}
+    DefaultParameters.gameplaytask_waitdelay = DefaultParameters.gameplaytask_waitdelay or {}
     
     --TaskWaitDelay
-    DefaultParameters.GameplayTask_WaitDelay.TaskWaitDelay = Class(DefaultParameterClass)
-    DefaultParameters.GameplayTask_WaitDelay.TaskWaitDelay.Priority = 192
+    DefaultParameters.gameplaytask_waitdelay.taskwaitdelay = Class(DefaultParameterClass)
+    DefaultParameters.gameplaytask_waitdelay.taskwaitdelay.priority = 192
 end
 
 --AIBlueprintHelperLibrary
 do
-    DefaultParameters.AIBlueprintHelperLibrary = DefaultParameters.AIBlueprintHelperLibrary or {}
+    DefaultParameters.aiblueprinthelperlibrary = DefaultParameters.aiblueprinthelperlibrary or {}
     
     --SpawnAIFromClass
-    DefaultParameters.AIBlueprintHelperLibrary.SpawnAIFromClass = Class(DefaultParameterClass)
-    DefaultParameters.AIBlueprintHelperLibrary.SpawnAIFromClass.bNoCollisionFail = false
+    DefaultParameters.aiblueprinthelperlibrary.spawnaifromclass = Class(DefaultParameterClass)
+    DefaultParameters.aiblueprinthelperlibrary.spawnaifromclass.bnocollisionfail = false
     --SendAIMessage
-    DefaultParameters.AIBlueprintHelperLibrary.SendAIMessage = Class(DefaultParameterClass)
-    DefaultParameters.AIBlueprintHelperLibrary.SendAIMessage.bSuccess = true
+    DefaultParameters.aiblueprinthelperlibrary.sendaimessage = Class(DefaultParameterClass)
+    DefaultParameters.aiblueprinthelperlibrary.sendaimessage.bsuccess = true
     --CreateMoveToProxyObject
-    DefaultParameters.AIBlueprintHelperLibrary.CreateMoveToProxyObject = Class(DefaultParameterClass)
-    DefaultParameters.AIBlueprintHelperLibrary.CreateMoveToProxyObject.AcceptanceRadius = 5.000000
-    DefaultParameters.AIBlueprintHelperLibrary.CreateMoveToProxyObject.bStopOnOverlap = false
+    DefaultParameters.aiblueprinthelperlibrary.createmovetoproxyobject = Class(DefaultParameterClass)
+    DefaultParameters.aiblueprinthelperlibrary.createmovetoproxyobject.acceptanceradius = 5.000000
+    DefaultParameters.aiblueprinthelperlibrary.createmovetoproxyobject.bstoponoverlap = false
 end
 
 --AIController
 do
-    DefaultParameters.AIController = DefaultParameters.AIController or {}
+    DefaultParameters.aicontroller = DefaultParameters.aicontroller or {}
     
     --MoveToLocation
-    DefaultParameters.AIController.MoveToLocation = Class(DefaultParameterClass)
-    DefaultParameters.AIController.MoveToLocation.AcceptanceRadius = -1.000000
-    DefaultParameters.AIController.MoveToLocation.bStopOnOverlap = true
-    DefaultParameters.AIController.MoveToLocation.bUsePathfinding = true
-    DefaultParameters.AIController.MoveToLocation.bProjectDestinationToNavigation = false
-    DefaultParameters.AIController.MoveToLocation.bCanStrafe = true
-    DefaultParameters.AIController.MoveToLocation.bAllowPartialPath = true
+    DefaultParameters.aicontroller.movetolocation = Class(DefaultParameterClass)
+    DefaultParameters.aicontroller.movetolocation.acceptanceradius = -1.000000
+    DefaultParameters.aicontroller.movetolocation.bstoponoverlap = true
+    DefaultParameters.aicontroller.movetolocation.busepathfinding = true
+    DefaultParameters.aicontroller.movetolocation.bprojectdestinationtonavigation = false
+    DefaultParameters.aicontroller.movetolocation.bcanstrafe = true
+    DefaultParameters.aicontroller.movetolocation.ballowpartialpath = true
     --MoveToActor
-    DefaultParameters.AIController.MoveToActor = Class(DefaultParameterClass)
-    DefaultParameters.AIController.MoveToActor.AcceptanceRadius = -1.000000
-    DefaultParameters.AIController.MoveToActor.bStopOnOverlap = true
-    DefaultParameters.AIController.MoveToActor.bUsePathfinding = true
-    DefaultParameters.AIController.MoveToActor.bCanStrafe = true
-    DefaultParameters.AIController.MoveToActor.bAllowPartialPath = true
+    DefaultParameters.aicontroller.movetoactor = Class(DefaultParameterClass)
+    DefaultParameters.aicontroller.movetoactor.acceptanceradius = -1.000000
+    DefaultParameters.aicontroller.movetoactor.bstoponoverlap = true
+    DefaultParameters.aicontroller.movetoactor.busepathfinding = true
+    DefaultParameters.aicontroller.movetoactor.bcanstrafe = true
+    DefaultParameters.aicontroller.movetoactor.ballowpartialpath = true
 end
 
 --NavLocalGridManager
 do
-    DefaultParameters.NavLocalGridManager = DefaultParameters.NavLocalGridManager or {}
+    DefaultParameters.navlocalgridmanager = DefaultParameters.navlocalgridmanager or {}
     
     --RemoveLocalNavigationGrid
-    DefaultParameters.NavLocalGridManager.RemoveLocalNavigationGrid = Class(DefaultParameterClass)
-    DefaultParameters.NavLocalGridManager.RemoveLocalNavigationGrid.bRebuildGrids = true
+    DefaultParameters.navlocalgridmanager.removelocalnavigationgrid = Class(DefaultParameterClass)
+    DefaultParameters.navlocalgridmanager.removelocalnavigationgrid.brebuildgrids = true
     --AddLocalNavigationGridForCapsule
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForCapsule = Class(DefaultParameterClass)
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForCapsule.Radius2D = 5
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForCapsule.Height = 100.000000
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForCapsule.bRebuildGrids = true
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforcapsule = Class(DefaultParameterClass)
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforcapsule.radius2d = 5
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforcapsule.height = 100.000000
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforcapsule.brebuildgrids = true
     --AddLocalNavigationGridForBox
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForBox = Class(DefaultParameterClass)
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForBox.Extent = UE4.Vector.new(1.000000, 1.000000, 1.000000)
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForBox.Radius2D = 5
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForBox.Height = 100.000000
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForBox.bRebuildGrids = true
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforbox = Class(DefaultParameterClass)
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforbox.extent = UE4.Vector.new(1.000000, 1.000000, 1.000000)
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforbox.radius2d = 5
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforbox.height = 100.000000
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforbox.brebuildgrids = true
     --AddLocalNavigationGridForPoints
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForPoints = Class(DefaultParameterClass)
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForPoints.Radius2D = 5
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForPoints.Height = 100.000000
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForPoints.bRebuildGrids = true
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforpoints = Class(DefaultParameterClass)
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforpoints.radius2d = 5
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforpoints.height = 100.000000
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforpoints.brebuildgrids = true
     --AddLocalNavigationGridForPoint
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForPoint = Class(DefaultParameterClass)
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForPoint.Radius2D = 5
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForPoint.Height = 100.000000
-    DefaultParameters.NavLocalGridManager.AddLocalNavigationGridForPoint.bRebuildGrids = true
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforpoint = Class(DefaultParameterClass)
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforpoint.radius2d = 5
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforpoint.height = 100.000000
+    DefaultParameters.navlocalgridmanager.addlocalnavigationgridforpoint.brebuildgrids = true
 end
 
 --PawnActionsComponent
 do
-    DefaultParameters.PawnActionsComponent = DefaultParameters.PawnActionsComponent or {}
+    DefaultParameters.pawnactionscomponent = DefaultParameters.pawnactionscomponent or {}
     
     --K2_PerformAction
-    DefaultParameters.PawnActionsComponent.K2_PerformAction = Class(DefaultParameterClass)
-    DefaultParameters.PawnActionsComponent.K2_PerformAction.Priority = 2 --EAIRequestPriority::Type::HardScript
+    DefaultParameters.pawnactionscomponent.k2_performaction = Class(DefaultParameterClass)
+    DefaultParameters.pawnactionscomponent.k2_performaction.priority = 2 --EAIRequestPriority::Type::HardScript
 end
 
 --AISense_Hearing
 do
-    DefaultParameters.AISense_Hearing = DefaultParameters.AISense_Hearing or {}
+    DefaultParameters.aisense_hearing = DefaultParameters.aisense_hearing or {}
     
     --ReportNoiseEvent
-    DefaultParameters.AISense_Hearing.ReportNoiseEvent = Class(DefaultParameterClass)
-    DefaultParameters.AISense_Hearing.ReportNoiseEvent.Loudness = 1.000000
-    DefaultParameters.AISense_Hearing.ReportNoiseEvent.MaxRange = 0.000000
-    DefaultParameters.AISense_Hearing.ReportNoiseEvent.Tag = "None"
+    DefaultParameters.aisense_hearing.reportnoiseevent = Class(DefaultParameterClass)
+    DefaultParameters.aisense_hearing.reportnoiseevent.loudness = 1.000000
+    DefaultParameters.aisense_hearing.reportnoiseevent.maxrange = 0.000000
+    DefaultParameters.aisense_hearing.reportnoiseevent.tag = "None"
 end
 
 --AITask_MoveTo
 do
-    DefaultParameters.AITask_MoveTo = DefaultParameters.AITask_MoveTo or {}
+    DefaultParameters.aitask_moveto = DefaultParameters.aitask_moveto or {}
     
     --AIMoveTo
-    DefaultParameters.AITask_MoveTo.AIMoveTo = Class(DefaultParameterClass)
-    DefaultParameters.AITask_MoveTo.AIMoveTo.AcceptanceRadius = -1.000000
-    DefaultParameters.AITask_MoveTo.AIMoveTo.StopOnOverlap = 0 --EAIOptionFlag::Type::Default
-    DefaultParameters.AITask_MoveTo.AIMoveTo.AcceptPartialPath = 0 --EAIOptionFlag::Type::Default
-    DefaultParameters.AITask_MoveTo.AIMoveTo.bUsePathfinding = true
-    DefaultParameters.AITask_MoveTo.AIMoveTo.bLockAILogic = true
-    DefaultParameters.AITask_MoveTo.AIMoveTo.bUseContinuosGoalTracking = false
+    DefaultParameters.aitask_moveto.aimoveto = Class(DefaultParameterClass)
+    DefaultParameters.aitask_moveto.aimoveto.acceptanceradius = -1.000000
+    DefaultParameters.aitask_moveto.aimoveto.stoponoverlap = 0 --EAIOptionFlag::Type::Default
+    DefaultParameters.aitask_moveto.aimoveto.acceptpartialpath = 0 --EAIOptionFlag::Type::Default
+    DefaultParameters.aitask_moveto.aimoveto.busepathfinding = true
+    DefaultParameters.aitask_moveto.aimoveto.blockailogic = true
+    DefaultParameters.aitask_moveto.aimoveto.busecontinuosgoaltracking = false
 end
 
 --BTTask_BlueprintBase
 do
-    DefaultParameters.BTTask_BlueprintBase = DefaultParameters.BTTask_BlueprintBase or {}
+    DefaultParameters.bttask_blueprintbase = DefaultParameters.bttask_blueprintbase or {}
     
     --SetFinishOnMessageWithId
-    DefaultParameters.BTTask_BlueprintBase.SetFinishOnMessageWithId = Class(DefaultParameterClass)
-    DefaultParameters.BTTask_BlueprintBase.SetFinishOnMessageWithId.RequestID = -1
+    DefaultParameters.bttask_blueprintbase.setfinishonmessagewithid = Class(DefaultParameterClass)
+    DefaultParameters.bttask_blueprintbase.setfinishonmessagewithid.requestid = -1
 end
 
 --ARBlueprintLibrary
 do
-    DefaultParameters.ARBlueprintLibrary = DefaultParameters.ARBlueprintLibrary or {}
+    DefaultParameters.arblueprintlibrary = DefaultParameters.arblueprintlibrary or {}
     
     --PinComponentToTraceResult
-    DefaultParameters.ARBlueprintLibrary.PinComponentToTraceResult = Class(DefaultParameterClass)
-    DefaultParameters.ARBlueprintLibrary.PinComponentToTraceResult.DebugName = "None"
+    DefaultParameters.arblueprintlibrary.pincomponenttotraceresult = Class(DefaultParameterClass)
+    DefaultParameters.arblueprintlibrary.pincomponenttotraceresult.debugname = "None"
     --PinComponent
-    DefaultParameters.ARBlueprintLibrary.PinComponent = Class(DefaultParameterClass)
-    DefaultParameters.ARBlueprintLibrary.PinComponent.DebugName = "None"
+    DefaultParameters.arblueprintlibrary.pincomponent = Class(DefaultParameterClass)
+    DefaultParameters.arblueprintlibrary.pincomponent.debugname = "None"
     --DebugDrawPin
-    DefaultParameters.ARBlueprintLibrary.DebugDrawPin = Class(DefaultParameterClass)
-    DefaultParameters.ARBlueprintLibrary.DebugDrawPin.Color = UE4.LinearColor.new(1.000000, 1.000000, 0.000000, 0.750000)
-    DefaultParameters.ARBlueprintLibrary.DebugDrawPin.Scale = 5.000000
-    DefaultParameters.ARBlueprintLibrary.DebugDrawPin.PersistForSeconds = 0.000000
+    DefaultParameters.arblueprintlibrary.debugdrawpin = Class(DefaultParameterClass)
+    DefaultParameters.arblueprintlibrary.debugdrawpin.color = UE4.LinearColor.new(1.000000, 1.000000, 0.000000, 0.750000)
+    DefaultParameters.arblueprintlibrary.debugdrawpin.scale = 5.000000
+    DefaultParameters.arblueprintlibrary.debugdrawpin.persistforseconds = 0.000000
     --DebugDrawTrackedGeometry
-    DefaultParameters.ARBlueprintLibrary.DebugDrawTrackedGeometry = Class(DefaultParameterClass)
-    DefaultParameters.ARBlueprintLibrary.DebugDrawTrackedGeometry.Color = UE4.LinearColor.new(1.000000, 1.000000, 0.000000, 0.750000)
-    DefaultParameters.ARBlueprintLibrary.DebugDrawTrackedGeometry.OutlineThickness = 5.000000
-    DefaultParameters.ARBlueprintLibrary.DebugDrawTrackedGeometry.PersistForSeconds = 0.000000
+    DefaultParameters.arblueprintlibrary.debugdrawtrackedgeometry = Class(DefaultParameterClass)
+    DefaultParameters.arblueprintlibrary.debugdrawtrackedgeometry.color = UE4.LinearColor.new(1.000000, 1.000000, 0.000000, 0.750000)
+    DefaultParameters.arblueprintlibrary.debugdrawtrackedgeometry.outlinethickness = 5.000000
+    DefaultParameters.arblueprintlibrary.debugdrawtrackedgeometry.persistforseconds = 0.000000
     --LineTraceTrackedObjects3D
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects3D = Class(DefaultParameterClass)
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects3D.bTestFeaturePoints = true
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects3D.bTestGroundPlane = true
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects3D.bTestPlaneExtents = true
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects3D.bTestPlaneBoundaryPolygon = true
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d = Class(DefaultParameterClass)
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d.btestfeaturepoints = true
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d.btestgroundplane = true
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d.btestplaneextents = true
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d.btestplaneboundarypolygon = true
     --LineTraceTrackedObjects
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects = Class(DefaultParameterClass)
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects.bTestFeaturePoints = true
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects.bTestGroundPlane = true
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects.bTestPlaneExtents = true
-    DefaultParameters.ARBlueprintLibrary.LineTraceTrackedObjects.bTestPlaneBoundaryPolygon = true
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects = Class(DefaultParameterClass)
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects.btestfeaturepoints = true
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects.btestgroundplane = true
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects.btestplaneextents = true
+    DefaultParameters.arblueprintlibrary.linetracetrackedobjects.btestplaneboundarypolygon = true
 end
 
 --HeadMountedDisplayFunctionLibrary
 do
-    DefaultParameters.HeadMountedDisplayFunctionLibrary = DefaultParameters.HeadMountedDisplayFunctionLibrary or {}
+    DefaultParameters.headmounteddisplayfunctionlibrary = DefaultParameters.headmounteddisplayfunctionlibrary or {}
     
     --EnumerateTrackedDevices
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.EnumerateTrackedDevices = Class(DefaultParameterClass)
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.EnumerateTrackedDevices.SystemId = "None"
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.EnumerateTrackedDevices.DeviceType = 5 --EXRTrackedDeviceType::Any
+    DefaultParameters.headmounteddisplayfunctionlibrary.enumeratetrackeddevices = Class(DefaultParameterClass)
+    DefaultParameters.headmounteddisplayfunctionlibrary.enumeratetrackeddevices.systemid = "None"
+    DefaultParameters.headmounteddisplayfunctionlibrary.enumeratetrackeddevices.devicetype = 5 --EXRTrackedDeviceType::Any
     --SetSpectatorScreenModeTexturePlusEyeLayout
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.SetSpectatorScreenModeTexturePlusEyeLayout = Class(DefaultParameterClass)
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.SetSpectatorScreenModeTexturePlusEyeLayout.bDrawEyeFirst = true
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.SetSpectatorScreenModeTexturePlusEyeLayout.bClearBlack = false
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.SetSpectatorScreenModeTexturePlusEyeLayout.bUseAlpha = false
+    DefaultParameters.headmounteddisplayfunctionlibrary.setspectatorscreenmodetexturepluseyelayout = Class(DefaultParameterClass)
+    DefaultParameters.headmounteddisplayfunctionlibrary.setspectatorscreenmodetexturepluseyelayout.bdraweyefirst = true
+    DefaultParameters.headmounteddisplayfunctionlibrary.setspectatorscreenmodetexturepluseyelayout.bclearblack = false
+    DefaultParameters.headmounteddisplayfunctionlibrary.setspectatorscreenmodetexturepluseyelayout.busealpha = false
     --SetWorldToMetersScale
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.SetWorldToMetersScale = Class(DefaultParameterClass)
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.SetWorldToMetersScale.NewScale = 100.000000
+    DefaultParameters.headmounteddisplayfunctionlibrary.setworldtometersscale = Class(DefaultParameterClass)
+    DefaultParameters.headmounteddisplayfunctionlibrary.setworldtometersscale.newscale = 100.000000
     --ResetOrientationAndPosition
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.ResetOrientationAndPosition = Class(DefaultParameterClass)
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.ResetOrientationAndPosition.Yaw = 0.000000
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.ResetOrientationAndPosition.Options = 2 --EOrientPositionSelector::Type::OrientationAndPosition
+    DefaultParameters.headmounteddisplayfunctionlibrary.resetorientationandposition = Class(DefaultParameterClass)
+    DefaultParameters.headmounteddisplayfunctionlibrary.resetorientationandposition.yaw = 0.000000
+    DefaultParameters.headmounteddisplayfunctionlibrary.resetorientationandposition.options = 2 --EOrientPositionSelector::Type::OrientationAndPosition
     --GetTrackingSensorParameters
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.GetTrackingSensorParameters = Class(DefaultParameterClass)
-    DefaultParameters.HeadMountedDisplayFunctionLibrary.GetTrackingSensorParameters.Index = 0
+    DefaultParameters.headmounteddisplayfunctionlibrary.gettrackingsensorparameters = Class(DefaultParameterClass)
+    DefaultParameters.headmounteddisplayfunctionlibrary.gettrackingsensorparameters.index = 0
 end
 
 --MediaBlueprintFunctionLibrary
 do
-    DefaultParameters.MediaBlueprintFunctionLibrary = DefaultParameters.MediaBlueprintFunctionLibrary or {}
+    DefaultParameters.mediablueprintfunctionlibrary = DefaultParameters.mediablueprintfunctionlibrary or {}
     
     --EnumerateWebcamCaptureDevices
-    DefaultParameters.MediaBlueprintFunctionLibrary.EnumerateWebcamCaptureDevices = Class(DefaultParameterClass)
-    DefaultParameters.MediaBlueprintFunctionLibrary.EnumerateWebcamCaptureDevices.Filter = -1
+    DefaultParameters.mediablueprintfunctionlibrary.enumeratewebcamcapturedevices = Class(DefaultParameterClass)
+    DefaultParameters.mediablueprintfunctionlibrary.enumeratewebcamcapturedevices.filter = -1
     --EnumerateVideoCaptureDevices
-    DefaultParameters.MediaBlueprintFunctionLibrary.EnumerateVideoCaptureDevices = Class(DefaultParameterClass)
-    DefaultParameters.MediaBlueprintFunctionLibrary.EnumerateVideoCaptureDevices.Filter = -1
+    DefaultParameters.mediablueprintfunctionlibrary.enumeratevideocapturedevices = Class(DefaultParameterClass)
+    DefaultParameters.mediablueprintfunctionlibrary.enumeratevideocapturedevices.filter = -1
     --EnumerateAudioCaptureDevices
-    DefaultParameters.MediaBlueprintFunctionLibrary.EnumerateAudioCaptureDevices = Class(DefaultParameterClass)
-    DefaultParameters.MediaBlueprintFunctionLibrary.EnumerateAudioCaptureDevices.Filter = -1
+    DefaultParameters.mediablueprintfunctionlibrary.enumerateaudiocapturedevices = Class(DefaultParameterClass)
+    DefaultParameters.mediablueprintfunctionlibrary.enumerateaudiocapturedevices.filter = -1
 end
 
 --MediaSoundComponent
 do
-    DefaultParameters.MediaSoundComponent = DefaultParameters.MediaSoundComponent or {}
+    DefaultParameters.mediasoundcomponent = DefaultParameters.mediasoundcomponent or {}
     
     --SetSpectralAnalysisSettings
-    DefaultParameters.MediaSoundComponent.SetSpectralAnalysisSettings = Class(DefaultParameterClass)
-    DefaultParameters.MediaSoundComponent.SetSpectralAnalysisSettings.InFFTSize = 2 --EMediaSoundComponentFFTSize::Medium_512
+    DefaultParameters.mediasoundcomponent.setspectralanalysissettings = Class(DefaultParameterClass)
+    DefaultParameters.mediasoundcomponent.setspectralanalysissettings.infftsize = 2 --EMediaSoundComponentFFTSize::Medium_512
 end
 
 --PaperFlipbook
 do
-    DefaultParameters.PaperFlipbook = DefaultParameters.PaperFlipbook or {}
+    DefaultParameters.paperflipbook = DefaultParameters.paperflipbook or {}
     
     --GetSpriteAtTime
-    DefaultParameters.PaperFlipbook.GetSpriteAtTime = Class(DefaultParameterClass)
-    DefaultParameters.PaperFlipbook.GetSpriteAtTime.bClampToEnds = false
+    DefaultParameters.paperflipbook.getspriteattime = Class(DefaultParameterClass)
+    DefaultParameters.paperflipbook.getspriteattime.bclamptoends = false
     --GetKeyFrameIndexAtTime
-    DefaultParameters.PaperFlipbook.GetKeyFrameIndexAtTime = Class(DefaultParameterClass)
-    DefaultParameters.PaperFlipbook.GetKeyFrameIndexAtTime.bClampToEnds = false
+    DefaultParameters.paperflipbook.getkeyframeindexattime = Class(DefaultParameterClass)
+    DefaultParameters.paperflipbook.getkeyframeindexattime.bclamptoends = false
 end
 
 --PaperGroupedSpriteComponent
 do
-    DefaultParameters.PaperGroupedSpriteComponent = DefaultParameters.PaperGroupedSpriteComponent or {}
+    DefaultParameters.papergroupedspritecomponent = DefaultParameters.papergroupedspritecomponent or {}
     
     --UpdateInstanceColor
-    DefaultParameters.PaperGroupedSpriteComponent.UpdateInstanceColor = Class(DefaultParameterClass)
-    DefaultParameters.PaperGroupedSpriteComponent.UpdateInstanceColor.bMarkRenderStateDirty = true
+    DefaultParameters.papergroupedspritecomponent.updateinstancecolor = Class(DefaultParameterClass)
+    DefaultParameters.papergroupedspritecomponent.updateinstancecolor.bmarkrenderstatedirty = true
     --UpdateInstanceTransform
-    DefaultParameters.PaperGroupedSpriteComponent.UpdateInstanceTransform = Class(DefaultParameterClass)
-    DefaultParameters.PaperGroupedSpriteComponent.UpdateInstanceTransform.bWorldSpace = false
-    DefaultParameters.PaperGroupedSpriteComponent.UpdateInstanceTransform.bMarkRenderStateDirty = true
-    DefaultParameters.PaperGroupedSpriteComponent.UpdateInstanceTransform.bTeleport = false
+    DefaultParameters.papergroupedspritecomponent.updateinstancetransform = Class(DefaultParameterClass)
+    DefaultParameters.papergroupedspritecomponent.updateinstancetransform.bworldspace = false
+    DefaultParameters.papergroupedspritecomponent.updateinstancetransform.bmarkrenderstatedirty = true
+    DefaultParameters.papergroupedspritecomponent.updateinstancetransform.bteleport = false
     --GetInstanceTransform
-    DefaultParameters.PaperGroupedSpriteComponent.GetInstanceTransform = Class(DefaultParameterClass)
-    DefaultParameters.PaperGroupedSpriteComponent.GetInstanceTransform.bWorldSpace = false
+    DefaultParameters.papergroupedspritecomponent.getinstancetransform = Class(DefaultParameterClass)
+    DefaultParameters.papergroupedspritecomponent.getinstancetransform.bworldspace = false
     --AddInstance
-    DefaultParameters.PaperGroupedSpriteComponent.AddInstance = Class(DefaultParameterClass)
-    DefaultParameters.PaperGroupedSpriteComponent.AddInstance.bWorldSpace = false
-    DefaultParameters.PaperGroupedSpriteComponent.AddInstance.Color = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
+    DefaultParameters.papergroupedspritecomponent.addinstance = Class(DefaultParameterClass)
+    DefaultParameters.papergroupedspritecomponent.addinstance.bworldspace = false
+    DefaultParameters.papergroupedspritecomponent.addinstance.color = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
 end
 
 --PaperTileMapComponent
 do
-    DefaultParameters.PaperTileMapComponent = DefaultParameters.PaperTileMapComponent or {}
+    DefaultParameters.papertilemapcomponent = DefaultParameters.papertilemapcomponent or {}
     
     --SetLayerCollision
-    DefaultParameters.PaperTileMapComponent.SetLayerCollision = Class(DefaultParameterClass)
-    DefaultParameters.PaperTileMapComponent.SetLayerCollision.Layer = 0
-    DefaultParameters.PaperTileMapComponent.SetLayerCollision.bHasCollision = true
-    DefaultParameters.PaperTileMapComponent.SetLayerCollision.bOverrideThickness = true
-    DefaultParameters.PaperTileMapComponent.SetLayerCollision.CustomThickness = 50.000000
-    DefaultParameters.PaperTileMapComponent.SetLayerCollision.bOverrideOffset = false
-    DefaultParameters.PaperTileMapComponent.SetLayerCollision.CustomOffset = 0.000000
-    DefaultParameters.PaperTileMapComponent.SetLayerCollision.bRebuildCollision = true
+    DefaultParameters.papertilemapcomponent.setlayercollision = Class(DefaultParameterClass)
+    DefaultParameters.papertilemapcomponent.setlayercollision.layer = 0
+    DefaultParameters.papertilemapcomponent.setlayercollision.bhascollision = true
+    DefaultParameters.papertilemapcomponent.setlayercollision.boverridethickness = true
+    DefaultParameters.papertilemapcomponent.setlayercollision.customthickness = 50.000000
+    DefaultParameters.papertilemapcomponent.setlayercollision.boverrideoffset = false
+    DefaultParameters.papertilemapcomponent.setlayercollision.customoffset = 0.000000
+    DefaultParameters.papertilemapcomponent.setlayercollision.brebuildcollision = true
     --SetDefaultCollisionThickness
-    DefaultParameters.PaperTileMapComponent.SetDefaultCollisionThickness = Class(DefaultParameterClass)
-    DefaultParameters.PaperTileMapComponent.SetDefaultCollisionThickness.bRebuildCollision = true
+    DefaultParameters.papertilemapcomponent.setdefaultcollisionthickness = Class(DefaultParameterClass)
+    DefaultParameters.papertilemapcomponent.setdefaultcollisionthickness.brebuildcollision = true
     --GetTilePolygon
-    DefaultParameters.PaperTileMapComponent.GetTilePolygon = Class(DefaultParameterClass)
-    DefaultParameters.PaperTileMapComponent.GetTilePolygon.LayerIndex = 0
-    DefaultParameters.PaperTileMapComponent.GetTilePolygon.bWorldSpace = false
+    DefaultParameters.papertilemapcomponent.gettilepolygon = Class(DefaultParameterClass)
+    DefaultParameters.papertilemapcomponent.gettilepolygon.layerindex = 0
+    DefaultParameters.papertilemapcomponent.gettilepolygon.bworldspace = false
     --GetTileCenterPosition
-    DefaultParameters.PaperTileMapComponent.GetTileCenterPosition = Class(DefaultParameterClass)
-    DefaultParameters.PaperTileMapComponent.GetTileCenterPosition.LayerIndex = 0
-    DefaultParameters.PaperTileMapComponent.GetTileCenterPosition.bWorldSpace = false
+    DefaultParameters.papertilemapcomponent.gettilecenterposition = Class(DefaultParameterClass)
+    DefaultParameters.papertilemapcomponent.gettilecenterposition.layerindex = 0
+    DefaultParameters.papertilemapcomponent.gettilecenterposition.bworldspace = false
     --GetTileCornerPosition
-    DefaultParameters.PaperTileMapComponent.GetTileCornerPosition = Class(DefaultParameterClass)
-    DefaultParameters.PaperTileMapComponent.GetTileCornerPosition.LayerIndex = 0
-    DefaultParameters.PaperTileMapComponent.GetTileCornerPosition.bWorldSpace = false
+    DefaultParameters.papertilemapcomponent.gettilecornerposition = Class(DefaultParameterClass)
+    DefaultParameters.papertilemapcomponent.gettilecornerposition.layerindex = 0
+    DefaultParameters.papertilemapcomponent.gettilecornerposition.bworldspace = false
     --SetLayerColor
-    DefaultParameters.PaperTileMapComponent.SetLayerColor = Class(DefaultParameterClass)
-    DefaultParameters.PaperTileMapComponent.SetLayerColor.Layer = 0
+    DefaultParameters.papertilemapcomponent.setlayercolor = Class(DefaultParameterClass)
+    DefaultParameters.papertilemapcomponent.setlayercolor.layer = 0
     --GetLayerColor
-    DefaultParameters.PaperTileMapComponent.GetLayerColor = Class(DefaultParameterClass)
-    DefaultParameters.PaperTileMapComponent.GetLayerColor.Layer = 0
+    DefaultParameters.papertilemapcomponent.getlayercolor = Class(DefaultParameterClass)
+    DefaultParameters.papertilemapcomponent.getlayercolor.layer = 0
     --CreateNewTileMap
-    DefaultParameters.PaperTileMapComponent.CreateNewTileMap = Class(DefaultParameterClass)
-    DefaultParameters.PaperTileMapComponent.CreateNewTileMap.MapWidth = 4
-    DefaultParameters.PaperTileMapComponent.CreateNewTileMap.MapHeight = 4
-    DefaultParameters.PaperTileMapComponent.CreateNewTileMap.TileWidth = 32
-    DefaultParameters.PaperTileMapComponent.CreateNewTileMap.TileHeight = 32
-    DefaultParameters.PaperTileMapComponent.CreateNewTileMap.PixelsPerUnrealUnit = 1.000000
-    DefaultParameters.PaperTileMapComponent.CreateNewTileMap.bCreateLayer = true
+    DefaultParameters.papertilemapcomponent.createnewtilemap = Class(DefaultParameterClass)
+    DefaultParameters.papertilemapcomponent.createnewtilemap.mapwidth = 4
+    DefaultParameters.papertilemapcomponent.createnewtilemap.mapheight = 4
+    DefaultParameters.papertilemapcomponent.createnewtilemap.tilewidth = 32
+    DefaultParameters.papertilemapcomponent.createnewtilemap.tileheight = 32
+    DefaultParameters.papertilemapcomponent.createnewtilemap.pixelsperunrealunit = 1.000000
+    DefaultParameters.papertilemapcomponent.createnewtilemap.bcreatelayer = true
 end
 
 --LevelVariantSetsActor
 do
-    DefaultParameters.LevelVariantSetsActor = DefaultParameters.LevelVariantSetsActor or {}
+    DefaultParameters.levelvariantsetsactor = DefaultParameters.levelvariantsetsactor or {}
     
     --GetLevelVariantSets
-    DefaultParameters.LevelVariantSetsActor.GetLevelVariantSets = Class(DefaultParameterClass)
-    DefaultParameters.LevelVariantSetsActor.GetLevelVariantSets.bLoad = false
+    DefaultParameters.levelvariantsetsactor.getlevelvariantsets = Class(DefaultParameterClass)
+    DefaultParameters.levelvariantsetsactor.getlevelvariantsets.bload = false
 end
 
 --KismetProceduralMeshLibrary
 do
-    DefaultParameters.KismetProceduralMeshLibrary = DefaultParameters.KismetProceduralMeshLibrary or {}
+    DefaultParameters.kismetproceduralmeshlibrary = DefaultParameters.kismetproceduralmeshlibrary or {}
     
     --CreateGridMeshSplit
-    DefaultParameters.KismetProceduralMeshLibrary.CreateGridMeshSplit = Class(DefaultParameterClass)
-    DefaultParameters.KismetProceduralMeshLibrary.CreateGridMeshSplit.GridSpacing = 16.000000
+    DefaultParameters.kismetproceduralmeshlibrary.creategridmeshsplit = Class(DefaultParameterClass)
+    DefaultParameters.kismetproceduralmeshlibrary.creategridmeshsplit.gridspacing = 16.000000
     --CreateGridMeshWelded
-    DefaultParameters.KismetProceduralMeshLibrary.CreateGridMeshWelded = Class(DefaultParameterClass)
-    DefaultParameters.KismetProceduralMeshLibrary.CreateGridMeshWelded.GridSpacing = 16.000000
+    DefaultParameters.kismetproceduralmeshlibrary.creategridmeshwelded = Class(DefaultParameterClass)
+    DefaultParameters.kismetproceduralmeshlibrary.creategridmeshwelded.gridspacing = 16.000000
 end
 
 --MagicLeapHandTrackingFunctionLibrary
 do
-    DefaultParameters.MagicLeapHandTrackingFunctionLibrary = DefaultParameters.MagicLeapHandTrackingFunctionLibrary or {}
+    DefaultParameters.magicleaphandtrackingfunctionlibrary = DefaultParameters.magicleaphandtrackingfunctionlibrary or {}
     
     --SetConfiguration
-    DefaultParameters.MagicLeapHandTrackingFunctionLibrary.SetConfiguration = Class(DefaultParameterClass)
-    DefaultParameters.MagicLeapHandTrackingFunctionLibrary.SetConfiguration.KeypointsFilterLevel = 0 --EHandTrackingKeypointFilterLevel::NoFilter
-    DefaultParameters.MagicLeapHandTrackingFunctionLibrary.SetConfiguration.GestureFilterLevel = 0 --EHandTrackingGestureFilterLevel::NoFilter
-    DefaultParameters.MagicLeapHandTrackingFunctionLibrary.SetConfiguration.HandSwitchingFilterLevel = 0 --EHandTrackingGestureFilterLevel::NoFilter
-    DefaultParameters.MagicLeapHandTrackingFunctionLibrary.SetConfiguration.bTrackingEnabled = true
+    DefaultParameters.magicleaphandtrackingfunctionlibrary.setconfiguration = Class(DefaultParameterClass)
+    DefaultParameters.magicleaphandtrackingfunctionlibrary.setconfiguration.keypointsfilterlevel = 0 --EHandTrackingKeypointFilterLevel::NoFilter
+    DefaultParameters.magicleaphandtrackingfunctionlibrary.setconfiguration.gesturefilterlevel = 0 --EHandTrackingGestureFilterLevel::NoFilter
+    DefaultParameters.magicleaphandtrackingfunctionlibrary.setconfiguration.handswitchingfilterlevel = 0 --EHandTrackingGestureFilterLevel::NoFilter
+    DefaultParameters.magicleaphandtrackingfunctionlibrary.setconfiguration.btrackingenabled = true
 end
 
 --AchievementWriteCallbackProxy
 do
-    DefaultParameters.AchievementWriteCallbackProxy = DefaultParameters.AchievementWriteCallbackProxy or {}
+    DefaultParameters.achievementwritecallbackproxy = DefaultParameters.achievementwritecallbackproxy or {}
     
     --WriteAchievementProgress
-    DefaultParameters.AchievementWriteCallbackProxy.WriteAchievementProgress = Class(DefaultParameterClass)
-    DefaultParameters.AchievementWriteCallbackProxy.WriteAchievementProgress.Progress = 100.000000
-    DefaultParameters.AchievementWriteCallbackProxy.WriteAchievementProgress.UserTag = 0
+    DefaultParameters.achievementwritecallbackproxy.writeachievementprogress = Class(DefaultParameterClass)
+    DefaultParameters.achievementwritecallbackproxy.writeachievementprogress.progress = 100.000000
+    DefaultParameters.achievementwritecallbackproxy.writeachievementprogress.usertag = 0
 end
 
 --CableComponent
 do
-    DefaultParameters.CableComponent = DefaultParameters.CableComponent or {}
+    DefaultParameters.cablecomponent = DefaultParameters.cablecomponent or {}
     
     --SetAttachEndTo
-    DefaultParameters.CableComponent.SetAttachEndTo = Class(DefaultParameterClass)
-    DefaultParameters.CableComponent.SetAttachEndTo.SocketName = "None"
+    DefaultParameters.cablecomponent.setattachendto = Class(DefaultParameterClass)
+    DefaultParameters.cablecomponent.setattachendto.socketname = "None"
     --SetAttachEndToComponent
-    DefaultParameters.CableComponent.SetAttachEndToComponent = Class(DefaultParameterClass)
-    DefaultParameters.CableComponent.SetAttachEndToComponent.SocketName = "None"
+    DefaultParameters.cablecomponent.setattachendtocomponent = Class(DefaultParameterClass)
+    DefaultParameters.cablecomponent.setattachendtocomponent.socketname = "None"
 end
 
 --EditableMesh
 do
-    DefaultParameters.EditableMesh = DefaultParameters.EditableMesh or {}
+    DefaultParameters.editablemesh = DefaultParameters.editablemesh or {}
     
     --EndModification
-    DefaultParameters.EditableMesh.EndModification = Class(DefaultParameterClass)
-    DefaultParameters.EditableMesh.EndModification.bFromUndo = false
+    DefaultParameters.editablemesh.endmodification = Class(DefaultParameterClass)
+    DefaultParameters.editablemesh.endmodification.bfromundo = false
 end
 
 --OculusFunctionLibrary
 do
-    DefaultParameters.OculusFunctionLibrary = DefaultParameters.OculusFunctionLibrary or {}
+    DefaultParameters.oculusfunctionlibrary = DefaultParameters.oculusfunctionlibrary or {}
     
     --GetGuardianPoints
-    DefaultParameters.OculusFunctionLibrary.GetGuardianPoints = Class(DefaultParameterClass)
-    DefaultParameters.OculusFunctionLibrary.GetGuardianPoints.UsePawnSpace = false
+    DefaultParameters.oculusfunctionlibrary.getguardianpoints = Class(DefaultParameterClass)
+    DefaultParameters.oculusfunctionlibrary.getguardianpoints.usepawnspace = false
     --SetColorScaleAndOffset
-    DefaultParameters.OculusFunctionLibrary.SetColorScaleAndOffset = Class(DefaultParameterClass)
-    DefaultParameters.OculusFunctionLibrary.SetColorScaleAndOffset.bApplyToAllLayers = false
+    DefaultParameters.oculusfunctionlibrary.setcolorscaleandoffset = Class(DefaultParameterClass)
+    DefaultParameters.oculusfunctionlibrary.setcolorscaleandoffset.bapplytoalllayers = false
     --HideLoadingSplashScreen
-    DefaultParameters.OculusFunctionLibrary.HideLoadingSplashScreen = Class(DefaultParameterClass)
-    DefaultParameters.OculusFunctionLibrary.HideLoadingSplashScreen.bClear = false
+    DefaultParameters.oculusfunctionlibrary.hideloadingsplashscreen = Class(DefaultParameterClass)
+    DefaultParameters.oculusfunctionlibrary.hideloadingsplashscreen.bclear = false
     --AddLoadingSplashScreen
-    DefaultParameters.OculusFunctionLibrary.AddLoadingSplashScreen = Class(DefaultParameterClass)
-    DefaultParameters.OculusFunctionLibrary.AddLoadingSplashScreen.SizeInMeters = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.OculusFunctionLibrary.AddLoadingSplashScreen.bClearBeforeAdd = false
+    DefaultParameters.oculusfunctionlibrary.addloadingsplashscreen = Class(DefaultParameterClass)
+    DefaultParameters.oculusfunctionlibrary.addloadingsplashscreen.sizeinmeters = UE4.Vector2D.new(1.000000, 1.000000)
+    DefaultParameters.oculusfunctionlibrary.addloadingsplashscreen.bclearbeforeadd = false
     --GetRawSensorData
-    DefaultParameters.OculusFunctionLibrary.GetRawSensorData = Class(DefaultParameterClass)
-    DefaultParameters.OculusFunctionLibrary.GetRawSensorData.DeviceType = 1 --ETrackedDeviceType::HMD
+    DefaultParameters.oculusfunctionlibrary.getrawsensordata = Class(DefaultParameterClass)
+    DefaultParameters.oculusfunctionlibrary.getrawsensordata.devicetype = 1 --ETrackedDeviceType::HMD
     --GetPose
-    DefaultParameters.OculusFunctionLibrary.GetPose = Class(DefaultParameterClass)
-    DefaultParameters.OculusFunctionLibrary.GetPose.bUseOrienationForPlayerCamera = false
-    DefaultParameters.OculusFunctionLibrary.GetPose.bUsePositionForPlayerCamera = false
+    DefaultParameters.oculusfunctionlibrary.getpose = Class(DefaultParameterClass)
+    DefaultParameters.oculusfunctionlibrary.getpose.buseorienationforplayercamera = false
+    DefaultParameters.oculusfunctionlibrary.getpose.busepositionforplayercamera = false
 end
 
 --SteamVRControllerLibrary
 do
-    DefaultParameters.SteamVRControllerLibrary = DefaultParameters.SteamVRControllerLibrary or {}
+    DefaultParameters.steamvrcontrollerlibrary = DefaultParameters.steamvrcontrollerlibrary or {}
     
     --SetTouchDPadMapping
-    DefaultParameters.SteamVRControllerLibrary.SetTouchDPadMapping = Class(DefaultParameterClass)
-    DefaultParameters.SteamVRControllerLibrary.SetTouchDPadMapping.NewMapping = 0 --ESteamVRTouchDPadMapping::FaceButtons
+    DefaultParameters.steamvrcontrollerlibrary.settouchdpadmapping = Class(DefaultParameterClass)
+    DefaultParameters.steamvrcontrollerlibrary.settouchdpadmapping.newmapping = 0 --ESteamVRTouchDPadMapping::FaceButtons
 end
 
 --SUE4LuaTestUObject
 do
-    DefaultParameters.SUE4LuaTestUObject = DefaultParameters.SUE4LuaTestUObject or {}
+    DefaultParameters.sue4luatestuobject = DefaultParameters.sue4luatestuobject or {}
     
     --TestDefaultArgs
-    DefaultParameters.SUE4LuaTestUObject.TestDefaultArgs = Class(DefaultParameterClass)
-    DefaultParameters.SUE4LuaTestUObject.TestDefaultArgs.InIntArg1 = 123
-    DefaultParameters.SUE4LuaTestUObject.TestDefaultArgs.InIntArg2 = 456
+    DefaultParameters.sue4luatestuobject.testdefaultargs = Class(DefaultParameterClass)
+    DefaultParameters.sue4luatestuobject.testdefaultargs.inintarg1 = 123
+    DefaultParameters.sue4luatestuobject.testdefaultargs.inintarg2 = 456
 end
 

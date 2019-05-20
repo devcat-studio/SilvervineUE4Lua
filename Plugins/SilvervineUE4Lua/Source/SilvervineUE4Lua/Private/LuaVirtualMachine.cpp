@@ -415,7 +415,7 @@ public:
 			return;
 		}
 
-		const bool bAlreadyRegistered = DispatchClasses.Find(DispatchClass) != nullptr;
+		const bool bAlreadyRegistered = DispatchClassNames.Find(DispatchClass->GetFName()) != nullptr;
 
 		if (bAlreadyRegistered && !bForce)
 		{
@@ -449,7 +449,7 @@ public:
 
 		if (!bAlreadyRegistered)
 		{
-			DispatchClasses.Add(DispatchClass);
+			DispatchClassNames.Add(DispatchClass->GetFName());
 		}
 
 		// SUE4LuaBinding.RegisterDispatchHandler()
@@ -512,8 +512,8 @@ public:
 	TWeakObjectPtr<UObject> WorldContextObject;
 	// 디스패치 핸들러를 반환하는 함수
 	TSharedPtr<FSUE4LuaFunction> LuaDispatchHandlerFactory;
-	// 디스패치를 사용하는 UClass들
-	TSet<UClass*> DispatchClasses;
+	// 디스패치를 사용하는 UClass의 이름들
+	TSet<FName> DispatchClassNames;
 
 public:
 	//
@@ -586,6 +586,21 @@ TSharedPtr<FSUE4LuaVirtualMachine> FSUE4LuaVirtualMachine::Create(bool bDebuggab
 				lua_setfield(L, -2, "Error");
 			}
 
+			// SUE4Lua.Build
+			{
+				lua_newtable(L);
+				lua_pushvalue(L, -1);
+				lua_setfield(L, -3, "Build");
+
+				// SUE4Lua.Build.WITH_EDITOR
+				{
+					lua_pushboolean(L, WITH_EDITOR);
+					lua_setfield(L, -2, "WITH_EDITOR");
+				}
+
+				lua_pop(L, 1);
+			}
+
 			// Stack: SUE4Lua
 			lua_pop(L, 1);
 			check(lua_gettop(L) == 0);
@@ -608,7 +623,7 @@ TSharedPtr<FSUE4LuaVirtualMachine> FSUE4LuaVirtualMachine::Create(bool bDebuggab
 			SUE4LuaUStruct::Register(L);
 		}
 
-		// 라이브러리 등록
+		// c++ 라이브러리 등록
 		{
 			SUE4LuaLibrary::RegisterSUE4LuaLibrary(L);
 			SUE4LuaLibrary::RegisterPlatformTimeLibrary(L);
@@ -624,6 +639,9 @@ TSharedPtr<FSUE4LuaVirtualMachine> FSUE4LuaVirtualMachine::Create(bool bDebuggab
 			SUE4LuaLibrary::RegisterTextFormatterLibrary(L);
 			SUE4LuaLibrary::RegisterPointerEventLibrary(L);
 		}
+
+		// lua 라이브러리 등록
+		VM->ExecuteFile(L, TEXT("SUE4Lua/Libraries/AllLibraries.lua"));
 	}
 
 #if !(UE_BUILD_SHIPPING || UE_BUILD_TEST)

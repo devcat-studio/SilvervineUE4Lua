@@ -20,6 +20,13 @@ assert(type(SUE4Lua.Log) == 'function')
 assert(type(SUE4Lua.Warning) == 'function')
 assert(type(SUE4Lua.Error) == 'function')
 
+-- 빌드 정보
+do
+	assert(type(SUE4Lua.Build) == 'table')
+
+	assert(type(SUE4Lua.Build.WITH_EDITOR) == 'boolean')
+end
+
 -- SUE4Lua.Log() 등으로 디버그 텍스트를 출력했을 때 호출됩니다.
 function SUE4Lua.OnDebugPrint(text)
 end
