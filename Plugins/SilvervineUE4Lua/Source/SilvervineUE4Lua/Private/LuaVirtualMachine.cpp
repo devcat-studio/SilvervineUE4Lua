@@ -415,7 +415,7 @@ public:
 			return;
 		}
 
-		const bool bAlreadyRegistered = DispatchClasses.Find(DispatchClass) != nullptr;
+		const bool bAlreadyRegistered = DispatchClassNames.Find(DispatchClass->GetFName()) != nullptr;
 
 		if (bAlreadyRegistered && !bForce)
 		{
@@ -449,7 +449,7 @@ public:
 
 		if (!bAlreadyRegistered)
 		{
-			DispatchClasses.Add(DispatchClass);
+			DispatchClassNames.Add(DispatchClass->GetFName());
 		}
 
 		// SUE4LuaBinding.RegisterDispatchHandler()
@@ -512,8 +512,8 @@ public:
 	TWeakObjectPtr<UObject> WorldContextObject;
 	// 디스패치 핸들러를 반환하는 함수
 	TSharedPtr<FSUE4LuaFunction> LuaDispatchHandlerFactory;
-	// 디스패치를 사용하는 UClass들
-	TSet<UClass*> DispatchClasses;
+	// 디스패치를 사용하는 UClass의 이름들
+	TSet<FName> DispatchClassNames;
 
 public:
 	//
