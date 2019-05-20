@@ -127,7 +127,12 @@ namespace SUE4LuaUObject
 			lua_remove(L, -2);
 			if (!lua_isnil(L, -1))
 			{
-				return;
+				// UObject가 이전에 사용했던 메모리에 그대로 할당된 경우, 저장된 프록시 객체가 유효하지 않을 수 있습니다
+				auto UserData = FSUE4LuaUserData::ToUserData<FUObjectUserData>(L, -1);
+				if (UserData->TargetUObject.IsValid())
+				{
+					return;
+				}
 			}
 			lua_pop(L, 1);
 		}
