@@ -129,7 +129,33 @@ function SUE4LuaBinding.FindDispatchHandler(functionName, dispatchObject)
 		if handlerData.handler.__dispatchHandler then
 			func = handlerData.handler.__dispatchHandler(functionName, dispatchObject)
 		else
-			func= handlerData.handler[functionName] or nil
+			if handlerData.functions == nil then
+				handlerData.functions = {}
+				local currentHandler = handlerData.handler
+				while currentHandler do
+					local currentFunctions = {}
+					for k, v in pairs(currentHandler) do
+						if type(k) == 'string' and type(v) == 'function' then
+							local kLower = k:lower()
+							if currentFunctions[kLower] ~= nil then
+								SUE4Lua.Warning("FindDispatchHandler(): Function names are duplicated. Check case-sensitivity:", className .. '.' .. k)
+							elseif handlerData.functions[kLower] == nil then
+								handlerData.functions[kLower] = v
+								currentFunctions[kLower] = v
+							end
+						end
+					end
+					local mt = getmetatable(currentHandler)
+					currentHandler = (mt and mt.__index) or nil
+				end
+			end
+			func = handlerData.functions[functionName:lower()] or nil
+
+			if SUE4Lua.Build.WITH_EDITOR then
+				if func ~= nil and handlerData.handler[functionName] == nil then
+					SUE4Lua.Warning("FindDispatchHandler(): Check case-sensitivity:", className .. '.' .. functionName)
+				end
+			end
 		end
 		
 		if func ~= nil then
@@ -156,7 +182,8 @@ function SUE4LuaBinding.ReloadDispatchHandler(filename)
 			if handlerChunk then
 				local handler = handlerChunk()
 				if type(handler) == 'table' then
-					handlerData.handler = handler					
+					handlerData.handler = handler
+					handlerData.functions = nil
 					SUE4Lua.Log("Dispatch Handler was Hot-Reloaded: ", className, filename)
 				else
 					SUE4Lua.Error("Dispatch Handler files should return a table:", className, filename)

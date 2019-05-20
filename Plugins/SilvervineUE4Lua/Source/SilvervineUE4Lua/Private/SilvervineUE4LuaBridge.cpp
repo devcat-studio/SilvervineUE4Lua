@@ -125,10 +125,22 @@ void USUE4LuaBridge::DispatchInternal(FFrame& InStack, const FString& InFunction
 	TRefCountPtr<FSUE4LuaUStructValue> FuncParams(new FSUE4LuaUStructValue(SignatureFunction));
 
 	// 파라메터 테이블을 생성. 함수 호출 후에도 사용해야 하므로 스택에 먼저 푸시합니다.
+#if WITH_EDITOR
 	{
+		// 에디터 빌드에서 대소문자 오류를 잡아내기 위해 일반 테이블을 사용
+
 		lua_newtable(L);
 		// Stack: ParamTable
 	}
+#else
+	{
+		lua_getglobal(L, "CaseInsensitiveTable");
+		lua_getfield(L, -1, "new");
+		lua_remove(L, -2);
+		lua_call(L, 0, 1);
+		// Stack: ParamTable 
+	}
+#endif // WITH_EDITOR
 
 	// 호출할 함수를 찾아서 푸시합니다.
 	if (!VM->PushDispatchHandler(L, Stack->Object, InFunctionName.IsEmpty() ? SignatureFunction->GetName() : InFunctionName))

@@ -138,6 +138,8 @@ void FSUE4LuaDefaultParameterCodeGen::ExportClass(const FSUE4LuaCodeGenContext& 
 void FSUE4LuaDefaultParameterCodeGen::ExportDefaultParameters(const UClass* Class)
 {
 	const FString ClassName = Class->GetName();	
+	const FString ClassNameLower = ClassName.ToLower();
+
 	TArray<FString> BodyText;
 
 	// 상속받은 함수는 Gen 대상에서 제외
@@ -145,6 +147,7 @@ void FSUE4LuaDefaultParameterCodeGen::ExportDefaultParameters(const UClass* Clas
 	{
 		const UFunction* Function = *FuncIt;
 		const FString FunctionName = Function->GetName();
+		const FString FunctionNameLower = FunctionName.ToLower();
 
 		bool bStartWrite = false;
 
@@ -152,6 +155,7 @@ void FSUE4LuaDefaultParameterCodeGen::ExportDefaultParameters(const UClass* Clas
 		{
 			const UProperty* Param = *ParamIt;
 			const FString ParamName = Param->GetName();
+			const FString ParamNameLower = ParamName.ToLower();
 
 			if (IsReturnParameter(Param) || IsOutParameter(Param))
 			{
@@ -166,11 +170,11 @@ void FSUE4LuaDefaultParameterCodeGen::ExportDefaultParameters(const UClass* Clas
 				{
 					BodyText.Add(FString::Printf(TEXT("--%s"), *FunctionName));
 					BodyText.Add(FString::Printf(TEXT("DefaultParameters.%s.%s = Class(DefaultParameterClass)"),
-						*ClassName, *FunctionName));
+						*ClassNameLower, *FunctionNameLower));
 					bStartWrite = true;
 				}
 				BodyText.Add(FString::Printf(TEXT("DefaultParameters.%s.%s.%s = %s"),
-					*ClassName, *FunctionName, *ParamName, *ValueString));
+					*ClassNameLower, *FunctionNameLower, *ParamNameLower, *ValueString));
 			}
 		}
 	}
@@ -181,7 +185,7 @@ void FSUE4LuaDefaultParameterCodeGen::ExportDefaultParameters(const UClass* Clas
 		{
 			SUE4LUACODEGEN_INDENT(CodeBuilder);
 
-			CodeBuilder.AppendLine(FString::Printf(TEXT("DefaultParameters.%s = DefaultParameters.%s or {}"), *ClassName, *ClassName));
+			CodeBuilder.AppendLine(FString::Printf(TEXT("DefaultParameters.%s = DefaultParameters.%s or {}"), *ClassNameLower, *ClassNameLower));
 			CodeBuilder.AppendLine();
 			CodeBuilder.AppendLines(BodyText);
 		}

@@ -102,6 +102,57 @@ namespace SUE4LuaUFunction
 		return FString::Printf(TEXT("U%s::%s"), *ClassName, *FunctionName);
 	}
 
+	static void GetTableWithCaseInsensitive(lua_State* L, int32 StackIndex, const UProperty* Property)
+	{
+#if WITH_EDITOR
+		// 에디터 빌드는 오류를 잡아내기 위해 대소문자를 구별
+		FSUE4LuaStack::Push(L, Property->GetName());
+		lua_gettable(L, StackIndex);
+#else
+		FSUE4LuaStack::Push(L, Property->GetName());
+		lua_gettable(L, StackIndex);
+
+		if (lua_isnil(L, -1))
+		{
+			lua_pop(L, 1);
+
+			// 테이블 전체를 순회해서 대소문자 구별없이 키를 찾습니다.
+			lua_pushnil(L);
+			while (lua_next(L, StackIndex))
+			{
+				// Stack: key, value
+				lua_pushvalue(L, -2);
+				// Stack: key, value, key
+
+				if (lua_isstring(L, -1))
+				{
+					FName KeyName = FSUE4LuaStack::To<FName>(L, -1);
+
+					if (KeyName == Property->GetFName())
+					{
+						// Stack: key, value, key
+						lua_rotate(L, -3, -1);
+						// Stack: value, key, key
+						lua_pop(L, 2);
+						// Stack: value
+
+						return;
+					}
+				}
+
+				// Stack: key, value, key
+				lua_pop(L, 2);
+				// Stack: key
+			}
+
+			lua_pushnil(L);
+		}
+#endif // WITH_EDITOR
+
+		// Stack: value
+		return;
+	}
+
 	static void CopyDefaultValue(lua_State* L, const UFunction* Function, const UProperty* Property, void* ContainerPtr)
 	{
 		check(Function != nullptr);
@@ -120,20 +171,29 @@ namespace SUE4LuaUFunction
 			return;
 		}
 
+		FString ClassNameLower = GetClassName(Function);
+		ClassNameLower.ToLowerInline();
+
 		lua_getglobal(L, "DefaultParameters");
-		lua_getfield(L, -1, TCHAR_TO_UTF8(*GetClassName(Function)));
+		lua_getfield(L, -1, TCHAR_TO_UTF8(*ClassNameLower));
 		// Stack: DefaultParameters, Class
 
 		bool bFoundDefaultValue = false;
 
 		if (!lua_isnil(L, -1))
 		{
-			lua_getfield(L, -1, TCHAR_TO_UTF8(*GetFunctionName(Function)));
+			FString FunctionNameLower = GetFunctionName(Function);
+			FunctionNameLower.ToLowerInline();
+
+			lua_getfield(L, -1, TCHAR_TO_UTF8(*FunctionNameLower));
 			// Stack: DefaultParameters, Class, Function
 
 			if (!lua_isnil(L, -1))
 			{
-				lua_getfield(L, -1, TCHAR_TO_UTF8(*Property->GetName()));
+				FString PropertyNameLower = Property->GetName();
+				PropertyNameLower.ToLowerInline();
+
+				lua_getfield(L, -1, TCHAR_TO_UTF8(*PropertyNameLower));
 				// Stack: DefaultParameters, Class, Function, DefaultValue
 
 				if (!lua_isnil(L, -1))
@@ -313,8 +373,7 @@ namespace SUE4LuaUFunction
 					continue;
 				}
 
-				FSUE4LuaStack::Push(L, Property->GetName());
-				lua_gettable(L, ArgStackBaseIndex);
+				GetTableWithCaseInsensitive(L, ArgStackBaseIndex, Property);
 				// Stack: value
 
 				if (!lua_isnil(L, -1))
@@ -375,8 +434,7 @@ namespace SUE4LuaUFunction
 					const void* SrcValueAddress = Property->ContainerPtrToValuePtr<void>(FuncParams->GetValueAddress());
 
 					// Stack: NamedArgTable
-					FSUE4LuaStack::Push(L, Property->GetName());
-					lua_gettable(L, -2);
+					GetTableWithCaseInsensitive(L, ArgStackBaseIndex, Property);
 					// Stack: NamedArgTable, InValue
 
 					if (!SUE4LuaUProperty::TryCopyToLua(L, -1, Property, SrcValueAddress))
