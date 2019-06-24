@@ -25,5 +25,8 @@ namespace SUE4LuaLibrary
 	void RegisterColorLibrary(lua_State* L);
 	void RegisterLinearColorLibrary(lua_State* L);
 	void RegisterTextFormatterLibrary(lua_State* L);
+	void RegisterDateTimeLibrary(lua_State* L);
+	void RegisterTimespanLibrary(lua_State* L);
+	void RegisterQualifiedFrameTimeLibrary(lua_State* L);
 	void RegisterPointerEventLibrary(lua_State* L);
 };

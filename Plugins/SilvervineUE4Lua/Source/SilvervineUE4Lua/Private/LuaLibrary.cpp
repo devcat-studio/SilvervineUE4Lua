@@ -829,7 +829,6 @@ namespace SUE4LuaMathLibrary
 	}
 
 	// float Sin(Rad)
-	// #todo: 유닛테스트 추가	
 	static int32 LuaSin(lua_State* L)
 	{
 		if (lua_gettop(L) >= 1)
@@ -848,7 +847,6 @@ namespace SUE4LuaMathLibrary
 	}
 
 	// float Asin(Value)
-	// #todo: 유닛테스트 추가	
 	static int32 LuaAsin(lua_State* L)
 	{
 		if (lua_gettop(L) >= 1)
@@ -867,7 +865,6 @@ namespace SUE4LuaMathLibrary
 	}
 
 	// float Cos(Rad)
-	// #todo: 유닛테스트 추가	
 	static int32 LuaCos(lua_State* L)
 	{
 		if (lua_gettop(L) >= 1)
@@ -886,7 +883,6 @@ namespace SUE4LuaMathLibrary
 	}
 
 	// float Acos(Value)
-	// #todo: 유닛테스트 추가	
 	static int32 LuaAcos(lua_State* L)
 	{
 		if (lua_gettop(L) >= 1)
@@ -905,7 +901,6 @@ namespace SUE4LuaMathLibrary
 	}
 
 	// float Tan(Rad)
-	// #todo: 유닛테스트 추가	
 	static int32 LuaTan(lua_State* L)
 	{
 		if (lua_gettop(L) >= 1)
@@ -924,7 +919,6 @@ namespace SUE4LuaMathLibrary
 	}
 
 	// float Atan(Value)
-	// #todo: 유닛테스트 추가	
 	static int32 LuaAtan(lua_State* L)
 	{
 		if (lua_gettop(L) >= 1)
@@ -943,7 +937,6 @@ namespace SUE4LuaMathLibrary
 	}
 
 	// float Atan2(A, B)
-	// #todo: 유닛테스트 추가	
 	static int32 LuaAtan2(lua_State* L)
 	{
 		if (lua_gettop(L) >= 2)
@@ -963,7 +956,6 @@ namespace SUE4LuaMathLibrary
 	}
 
 	// float DegreesToRadians(Degree)
-	// #todo: 유닛테스트 추가	
 	static int32 LuaDegreesToRadians(lua_State* L)
 	{
 		if (lua_gettop(L) >= 1)
@@ -982,7 +974,6 @@ namespace SUE4LuaMathLibrary
 	}
 
 	// float RadiansToDegrees(Rad)
-	// #todo: 유닛테스트 추가	
 	static int32 LuaRadiansToDegrees(lua_State* L)
 	{
 		if (lua_gettop(L) >= 1)
@@ -1000,18 +991,56 @@ namespace SUE4LuaMathLibrary
 		return 1;
 	}
 
-	// bool IsNearlyZero(Value)
-	// #todo: 유닛테스트 추가	
+	// bool IsNearlyZero(Value, Tolerance?)
 	static int32 LuaIsNearlyZero(lua_State* L)
 	{
 		if (lua_gettop(L) >= 1)
 		{
 			float A = FSUE4LuaStack::To<float>(L, 1);
 			FSUE4LuaStack::Push(L, FMath::IsNearlyZero(A));
+			if (lua_isnumber(L, 2))
+			{
+				float Tolerance = FSUE4LuaStack::To<float>(L, 2);
+
+				FSUE4LuaStack::Push(L, FMath::IsNearlyZero(A, Tolerance));
+			}
+			else
+			{
+				FSUE4LuaStack::Push(L, FMath::IsNearlyZero(A));
+			}
 		}
 		else
 		{
 			SUE4LVM_ERROR(L, TEXT("UE4.Math.IsNearlyZero(): invalid argument count."));
+
+			lua_pushnil(L);
+		}
+
+		return 1;
+	}
+
+	// bool IsNearlyEqual(Value1, Value2)
+	static int32 LuaIsNearlyEqual(lua_State* L)
+	{
+		if (lua_gettop(L) >= 2)
+		{
+			float A = FSUE4LuaStack::To<float>(L, 1);
+			float B = FSUE4LuaStack::To<float>(L, 2);
+
+			if (lua_isnumber(L, 3))
+			{
+				float Tolerance = FSUE4LuaStack::To<float>(L, 3);
+
+				FSUE4LuaStack::Push(L, FMath::IsNearlyEqual(A, B, Tolerance));
+			}
+			else
+			{
+				FSUE4LuaStack::Push(L, FMath::IsNearlyEqual(A, B));
+			}
+		}
+		else
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.Math.IsNearlyEqual(): invalid argument count."));
 
 			lua_pushnil(L);
 		}
@@ -1131,6 +1160,10 @@ namespace SUE4LuaMathLibrary
 
 		lua_pushstring(L, "IsNearlyZero");
 		lua_pushcfunction(L, &LuaIsNearlyZero);
+		lua_rawset(L, -3);
+
+		lua_pushstring(L, "IsNearlyEqual");
+		lua_pushcfunction(L, &LuaIsNearlyEqual);
 		lua_rawset(L, -3);
 
 		lua_pop(L, 2);
@@ -2566,6 +2599,33 @@ namespace SUE4LuaRotatorLibrary
 		return 1;
 	}
 
+	// Rotator MakeRotFromX(X)
+	static int32 LuaMakeRotFromX(lua_State* L)
+	{
+		auto X = FSUE4LuaStack::To<FVector>(L, 1);
+
+		FSUE4LuaStack::Push(L, FRotationMatrix::MakeFromX(X).Rotator());
+		return 1;
+	}
+
+	// Rotator MakeRotFromY(Y)
+	static int32 LuaMakeRotFromY(lua_State* L)
+	{
+		auto Y = FSUE4LuaStack::To<FVector>(L, 1);
+
+		FSUE4LuaStack::Push(L, FRotationMatrix::MakeFromY(Y).Rotator());
+		return 1;
+	}
+
+	// Rotator MakeRotFromZ(Z)
+	static int32 LuaMakeRotFromZ(lua_State* L)
+	{
+		auto Z = FSUE4LuaStack::To<FVector>(L, 1);
+
+		FSUE4LuaStack::Push(L, FRotationMatrix::MakeFromZ(Z).Rotator());
+		return 1;
+	}
+
 	// Quat ToQuat(R)
 	static int32 LuaToQuat(lua_State* L)
 	{
@@ -2643,6 +2703,18 @@ namespace SUE4LuaRotatorLibrary
 
 		lua_pushstring(L, "GetNormal");
 		lua_pushcfunction(L, &LuaGetNormal);
+		lua_rawset(L, -3);
+
+		lua_pushstring(L, "MakeRotFromX");
+		lua_pushcfunction(L, &LuaMakeRotFromX);
+		lua_rawset(L, -3);
+
+		lua_pushstring(L, "MakeRotFromY");
+		lua_pushcfunction(L, &LuaMakeRotFromY);
+		lua_rawset(L, -3);
+
+		lua_pushstring(L, "MakeRotFromZ");
+		lua_pushcfunction(L, &LuaMakeRotFromZ);
 		lua_rawset(L, -3);
 
 		lua_pushstring(L, "ToQuat");
@@ -3300,6 +3372,714 @@ namespace SUE4LuaLinearColorLibrary
 }
 
 //=============================================================================================================================
+// namespace SUE4LuaDateTimeLibrary
+//=============================================================================================================================
+namespace SUE4LuaDateTimeLibrary
+{
+	// operator==(DT1, DT2)
+	static int32 LuaOperatorEqual(lua_State* L)
+	{
+		auto DT1 = FSUE4LuaStack::To<FDateTime>(L, 1);
+		auto DT2 = FSUE4LuaStack::To<FDateTime>(L, 2);
+
+		FSUE4LuaStack::Push(L, DT1 == DT2);
+		return 1;
+	}
+
+	// operator+(DT, Timespan)
+	static int32 LuaOperatorAdd(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+		auto Timespan = FSUE4LuaStack::To<FTimespan>(L, 2);
+
+		FSUE4LuaStack::Push(L, DT + Timespan);
+		return 1;
+	}
+
+	// operator-(DT1, Timespan or DT2)
+	static int32 LuaOperatorSubtract(lua_State* L)
+	{
+		auto DT1 = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		if (FSUE4LuaStack::IsPrimitiveStructTypeOf(L, 2, "Timespan"))
+		{
+			auto Timespan = FSUE4LuaStack::To<FTimespan>(L, 2);
+
+			FSUE4LuaStack::Push(L, DT1 - Timespan);
+		}
+		else
+		{
+			auto DT2 = FSUE4LuaStack::To<FDateTime>(L, 2);
+
+			FSUE4LuaStack::Push(L, DT1 - DT2);
+		}
+
+		return 1;
+	}
+
+	// DateTime GetDate(DT)
+	static int32 LuaGetDate(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetDate());
+		return 1;
+	}
+
+	// int GetDay(DT)
+	static int32 LuaGetDay(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetDay());
+		return 1;
+	}
+
+	// int GetDayOfYear(DT)
+	static int32 LuaGetDayOfYear(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetDayOfYear());
+		return 1;
+	}
+
+	// int GetHour(DT)
+	static int32 LuaGetHour(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetHour());
+		return 1;
+	}
+
+	// int GetHour12(DT)
+	static int32 LuaGetHour12(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetHour12());
+		return 1;
+	}
+
+	// int GetMillisecond(DT)
+	static int32 LuaGetMillisecond(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetMillisecond());
+		return 1;
+	}
+
+	// int GetMinute(DT)
+	static int32 LuaGetMinute(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetMinute());
+		return 1;
+	}
+
+	// int GetMonth(DT)
+	static int32 LuaGetMonth(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetMonth());
+		return 1;
+	}
+
+	// int GetSecond(DT)
+	static int32 LuaGetSecond(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetSecond());
+		return 1;
+	}
+
+	// Timespan GetTimeOfDay(DT)
+	static int32 LuaGetTimeOfDay(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetTimeOfDay());
+		return 1;
+	}
+
+	// int GetYear(DT)
+	static int32 LuaGetYear(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.GetYear());
+		return 1;
+	}
+
+	// bool IsAfternoon(DT)
+	static int32 LuaIsAfternoon(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.IsAfternoon());
+		return 1;
+	}
+
+	// bool IsMorning(DT)
+	static int32 LuaIsMorning(lua_State* L)
+	{
+		auto DT = FSUE4LuaStack::To<FDateTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, DT.IsMorning());
+		return 1;
+	}
+
+	// int DaysInYear(Year, Month)
+	static int32 LuaDaysInYear(lua_State* L)
+	{
+		int32 Year = FSUE4LuaStack::To<int32>(L, 1);
+
+		FSUE4LuaStack::Push(L, FDateTime::DaysInYear(Year));
+		return 1;
+	}
+
+	// int DaysInMonth(Year, Month)
+	static int32 LuaDaysInMonth(lua_State* L)
+	{
+		int32 Year = FSUE4LuaStack::To<int32>(L, 1);
+		int32 Month = FSUE4LuaStack::To<int32>(L, 2);
+
+		FSUE4LuaStack::Push(L, FDateTime::DaysInMonth(Year, Month));
+		return 1;
+	}
+
+	// bool IsLeapYear(Year)
+	static int32 LuaIsLeapYear(lua_State* L)
+	{
+		int32 Year = FSUE4LuaStack::To<int32>(L, 1);
+
+		FSUE4LuaStack::Push(L, FDateTime::IsLeapYear(Year));
+		return 1;
+	}
+
+	// DateTime MaxValue()
+	static int32 LuaMaxValue(lua_State* L)
+	{
+		FSUE4LuaStack::Push(L, FDateTime::MaxValue());
+		return 1;
+	}
+
+	// DateTime MinValue()
+	static int32 LuaMinValue(lua_State* L)
+	{
+		FSUE4LuaStack::Push(L, FDateTime::MinValue());
+		return 1;
+	}
+	
+	// DateTime Now()
+	static int32 LuaNow(lua_State* L)
+	{
+		FSUE4LuaStack::Push(L, FDateTime::Now());
+		return 1;
+	}
+
+	// DateTime Today()
+	static int32 LuaToday(lua_State* L)
+	{
+		FSUE4LuaStack::Push(L, FDateTime::Today());
+		return 1;
+	}
+
+	// DateTime UtcNow()
+	static int32 LuaUtcNow(lua_State* L)
+	{
+		FSUE4LuaStack::Push(L, FDateTime::UtcNow());
+		return 1;
+	}
+
+	static void Register(lua_State* L)
+	{
+		lua_getglobal(L, "UE4");
+		lua_getfield(L, -1, "DateTime");
+		// Stack: UE4, DateTime
+
+		// Operators
+		{
+			lua_getfield(L, -1, "metaTable");
+			// Stack: UE4, DateTime, metaTable
+
+			lua_pushstring(L, "__eq");
+			lua_pushcfunction(L, &LuaOperatorEqual);
+			lua_rawset(L, -3);
+
+			lua_pushstring(L, "__add");
+			lua_pushcfunction(L, &LuaOperatorAdd);
+			lua_rawset(L, -3);
+
+			lua_pushstring(L, "__sub");
+			lua_pushcfunction(L, &LuaOperatorSubtract);
+			lua_rawset(L, -3);
+
+			lua_pop(L, 1);
+			// Stack: UE4, DateTime
+		}
+
+		lua_pushcfunction(L, &LuaGetDate);
+		lua_setfield(L, -2, "GetDate");
+
+		lua_pushcfunction(L, &LuaGetDay);
+		lua_setfield(L, -2, "GetDay");
+
+		lua_pushcfunction(L, &LuaGetDayOfYear);
+		lua_setfield(L, -2, "GetDayOfYear");
+
+		lua_pushcfunction(L, &LuaGetHour);
+		lua_setfield(L, -2, "GetHour");
+
+		lua_pushcfunction(L, &LuaGetHour12);
+		lua_setfield(L, -2, "GetHour12");
+
+		lua_pushcfunction(L, &LuaGetMillisecond);
+		lua_setfield(L, -2, "GetMillisecond");
+
+		lua_pushcfunction(L, &LuaGetMinute);
+		lua_setfield(L, -2, "GetMinute");
+
+		lua_pushcfunction(L, &LuaGetMonth);
+		lua_setfield(L, -2, "GetMonth");
+
+		lua_pushcfunction(L, &LuaGetSecond);
+		lua_setfield(L, -2, "GetSecond");
+
+		lua_pushcfunction(L, &LuaGetTimeOfDay);
+		lua_setfield(L, -2, "GetTimeOfDay");
+
+		lua_pushcfunction(L, &LuaGetYear);
+		lua_setfield(L, -2, "GetYear");
+
+		lua_pushcfunction(L, &LuaIsAfternoon);
+		lua_setfield(L, -2, "IsAfternoon");
+
+		lua_pushcfunction(L, &LuaIsMorning);
+		lua_setfield(L, -2, "IsMorning");
+
+		lua_pushcfunction(L, &LuaDaysInYear);
+		lua_setfield(L, -2, "DaysInYear");
+
+		lua_pushcfunction(L, &LuaDaysInMonth);
+		lua_setfield(L, -2, "DaysInMonth");
+
+		lua_pushcfunction(L, &LuaIsLeapYear);
+		lua_setfield(L, -2, "IsLeapYear");
+
+		lua_pushcfunction(L, &LuaMaxValue);
+		lua_setfield(L, -2, "MaxValue");
+
+		lua_pushcfunction(L, &LuaMinValue);
+		lua_setfield(L, -2, "MinValue");
+
+		lua_pushcfunction(L, &LuaNow);
+		lua_setfield(L, -2, "Now");
+
+		lua_pushcfunction(L, &LuaToday);
+		lua_setfield(L, -2, "Today");
+
+		lua_pushcfunction(L, &LuaUtcNow);
+		lua_setfield(L, -2, "UtcNow");
+
+		// Stack: UE4, DateTime
+		lua_pop(L, 2);
+		// Stack: (empty)
+	}
+}
+
+//=============================================================================================================================
+// namespace SUE4LuaTimespanLibrary
+//=============================================================================================================================
+namespace SUE4LuaTimespanLibrary
+{
+	// operator-(T)
+	static int32 LuaOperatorUnaryMinus(lua_State* L)
+	{
+		auto V = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, -V);
+		return 1;
+	}
+
+	// operator==(T1, T2)
+	static int32 LuaOperatorEqual(lua_State* L)
+	{
+		auto T1 = FSUE4LuaStack::To<FTimespan>(L, 1);
+		auto T2 = FSUE4LuaStack::To<FTimespan>(L, 2);
+
+		FSUE4LuaStack::Push(L, T1 == T2);
+		return 1;
+	}
+
+	// operator+(T1, T2)
+	static int32 LuaOperatorAdd(lua_State* L)
+	{
+		auto T1 = FSUE4LuaStack::To<FTimespan>(L, 1);
+		auto T2 = FSUE4LuaStack::To<FTimespan>(L, 2);
+
+		FSUE4LuaStack::Push(L, T1 + T2);
+		return 1;
+	}
+
+	// operator-(T1, T2)
+	static int32 LuaOperatorSubtract(lua_State* L)
+	{
+		auto T1 = FSUE4LuaStack::To<FTimespan>(L, 1);
+		auto T2 = FSUE4LuaStack::To<FTimespan>(L, 2);
+
+		FSUE4LuaStack::Push(L, T1 - T2);
+		return 1;
+	}
+
+	// operator*(T, Scalar)
+	static int32 LuaOperatorMultiply(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+		auto Scalar = FSUE4LuaStack::To<float>(L, 2);
+
+		FSUE4LuaStack::Push(L, T * Scalar);
+		return 1;
+	}
+
+	// operator/(T, Scalar)
+	static int32 LuaOperatorDivide(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+		auto Scalar = FSUE4LuaStack::To<float>(L, 2);
+
+		FSUE4LuaStack::Push(L, T / Scalar);
+		return 1;
+	}
+
+	// int GetDays(T)
+	static int32 LuaGetDays(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetDays());
+		return 1;
+	}
+
+	// Timespan GetDuration(T)
+	static int32 LuaGetDuration(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetDuration());
+		return 1;
+	}
+
+	// int GetHours(T)
+	static int32 LuaGetHours(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetHours());
+		return 1;
+	}
+
+	// int GetMilliseconds(T)
+	static int32 LuaGetMilliseconds(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetFractionMilli());
+		return 1;
+	}
+
+	// int GetMinutes(T)
+	static int32 LuaGetMinutes(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetMinutes());
+		return 1;
+	}
+
+	// int GetSeconds(T)
+	static int32 LuaGetSeconds(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetSeconds());
+		return 1;
+	}
+
+	// double GetTotalDays(T)
+	static int32 LuaGetTotalDays(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetTotalDays());
+		return 1;
+	}
+
+	// double GetTotalHours(T)
+	static int32 LuaGetTotalHours(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetTotalHours());
+		return 1;
+	}
+
+	// double GetTotalMilliseconds(T)
+	static int32 LuaGetTotalMilliseconds(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetTotalMilliseconds());
+		return 1;
+	}
+
+	// double GetTotalMinutes(T)
+	static int32 LuaGetTotalMinutes(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetTotalMinutes());
+		return 1;
+	}
+
+	// double GetTotalSeconds(T)
+	static int32 LuaGetTotalSeconds(lua_State* L)
+	{
+		auto T = FSUE4LuaStack::To<FTimespan>(L, 1);
+
+		FSUE4LuaStack::Push(L, T.GetTotalSeconds());
+		return 1;
+	}
+
+	// Timespan FromDays(Days)
+	static int32 LuaFromDays(lua_State* L)
+	{
+		auto Days = FSUE4LuaStack::To<float>(L, 1);
+
+		FSUE4LuaStack::Push(L, UKismetMathLibrary::FromDays(Days));
+		return 1;
+	}
+
+	// Timespan FromHours(Hours)
+	static int32 LuaFromHours(lua_State* L)
+	{
+		auto Hours = FSUE4LuaStack::To<float>(L, 1);
+
+		FSUE4LuaStack::Push(L, UKismetMathLibrary::FromHours(Hours));
+		return 1;
+	}
+
+	// Timespan FromMilliseconds(Milliseconds)
+	static int32 LuaFromMilliseconds(lua_State* L)
+	{
+		auto Milliseconds = FSUE4LuaStack::To<float>(L, 1);
+
+		FSUE4LuaStack::Push(L, UKismetMathLibrary::FromMilliseconds(Milliseconds));
+		return 1;
+	}
+
+	// Timespan FromMinutes(Minutes)
+	static int32 LuaFromMinutes(lua_State* L)
+	{
+		auto Minutes = FSUE4LuaStack::To<float>(L, 1);
+
+		FSUE4LuaStack::Push(L, UKismetMathLibrary::FromMinutes(Minutes));
+		return 1;
+	}
+
+	// Timespan FromSeconds(Milliseconds)
+	static int32 LuaFromSeconds(lua_State* L)
+	{
+		auto Seconds = FSUE4LuaStack::To<float>(L, 1);
+
+		FSUE4LuaStack::Push(L, UKismetMathLibrary::FromSeconds(Seconds));
+		return 1;
+	}
+
+	// Timespan MaxValue()
+	static int32 LuaMaxValue(lua_State* L)
+	{
+		FSUE4LuaStack::Push(L, FTimespan::MaxValue());
+		return 1;
+	}
+
+	// Timespan MinValue()
+	static int32 LuaMinValue(lua_State* L)
+	{
+		FSUE4LuaStack::Push(L, FTimespan::MinValue());
+		return 1;
+	}
+
+	// float Ratio(T1, T2)
+	static int32 LuaRatio(lua_State* L)
+	{
+		auto T1 = FSUE4LuaStack::To<FTimespan>(L, 1);
+		auto T2 = FSUE4LuaStack::To<FTimespan>(L, 2);
+
+		FSUE4LuaStack::Push(L, FTimespan::Ratio(T1, T2));
+		return 1;
+	}
+
+	// Timespan ZeroValue()
+	static int32 LuaZeroValue(lua_State* L)
+	{
+		FSUE4LuaStack::Push(L, FTimespan::Zero());
+		return 1;
+	}
+
+	static void Register(lua_State* L)
+	{
+		lua_getglobal(L, "UE4");
+		lua_getfield(L, -1, "Timespan");
+		// Stack: UE4, Timespan
+
+		// Operators
+		{
+			lua_getfield(L, -1, "metaTable");
+			// Stack: UE4, Timespan, metaTable
+
+			lua_pushstring(L, "__unm");
+			lua_pushcfunction(L, &LuaOperatorUnaryMinus);
+			lua_rawset(L, -3);
+
+			lua_pushstring(L, "__eq");
+			lua_pushcfunction(L, &LuaOperatorEqual);
+			lua_rawset(L, -3);
+
+			lua_pushstring(L, "__add");
+			lua_pushcfunction(L, &LuaOperatorAdd);
+			lua_rawset(L, -3);
+
+			lua_pushstring(L, "__sub");
+			lua_pushcfunction(L, &LuaOperatorSubtract);
+			lua_rawset(L, -3);
+
+			lua_pushstring(L, "__mul");
+			lua_pushcfunction(L, &LuaOperatorMultiply);
+			lua_rawset(L, -3);
+
+			lua_pushstring(L, "__div");
+			lua_pushcfunction(L, &LuaOperatorDivide);
+			lua_rawset(L, -3);
+
+			lua_pop(L, 1);
+			// Stack: UE4, Timespan
+		}
+
+		lua_pushcfunction(L, &LuaGetDays);
+		lua_setfield(L, -2, "GetDays");
+
+		lua_pushcfunction(L, &LuaGetDuration);
+		lua_setfield(L, -2, "GetDuration");
+
+		lua_pushcfunction(L, &LuaGetHours);
+		lua_setfield(L, -2, "GetHours");
+
+		lua_pushcfunction(L, &LuaGetMilliseconds);
+		lua_setfield(L, -2, "GetMilliseconds");
+		
+		lua_pushcfunction(L, &LuaGetMinutes);
+		lua_setfield(L, -2, "GetMinutes");
+
+		lua_pushcfunction(L, &LuaGetSeconds);
+		lua_setfield(L, -2, "GetSeconds");
+
+		lua_pushcfunction(L, &LuaGetTotalDays);
+		lua_setfield(L, -2, "GetTotalDays");
+
+		lua_pushcfunction(L, &LuaGetTotalHours);
+		lua_setfield(L, -2, "GetTotalHours");
+
+		lua_pushcfunction(L, &LuaGetTotalMilliseconds);
+		lua_setfield(L, -2, "GetTotalMilliseconds");
+
+		lua_pushcfunction(L, &LuaGetTotalMinutes);
+		lua_setfield(L, -2, "GetTotalMinutes");
+
+		lua_pushcfunction(L, &LuaGetTotalSeconds);
+		lua_setfield(L, -2, "GetTotalSeconds");
+
+		lua_pushcfunction(L, &LuaFromDays);
+		lua_setfield(L, -2, "FromDays");
+
+		lua_pushcfunction(L, &LuaFromHours);
+		lua_setfield(L, -2, "FromHours");
+
+		lua_pushcfunction(L, &LuaFromMilliseconds);
+		lua_setfield(L, -2, "FromMilliseconds");
+
+		lua_pushcfunction(L, &LuaFromMinutes);
+		lua_setfield(L, -2, "FromMinutes");
+
+		lua_pushcfunction(L, &LuaFromSeconds);
+		lua_setfield(L, -2, "FromSeconds");
+
+		lua_pushcfunction(L, &LuaMaxValue);
+		lua_setfield(L, -2, "MaxValue");
+
+		lua_pushcfunction(L, &LuaMinValue);
+		lua_setfield(L, -2, "MinValue");
+
+		lua_pushcfunction(L, &LuaRatio);
+		lua_setfield(L, -2, "Ratio");
+
+		lua_pushcfunction(L, &LuaZeroValue);
+		lua_setfield(L, -2, "ZeroValue");
+
+		// Stack: UE4, Timespan
+		lua_pop(L, 2);
+		// Stack: (empty)
+	}
+}
+
+//=============================================================================================================================
+// namespace SUE4LuaQualifiedFrameTimeLibrary
+//=============================================================================================================================
+namespace SUE4LuaQualifiedFrameTimeLibrary
+{
+	// double AsSeconds()
+	static int32 LuaAsSeconds(lua_State* L)
+	{
+		auto QFT = FSUE4LuaStack::To<FQualifiedFrameTime>(L, 1);
+
+		FSUE4LuaStack::Push(L, QFT.AsSeconds());
+		return 1;
+	}
+
+	// FrameTime ConvertTo()
+	static int32 LuaConvertTo(lua_State* L)
+	{
+		auto QFT = FSUE4LuaStack::To<FQualifiedFrameTime>(L, 1);
+		auto DesiredFrameRate = FSUE4LuaStack::To<FFrameRate>(L, 2);
+
+		FSUE4LuaStack::Push(L, QFT.ConvertTo(DesiredFrameRate));
+		return 1;
+	}
+
+	static void Register(lua_State* L)
+	{
+		lua_getglobal(L, "UE4");
+		lua_getfield(L, -1, "QualifiedFrameTime");
+		// Stack: UE4, QualifiedFrameTime
+
+		lua_pushcfunction(L, &LuaAsSeconds);
+		lua_setfield(L, -2, "AsSeconds");
+
+		lua_pushcfunction(L, &LuaConvertTo);
+		lua_setfield(L, -2, "ConvertTo");
+
+		// Stack: UE4, QualifiedFrameTime
+		lua_pop(L, 2);
+		// Stack: (empty)
+	}
+}
+
+//=============================================================================================================================
 // namespace SUE4LuaTextFormatterLibrary
 //=============================================================================================================================
 namespace SUE4LuaTextFormatterLibrary
@@ -3435,6 +4215,54 @@ namespace SUE4LuaTextFormatterLibrary
 //=============================================================================================================================
 namespace SUE4LuaPointerEventLibrary
 {
+	// Vector2D GetScreenSpacePosition(PointEvent)
+	static int32 LuaGetScreenSpacePosition(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.GetScreenSpacePosition(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetScreenSpacePosition());
+		return 1;
+	}
+
+	// Vector2D GetLastScreenSpacePosition(PointEvent)
+	static int32 LuaGetLastScreenSpacePosition(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.GetLastScreenSpacePosition(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetLastScreenSpacePosition());
+		return 1;
+	}
+
+	// Vector2D GetCursorDelta(PointEvent)
+	static int32 LuaGetCursorDelta(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.GetCursorDelta(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetCursorDelta());
+		return 1;
+	}
+
 	// bool IsMouseLeftButtonDown(PointEvent)
 	static int32 LuaIsMouseLeftButtonDown(lua_State* L)
 	{
@@ -3467,17 +4295,178 @@ namespace SUE4LuaPointerEventLibrary
 		return 1;
 	}
 
+	// FKey GetEffectingButton(PointEvent)
+	static int32 LuaGetEffectingButton(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.GetEffectingButton(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetEffectingButton());
+		return 1;
+	}
+
+	// float GetWheelDelta(PointEvent)
+	static int32 LuaGetWheelDelta(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.GetWheelDelta(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetWheelDelta());
+		return 1;
+	}
+
+	// int GetUserIndex(PointEvent)
+	static int32 LuaGetUserIndex(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.GetUserIndex(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetUserIndex());
+		return 1;
+	}
+
+	// int GetPointerIndex(PointEvent)
+	static int32 LuaGetPointerIndex(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.GetPointerIndex(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetPointerIndex());
+		return 1;
+	}
+
+	// int GetTouchpadIndex(PointEvent)
+	static int32 LuaGetTouchpadIndex(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.GetTouchpadIndex(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetTouchpadIndex());
+		return 1;
+	}
+
+	// bool IsTouchEvent(PointEvent)
+	static int32 LuaIsTouchEvent(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.IsTouchEvent(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.IsTouchEvent());
+		return 1;
+	}
+
+	// EGestureEvent GetGestureType(PointEvent)
+	static int32 LuaGetGestureType(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.IsTouchEvent(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetGestureType());
+		return 1;
+	}
+
+	// Vector2D GetGestureDelta(PointEvent)
+	static int32 LuaGetGestureDelta(lua_State* L)
+	{
+		if (!SUE4LuaUStruct::IsUStruct(L, 1))
+		{
+			SUE4LVM_ERROR(L, TEXT("UE4.GetGestureDelta(): Invalid arg1"));
+
+			FSUE4LuaStack::Push(L, false);
+			return 1;
+		}
+
+		auto PointerEvent = FSUE4LuaStack::To<FPointerEvent>(L, 1);
+		FSUE4LuaStack::Push(L, PointerEvent.GetGestureDelta());
+		return 1;
+	}
+
 	static void Register(lua_State* L)
 	{
 		lua_getglobal(L, "UE4");
 		lua_getfield(L, -1, "PointerEvent");
 		// Stack: UE4, PointerEvent
 
+		lua_pushcfunction(L, &LuaGetScreenSpacePosition);
+		lua_setfield(L, -2, "GetScreenSpacePosition");
+
+		lua_pushcfunction(L, &LuaGetLastScreenSpacePosition);
+		lua_setfield(L, -2, "GetLastScreenSpacePosition");
+
+		lua_pushcfunction(L, &LuaGetCursorDelta);
+		lua_setfield(L, -2, "GetCursorDelta");
+
 		lua_pushcfunction(L, &LuaIsMouseLeftButtonDown);
 		lua_setfield(L, -2, "IsLeftMouseButtonDown");
 
 		lua_pushcfunction(L, &LuaIsMouseRightButtonDown);
 		lua_setfield(L, -2, "IsRightMouseButtonDown");
+
+		lua_pushcfunction(L, &LuaGetEffectingButton);
+		lua_setfield(L, -2, "GetEffectingButton");
+
+		lua_pushcfunction(L, &LuaGetWheelDelta);
+		lua_setfield(L, -2, "GetWheelDelta");
+
+		lua_pushcfunction(L, &LuaGetUserIndex);
+		lua_setfield(L, -2, "GetUserIndex");
+
+		lua_pushcfunction(L, &LuaGetPointerIndex);
+		lua_setfield(L, -2, "GetPointerIndex");
+
+		lua_pushcfunction(L, &LuaGetTouchpadIndex);
+		lua_setfield(L, -2, "GetTouchpadIndex");
+
+		lua_pushcfunction(L, &LuaIsTouchEvent);
+		lua_setfield(L, -2, "IsTouchEvent");
+
+		lua_pushcfunction(L, &LuaGetGestureType);
+		lua_setfield(L, -2, "GetGestureType");
+
+		lua_pushcfunction(L, &LuaGetGestureDelta);
+		lua_setfield(L, -2, "GetGestureDelta");
 
 		// Stack: UE4, PointerEvent
 		lua_pop(L, 2);
@@ -3543,6 +4532,21 @@ namespace SUE4LuaLibrary
 	void RegisterLinearColorLibrary(lua_State* L)
 	{
 		SUE4LuaLinearColorLibrary::Register(L);
+	}
+
+	void RegisterDateTimeLibrary(lua_State* L)
+	{
+		SUE4LuaDateTimeLibrary::Register(L);
+	}
+
+	void RegisterTimespanLibrary(lua_State* L)
+	{
+		SUE4LuaTimespanLibrary::Register(L);
+	}
+
+	void RegisterQualifiedFrameTimeLibrary(lua_State* L)
+	{
+		SUE4LuaQualifiedFrameTimeLibrary::Register(L);
 	}
 
 	void RegisterTextFormatterLibrary(lua_State* L)

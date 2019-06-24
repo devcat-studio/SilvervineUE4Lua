@@ -165,6 +165,36 @@ local Return1 = UE4.Rotator.GetNormal(Rotator) -- Rotator(90.0, 90.0, 90.0)
 local Return2 = Rotator:GetNormal() -- Rotator(90.0, 90.0, 90.0)
 ```
 
+## UE4.Rotator.MakeRotFromX(X)
+
+XAxis만 주어진 로테이터를 만듭니다. Y와 Z는 불특정하지만 orthonormal입니다. XAxis는 normalized될 필요가 없습니다.
+
+```lua
+local Vector = UE4.Rotator.new(1.0, 1.0, 1.0)
+
+local Return = UE4.Rotator.MakeRotFromX(Vector) -- Rotator(90.0, 90.0, 90.0)
+```
+
+## UE4.Rotator.MakeRotFromY(Y)
+
+YAxis만 주어진 로테이터를 만듭니다. X와 Z는 불특정하지만 orthonormal입니다. YAxis는 normalized될 필요가 없습니다.
+
+```lua
+local Vector = UE4.Rotator.new(1.0, 1.0, 1.0)
+
+local Return = UE4.Rotator.MakeRotFromY(Vector) -- Rotator(90.0, 90.0, 90.0)
+```
+
+## UE4.Rotator.MakeRotFromZ(Z)
+
+ZAxis만 주어진 로테이터를 만듭니다. X와 Y는 불특정하지만 orthonormal입니다. ZAxis는 normalized될 필요가 없습니다.
+
+```lua
+local Vector = UE4.Rotator.new(1.0, 1.0, 1.0)
+
+local Return = UE4.Rotator.MakeRotFromZ(Vector) -- Rotator(90.0, 90.0, 90.0)
+```
+
 ## UE4.Rotator.ToQuat(R)
 
 회전을 쿼터니언으로 가져옵니다.

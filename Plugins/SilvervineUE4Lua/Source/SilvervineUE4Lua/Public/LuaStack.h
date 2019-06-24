@@ -51,6 +51,8 @@ public:
 		return reinterpret_cast<UStructType*>(GetUStructRef(L, Index, UStructType::StaticStruct()));
 	}
 
+	static bool IsPrimitiveStructTypeOf(lua_State* L, int32 Index, const char* TypeName);
+
 private:
 	FSUE4LuaStack();
 	~FSUE4LuaStack();
@@ -127,7 +129,6 @@ private:
 	static FString ToStringTCHAR(lua_State* L, int32 Index);
 
 	// noexport타입의 구조체 처리
-	static bool IsPrimitiveStructTypeOf(lua_State* L, int32 Index, const char* TypeName);
 	static void PushObject(lua_State* L, const FVector& InValue);
 	static void ToObject(lua_State* L, FVector& OutValue, int32 Index);
 	static void PushObject(lua_State* L, const FVector2D& InValue);
