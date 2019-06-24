@@ -433,16 +433,25 @@ public:
 				return;
 			}
 
-			DispatchHandlerFilename = LuaDispatchHandlerFactory->Call<FString>(DispatchClass);
-
-			// 핸들러 로딩에 실패했어도 핫 리로딩으로 재연결될 수 있도록 리턴하지 않고 계속 진행
-			if (!DispatchHandlerFilename.IsEmpty())
+			auto CurrentClass = DispatchClass;
+			while (CurrentClass)
 			{
-				HandlerChunk = LoadFile(L, *DispatchHandlerFilename);
+				DispatchHandlerFilename = LuaDispatchHandlerFactory->Call<FString>(CurrentClass);
 
-				if (!HandlerChunk.IsValid())
+				if (DispatchHandlerFilename.IsEmpty())
 				{
-					SUE4LVM_ERROR(L, TEXT("LoadDispatchHandler(): Failed to load dispatch handler: %s(%s)"), *DispatchClass->GetName(), *DispatchHandlerFilename);
+					// 부모 클래스로 등록된 디스패치 핸들러가 있는지 찾아봅니다.
+					CurrentClass = CurrentClass->GetSuperClass();
+				}
+				else
+				{
+					HandlerChunk = LoadFile(L, *DispatchHandlerFilename);
+					if (!HandlerChunk.IsValid())
+					{
+						// 핸들러 로딩에 실패했어도 핫 리로딩으로 재연결될 수 있도록 리턴하지 않고 계속 진행
+						SUE4LVM_ERROR(L, TEXT("LoadDispatchHandler(): Failed to load dispatch handler: %s(%s)"), *DispatchClass->GetName(), *DispatchHandlerFilename);
+					}
+					break;
 				}
 			}
 		}
