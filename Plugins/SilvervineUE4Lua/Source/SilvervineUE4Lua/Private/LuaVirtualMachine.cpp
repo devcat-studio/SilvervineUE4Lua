@@ -637,6 +637,9 @@ TSharedPtr<FSUE4LuaVirtualMachine> FSUE4LuaVirtualMachine::Create(bool bDebuggab
 			SUE4LuaLibrary::RegisterColorLibrary(L);
 			SUE4LuaLibrary::RegisterLinearColorLibrary(L);
 			SUE4LuaLibrary::RegisterTextFormatterLibrary(L);
+			SUE4LuaLibrary::RegisterDateTimeLibrary(L);
+			SUE4LuaLibrary::RegisterTimespanLibrary(L);
+			SUE4LuaLibrary::RegisterQualifiedFrameTimeLibrary(L);
 			SUE4LuaLibrary::RegisterPointerEventLibrary(L);
 		}
 

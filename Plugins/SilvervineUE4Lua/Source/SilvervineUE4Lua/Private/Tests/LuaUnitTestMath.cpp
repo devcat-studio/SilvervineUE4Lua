@@ -3,6 +3,8 @@
 
 #include "LuaUnitTests.h"
 
+#include "Kismet/KismetMathLibrary.h"
+
 #include "LuaFunction.h"
 #include "LuaVirtualMachine.h"
 
@@ -249,7 +251,165 @@ bool FSUE4LuaTestCaseMath::RunTest(const FString& Parameters)
 		TestTrue(TEXT("Math.FixedTurn(InCurrent, InDesired, InDeltaRate)"),
 			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3) == FMath::FixedTurn(Arg1, Arg2, Arg3));
 	}
+	{
+		float Arg1 = 45.0f;
 
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.Sin(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.Sin(Rad)"),
+			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::Sin(Arg1));
+	}
+	{
+		float Arg1 = 0.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.Asin(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.Asin(Value)"),
+			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::Asin(Arg1));
+	}
+	{
+		float Arg1 = 45.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.Cos(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.Cos(Rad)"),
+			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::Cos(Arg1));
+	}
+	{
+		float Arg1 = 0.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.Acos(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.Acos(Value)"),
+			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::Acos(Arg1));
+	}
+	{
+		float Arg1 = 45.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.Tan(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.Tan(Rad)"),
+			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::Tan(Arg1));
+	}
+	{
+		float Arg1 = 0.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.Atan(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.Atan(Value)"),
+			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::Atan(Arg1));
+	}
+	{
+		float Arg1 = 50.0f;
+		float Arg2 = 100.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return UE4.Math.Atan2(arg1, arg2)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.Atan2(Value)"),
+			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == FMath::Atan2(Arg1, Arg2));
+	}
+	{
+		float Arg1 = 45.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.DegreesToRadians(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.DegreesToRadians(Degree)"),
+			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::DegreesToRadians(Arg1));
+	}
+	{
+		float Arg1 = 0.5f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.RadiansToDegrees(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.RadiansToDegrees(Degree)"),
+			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::RadiansToDegrees(Arg1));
+	}
+	{
+		float Arg1 = 0.000000001f; // smaller then SMALL_NUMBER(0.00000001);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.IsNearlyZero(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.IsNearlyZero(Value) #1"),
+			FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1));
+	}
+	{
+		float Arg1 = 45.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Math.IsNearlyZero(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.IsNearlyZero(Value) #2"),
+			FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::IsNearlyZero(Arg1));
+	} 
+	{
+		float Arg1 = 0.1f;
+		float Arg2 = 0.2f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return UE4.Math.IsNearlyZero(arg1, arg2)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.IsNearlyZero(Value, Tolerance) #2"),
+			FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == FMath::IsNearlyZero(Arg1, Arg2));
+	}
+	{
+		float Arg1 = 45.0f;
+		float Arg2 = 45.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return UE4.Math.IsNearlyEqual(arg1, arg2)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.IsNearlyEqual(Value1, Value2)"),
+			FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == FMath::IsNearlyEqual(Arg1, Arg2));
+	}
+	{
+		float Arg1 = 45.0f;
+		float Arg2 = 45.5f;
+		float Arg3 = 1.0f;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2, arg3)")
+			TEXT("\n		return UE4.Math.IsNearlyEqual(arg1, arg2, arg3)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Math.IsNearlyEqual(Value1, Value2, Tolerance)"),
+			FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3) == FMath::IsNearlyEqual(Arg1, Arg2, Arg3));
+	}
 	return true;
 }
 
@@ -1599,6 +1759,36 @@ bool FSUE4LuaTestCaseMathRotator::RunTest(const FString& Parameters)
 		TestTrue(TEXT("Rotator.GetNormal()"), FSUE4LuaFunction::CallGlobal<FRotator>(VM.ToSharedRef(), TEXT("Test"), Arg).Equals(Arg.GetNormalized()));
 	}
 	{
+		FVector Arg(1.0f, 2.0f, 3.0f);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Rotator.MakeRotFromX(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Rotator.MakeRotFromX()"), FSUE4LuaFunction::CallGlobal<FRotator>(VM.ToSharedRef(), TEXT("Test"), Arg).Equals(FRotationMatrix::MakeFromX(Arg).Rotator()));
+	}
+	{
+		FVector Arg(1.0f, 2.0f, 3.0f);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Rotator.MakeRotFromY(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Rotator.MakeRotFromY()"), FSUE4LuaFunction::CallGlobal<FRotator>(VM.ToSharedRef(), TEXT("Test"), Arg).Equals(FRotationMatrix::MakeFromY(Arg).Rotator()));
+	}
+	{
+		FVector Arg(1.0f, 2.0f, 3.0f);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Rotator.MakeRotFromZ(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Rotator.MakeRotFromZ()"), FSUE4LuaFunction::CallGlobal<FRotator>(VM.ToSharedRef(), TEXT("Test"), Arg).Equals(FRotationMatrix::MakeFromZ(Arg).Rotator()));
+	}
+	{
 		FRotator Arg(1.0f, 2.0f, 3.0f);
 
 		VM->ExecuteString(
@@ -2198,5 +2388,604 @@ bool FSUE4LuaTestCaseMathLinearColor::RunTest(const FString& Parameters)
 		TestTrue(TEXT("LinearColor.GetLuminance(bSRGB) #2"), FSUE4LuaFunction::CallGlobal<FColor>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == Arg1.ToFColor(Arg2));
 	}
 	
+	return true;
+}
+
+
+//=============================================================================================================================
+// FSUE4LuaTestCaseMathDateTime
+//=============================================================================================================================
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FSUE4LuaTestCaseMathDateTime, "Silvervine.UE4Lua.MathDateTime", SUE4LUA_ATF_UNITTEST)
+bool FSUE4LuaTestCaseMathDateTime::RunTest(const FString& Parameters)
+{
+	auto VM = FSUE4LuaVirtualMachine::Create();
+	if (!VM.IsValid())
+	{
+		return false;
+	}
+
+	{
+		FDateTime Arg1(2000);
+		FTimespan Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 + arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime + FTimespan"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == (Arg1 + Arg2));
+	}
+	{
+		FDateTime Arg1(2000);
+		FDateTime Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 - arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime - DateTime"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == (Arg1 - Arg2));
+	}
+	{
+		FDateTime Arg1(2000);
+		FTimespan Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 - arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime - Timespan"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == (Arg1 - Arg2));
+	}
+	{
+		FDateTime Arg1(1000);
+		FDateTime Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 == arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime == DateTime #1"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2));
+	}
+	{
+		FDateTime Arg1(2000);
+		FDateTime Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 == arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime == DateTime #2"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == (Arg1 == Arg2));
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetDate()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetDate()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetDate());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetDay()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetDay()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetDay());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetDayOfYear()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetDayOfYear()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetDayOfYear());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetHour()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetHour()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetHour());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetHour12()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetHour12()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetHour12());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetMillisecond()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetMillisecond()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetMillisecond());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetMinute()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetMinute()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetMinute());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetMonth()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetMonth()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetMonth());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetSecond()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetSecond()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetSecond());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetTimeOfDay()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetTimeOfDay()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetTimeOfDay());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetYear()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.GetYear()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetYear());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:IsAfternoon()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.IsAfternoon()"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.IsAfternoon());
+	}
+	{
+		FDateTime Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:IsMorning()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.IsMorning()"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.IsMorning());
+	}
+	{
+		int32 Arg1 = 2000;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.DateTime.DaysInYear(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.DaysInYear()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FDateTime::DaysInYear(Arg1));
+	}
+	{
+		int32 Arg1 = 2000;
+		int32 Arg2 = 12;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return UE4.DateTime.DaysInMonth(arg1, arg2)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.DaysInMonth()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == FDateTime::DaysInMonth(Arg1, Arg2));
+	}
+	{
+		int32 Arg1 = 2000;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.DateTime.IsLeapYear(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.IsLeapYear()"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FDateTime::IsLeapYear(Arg1));
+	}
+	{
+		VM->ExecuteString(
+			TEXT("\n	function Test()")
+			TEXT("\n		return UE4.DateTime.MaxValue()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.MaxValue()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test")) == FDateTime::MaxValue());
+	}
+	{
+		VM->ExecuteString(
+			TEXT("\n	function Test()")
+			TEXT("\n		return UE4.DateTime.MinValue()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.MinValue()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test")) == FDateTime::MinValue());
+	}
+	{
+		VM->ExecuteString(
+			TEXT("\n	function Test()")
+			TEXT("\n		return UE4.DateTime.Now()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.Now()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test")) == FDateTime::Now());
+	}
+	{
+		VM->ExecuteString(
+			TEXT("\n	function Test()")
+			TEXT("\n		return UE4.DateTime.Today()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.Today()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test")) == FDateTime::Today());
+	}
+	{
+		VM->ExecuteString(
+			TEXT("\n	function Test()")
+			TEXT("\n		return UE4.DateTime.UtcNow()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("DateTime.UtcNow()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test")) == FDateTime::UtcNow());
+	}
+
+	return true;
+}
+
+
+//=============================================================================================================================
+// FSUE4LuaTestCaseMathTimespan
+//=============================================================================================================================
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FSUE4LuaTestCaseMathTimespan, "Silvervine.UE4Lua.MathTimespan", SUE4LUA_ATF_UNITTEST)
+bool FSUE4LuaTestCaseMathTimespan::RunTest(const FString& Parameters)
+{
+	auto VM = FSUE4LuaVirtualMachine::Create();
+	if (!VM.IsValid())
+	{
+		return false;
+	}
+
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return -arg1")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan unary minus"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1) == (-Arg1));
+	}
+	{
+		FTimespan Arg1(2000);
+		FTimespan Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 + arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan + Timespan"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == (Arg1 + Arg2));
+	}
+	{
+		FTimespan Arg1(2000);
+		FTimespan Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 - arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan - Timespan"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == (Arg1 - Arg2));
+	}
+	{
+		FTimespan Arg1(2000);
+		float Arg2 = 1000;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 * arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan * Scalar"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == (Arg1 * Arg2));
+	}
+	{
+		FTimespan Arg1(2000);
+		float Arg2 = 1000;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 / arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan / Scalar"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == (Arg1 / Arg2));
+	}
+	{
+		FTimespan Arg1(1000);
+		FTimespan Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 == arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan == Timespan #1"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2));
+	}
+	{
+		FTimespan Arg1(2000);
+		FTimespan Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1 == arg2")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan == Timespan #2"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == (Arg1 == Arg2));
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetDays()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetDays()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetDays());
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetDuration()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetDuration()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetDuration());
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetHours()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetHours()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetHours());
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetMilliseconds()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetMilliseconds()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetFractionMilli());
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetMinutes()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetMinutes()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetMinutes());
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetSeconds()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetSeconds()"), FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetSeconds());
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetTotalDays()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetTotalDays()"), FSUE4LuaFunction::CallGlobal<double>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetTotalDays());
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetTotalHours()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetTotalHours()"), FSUE4LuaFunction::CallGlobal<double>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetTotalHours());
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetTotalMilliseconds()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetTotalMilliseconds()"), FSUE4LuaFunction::CallGlobal<double>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetTotalMilliseconds());
+	}
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetTotalMinutes()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetTotalMinutes()"), FSUE4LuaFunction::CallGlobal<double>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetTotalMinutes());
+	} 
+	{
+		FTimespan Arg1(2000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:GetTotalSeconds()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.GetTotalSeconds()"), FSUE4LuaFunction::CallGlobal<double>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetTotalSeconds());
+	}
+	{
+		float Arg1 = 2000;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Timespan.FromDays(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.FromDays()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1) == UKismetMathLibrary::FromDays(Arg1));
+	}
+	{
+		float Arg1 = 2000;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Timespan.FromHours(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.FromHours()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1) == UKismetMathLibrary::FromHours(Arg1));
+	}
+	{
+		float Arg1 = 2000;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Timespan.FromMilliseconds(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.FromMilliseconds()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1) == UKismetMathLibrary::FromMilliseconds(Arg1));
+	}
+	{
+		float Arg1 = 2000;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Timespan.FromMinutes(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.FromMinutes()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1) == UKismetMathLibrary::FromMinutes(Arg1));
+	}
+	{
+		float Arg1 = 2000;
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return UE4.Timespan.FromSeconds(arg1)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.FromSeconds()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test"), Arg1) == UKismetMathLibrary::FromSeconds(Arg1));
+	}
+	{
+		VM->ExecuteString(
+			TEXT("\n	function Test()")
+			TEXT("\n		return UE4.Timespan.MaxValue()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.MaxValue()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test")) == FTimespan::MaxValue());
+	}
+	{
+		VM->ExecuteString(
+			TEXT("\n	function Test()")
+			TEXT("\n		return UE4.Timespan.MinValue()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.MinValue()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test")) == FTimespan::MinValue());
+	}
+	{
+		FTimespan Arg1(2000);
+		FTimespan Arg2(1000);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return UE4.Timespan.Ratio(arg1, arg2)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.Ratio()"), FSUE4LuaFunction::CallGlobal<double>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == FTimespan::Ratio(Arg1, Arg2));
+	}
+	{
+		VM->ExecuteString(
+			TEXT("\n	function Test()")
+			TEXT("\n		return UE4.Timespan.ZeroValue()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("Timespan.ZeroValue()"), FSUE4LuaFunction::CallGlobal<FTimespan>(VM.ToSharedRef(), TEXT("Test")) == FTimespan::Zero());
+	}
+
+	return true;
+}
+
+
+//=============================================================================================================================
+// FSUE4LuaTestCaseMathQualifiedFrameTime
+//=============================================================================================================================
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FSUE4LuaTestCaseMathQualifiedFrameTime, "Silvervine.UE4Lua.MathQualifiedFrameTime", SUE4LUA_ATF_UNITTEST)
+bool FSUE4LuaTestCaseMathQualifiedFrameTime::RunTest(const FString& Parameters)
+{
+	auto VM = FSUE4LuaVirtualMachine::Create();
+	if (!VM.IsValid())
+	{
+		return false;
+	}
+
+	{
+		FQualifiedFrameTime Arg1(FFrameTime(10, 10), FFrameRate(10, 10));
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1)")
+			TEXT("\n		return arg1:AsSeconds()")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("QualifiedFrameTime.AsSeconds()"), FSUE4LuaFunction::CallGlobal<double>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.AsSeconds());
+	}
+	{
+		FQualifiedFrameTime Arg1(FFrameTime(10, 10), FFrameRate(10, 10));
+		FFrameRate Arg2(20, 20);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(arg1, arg2)")
+			TEXT("\n		return arg1:ConvertTo(arg2)")
+			TEXT("\n	end"));
+
+		TestTrue(TEXT("QualifiedFrameTime.ConvertTo()"), FSUE4LuaFunction::CallGlobal<FFrameTime>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == Arg1.ConvertTo(Arg2));
+	}
+
 	return true;
 }
