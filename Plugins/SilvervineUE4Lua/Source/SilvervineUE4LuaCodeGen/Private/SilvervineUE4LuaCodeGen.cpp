@@ -117,9 +117,9 @@ bool FSilvervineUE4LuaCodeGenModule::LoadConfig()
 	// 대신 FPaths::GetProjectFilePath()을 사용하여 직접 경로 정보를 만들고 있습니다.
 	FString ProjectPath = FPaths::GetPath(FPaths::GetProjectFilePath());
 	FString PlatformName = FPlatformProperties::PlatformName();
-	
+
 	FString SourceConfigDir = FString::Printf(TEXT("%s/Plugins/SilvervineUE4Lua/Config"), *ProjectPath);
-	FString GeneratedConfigDir = FString::Printf(TEXT("%s/Saved/Config/%s"), *ProjectPath, *PlatformName);
+	FString GeneratedConfigDir = FString::Printf(TEXT("%s/Saved/Config/"), *ProjectPath);
 	
 	// PluginManager가 Load해주는 ini 정보 또한 UHT 프로젝트 기준이라 사용할 수 없습니다.
 	// 캐시로 저장하지 않는 임시 ConfigFile을 만들어 사용합니다.
