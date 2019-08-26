@@ -2966,7 +2966,7 @@ bool FSUE4LuaTestCaseMathQualifiedFrameTime::RunTest(const FString& Parameters)
 	}
 
 	{
-		FQualifiedFrameTime Arg1(FFrameTime(10, 10), FFrameRate(10, 10));
+		FQualifiedFrameTime Arg1(FFrameTime(10, 0.1), FFrameRate(10, 10));
 
 		VM->ExecuteString(
 			TEXT("\n	function Test(arg1)")
@@ -2976,7 +2976,7 @@ bool FSUE4LuaTestCaseMathQualifiedFrameTime::RunTest(const FString& Parameters)
 		TestTrue(TEXT("QualifiedFrameTime.AsSeconds()"), FSUE4LuaFunction::CallGlobal<double>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.AsSeconds());
 	}
 	{
-		FQualifiedFrameTime Arg1(FFrameTime(10, 10), FFrameRate(10, 10));
+		FQualifiedFrameTime Arg1(FFrameTime(10, 0.1), FFrameRate(10, 10));
 		FFrameRate Arg2(20, 20);
 
 		VM->ExecuteString(
