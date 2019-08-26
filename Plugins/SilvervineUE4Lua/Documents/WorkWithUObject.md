@@ -1,47 +1,47 @@
 
-Lua에서 UObject 사용하기
-=======================
+Working with UObject in Lua
+===========================
 
-UObject는 Lua에서 가장 많이 사용하는 엔진 타입입니다. 
-SUE4Lua는 UObject를 _userdata_ 형식의 프록시 객체로 감싸써 Lua에 전달합니다.
-이 프록시 객체를 사용하면 마치 Lua 테이블 처럼 UObject를 다룰 수 있어서 코딩할 때 매우 편리합니다.
+UObject is the most common engine type in lua. 
+SUE4Lua wraps a UObject in a proxy object of the _userdata_ type and passes it to lua.
+This proxy object allows you to handle UObject like a lua table, which is very convenient for coding.
 
-아래의 모든 테스트 코드는 [여기](../Source/SilvervineUE4Lua/Private/Scripts/Tests/UObjectTest.lua)에 있습니다.
+All test codes below are [here](../Source/SilvervineUE4Lua/Private/Scripts/Tests/UObjectTest.lua).
 
-참고:
-* UObject의 모든 멤버를 Lua에서 사용할 수 있는 것은 아닙니다. UPROPERTY()와 UFUNCTION()가 붙은 멤버만 Lua에서 사용할 수 있습니다.
-* 함수는 BlueprintCallable일 필요가 없습니다. `UFUNCTION()` 만 붙어 있어도 Lua에서 사용할 수 있습니다.
-* C++의 접근 지정자(private, protected)는 Lua에 영향을 주지 않습니다. private 멤버도 Lua에서 사용할 수 있습니다. 
+Note:
+* Not all members of a UObject are accessable in lua. Only members with UPROPERTY() and UFUNCTION() can be accessed.
+* The function does not need to be BlueprintCallable. `UFUNCTION()` is sufficient.
+* C++ access specifiers(private, protected) do not affect. Private members are accessable from lua.
 
-기본
-----
+Primitive Types
+---------------
 
-대부분의 C++ 기본형 속성 멤버를 Lua에서 사용할 수 있습니다.
+Most C++ primitive type members are accessable from lua.
 ```lua
 Obj.IntProperty = 123
 SUE4Lua.Log("Obj.IntProperty", Obj.IntProperty) -- Obj.IntProperty	123
 ```
 
-enum은 정수로 처리됩니다. UEnum은 [여기](WorkWithUEnum_ko.md)를 참고하세요.
+Enum is treated as integer. For UEnum, see [this](WorkWithUEnum.md).
 ```lua
 Obj.EnumProperty = 1
 SUE4Lua.Log("Obj.EnumProperty", Obj.EnumProperty)   -- Obj.EnumProperty	1
 ```
 
-`FName`, `FString`, `FText`은 Lua에서 모두 `string` 타입으로 처리됩니다.
+`FName`, `FString` and `FText` are all treated as string.
 ```lua
 Obj.NameProperty = "name"
 SUE4Lua.Log("Obj.NameProperty", Obj.NameProperty)   -- Obj.NameProperty	name
 ```
 
-UObject 멤버도 사용할 수 있습니다.
+You can use UObject members.
 ```lua
 Obj.UObjectProperty = Obj
 SUE4Lua.Log("type(Obj.UObjectProperty)", type(Obj.UObjectProperty))
 -- type(Obj.UObjectProperty)	userdata
 ```
 
-UStruct 멤버도 사용할 수 있습니다.
+You can use UStruct members.
 ```lua
 Obj.StructProperty.IntProperty = 123
 SUE4Lua.Log("Obj.StructProperty.IntProperty", Obj.StructProperty.IntProperty)
@@ -51,7 +51,7 @@ SUE4Lua.Log("Obj.NestedStructProperty.StructProperty.IntProperty", Obj.NestedStr
 -- Obj.NestedStructProperty.StructProperty.IntProperty	123
 ```
 
-배열은 테이블처럼 다룰 수 있습니다.
+Arrays can be treated like tables.
 ```lua
 for i = 0, 9 do
     Obj.FixedIntArrayProperty[i] = i * i
@@ -70,10 +70,10 @@ end
 -- Obj.FixedIntArrayProperty: k,v = 	8	64
 ```
 
-참고:
-* 배열을 ipairs()로 순회하면 0번 인덱스가 무시되므로 배열에 ipairs()를 사용하지 않는 것이 좋습니다.
+Note:
+* It is not recommended to use ipairs() on an array because iterating the array with ipairs() will ignore index 0.
 
-`FVector`와 같은 구조체의 배열도 사용할 수 있습니다.
+You can use array of structures like `FVector`.
 ```lua
 Obj.FixedVectorArrayProperty[4] = UE4.Vector.new(1, 2, 3)
 SUE4Lua.Log("Obj.FixedVectorArrayProperty[4].X", Obj.FixedVectorArrayProperty[4].X)
@@ -87,7 +87,7 @@ SUE4Lua.Log("Obj.FixedVectorArrayProperty[4].Z", Obj.FixedVectorArrayProperty[4]
 TArray
 ------
 
-TArray의 Add(), Remove, Insert(), Empty(), Num() 함수를 Lua에서 그대로 사용할 수 있습니다.
+You can use TArray's Add(), Remove, Insert(), Empty() and Num().
 ```lua
 Obj.IntArrayProperty:Empty()
 Obj.IntArrayProperty:Add(123)
@@ -105,7 +105,7 @@ SUE4Lua.Log("Obj.IntArrayProperty:Num()", Obj.IntArrayProperty:Num())
 -- Obj.IntArrayProperty:Num()	0
 ```
 
-원소가 기본형이면 `[]`로 접근할 수 있습니다.
+If the element is a primitive type, it can be accessed with `[]`.
 ```lua
 Obj.IntArrayProperty:Empty()
 Obj.IntArrayProperty:Add(123)
@@ -115,7 +115,7 @@ SUE4Lua.Log("Obj.IntArrayProperty[0]", Obj.IntArrayProperty[0])
 TMap
 ----
 
-TMap의 Num(), Empty(), Add(), Remove() 함수를 그대로 사용할 수 있습니다. 
+You can use TMap's Num(), Empty(), Add() and Remove(). 
 ```lua
 Obj.IntMapProperty:Empty()
 Obj.IntMapProperty:Add(1, 2)
@@ -133,7 +133,7 @@ SUE4Lua.Log("Obj.IntMapProperty:Num()", Obj.IntMapProperty:Num())
 -- Obj.IntMapProperty:Num()	0
 ```
 
-원소가 기본형이면 `[]`로 접근할 수 있습니다.
+If the element is a primitive type, it can be accessed with `[]`.
 ```lua
 Obj.IntMapProperty:Empty()
 Obj.IntMapProperty[123] = 456
@@ -147,7 +147,7 @@ SUE4Lua.Log("Obj.IntMapProperty[123]", Obj.IntMapProperty[123])
 TSet
 ----
 
-TSet의 Num(), Empty(), Add(), Remove() 함수를 그대로 사용할 수 있습니다. 
+You can use TSet's Num(), Empty(), Add() and Remove(). 
 ```lua
 Obj.IntSetProperty:Empty()
 Obj.IntSetProperty:Add(1)
@@ -165,7 +165,7 @@ SUE4Lua.Log("Obj.IntSetProperty:Num()", Obj.IntSetProperty:Num())
 -- Obj.IntSetProperty:Num()	0
 ```
 
-원소가 기본형이면 `[]`로 접근할 수 있습니다.
+If the element is a primitive type, it can be accessed with `[]`.
 ```lua
 Obj.IntSetProperty:Empty()
 Obj.IntSetProperty[123] = false
@@ -176,11 +176,11 @@ SUE4Lua.Log("Obj.IntSetProperty[123]", Obj.IntSetProperty[123])
 -- Obj.IntSetProperty[123]	nil
 ```
 
-UStruct 타입의 TArray, TMap, TSet에서 원소 검색하기
--------------------------------------------------
+Finding elements of UStruct type in TArray, TMap and TSet
+---------------------------------------------------------
 
-원소가 UStruct 타입인 TArray은 `[]`로 접근할 수 없습니다. 이 경우에는 GetCopy() 혹은 GetRef()를 사용해야 합니다.
-마찬가지로 TMap과 TSet은 FindCopy(), FindRef()를 사용해야 합니다.
+TArray whose elements are of UStruct type cannot be accessed with `[]`. In this case, you must use GetCopy() or GetRef() for safety. 
+Similarly, You must use FindCopy() or FindRef() to access TMap and TSet.
 
 ```lua
 Obj.StructArrayProperty:Empty()
@@ -193,12 +193,12 @@ SUE4Lua.Log("Obj.StructArrayProperty:GetRef(0).IntProperty", Obj.StructArrayProp
 -- Obj.StructArrayProperty:GetRef(0).IntProperty	123
 ```
 
-이름에서 알 수 있듯이 GetCopy()는 사본을 반환하므로 이 값을 수정해도 원본 값이 바뀌지 않습니다.
-GetRef()는 원본의 참조를 반환하므로 수정하면 원본 값이 바뀝니다.
+As you can know from the name, GetCopy() returns a copy, so modifying it does not change the original value.
+GetRef() returns a reference to the original, so modifying it changes the original value.
 
-TArray의 내부 버퍼가 재할당된 후에 이전에 저장해 둔 GetRef() 반환값을 사용하면 **게임이 크래시될 수 있으니 주의하세요**. TMap, TSet도 동일합니다.
+Note that after TArray's buffer is reallocated, using the previously saved GetRef() value **may cause your game to crash**. The same is true for TMap and TSet.
 
-참고: 다음 타입들은 예외적으로 UStruct지만 `[]`로 접근할 수 있습니다(noexport 속성의 UStruct는 값 타입으로 취급합니다). 
+Note: The following UStruct types can be accessed with `[]`(UStruct with _noexport_ is treated as a value type). 
 * FVector, FVector2D, FVector4, FIntPoint, FIntVector, FMatrix, FRotator, FQuad, FTransform
 * FColor, FLinearColor
 * FBox, FBox2D, FBoxSphereBounds
@@ -209,11 +209,11 @@ TArray의 내부 버퍼가 재할당된 후에 이전에 저장해 둔 GetRef() 
 * FSoftObjectPath
 * FFloatRangeBound, FFloatRange, FInt32Interval
 
-딜리게이트
----------
+Delegate
+--------
 
-딜리게이트 및 멀티캐스트 딜리게이트의 _일부_ 기능을 Lua에서 사용할 수 있습니다.
-Lua에서 브로드캐스팅을 할 수 있다면 코드 흐름을 파악하기 어렵다고 판단하여 일부러 브로드캐스팅 함수를 바인딩하지 않았습니다.
+Some features of delegate and multicast delegate are available in lua.
+We think that if lua could broadcast, it would be hard to understand the code flow.
 
 ```lua
 Obj.ValueProperty = function () end
@@ -234,12 +234,12 @@ SUE4Lua.Log("Obj.IntMulticastDelegate:Contains()", Obj.IntMulticastDelegate:Cont
 -- Obj.IntMulticastDelegate:Contains()	false
 ```
 
-바인드할 함수를 전달하는 방법이 이상하게 보일 수 있습니다. 자세한 내용은 [여기](WorkWithLuaValue_ko.md)를 참고하세요.
+The way of binding functions may seem odd. Please see [this](WorkWithLuaValue.md) for details.
 
-함수 호출하기
-------------
+Function Call
+-------------
 
-다음과 같은 UFunction이 있을 때,
+If you have the following UFunction,
 ```cpp
 int32 USUE4LuaTestUObject::TestArgs(int32 InIntArg1, int32 InIntArg2, const int32& InIntArg3, int32& OutIntArg1, int32& OutIntArg2)
 {
@@ -250,14 +250,14 @@ int32 USUE4LuaTestUObject::TestArgs(int32 InIntArg1, int32 InIntArg2, const int3
 }
 ```
 
-Lua에서 다음과 같이 TestArgs()를 호출할 수 있습니다. 
-출력값(참조형 파라메터)이 있다면 UFunction의 반환값 다음에 차례대로 Lua에 반환됩니다.
+You can call TestArgs() as follows.
+If there is an output value(reference type parameter), it is returned to lua after the return value of UFunction itself.
 
 ```lua
 SUE4Lua.Log("Obj:TestArgs(1, 2, 3, 4, 5)", Obj:TestArgs(1, 2, 3, 4, 5)) -- Obj:TestArgs(1, 2, 3, 4, 5)	6	3   3
 ```
 
-이름을 사용해서 파라메터를 전달할 수도 있습니다. 이 방식은 파라메터가 많을 때 코드의 가독성을 높혀줍니다.
+You can also pass parameters by name. This method improves readability when there are many parameters.
 ```lua
 SUE4Lua.Log("Obj:TestArgs(Args)", Obj:TestArgs({
     InIntArg1 = 1,
@@ -268,7 +268,7 @@ SUE4Lua.Log("Obj:TestArgs(Args)", Obj:TestArgs({
 })) -- Obj:TestArgs(Args)	6	3	3
 ```
 
-출력값 파라메터를 전달하지 않아도 상관없습니다.
+You can omit to pass output parameters.
 ```lua
 SUE4Lua.Log("Obj:TestArgs(1, 2, 3)", Obj:TestArgs(1, 2, 3))
 SUE4Lua.Log("Obj:TestArgs(Args)", Obj:TestArgs({
@@ -280,7 +280,7 @@ SUE4Lua.Log("Obj:TestArgs(Args)", Obj:TestArgs({
 -- Obj:TestArgs(Args)	6	3	3
 ```
 
-_이름으로 전달_ 방식으로 함수를 호출했을 경우 전달한 Lua 테이블에 출력값이 저장됩니다.
+If you cal functions with _pass-by-name_, the output value will be stored in the passed lua table.
 ```lua
 local Args = {
     InIntArg1 = 1,
@@ -292,12 +292,12 @@ SUE4Lua.Log("Args.OutIntArg1", Args.OutIntArg1) -- Args.OutIntArg1	3
 SUE4Lua.Log("Args.OutIntArg2", Args.OutIntArg2) -- Args.OutIntArg2	3
 ```
 
-UObject 생성하기
----------------
+Creating a UObject Instance
+---------------------------
 
-`UE4.NewObject()` 함수를 사용해서 새 UObject 인스턴스를 생성할 수 있습니다.
+You can create a new UObject instance using the `UE4.NewObject()`.
 ```lua
 local Obj = UE4.NewObject(UE4.FindClass("SUE4LuaTestUObject"))
 ```
-----------------------------------------------------
-[프로그래밍 가이드](ProgrammingGuide_ko.md)로 돌아가기
+------------------------------------------------
+[Back to Programming Guide](ProgrammingGuide.md)

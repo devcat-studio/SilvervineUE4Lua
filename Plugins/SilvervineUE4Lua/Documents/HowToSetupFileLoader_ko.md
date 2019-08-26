@@ -53,12 +53,12 @@ Lua Bundle FileLoader
 
 2. Use Bundle File Loader를 체크합니다.
 
-3. Bundle File Load Map에 Lua 파일이 들어있는 경로들을 등록합니다.
+3. Bundle File Load Map에 번들 파일이 들어있는 경로들을 등록합니다.
 
 ![](Images/BundleFileLoader.png)
 
-* 맵의 Key 값은 로컬 파일 로더와 동일한 가상 경로로 설정합니다.
-* 맵의 Value 값은 번들 파일의 경로로 설정합니다. 가상 경로 하나당 번들 파일 하나를 지정합니다.
+* 맵의 Key 값으로 로컬 파일 로더와 동일한 가상 경로로 설정합니다.
+* 맵의 Value 값으로 번들 파일의 경로를 설정합니다. 가상 경로 하나당 번들 파일 하나를 지정합니다.
 
 참고:
 * 현재 zip 형식만 지원합니다.

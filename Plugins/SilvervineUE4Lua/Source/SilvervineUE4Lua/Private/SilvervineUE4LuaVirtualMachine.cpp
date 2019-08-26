@@ -33,7 +33,7 @@ FSUE4LuaVMInstance* USUE4LuaVirtualMachine::GetEditorVMInstance()
 
 	return &EditorVMInstance;
 #else
-	UE_LOG(LogSUE4L, Error, TEXT("EditorVM is not valid in non editor build. [%s]"), TEXT(__FUNCTION__));
+	UE_LOG(LogSUE4L, Error, TEXT("EditorVM is not valid in non editor build. [%s]"), __SUE4LUA_FUNCTION__);
 	return nullptr;
 #endif
 }
@@ -51,7 +51,7 @@ TSharedPtr<FSUE4LuaVirtualMachine> USUE4LuaVirtualMachine::RegisterGameInstance(
 {
 	if (GameInstance == nullptr)
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("Invalid GameInstance. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("Invalid GameInstance. [%s]"), __SUE4LUA_FUNCTION__);
 		return nullptr;
 	}
 
@@ -59,7 +59,7 @@ TSharedPtr<FSUE4LuaVirtualMachine> USUE4LuaVirtualMachine::RegisterGameInstance(
 	{
 		if (GameVMInstance.GameInstance == GameInstance)
 		{
-			UE_LOG(LogSUE4L, Warning, TEXT("Already registered GameInstance: %s. [%s]"), *GameInstance->GetName(), TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Warning, TEXT("Already registered GameInstance: %s. [%s]"), *GameInstance->GetName(), __SUE4LUA_FUNCTION__);
 			return GameVMInstance.VM;
 		}
 	}
@@ -73,7 +73,7 @@ TSharedPtr<FSUE4LuaVirtualMachine> USUE4LuaVirtualMachine::RegisterGameInstance(
 #endif
 	if (!NewGameVMInstance.VM.IsValid())
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("GameInstance VM was not properly initialized. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("GameInstance VM was not properly initialized. [%s]"), __SUE4LUA_FUNCTION__);
 		return nullptr;
 	}
 
@@ -93,7 +93,7 @@ bool USUE4LuaVirtualMachine::UnregisterGameInstance(UGameInstance* GameInstance)
 {
 	if (GameInstance == nullptr)
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("Invalid GameInstance. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("Invalid GameInstance. [%s]"), __SUE4LUA_FUNCTION__);
 		return false;
 	}
 
@@ -110,7 +110,7 @@ bool USUE4LuaVirtualMachine::UnregisterGameInstance(UGameInstance* GameInstance)
 		}
 	}
 
-	UE_LOG(LogSUE4L, Error, TEXT("Unregistered GameInstance: %s. [%s]"), *GameInstance->GetName(), TEXT(__FUNCTION__));
+	UE_LOG(LogSUE4L, Error, TEXT("Unregistered GameInstance: %s. [%s]"), *GameInstance->GetName(), __SUE4LUA_FUNCTION__);
 	
 	return false;
 }

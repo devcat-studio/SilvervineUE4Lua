@@ -1,18 +1,18 @@
 
-게임 모듈 설정하기
-================
+How to Setup a Game Module
+==========================
 
-게임 모듈의 C++ 코드에서 SUE4Lua를 사용하려면 몇 가지 설정이 필요합니다.
+To use SUE4Lua in the C++ code of the game module, you must write some setup codes.
 
-Blueprint에서만 Lua를 사용하고 있다면 아래 과정은 생략해도 상관 없습니다.
+If you are using lua only with a blueprint, you can skip the steps below.
 
-1. 게임 모듈의 Build.cs 파일을 열고 아래 코드를 추가합니다.
+1. Add the following code in your game module's Build.cs.
 
 ```cpp
 PrivateDependencyModuleNames.Add("SilvervineUE4Lua");
 ```
 
-예를 들면,
+For example,
 
 ```cpp
 // Fill out your copyright notice in the Description page of Project Settings.
@@ -42,15 +42,15 @@ public class SUE4LuaSample : ModuleRules
 }
 ```
 
-2. 게임 모듈을 정의하는 cpp 파일을 열고 적당한 위치에 `#include "SilvervineUE4LuaCodeGen_Game.g.inl"` 인클루드 코드를 추가합니다.
+2. Add `#include "SilvervineUE4LuaCodeGen_Game.g.inl"` to the appropriate location of your game module's cpp.
 
-3. StartupModule() 함수에 아래 코드를 추가합니다.
+3. Add the following code in StartupModule().
 
 ```cpp
 SUE4LUA_REGISTER_BINDINGS();
 ```
 
-예를 들면,
+For example,
 
 ```cpp
 // Fill out your copyright notice in the Description page of Project Settings.
@@ -78,5 +78,5 @@ public:
 IMPLEMENT_PRIMARY_GAME_MODULE(FSUE4LuaSampleGameModuleImpl, SUE4LuaSample, "SUE4LuaSample");
 ```
 
-----------------------------------------------------
-[프로그래밍 가이드](ProgrammingGuide_ko.md)로 돌아가기
+------------------------------------------------
+[Back to Programming Guide](ProgrammingGuide.md)

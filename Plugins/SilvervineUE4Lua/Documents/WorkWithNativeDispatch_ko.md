@@ -7,7 +7,7 @@ C++ 함수도 [디스패치](WorkWithBlueprintDispatch_ko.md)할 수 있습니�
 준비
 ----
 
-Blueprint 디스패치와 마찬가지로 Lua 브릿지가 필요합니다. 다음과 같이 Lua 브릿지를 초기화 해주세요. 초기화만 할 수 있다만 어떠한 방식이든 상관없습니다.
+Blueprint 디스패치와 마찬가지로 Lua 브릿지가 필요합니다. 다음과 같이 Lua 브릿지를 초기화 해주세요. 초기화를 할 수 있다면 어떠한 방식이든 상관없습니다.
 
 ```cpp
 #include "SilvervineUE4LuaBridge.h"

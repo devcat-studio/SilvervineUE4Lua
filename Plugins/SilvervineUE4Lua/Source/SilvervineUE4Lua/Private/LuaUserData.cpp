@@ -34,7 +34,7 @@ void FSUE4LuaUserData::Initialize(lua_State* L)
 		OwnerVM->AddUserData(this);
 	}
 
-	UE_CLOG(OwnerVM == nullptr, LogSUE4L, Error, TEXT("Invalid OwnerVM. [%s]"), TEXT(__FUNCTION__));
+	UE_CLOG(OwnerVM == nullptr, LogSUE4L, Error, TEXT("Invalid OwnerVM. [%s]"), __SUE4LUA_FUNCTION__);
 }
 
 void FSUE4LuaUserData::Dispose()

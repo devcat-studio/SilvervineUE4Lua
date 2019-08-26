@@ -123,8 +123,23 @@ bool FSUE4LuaTestCaseArray::RunTest(const FString& Parameters)
 		TestTrue(TEXT("TArray.Remove()"), TestUObject->IntArrayProperty.Num() == 0);
 	}
 	{
+		int32 TestValue = 123;
+		TestUObject->IntArrayProperty.Empty();
+		TestUObject->IntArrayProperty.Add(TestValue);
+
+		VM->ExecuteString(
+			TEXT("\n	function Test(uobj, value)")
+			TEXT("\n		return uobj.IntArrayProperty:Find(value)")
+			TEXT("\n	end"));
+		int32 Result1 = FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), TestUObject, TestValue);
+		int32 Result2 = FSUE4LuaFunction::CallGlobal<int32>(VM.ToSharedRef(), TEXT("Test"), TestUObject, TestValue + 1);
+		TestTrue(TEXT("TArray.Find()"), Result1 >= 0);
+		TestTrue(TEXT("TArray.Find()"), Result2 < 0);
+	}
+	{
 		int32 TestIndex = 3;
 		int32 TestValue = 123;
+		TestUObject->IntArrayProperty.Empty();
 		TestUObject->IntArrayProperty.SetNum(TestIndex + 1);
 		TestUObject->IntArrayProperty[TestIndex] = 0;
 

@@ -4,7 +4,7 @@
 
 디스패치할 클래스가 사용하는 Lua 파일 이름을 반환해주는 Lua 함수를 _디스패치 핸들러 팩토리_ 라고 부릅니다. 
 
-디스패치 핸들러 팩토리는 다음과 같이 구현한 후에 VM에 연결해주세요. Game/Main.lua와 같은 가장 먼저 실행되는 Lua파일에 작성하시는 것이 좋습니다.
+디스패치 핸들러 팩토리를 다음과 같이 구현한 후에 VM에 연결해주세요. Game/Main.lua와 같은 가장 먼저 실행되는 Lua파일에 작성하시는 것이 좋습니다.
 ```lua
 SUE4Lua.SetDispatchHandlerFactory(function (CallerClass)
     local ClassName = CallerClass:GetName()

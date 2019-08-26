@@ -21,18 +21,18 @@ class FSUE4LuaNullFileLoader : public FSUE4LuaFileLoader
 public:
 	virtual bool LoadFileToString(FString& Result, const TCHAR* Filename) override
 	{
-		UE_LOG(LogSUE4L, Warning, TEXT("Accessing to Null File Loader. Check that SetFileLoader() calls is valid. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Warning, TEXT("Accessing to Null File Loader. Check that SetFileLoader() calls is valid. [%s]"), __SUE4LUA_FUNCTION__);
 
 		return false;
 	}
 	virtual FString GetLocalFilePath(const TCHAR* Filename) override
 	{
-		UE_LOG(LogSUE4L, Warning, TEXT("Accessing to Null File Loader. Check that SetFileLoader() calls is valid. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Warning, TEXT("Accessing to Null File Loader. Check that SetFileLoader() calls is valid. [%s]"), __SUE4LUA_FUNCTION__);
 		return FString();
 	}
 	virtual TArray<FString> GetFilenames(const TCHAR* Filename) override
 	{
-		UE_LOG(LogSUE4L, Warning, TEXT("Accessing to Null File Loader. Check that SetFileLoader() calls is valid. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Warning, TEXT("Accessing to Null File Loader. Check that SetFileLoader() calls is valid. [%s]"), __SUE4LUA_FUNCTION__);
 		return TArray<FString>();	
 	}
 };
@@ -56,7 +56,7 @@ void FSilvervineUE4LuaModule::ShutdownModule()
 {
 	if (0 < FSUE4LuaNativeValue::GetInstanceCount())
 	{
-		UE_LOG(LogSUE4L, Warning, TEXT("%d remaining native values. [%s]"), FSUE4LuaNativeValue::GetInstanceCount(), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Warning, TEXT("%d remaining native values. [%s]"), FSUE4LuaNativeValue::GetInstanceCount(), __SUE4LUA_FUNCTION__);
 	}
 }
 

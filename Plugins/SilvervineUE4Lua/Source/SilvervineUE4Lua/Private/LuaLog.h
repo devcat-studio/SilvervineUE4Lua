@@ -11,21 +11,27 @@ struct lua_State;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogSUE4L, Log, All);
 
+#if (PLATFORM_WINDOWS || PLATFORM_XBOXONE) && !defined(__clang__)
+#define __SUE4LUA_FUNCTION__	TEXT(__FUNCTION__)
+#else
+#define __SUE4LUA_FUNCTION__	TEXT("")
+#endif
+
 // Log, Warning, Error 로그 출력 매크로
 #define SUE4LVM_LOG(L, Format, ...)																																\
 	{																																							\
-		UE_LOG(LogSUE4L, Log, TEXT("[LuaVM] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, TEXT(__FUNCTION__)), ##__VA_ARGS__);							\
-		SUE4LuaLog::DebugPrint(L, *FString::Printf(TEXT("[Log] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, TEXT(__FUNCTION__)), ##__VA_ARGS__));		\
+		UE_LOG(LogSUE4L, Log, TEXT("[LuaVM] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, __SUE4LUA_FUNCTION__), ##__VA_ARGS__);						\
+		SUE4LuaLog::DebugPrint(L, *FString::Printf(TEXT("[Log] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, __SUE4LUA_FUNCTION__), ##__VA_ARGS__));	\
 	}
 #define SUE4LVM_WARNING(L, Format, ...)																															\
 	{																																							\
-		UE_LOG(LogSUE4L, Warning, TEXT("[LuaVM] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, TEXT(__FUNCTION__)), ##__VA_ARGS__);						\
-		SUE4LuaLog::DebugPrint(L, *FString::Printf(TEXT("[Warning] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, TEXT(__FUNCTION__)), ##__VA_ARGS__));	\
+		UE_LOG(LogSUE4L, Warning, TEXT("[LuaVM] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, __SUE4LUA_FUNCTION__), ##__VA_ARGS__);					\
+		SUE4LuaLog::DebugPrint(L, *FString::Printf(TEXT("[Warning] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, __SUE4LUA_FUNCTION__), ##__VA_ARGS__));\
 	}
 #define SUE4LVM_ERROR(L, Format, ...)																															\
 	{																																							\
-		UE_LOG(LogSUE4L, Error, TEXT("[LuaVM] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, TEXT(__FUNCTION__)), ##__VA_ARGS__);						\
-		SUE4LuaLog::DebugPrint(L, *FString::Printf(TEXT("[Error] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, TEXT(__FUNCTION__)), ##__VA_ARGS__));	\
+		UE_LOG(LogSUE4L, Error, TEXT("[LuaVM] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, __SUE4LUA_FUNCTION__), ##__VA_ARGS__);						\
+		SUE4LuaLog::DebugPrint(L, *FString::Printf(TEXT("[Error] [%s] ") Format, SUE4LuaLog::GetCurrentFileLocation(L, __SUE4LUA_FUNCTION__), ##__VA_ARGS__));	\
 	}
 
 namespace SUE4LuaLog

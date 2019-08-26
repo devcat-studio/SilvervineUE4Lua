@@ -138,7 +138,7 @@ public:
 		FString Source;
 		if (!FSUE4LuaFileLoaderHelper::LoadFileToString(Source, Filename))
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("'%s' not found. [%s]"), Filename, TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("'%s' not found. [%s]"), Filename, __SUE4LUA_FUNCTION__);
 			return false;
 		}
 
@@ -153,12 +153,12 @@ public:
 			}
 			else
 			{
-				UE_LOG(LogSUE4L, Error, TEXT("lua_pcall() failed: %s [%s]"), ANSI_TO_TCHAR(lua_tostring(L, -1)), TEXT(__FUNCTION__));
+				UE_LOG(LogSUE4L, Error, TEXT("lua_pcall() failed: %s [%s]"), ANSI_TO_TCHAR(lua_tostring(L, -1)), __SUE4LUA_FUNCTION__);
 			}
 		}
 		else
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("luaL_loadbuffer() failed: %s [%s]"), ANSI_TO_TCHAR(lua_tostring(L, -1)), TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("luaL_loadbuffer() failed: %s [%s]"), ANSI_TO_TCHAR(lua_tostring(L, -1)), __SUE4LUA_FUNCTION__);
 		}
 
 		return bSuccess;
@@ -399,7 +399,7 @@ public:
 		}
 		else
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Trying to pop invalid value as error handler. [%s]"), TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Trying to pop invalid value as error handler. [%s]"), __SUE4LUA_FUNCTION__);
 		}
 	}
 
@@ -547,7 +547,7 @@ TSharedPtr<FSUE4LuaVirtualMachine> FSUE4LuaVirtualMachine::Create(bool bDebuggab
 
 		if (!FSUE4LuaVMContext::RawExecuteFile(L, TEXT("SUE4Lua/Framework/Prerequisite.lua")))
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("VM is not initialized properly. [%s]"), TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("VM is not initialized properly. [%s]"), __SUE4LUA_FUNCTION__);
 
 			VM.Reset();
 		}
@@ -683,7 +683,7 @@ TSharedPtr<FSUE4LuaVirtualMachine> FSUE4LuaVirtualMachine::Create(bool bDebuggab
 					}
 					else
 					{
-						UE_LOG(LogSUE4L, Error, TEXT("'%s' file already exists. check the filename case sensitivity. [%s]"), *Filename, TEXT(__FUNCTION__));
+						UE_LOG(LogSUE4L, Error, TEXT("'%s' file already exists. check the filename case sensitivity. [%s]"), *Filename, __SUE4LUA_FUNCTION__);
 					}
 				}
 			}

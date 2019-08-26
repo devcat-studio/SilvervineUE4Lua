@@ -1326,7 +1326,7 @@ void luaV_execute (lua_State *L) {
 		  Halt h = cl->p->halts[GETARG_Bx(i)];
 		  L->hookmask |= LUA_MASKHALT;
 		  L->hook = h.hook;
-		  Protect(luaG_traceexec(L, ci->u.l.savedpc));
+		  Protect(luaG_traceexec(L));
 		  if (L->hookmask & LUA_MASKHALT)
 			  L->hookmask ^= LUA_MASKHALT;
 		  if (L->hook == h.hook)
