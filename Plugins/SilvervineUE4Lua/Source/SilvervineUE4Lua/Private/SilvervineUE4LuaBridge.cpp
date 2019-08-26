@@ -47,7 +47,7 @@ void USUE4LuaBridge::NativeInitialize(USUE4LuaVirtualMachine* InVM)
 {
 	if (InVM == nullptr)
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("USUE4LuaVirtualMachine is null. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("USUE4LuaVirtualMachine is null. [%s]"), __SUE4LUA_FUNCTION__);
 		return;
 	}
 
@@ -85,7 +85,7 @@ FSUE4LuaVirtualMachine* USUE4LuaBridge::GetVM()
 
 	if (RefVM == nullptr)
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("RefVM is null. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("RefVM is null. [%s]"), __SUE4LUA_FUNCTION__);
 		return nullptr;
 	}
 
@@ -105,7 +105,7 @@ void USUE4LuaBridge::DispatchInternal(FFrame& InStack, const FString& InFunction
 	if (VM == nullptr)
 	{
 		// 종료시 이렇게 될 수 있어서 경고 없이 조용히 넘어가도록 함
-		// UE_LOG(LogSUE4L, Error, TEXT("VM is invalid. [%s]"), TEXT(__FUNCTION__));
+		// UE_LOG(LogSUE4L, Error, TEXT("VM is invalid. [%s]"), __SUE4LUA_FUNCTION__);
 		return;
 	}
 

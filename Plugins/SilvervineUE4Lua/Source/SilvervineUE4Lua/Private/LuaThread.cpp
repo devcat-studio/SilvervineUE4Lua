@@ -24,12 +24,12 @@ TSharedPtr<FSUE4LuaThread> FSUE4LuaThread::Create(TSharedRef<FSUE4LuaVirtualMach
 {
 	if (VM->IsDisposed())
 	{
-		UE_LOG(LogSUE4L, Warning, TEXT("Disposed VM is passed. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Warning, TEXT("Disposed VM is passed. [%s]"), __SUE4LUA_FUNCTION__);
 		return nullptr;
 	}
 	if (LuaState == nullptr)
 	{
-		UE_LOG(LogSUE4L, Warning, TEXT("Invalid lua state. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Warning, TEXT("Invalid lua state. [%s]"), __SUE4LUA_FUNCTION__);
 		return nullptr;
 	}
 
@@ -42,7 +42,7 @@ void FSUE4LuaThread::SetDisposed()
 {
 	if (LuaState == nullptr)
 	{
-		UE_LOG(LogSUE4L, Warning, TEXT("Already disposed. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Warning, TEXT("Already disposed. [%s]"), __SUE4LUA_FUNCTION__);
 		return;
 	}
 

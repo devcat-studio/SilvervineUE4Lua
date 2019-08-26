@@ -129,7 +129,7 @@ namespace ZipStructure
 
 		if (Signature != LocalFileHeader::SignatureConstant)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [LocalFileHeader][%s]"), Signature, TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [LocalFileHeader][%s]"), Signature, __SUE4LUA_FUNCTION__);
 			return false;
 		}
 
@@ -165,7 +165,7 @@ namespace ZipStructure
 
 		if (Signature != CentralDirFileHeader::SignatureConstant)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [CentralDirFileHeader][%s]"), Signature, TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [CentralDirFileHeader][%s]"), Signature, __SUE4LUA_FUNCTION__);
 			return false;
 		}
 
@@ -192,7 +192,7 @@ namespace ZipStructure
 
 		if (Signature != EndOfCentralDirBlock::SignatureConstant)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [EndOfCentralDirBlock][%s]"), Signature, TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [EndOfCentralDirBlock][%s]"), Signature, __SUE4LUA_FUNCTION__);
 			return false;
 		}
 
@@ -223,14 +223,14 @@ bool FSUE4LuaBundleArchive::ReadFile(FString& OutResult, const TCHAR* Filename)
 {
 	if (Bytes.Num() == 0)
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("There is no data to read [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("There is no data to read [%s]"), __SUE4LUA_FUNCTION__);
 		return false;
 	}
 	
 	FMemoryReader Reader(Bytes, true);
 	if (!LocalFileHeaderOffsetMappings.Contains(Filename))
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("Local File Header of '%s' is not found. [%s]"), Filename, TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("Local File Header of '%s' is not found. [%s]"), Filename, __SUE4LUA_FUNCTION__);
 		return false;
 	}
 
@@ -244,7 +244,7 @@ bool FSUE4LuaBundleArchive::ReadFile(FString& OutResult, const TCHAR* Filename)
 		FileHeader.Deserialize(Reader);
 		if (FileHeader.Signature != ZipStructure::LocalFileHeader::SignatureConstant)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [LocalFileHeader][%s]"), FileHeader.Signature, TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [LocalFileHeader][%s]"), FileHeader.Signature, __SUE4LUA_FUNCTION__);
 			return false;
 		}
 
@@ -275,7 +275,7 @@ bool FSUE4LuaBundleArchive::ReadFile(FString& OutResult, const TCHAR* Filename)
 			FFileHelper::BufferToString(OutResult, Bytes.GetData() + Reader.Tell(), FileHeader.UncompressedSize);
 			break;
 		default:
-			UE_LOG(LogSUE4L, Error, TEXT("Invalid Compression method : %d"), FileHeader.Method, TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Invalid Compression method : %d"), FileHeader.Method, __SUE4LUA_FUNCTION__);
 			return false;
 			break;		
 		}
@@ -298,7 +298,7 @@ bool FSUE4LuaBundleArchive::ReadCentralDirectories()
 
 		if (EndBlock.Signature != ZipStructure::EndOfCentralDirBlock::SignatureConstant)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [EndOfCentralDirBlock][%s]"), EndBlock.Signature, TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [EndOfCentralDirBlock][%s]"), EndBlock.Signature, __SUE4LUA_FUNCTION__);
 			return false;
 		}
 	}
@@ -315,7 +315,7 @@ bool FSUE4LuaBundleArchive::ReadCentralDirectories()
 
 			if (CentralDir.Signature != ZipStructure::CentralDirFileHeader::SignatureConstant)
 			{
-				UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [CentralDirFileHeader][%s]"), CentralDir.Signature, TEXT(__FUNCTION__));
+				UE_LOG(LogSUE4L, Error, TEXT("Invalid Signature (0x%08X) [CentralDirFileHeader][%s]"), CentralDir.Signature, __SUE4LUA_FUNCTION__);
 				return false;
 			}
 

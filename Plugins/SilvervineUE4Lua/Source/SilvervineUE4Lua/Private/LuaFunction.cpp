@@ -21,12 +21,12 @@ TSharedPtr<FSUE4LuaFunction> FSUE4LuaFunction::CreateFromGlobal(TSharedRef<FSUE4
 {
 	if (LuaVM->IsDisposed())
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("VM was disposed. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("VM was disposed. [%s]"), __SUE4LUA_FUNCTION__);
 		return nullptr;
 	}
 	if (FunctionName == nullptr)
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("Invalid function name. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("Invalid function name. [%s]"), __SUE4LUA_FUNCTION__);
 		return nullptr;
 	}
 
@@ -46,7 +46,7 @@ TSharedPtr<FSUE4LuaFunction> FSUE4LuaFunction::CreateFromGlobal(TSharedRef<FSUE4
 
 	if (!RetLuaFunction->FunctionReferencer.IsValid())
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("Global lua function '%s' doesn't exist. [%s]"), FunctionName, TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("Global lua function '%s' doesn't exist. [%s]"), FunctionName, __SUE4LUA_FUNCTION__);
 		return nullptr;
 	}
 

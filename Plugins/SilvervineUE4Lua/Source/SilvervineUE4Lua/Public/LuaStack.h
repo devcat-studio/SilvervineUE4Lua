@@ -45,7 +45,7 @@ public:
 	template<typename RetType>
 	static RetType To(lua_State* L, int32 Index);
 
-	template<typename UStructType, typename = TEnableIf<TIsFunction<decltype(UStructType::StaticStruct)>::Value>::Type>
+	template<typename UStructType, typename = typename TEnableIf<TIsFunction<decltype(UStructType::StaticStruct)>::Value>::Type>
 	static UStructType*  GetRef(lua_State* L, int32 Index)
 	{
 		return reinterpret_cast<UStructType*>(GetUStructRef(L, Index, UStructType::StaticStruct()));
@@ -213,7 +213,7 @@ private:
 
 	// UObject 타입 처리
 	static void PushObject(lua_State* L, const UObject* InValue);
-	template<typename UObjectType, typename = TEnableIf<TIsDerivedFrom<UObjectType, UObject>::IsDerived>::Type>
+	template<typename UObjectType, typename = typename TEnableIf<TIsDerivedFrom<UObjectType, UObject>::IsDerived>::Type>
 	static void ToObject(lua_State* L, UObjectType*& OutValue, int32 Index)
 	{
 		OutValue = Cast<UObjectType>(ToUObject(L, Index, UObjectType::StaticClass()));
@@ -221,12 +221,12 @@ private:
 	static UObject* ToUObject(lua_State* L, int32 Index, UClass* Class);
 
 	// UStruct 타입 처리
-	template<typename UStructType, typename = TEnableIf<TIsFunction<decltype(UStructType::StaticStruct)>::Value>::Type>
+	template<typename UStructType, typename = typename TEnableIf<TIsFunction<decltype(UStructType::StaticStruct)>::Value>::Type>
 	static void PushObject(lua_State* L, const UStructType& InValue)
 	{
 		PushUStruct(L, UStructType::StaticStruct(), &InValue);
 	}
-	template<typename UStructType, typename = TEnableIf<TIsFunction<decltype(UStructType::StaticStruct)>::Value>::Type>
+	template<typename UStructType, typename = typename TEnableIf<TIsFunction<decltype(UStructType::StaticStruct)>::Value>::Type>
 	static void ToObject(lua_State* L, UStructType& OutValue, int32 Index)
 	{
 		ToUStruct(L, Index, UStructType::StaticStruct(), &OutValue);

@@ -171,7 +171,7 @@ void luaF_freeproto (lua_State *L, Proto *f) {
 		f->list_next->list_prev = f->list_prev;
 	}
 	//check_protolist(L->l_G, L->l_G->proto_list);
-	luaM_freearray(L, f->halts, f->sizehalts, Halt);
+	luaM_freearray(L, f->halts, f->sizehalts);
 	/* LUA_HALT } */
   luaM_freearray(L, f->code, f->sizecode);
   luaM_freearray(L, f->p, f->sizep);

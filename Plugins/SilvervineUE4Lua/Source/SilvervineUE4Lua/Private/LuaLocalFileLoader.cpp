@@ -31,7 +31,7 @@ bool FSUE4LuaLocalFileLoader::LoadFileToString(FString& Result, const TCHAR* Fil
 	{
 		if (!bUsedForUnitTest)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Null path. [%s]"), TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Null path. [%s]"), __SUE4LUA_FUNCTION__);
 		}
 		return false;
 	}
@@ -45,7 +45,7 @@ bool FSUE4LuaLocalFileLoader::LoadFileToString(FString& Result, const TCHAR* Fil
 		{
 			if (!bUsedForUnitTest)
 			{
-				UE_LOG(LogSUE4L, Error, TEXT("Invalid virtual path: %s. [%s]"), Filename, TEXT(__FUNCTION__));
+				UE_LOG(LogSUE4L, Error, TEXT("Invalid virtual path: %s. [%s]"), Filename, __SUE4LUA_FUNCTION__);
 			}
 			return false;
 		}
@@ -58,7 +58,7 @@ bool FSUE4LuaLocalFileLoader::LoadFileToString(FString& Result, const TCHAR* Fil
 		{
 			if (!bUsedForUnitTest)
 			{
-				UE_LOG(LogSUE4L, Error, TEXT("Virtual path '%s' is not found. [%s]"), *VirtualPath, TEXT(__FUNCTION__));
+				UE_LOG(LogSUE4L, Error, TEXT("Virtual path '%s' is not found. [%s]"), *VirtualPath, __SUE4LUA_FUNCTION__);
 			}
 			return false;
 		}
@@ -68,7 +68,7 @@ bool FSUE4LuaLocalFileLoader::LoadFileToString(FString& Result, const TCHAR* Fil
 
 	if (!bUsedForUnitTest)
 	{
-		UE_LOG(LogSUE4L, Verbose, TEXT("Loading lua file '%s'... [%s] "), *LocalPath, TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Verbose, TEXT("Loading lua file '%s'... [%s] "), *LocalPath, __SUE4LUA_FUNCTION__);
 	}
 
 	return FFileHelper::LoadFileToString(Result, *LocalPath);
@@ -103,7 +103,7 @@ TArray<FString> FSUE4LuaLocalFileLoader::GetFilenames(const TCHAR* Path)
 	{
 		if (!bUsedForUnitTest)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Null path. [%s]"), TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Null path. [%s]"), __SUE4LUA_FUNCTION__);
 		}
 		return TArray<FString>();
 	}
@@ -114,7 +114,7 @@ TArray<FString> FSUE4LuaLocalFileLoader::GetFilenames(const TCHAR* Path)
 	{
 		if (!bUsedForUnitTest)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Virtual path '%s' is not found. [%s]"), Path, TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Virtual path '%s' is not found. [%s]"), Path, __SUE4LUA_FUNCTION__);
 		}
 		return TArray<FString>();
 	}
@@ -158,7 +158,7 @@ bool FSUE4LuaLocalFileLoader::Map(const TCHAR* VirtualPath, const TCHAR* LocalPa
 	{
 		if (!bUsedForUnitTest)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("Invalid path. [%s] "), TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("Invalid path. [%s] "), __SUE4LUA_FUNCTION__);
 		}
 		return false;
 	}
@@ -170,7 +170,7 @@ bool FSUE4LuaLocalFileLoader::Map(const TCHAR* VirtualPath, const TCHAR* LocalPa
 	{
 		if (!bUsedForUnitTest)
 		{
-			UE_LOG(LogSUE4L, Error, TEXT("VirtualPath '%s' already exists. [%s] "), *VirtualPathStr, TEXT(__FUNCTION__));
+			UE_LOG(LogSUE4L, Error, TEXT("VirtualPath '%s' already exists. [%s] "), *VirtualPathStr, __SUE4LUA_FUNCTION__);
 		}
 		return false;
 	}
@@ -179,7 +179,7 @@ bool FSUE4LuaLocalFileLoader::Map(const TCHAR* VirtualPath, const TCHAR* LocalPa
 
 	if (!bUsedForUnitTest)
 	{
-		UE_LOG(LogSUE4L, Verbose, TEXT("Mapping '%s' to '%s [%s]"), *VirtualPathStr, *LocalPathStr, TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Verbose, TEXT("Mapping '%s' to '%s [%s]"), *VirtualPathStr, *LocalPathStr, __SUE4LUA_FUNCTION__);
 	}
 
 #if WITH_EDITOR

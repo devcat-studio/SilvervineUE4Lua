@@ -26,7 +26,7 @@ FSUE4LuaStackGuard::~FSUE4LuaStackGuard()
 	int32 CurTopIndex = lua_gettop(L);
 	if (CurTopIndex != SavedTopIndex)
 	{
-		UE_LOG(LogSUE4L, Error, TEXT("Stack is not properly unwound. [%s]"), TEXT(__FUNCTION__));
+		UE_LOG(LogSUE4L, Error, TEXT("Stack is not properly unwound. [%s]"), __SUE4LUA_FUNCTION__);
 
 		lua_settop(L, SavedTopIndex);
 	}
