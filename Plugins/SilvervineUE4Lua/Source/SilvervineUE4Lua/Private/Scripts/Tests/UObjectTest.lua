@@ -78,6 +78,8 @@ SUE4Lua.Log("Obj.IntArrayProperty:Num()", Obj.IntArrayProperty:Num())
 Obj.IntArrayProperty:Empty()
 Obj.IntArrayProperty:Add(123)
 SUE4Lua.Log("Obj.IntArrayProperty[0]", Obj.IntArrayProperty[0])
+SUE4Lua.Log("Obj.IntArrayProperty:Find(123)", Obj.IntArrayProperty:Find(123))
+SUE4Lua.Log("Obj.IntArrayProperty:Find(456)", Obj.IntArrayProperty:Find(456))
 
 Obj.StructArrayProperty:Empty()
 Obj.StructArrayProperty:Add()

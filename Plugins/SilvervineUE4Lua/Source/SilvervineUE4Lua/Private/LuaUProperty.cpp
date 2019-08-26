@@ -404,6 +404,7 @@ namespace SUE4LuaUProperty
 	struct FArrayUserData : public FUPropertyUserData
 	{
 		const UArrayProperty* ArrayProperty = nullptr;
+		void* ItemBuffer = nullptr;		// Find()에서 사용
 		bool bIndexable = false;
 
 		static const char* StaticGetTypeName()
@@ -552,6 +553,41 @@ namespace SUE4LuaUProperty
 			return 0;
 		}
 
+		// integer Find(self, value)
+		static int32 LuaFind(lua_State* L)
+		{
+			int32 ResultIndex = INDEX_NONE;
+
+			auto UserData = FSUE4LuaUserData::ToUserData<FArrayUserData>(L, 1);
+			if (UserData != nullptr)
+			{
+				if (UserData->IsValid())
+				{
+					if (UserData->CopyItemFromStack(L, 2))
+					{
+						auto ScriptHelper = UserData->GetScriptHelper();
+						auto InnerProp = UserData->ArrayProperty->Inner;
+
+						for (int32 Index = 0; Index < ScriptHelper.Num(); ++Index)
+						{
+							if (InnerProp->Identical(UserData->ItemBuffer, ScriptHelper.GetRawPtr(Index)))
+							{
+								ResultIndex = Index;
+								break;
+							}
+						}
+					}
+				}
+			}
+			else
+			{
+				SUE4LVM_ERROR(L, TEXT("Array.Find(): Invalid self"));
+			}
+
+			FSUE4LuaStack::Push(L, ResultIndex);
+			return 1;
+		}
+
 		// value GetCopy(self, index)
 		static int32 LuaGetCopy(lua_State* L)
 		{
@@ -610,6 +646,9 @@ namespace SUE4LuaUProperty
 			lua_pushcfunction(L, &LuaRemove);
 			lua_setfield(L, -2, "Remove");
 
+			lua_pushcfunction(L, &LuaFind);
+			lua_setfield(L, -2, "Find");
+
 			lua_pushcfunction(L, &LuaGetCopy);
 			lua_setfield(L, -2, "GetCopy");
 
@@ -618,6 +657,18 @@ namespace SUE4LuaUProperty
 
 			lua_pushcfunction(L, &LuaSet);
 			lua_setfield(L, -2, "Set");
+		}
+
+		virtual ~FArrayUserData()
+		{
+			if (ItemBuffer != nullptr)
+			{
+				auto InnerProp = ArrayProperty->Inner;
+
+				InnerProp->DestroyValue(ItemBuffer);
+				FMemory::Free(ItemBuffer);
+				ItemBuffer = nullptr;
+			}
 		}
 
 		FScriptArrayHelper GetScriptHelper()
@@ -731,6 +782,19 @@ namespace SUE4LuaUProperty
 			auto IteratorUserData = FPropertyIteratorUserData::New<FArrayIteratorUserData>(L);
 		}
 		// End FUPropertyUserData Interface
+
+		bool CopyItemFromStack(lua_State* L, int32 StackIndex)
+		{
+			auto InnerProp = ArrayProperty->Inner;
+
+			if (ItemBuffer == nullptr)
+			{
+				ItemBuffer = FMemory::Malloc(InnerProp->GetSize(), InnerProp->GetMinAlignment());
+				InnerProp->InitializeValue(ItemBuffer);
+			}
+
+			return SUE4LuaUProperty::CopyToNative(L, StackIndex, InnerProp, ItemBuffer);
+		}
 
 		void Set(lua_State* L, int32 StackIndex) 
 		{
