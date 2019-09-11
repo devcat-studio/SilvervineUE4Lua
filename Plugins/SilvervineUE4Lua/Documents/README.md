@@ -49,11 +49,15 @@ The following versions of UE4 are supported:
 
 * 4.21
 * 4.22
+* 4.23
 
 We have been developing SUE4Lua since version 4.19, so we expect it to work well with older engine versions.
 
 Note:
 * 4.20 has a bug in the Unreal Header Tool (UHT) and the codegen module in SUE4Lua is not compiled with it. This issue is difficult to workaround without engine modification, so SUE4Lua is not recommended for 4.20.
+* In 4.23 installed engine build, there is an issue where the SUE4Lua plugin causes a build error. You can workaround it as follows:
+1. Open Engine/Config/BaseEngine.ini
+2. Modify `HasInstalledPlatformInfo` to _false_ in the `InstalledPlatforms` section.
 
 The supported Lua versions are:
 

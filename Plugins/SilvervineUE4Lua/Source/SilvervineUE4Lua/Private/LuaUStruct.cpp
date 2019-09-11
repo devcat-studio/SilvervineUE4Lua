@@ -4,6 +4,7 @@
 #include "LuaUStruct.h"
 
 #include "CoreUObject.h"
+#include "Launch/Resources/Version.h"
 
 #include "LuaAPI.h"
 #include "LuaLog.h"
@@ -16,6 +17,15 @@
 
 namespace SUE4LuaUStruct
 {
+	static FString GetAuthoredNameForField(const UStruct* Struct, const UField* Field)
+	{
+#if 23 <= ENGINE_MINOR_VERSION
+		return Struct->GetAuthoredNameForField(Field);
+#else
+		return Struct->PropertyNameToDisplayName(Field->GetFName());
+#endif
+	}
+
 	//=============================================================================================================================
 	// FUStructUserData
 	//
@@ -302,7 +312,7 @@ namespace SUE4LuaUStruct
 				for (TFieldIterator<UProperty> PropIt(Struct); PropIt; ++PropIt)
 				{
 					const UProperty* FieldProperty = *PropIt;
-					const FString FieldPropertyName = Struct->PropertyNameToDisplayName(FieldProperty->GetFName());
+					const FString FieldPropertyName = GetAuthoredNameForField(Struct, FieldProperty);
 
 					// 속성 이름이 FName으로 저장되므로 이름을 비교할 때 반드시 대소문자를 무시해야 합니다.
 					if (FieldPropertyName.Equals(NameStr, ESearchCase::IgnoreCase))
@@ -370,7 +380,7 @@ namespace SUE4LuaUStruct
 				}
 				else
 				{
-					FSUE4LuaStack::Push(L, StructUserData->Struct->PropertyNameToDisplayName(MemberProperty->GetFName()));
+					FSUE4LuaStack::Push(L, GetAuthoredNameForField(StructUserData->Struct, MemberProperty));
 				}
 				SUE4LuaUProperty::Push(L, MemberProperty, MemberProperty->ContainerPtrToValuePtr<void>(StructUserData->ValueAddress), StructUserData->Owner);
 
