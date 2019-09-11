@@ -49,11 +49,15 @@ SUE4Lua에는 다른 UE4 Lua 스크립트 플러그인과 다른 몇 가지 특�
 
 * 4.21
 * 4.22
+* 4.23
 
 SUE4Lua는 4.19 버전부터 개발을 시작했습니다. 때문에, 과거 엔진 버전에서도 큰 문제 없이 동작할 것으로 예상합니다.
 
 참고:
 * 4.20 버전은 UHT(Unreal Header Tool)의 버그로 SUE4Lua의 코드젠 모듈이 제대로 빌드되지 않습니다. 이 문제는 엔진 수정 없이 우회하기 어려우니 4.20 버전에 SUE4Lua를 사용하지 않는 것을 권장합니다.
+* 4.23 부터 인스톨된 엔진 빌드에서 SUE4Lua 플러그인가 빌드 오류를 발생시키는 문제가 발견되었습니다. 아래와 같은 방법으로 우회할 수 있습니다.
+1. Engine/Config/BaseEngine.ini를 엽니다.
+2. `InstalledPlatforms` 섹션의 `HasInstalledPlatformInfo`를 _false_ 로 수정합니다.
 
 지원하는 Lua 버전은 다음과 같습니다.
 

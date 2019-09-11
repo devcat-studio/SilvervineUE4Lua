@@ -1872,7 +1872,7 @@ namespace SUE4LuaUProperty
 		{
 			check(IsValid());
 
-			return *MulticastDelegateProperty->GetPropertyValuePtr(ValueAddress);
+			return *reinterpret_cast<FMulticastScriptDelegate*>(ValueAddress);
 		}
 
 		UFunction* GetSignatureFunction() const
