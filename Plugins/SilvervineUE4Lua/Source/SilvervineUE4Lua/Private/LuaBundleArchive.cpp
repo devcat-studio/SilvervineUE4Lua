@@ -322,6 +322,8 @@ bool FSUE4LuaBundleArchive::ReadCentralDirectories()
 			FString Filename;
 			FFileHelper::BufferToString(Filename, Bytes.GetData() + Reader.Tell(), CentralDir.FilenameLen);
 
+			FPaths::NormalizeFilename(Filename);
+
 			if (!Filename.IsEmpty() && CentralDir.CompressedSize > 0)
 			{
 				LocalFileHeaderOffsetMappings.Add(Filename, CentralDir.OffsetLocalFileHeader);
