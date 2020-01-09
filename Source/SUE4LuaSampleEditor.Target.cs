@@ -9,6 +9,10 @@ public class SUE4LuaSampleEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 
-		ExtraModuleNames.AddRange( new string[] { "SUE4LuaSample" } );
+#if UE_4_24_OR_LATER
+        DefaultBuildSettings = BuildSettingsVersion.Latest;
+#endif
+
+        ExtraModuleNames.AddRange( new string[] { "SUE4LuaSample" } );
 	}
 }

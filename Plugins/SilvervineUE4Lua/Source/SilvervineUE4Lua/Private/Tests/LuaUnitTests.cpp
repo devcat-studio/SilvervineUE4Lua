@@ -1,8 +1,9 @@
 // SilvervineUE4Lua / devCAT studio
-// Copyright 2016 - 2019. Nexon Korea Corporation. All rights reserved.
+// Copyright 2016 - 2020. Nexon Korea Corporation. All rights reserved.
 
 #include "LuaUnitTests.h"
 
+#include "LuaUnitTestUnknownUObjectType.h"
 #include "SilvervineUE4LuaBridge.h"
 
 
@@ -74,6 +75,11 @@ int32 USUE4LuaTestUObject::TestCoroutine(int32 InArg)
 
 void USUE4LuaTestUObject::TestTimer()
 {
+}
+
+USUE4LuaTestUnknownUObjectType* USUE4LuaTestUObject::TestUnknownUObjectType()
+{
+	return const_cast<USUE4LuaTestUnknownUObjectType*>(GetDefault<USUE4LuaTestUnknownUObjectType>());
 }
 
 //=============================================================================================================================

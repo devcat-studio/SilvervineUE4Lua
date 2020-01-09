@@ -1,5 +1,5 @@
 // SilvervineUE4Lua / devCAT studio
-// Copyright 2016 - 2019. Nexon Korea Corporation. All rights reserved.
+// Copyright 2016 - 2020. Nexon Korea Corporation. All rights reserved.
 
 #include "LuaLibrary.h"
 
@@ -8,7 +8,7 @@
 #include "Engine/World.h"
 #include "Engine/GameInstance.h"
 #include "Engine/UserDefinedEnum.h"
-#include "Events.h"
+#include "Input/Events.h"
 #include "GameFramework/PlayerController.h"
 #include "HAL/PlatformTime.h"
 #include "InputCoreTypes.h"

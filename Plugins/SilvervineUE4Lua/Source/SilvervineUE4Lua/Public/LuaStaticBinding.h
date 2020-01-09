@@ -1,5 +1,5 @@
 // SilvervineUE4Lua / devCAT studio
-// Copyright 2016 - 2019. Nexon Korea Corporation. All rights reserved.
+// Copyright 2016 - 2020. Nexon Korea Corporation. All rights reserved.
 
 #pragma once
 
@@ -103,6 +103,19 @@ public:
 	// lua 스택에 출력값을 푸시
 	template<typename ArgType>
 	void Push(const char* ArgName, int32 ArgIndex, const ArgType& Arg)
+	{
+		if (bPassByName)
+		{
+			LuaGetField(ArgName);
+		}
+		else
+		{
+			FSUE4LuaStack::Push(L, Arg);
+		}
+	}
+
+	// UObject 타입에 대한 Push 구현
+	void PushUObject(const char* ArgName, int32 ArgIndex, const UObject* Arg)
 	{
 		if (bPassByName)
 		{

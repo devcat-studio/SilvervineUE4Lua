@@ -1,5 +1,5 @@
 // SilvervineUE4Lua / devCAT studio
-// Copyright 2016 - 2019. Nexon Korea Corporation. All rights reserved.
+// Copyright 2016 - 2020. Nexon Korea Corporation. All rights reserved.
 
 #include "LuaUnitTests.h"
 
@@ -20,7 +20,7 @@ bool FSUE4LuaTestCaseMath::RunTest(const FString& Parameters)
 	{
 		return false;
 	}
-		
+
 	{
 		float Arg1 = 1.0f;
 		float Arg2 = 2.0f;
@@ -43,13 +43,13 @@ bool FSUE4LuaTestCaseMath::RunTest(const FString& Parameters)
 	{
 		float Arg1 = 1.0f;
 		float Arg2 = 2.0f;
-			
+
 		VM->ExecuteString(
 			TEXT("\n	function Test(arg1, arg2)")
 			TEXT("\n		return UE4.Math.GridSnap(arg1, arg2)")
 			TEXT("\n	end"));
 
-		TestTrue(TEXT("Math.GridSnap(Location, GridSize)"), 
+		TestTrue(TEXT("Math.GridSnap(Location, GridSize)"),
 			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == FMath::GridSnap(Arg1, Arg2));
 	}
 	{
@@ -62,7 +62,7 @@ bool FSUE4LuaTestCaseMath::RunTest(const FString& Parameters)
 			TEXT("\n		return UE4.Math.ClampAngle(arg1, arg2, arg3)")
 			TEXT("\n	end"));
 
-		TestTrue(TEXT("Math.ClampAngle(AngleDegrees, MinAngleDegrees, MaxAngleDegrees)"), 
+		TestTrue(TEXT("Math.ClampAngle(AngleDegrees, MinAngleDegrees, MaxAngleDegrees)"),
 			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3) == FMath::ClampAngle(Arg1, Arg2, Arg3));
 	}
 	{
@@ -168,7 +168,7 @@ bool FSUE4LuaTestCaseMath::RunTest(const FString& Parameters)
 
 		TestTrue(TEXT("Math.NormalizeToRange(Value, RangeMin, RangeMax)"),
 			FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3) == Result);
-	}		
+	}
 	{
 		float Arg1 = 1.0f;
 		float Arg2 = 2.0f;
@@ -372,7 +372,7 @@ bool FSUE4LuaTestCaseMath::RunTest(const FString& Parameters)
 
 		TestTrue(TEXT("Math.IsNearlyZero(Value) #2"),
 			FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1) == FMath::IsNearlyZero(Arg1));
-	} 
+	}
 	{
 		float Arg1 = 0.1f;
 		float Arg2 = 0.2f;
@@ -424,7 +424,7 @@ bool FSUE4LuaTestCaseMathVector::RunTest(const FString& Parameters)
 	{
 		return false;
 	}
-		
+
 	{
 		FVector Arg(1.0f, 2.0f, 3.0f);
 
@@ -779,7 +779,7 @@ bool FSUE4LuaTestCaseMathVector::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Vector.IsZero() #2"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg) == Arg.IsZero());
-	}		
+	}
 	{
 		FVector Arg(1.0f, 2.0f, 3.0f);
 		Arg.Normalize();
@@ -836,7 +836,7 @@ bool FSUE4LuaTestCaseMathVector::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Vector.Lerp(Vector, Alpha)"), FSUE4LuaFunction::CallGlobal<FVector>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3).Equals(Arg1 + Arg3 * (Arg2 - Arg1)));
-	}		
+	}
 	{
 		FVector Arg1(1.0f, 2.0f, 3.0f);
 		FVector Arg2(1.0f, 0.0f, 0.0f);
@@ -845,7 +845,7 @@ bool FSUE4LuaTestCaseMathVector::RunTest(const FString& Parameters)
 			TEXT("\n	function Test(arg1, arg2)")
 			TEXT("\n		return arg1:Reflection(arg2)")
 			TEXT("\n	end"));
-						
+
 		TestTrue(TEXT("Vector.Reflection(Surface)"), FSUE4LuaFunction::CallGlobal<FVector>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2).Equals(FMath::GetReflectionVector(Arg1, Arg2)));
 	}
 	{
@@ -971,7 +971,7 @@ bool FSUE4LuaTestCaseMathVector::RunTest(const FString& Parameters)
 
 		TestTrue(TEXT("Vector.ToTransform()"), FSUE4LuaFunction::CallGlobal<FTransform>(VM.ToSharedRef(), TEXT("Test"), Arg).Equals(FTransform(Arg)));
 	}
-	
+
 	return true;
 }
 
@@ -1147,7 +1147,7 @@ bool FSUE4LuaTestCaseMathVector2D::RunTest(const FString& Parameters)
 			TEXT("\n	function Test(arg1, arg2)")
 			TEXT("\n		return arg1:CrossProduct(arg2)")
 			TEXT("\n	end"));
-			
+
 		TestTrue(TEXT("Vector2D.CrossProduct(Vector2D)"), FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == FVector2D::CrossProduct(Arg1, Arg2));
 	}
 	{
@@ -1191,7 +1191,7 @@ bool FSUE4LuaTestCaseMathVector2D::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Vector2D.DistanceSquared(Vector2D)"), FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == FVector2D::DistSquared(Arg1, Arg2));
-	}		
+	}
 	{
 		FVector2D Arg(0.000001f, 0.000001f); // smaller then KINDA_SMALL_NUMBER(0.00001)
 
@@ -1242,7 +1242,7 @@ bool FSUE4LuaTestCaseMathVector2D::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Vector2D.IsZero() #2"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg) == Arg.IsZero());
-	}		
+	}
 	{
 		FVector2D Arg1(1.0f, 2.0f);
 		float Arg2 = 3.0f;
@@ -1265,7 +1265,7 @@ bool FSUE4LuaTestCaseMathVector2D::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Vector2D.Lerp(Vector2D, Alpha)"), FSUE4LuaFunction::CallGlobal<FVector2D>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3).Equals(Arg1 + Arg3 * (Arg2 - Arg1)));
-	}		
+	}
 	{
 		FVector2D Arg(1.0f, 2.0f);
 
@@ -1333,11 +1333,11 @@ bool FSUE4LuaTestCaseMathTransform::RunTest(const FString& Parameters)
 	{
 		return false;
 	}
-	
+
 	{
 		FTransform Arg1(FRotator(1.0f, 2.0f, 3.0f), FVector(4.0f, 5.0f, 6.0f), FVector(7.0f, 8.0f, 9.0f));
 		FTransform Arg2(FRotator(2.0f, 3.0f, 4.0f), FVector(5.0f, 6.0f, 7.0f), FVector(8.0f, 9.0f, 10.0f));
-			
+
 		VM->ExecuteString(
 			TEXT("\n	function Test(arg1, arg2)")
 			TEXT("\n		return arg1 + arg2")
@@ -1365,10 +1365,10 @@ bool FSUE4LuaTestCaseMathTransform::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Transform == Transform"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg, Arg));
-	}		
+	}
 	{
 		FTransform Arg(FRotator(1.0f, 2.0f, 3.0f), FVector(4.0f, 5.0f, 6.0f), FVector(7.0f, 8.0f, 9.0f));
-			
+
 		VM->ExecuteString(
 			TEXT("\n	function Test(arg1, arg2)")
 			TEXT("\n		return arg1:Equals(arg2)")
@@ -1420,7 +1420,7 @@ bool FSUE4LuaTestCaseMathTransform::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Transform.TransformDirection(Direction)"), FSUE4LuaFunction::CallGlobal<FVector>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2).Equals(Arg1.TransformPositionNoScale(Arg2)));
-	}		
+	}
 	{
 		FTransform Arg1(FRotator(1.0f, 2.0f, 3.0f), FVector(4.0f, 5.0f, 6.0f), FVector(7.0f, 8.0f, 9.0f));
 		FRotator Arg2(1.0f, 2.0f, 3.0f);
@@ -1498,7 +1498,7 @@ bool FSUE4LuaTestCaseMathTransform::RunTest(const FString& Parameters)
 
 		TestTrue(TEXT("Transform.Lerp(Transform, Alpha)"), Result1.Equals(Result2));
 	}
-	
+
 	return true;
 }
 
@@ -1513,7 +1513,7 @@ bool FSUE4LuaTestCaseMathRotator::RunTest(const FString& Parameters)
 	{
 		return false;
 	}
-	
+
 	{
 		FRotator Arg1(1.0f, 2.0f, 3.0f);
 		FRotator Arg2(4.0f, 5.0f, 6.0f);
@@ -1556,7 +1556,7 @@ bool FSUE4LuaTestCaseMathRotator::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Rotator == Rotator"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg, Arg));
-	}		
+	}
 	{
 		FRotator Arg(1.0f, 2.0f, 3.0f);
 
@@ -1589,9 +1589,9 @@ bool FSUE4LuaTestCaseMathRotator::RunTest(const FString& Parameters)
 			TEXT("\n	function Test(arg1, arg2, arg3)")
 			TEXT("\n		return arg1:Equals(arg2, arg3)")
 			TEXT("\n	end"));
-			
+
 		TestTrue(TEXT("Rotator.Equals(Rotator, Tolerance)"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3) == Arg1.Equals(Arg2, Arg3));
-	}		
+	}
 	{
 		FRotator Arg(0.000001f, 0.000001f, 0.000001f);
 
@@ -1642,7 +1642,7 @@ bool FSUE4LuaTestCaseMathRotator::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Rotator.IsZero() #2"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg) == Arg.IsZero());
-	}		
+	}
 	{
 		FRotator Arg(1.0f, 2.0f, 3.0f);
 
@@ -1652,7 +1652,7 @@ bool FSUE4LuaTestCaseMathRotator::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Rotator.Inverse()"), FSUE4LuaFunction::CallGlobal<FRotator>(VM.ToSharedRef(), TEXT("Test"), Arg).Equals(Arg.GetInverse()));
-	}		
+	}
 	{
 		FRotator Arg1(1.0f, 2.0f, 3.0f);
 		FRotator Arg2(4.0f, 5.0f, 6.0f);
@@ -1673,7 +1673,7 @@ bool FSUE4LuaTestCaseMathRotator::RunTest(const FString& Parameters)
 
 			Result = ResultQuat.Rotator();
 		}
-			
+
 		TestTrue(TEXT("Rotator.Lerp(Rotator, Alpha, bShortestPath) #1"), FSUE4LuaFunction::CallGlobal<FRotator>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3, Arg4).Equals(Result));
 	}
 	{
@@ -1690,7 +1690,7 @@ bool FSUE4LuaTestCaseMathRotator::RunTest(const FString& Parameters)
 		FRotator Result;
 		{
 			FRotator DeltaAngle = Arg2 - Arg1;
-			Result = Arg1 + Arg3 * DeltaAngle;			
+			Result = Arg1 + Arg3 * DeltaAngle;
 		}
 
 		TestTrue(TEXT("Rotator.Lerp(Rotator, Alpha, bShortestPath) #2"), FSUE4LuaFunction::CallGlobal<FRotator>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3, Arg4).Equals(Result));
@@ -1844,7 +1844,7 @@ bool FSUE4LuaTestCaseMathRotator::RunTest(const FString& Parameters)
 
 		TestTrue(TEXT("Rotator.GetUpVector()"), FSUE4LuaFunction::CallGlobal<FVector>(VM.ToSharedRef(), TEXT("Test"), Arg).Equals(ZAxis));
 	}
-	
+
 	return true;
 }
 
@@ -1859,7 +1859,7 @@ bool FSUE4LuaTestCaseMathQuat::RunTest(const FString& Parameters)
 	{
 		return false;
 	}
-	
+
 	{
 		FQuat Arg1(FRotator(1.0f, 2.0f, 3.0f).Quaternion());
 		FQuat Arg2(FRotator(4.0f, 5.0f, 6.0f).Quaternion());
@@ -1932,7 +1932,7 @@ bool FSUE4LuaTestCaseMathQuat::RunTest(const FString& Parameters)
 			TEXT("\n	function Test(arg1, arg2)")
 			TEXT("\n		return arg1:Equals(arg2)")
 			TEXT("\n	end"));
-			
+
 		TestTrue(TEXT("Quat.Equals(Quat) #1"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg, Arg));
 	}
 	{
@@ -1950,14 +1950,14 @@ bool FSUE4LuaTestCaseMathQuat::RunTest(const FString& Parameters)
 		FQuat Arg1(FRotator(1.0f, 2.0f, 3.0f).Quaternion());
 		FQuat Arg2(FRotator(4.0f, 5.0f, 6.0f).Quaternion());
 		float Arg3 = 10.0f;
-			
+
 		VM->ExecuteString(
 			TEXT("\n	function Test(arg1, arg2, arg3)")
 			TEXT("\n		return arg1:Equals(arg2, arg3)")
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Quat.Equals(Quat, Tolerance)"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3) == Arg1.Equals(Arg2, Arg3));
-	}		
+	}
 	{
 		FQuat Arg(FRotator(1.0f, 2.0f, 3.0f).Quaternion());
 
@@ -1977,7 +1977,7 @@ bool FSUE4LuaTestCaseMathQuat::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Quat.SizeSquared()"), FSUE4LuaFunction::CallGlobal<float>(VM.ToSharedRef(), TEXT("Test"), Arg) == Arg.SizeSquared());
-	}		
+	}
 	{
 		FQuat Arg(FRotator(1.0f, 2.0f, 3.0f).Quaternion());
 		Arg.Normalize();
@@ -2041,7 +2041,7 @@ bool FSUE4LuaTestCaseMathQuat::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Quat.GetRotationAxis()"), FSUE4LuaFunction::CallGlobal<FVector>(VM.ToSharedRef(), TEXT("Test"), Arg).Equals(Arg.GetRotationAxis()));
-	}		
+	}
 	{
 		FQuat Arg(FRotator(1.0f, 2.0f, 3.0f).Quaternion());
 
@@ -2300,7 +2300,7 @@ bool FSUE4LuaTestCaseMathLinearColor::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("LinearColor.Lerp(LinearColor, Alpha)"), FSUE4LuaFunction::CallGlobal<FLinearColor>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2, Arg3).Equals(Arg1 + Arg3 * (Arg2 - Arg1)));
-	}		
+	}
 	{
 		FLinearColor Arg1(0.1f, 0.2f, 0.3f, 0.4f);
 		FLinearColor Arg2(0.5f, 0.6f, 0.7f, 0.8f);
@@ -2387,7 +2387,7 @@ bool FSUE4LuaTestCaseMathLinearColor::RunTest(const FString& Parameters)
 
 		TestTrue(TEXT("LinearColor.GetLuminance(bSRGB) #2"), FSUE4LuaFunction::CallGlobal<FColor>(VM.ToSharedRef(), TEXT("Test"), Arg1, Arg2) == Arg1.ToFColor(Arg2));
 	}
-	
+
 	return true;
 }
 
@@ -2637,28 +2637,43 @@ bool FSUE4LuaTestCaseMathDateTime::RunTest(const FString& Parameters)
 		TestTrue(TEXT("DateTime.MinValue()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test")) == FDateTime::MinValue());
 	}
 	{
+		FDateTime DateTime1 = FDateTime::Now();
+
 		VM->ExecuteString(
 			TEXT("\n	function Test()")
 			TEXT("\n		return UE4.DateTime.Now()")
 			TEXT("\n	end"));
 
-		TestTrue(TEXT("DateTime.Now()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test")) == FDateTime::Now());
+		FDateTime DateTime2 = FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test"));
+		FDateTime DateTime3 = FDateTime::Now();
+
+		TestTrue(TEXT("DateTime.Now()"), (FTimespan(0) <= DateTime2 - DateTime1) && (DateTime2 - DateTime1 <= DateTime3 - DateTime1));
 	}
 	{
+		FDateTime DateTime1 = FDateTime::Today();
+
 		VM->ExecuteString(
 			TEXT("\n	function Test()")
 			TEXT("\n		return UE4.DateTime.Today()")
 			TEXT("\n	end"));
 
-		TestTrue(TEXT("DateTime.Today()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test")) == FDateTime::Today());
+		FDateTime DateTime2 = FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test"));
+		FDateTime DateTime3 = FDateTime::Today();
+
+		TestTrue(TEXT("DateTime.Today()"), (FTimespan(0) <= DateTime2 - DateTime1) && (DateTime2 - DateTime1 <= DateTime3 - DateTime1));
 	}
 	{
+		FDateTime DateTime1 = FDateTime::UtcNow();
+
 		VM->ExecuteString(
 			TEXT("\n	function Test()")
 			TEXT("\n		return UE4.DateTime.UtcNow()")
 			TEXT("\n	end"));
 
-		TestTrue(TEXT("DateTime.UtcNow()"), FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test")) == FDateTime::UtcNow());
+		FDateTime DateTime2 = FSUE4LuaFunction::CallGlobal<FDateTime>(VM.ToSharedRef(), TEXT("Test"));
+		FDateTime DateTime3 = FDateTime::UtcNow();
+
+		TestTrue(TEXT("DateTime.UtcNow()"), (FTimespan(0) <= DateTime2 - DateTime1) && (DateTime2 - DateTime1 <= DateTime3 - DateTime1));
 	}
 
 	return true;
@@ -2852,7 +2867,7 @@ bool FSUE4LuaTestCaseMathTimespan::RunTest(const FString& Parameters)
 			TEXT("\n	end"));
 
 		TestTrue(TEXT("Timespan.GetTotalMinutes()"), FSUE4LuaFunction::CallGlobal<double>(VM.ToSharedRef(), TEXT("Test"), Arg1) == Arg1.GetTotalMinutes());
-	} 
+	}
 	{
 		FTimespan Arg1(2000);
 
