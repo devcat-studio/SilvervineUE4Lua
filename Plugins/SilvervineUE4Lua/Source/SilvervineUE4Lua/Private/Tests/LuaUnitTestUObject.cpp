@@ -3,6 +3,7 @@
 
 #include "LuaUnitTests.h"
 
+#include "LuaUnitTestUnknownUObjectType.h"
 #include "LuaVirtualMachine.h"
 
 
@@ -144,6 +145,13 @@ bool FSUE4LuaTestCaseUObject::RunTest(const FString& Parameters)
 			TEXT("\n		return uobj.IntArrayProperty == uobj.IntArrayProperty")
 			TEXT("\n	end"));
 		TestTrue(TEXT("UObject property proxy caching"), FSUE4LuaFunction::CallGlobal<bool>(VM.ToSharedRef(), TEXT("Test"), TestUObject));
+	}
+	{
+		VM->ExecuteString(
+			TEXT("\n	function Test(uobj)")
+			TEXT("\n		return uobj:TestUnknownUObjectType()")
+			TEXT("\n	end"));
+		TestTrue(TEXT("UObject unknown uobject type passing"), FSUE4LuaFunction::CallGlobal<USUE4LuaTestUnknownUObjectType*>(VM.ToSharedRef(), TEXT("Test"), TestUObject) == TestUObject->TestUnknownUObjectType());
 	}
 
 	return true;

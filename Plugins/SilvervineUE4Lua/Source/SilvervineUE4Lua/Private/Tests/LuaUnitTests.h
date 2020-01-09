@@ -244,6 +244,9 @@ public:
 
 	UFUNCTION()
 	void TestTimer();
+
+	UFUNCTION()
+	class USUE4LuaTestUnknownUObjectType* TestUnknownUObjectType();
 };
 
 //

@@ -234,6 +234,9 @@ private:
 	static void PushUStruct(lua_State* L, const UScriptStruct* Struct, const void* Src);
 	static void ToUStruct(lua_State* L, int32 Index, const UScriptStruct* Struct, void* Dest);
 	static void* GetUStructRef(lua_State* L, int32 Index, const UScriptStruct* Struct);
+
+	// 전방선언만 존재하는 UObject 타입을 푸시하는 코드가 있을 때 링크 오류를 내서 빌드가 실패하도록 만듭니다.
+	static void PushObject(lua_State* L, const void*);
 };
 
 template<typename ...ArgTypes>

@@ -114,6 +114,19 @@ public:
 		}
 	}
 
+	// UObject 타입에 대한 Push 구현
+	void PushUObject(const char* ArgName, int32 ArgIndex, const UObject* Arg)
+	{
+		if (bPassByName)
+		{
+			LuaGetField(ArgName);
+		}
+		else
+		{
+			FSUE4LuaStack::Push(L, Arg);
+		}
+	}
+
 	// UStruct 타입에 대한 Push 구현
 	template<typename UStructType>
 	void PushUStruct(const char* ArgName, int32 ArgIndex, const UStructType& Arg)

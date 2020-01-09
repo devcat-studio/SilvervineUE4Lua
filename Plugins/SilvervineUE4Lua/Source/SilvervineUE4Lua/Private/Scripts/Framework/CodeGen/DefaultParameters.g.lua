@@ -792,16 +792,6 @@ do
     DefaultParameters.meshcomponent.prestreamtextures.cinematictexturegroups = 0
 end
 
---ParticleSystemComponent
-do
-    DefaultParameters.particlesystemcomponent = DefaultParameters.particlesystemcomponent or {}
-    
-    --SetAutoAttachParams
-    DefaultParameters.particlesystemcomponent.setautoattachparams = Class(DefaultParameterClass)
-    DefaultParameters.particlesystemcomponent.setautoattachparams.socketname = "None"
-    DefaultParameters.particlesystemcomponent.setautoattachparams.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
-end
-
 --SplineComponent
 do
     DefaultParameters.splinecomponent = DefaultParameters.splinecomponent or {}
@@ -894,6 +884,16 @@ do
     --SetClosedLoop
     DefaultParameters.splinecomponent.setclosedloop = Class(DefaultParameterClass)
     DefaultParameters.splinecomponent.setclosedloop.bupdatespline = true
+end
+
+--ParticleSystemComponent
+do
+    DefaultParameters.particlesystemcomponent = DefaultParameters.particlesystemcomponent or {}
+    
+    --SetAutoAttachParams
+    DefaultParameters.particlesystemcomponent.setautoattachparams = Class(DefaultParameterClass)
+    DefaultParameters.particlesystemcomponent.setautoattachparams.socketname = "None"
+    DefaultParameters.particlesystemcomponent.setautoattachparams.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
 end
 
 --SkinnedMeshComponent
@@ -1004,6 +1004,16 @@ do
     --GetInstancesOverlappingSphere
     DefaultParameters.instancedstaticmeshcomponent.getinstancesoverlappingsphere = Class(DefaultParameterClass)
     DefaultParameters.instancedstaticmeshcomponent.getinstancesoverlappingsphere.bsphereinworldspace = true
+    --BatchUpdateInstancesTransform
+    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransform = Class(DefaultParameterClass)
+    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransform.bworldspace = false
+    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransform.bmarkrenderstatedirty = false
+    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransform.bteleport = false
+    --BatchUpdateInstancesTransforms
+    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransforms = Class(DefaultParameterClass)
+    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransforms.bworldspace = false
+    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransforms.bmarkrenderstatedirty = false
+    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransforms.bteleport = false
     --UpdateInstanceTransform
     DefaultParameters.instancedstaticmeshcomponent.updateinstancetransform = Class(DefaultParameterClass)
     DefaultParameters.instancedstaticmeshcomponent.updateinstancetransform.bworldspace = false
@@ -1646,6 +1656,7 @@ do
     DefaultParameters.kismetrenderinglibrary.createrendertarget2d.width = 256
     DefaultParameters.kismetrenderinglibrary.createrendertarget2d.height = 256
     DefaultParameters.kismetrenderinglibrary.createrendertarget2d.format = 5 --ETextureRenderTargetFormat::RTF_RGBA16f
+    DefaultParameters.kismetrenderinglibrary.createrendertarget2d.clearcolor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
     --ClearRenderTarget2D
     DefaultParameters.kismetrenderinglibrary.clearrendertarget2d = Class(DefaultParameterClass)
     DefaultParameters.kismetrenderinglibrary.clearrendertarget2d.clearcolor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
@@ -1909,6 +1920,14 @@ do
     DefaultParameters.kismetsystemlibrary.linetracesingle.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
     DefaultParameters.kismetsystemlibrary.linetracesingle.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
     DefaultParameters.kismetsystemlibrary.linetracesingle.drawtime = 5.000000
+    --K2_SetTimer
+    DefaultParameters.kismetsystemlibrary.k2_settimer = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.k2_settimer.initialstartdelay = 0.000000
+    DefaultParameters.kismetsystemlibrary.k2_settimer.initialstartdelayvariance = 0.000000
+    --K2_SetTimerDelegate
+    DefaultParameters.kismetsystemlibrary.k2_settimerdelegate = Class(DefaultParameterClass)
+    DefaultParameters.kismetsystemlibrary.k2_settimerdelegate.initialstartdelay = 0.000000
+    DefaultParameters.kismetsystemlibrary.k2_settimerdelegate.initialstartdelayvariance = 0.000000
     --PrintText
     DefaultParameters.kismetsystemlibrary.printtext = Class(DefaultParameterClass)
     DefaultParameters.kismetsystemlibrary.printtext.intext = INVTEXT("Hello")
@@ -1961,6 +1980,12 @@ do
     DefaultParameters.kismettextlibrary.conv_floattotext.maximumintegraldigits = 324
     DefaultParameters.kismettextlibrary.conv_floattotext.minimumfractionaldigits = 0
     DefaultParameters.kismettextlibrary.conv_floattotext.maximumfractionaldigits = 3
+    --Conv_Int64ToText
+    DefaultParameters.kismettextlibrary.conv_int64totext = Class(DefaultParameterClass)
+    DefaultParameters.kismettextlibrary.conv_int64totext.balwayssign = false
+    DefaultParameters.kismettextlibrary.conv_int64totext.busegrouping = true
+    DefaultParameters.kismettextlibrary.conv_int64totext.minimumintegraldigits = 1
+    DefaultParameters.kismettextlibrary.conv_int64totext.maximumintegraldigits = 324
     --Conv_IntToText
     DefaultParameters.kismettextlibrary.conv_inttotext = Class(DefaultParameterClass)
     DefaultParameters.kismettextlibrary.conv_inttotext.balwayssign = false
@@ -2057,6 +2082,15 @@ do
     DefaultParameters.moviescenesequenceplayer.playlooping.numloops = -1
 end
 
+--KismetAnimationLibrary
+do
+    DefaultParameters.kismetanimationlibrary = DefaultParameters.kismetanimationlibrary or {}
+    
+    --K2_EndProfilingTimer
+    DefaultParameters.kismetanimationlibrary.k2_endprofilingtimer = Class(DefaultParameterClass)
+    DefaultParameters.kismetanimationlibrary.k2_endprofilingtimer.blog = true
+end
+
 --PlayMontageCallbackProxy
 do
     DefaultParameters.playmontagecallbackproxy = DefaultParameters.playmontagecallbackproxy or {}
@@ -2066,6 +2100,25 @@ do
     DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage.playrate = 1.000000
     DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage.startingposition = 0.000000
     DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage.startingsection = "None"
+end
+
+--WidgetAnimationPlayCallbackProxy
+do
+    DefaultParameters.widgetanimationplaycallbackproxy = DefaultParameters.widgetanimationplaycallbackproxy or {}
+    
+    --CreatePlayAnimationTimeRangeProxyObject
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject = Class(DefaultParameterClass)
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.startattime = 0.000000
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.endattime = 0.000000
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.numloopstoplay = 1
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.playmode = 0 --EUMGSequencePlayMode::Type::Forward
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.playbackspeed = 1.000000
+    --CreatePlayAnimationProxyObject
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject = Class(DefaultParameterClass)
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject.startattime = 0.000000
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject.numloopstoplay = 1
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject.playmode = 0 --EUMGSequencePlayMode::Type::Forward
+    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject.playbackspeed = 1.000000
 end
 
 --WidgetBlueprintLibrary
@@ -2153,15 +2206,6 @@ do
     DefaultParameters.widget.hasmousecapturebyuser.pointerindex = -1
 end
 
---DynamicEntryBox
-do
-    DefaultParameters.dynamicentrybox = DefaultParameters.dynamicentrybox or {}
-    
-    --Reset
-    DefaultParameters.dynamicentrybox.reset = Class(DefaultParameterClass)
-    DefaultParameters.dynamicentrybox.reset.bdeletewidgets = false
-end
-
 --Image
 do
     DefaultParameters.image = DefaultParameters.image or {}
@@ -2220,6 +2264,25 @@ do
     DefaultParameters.userwidget.addtoviewport.zorder = 0
 end
 
+--DynamicEntryBox
+do
+    DefaultParameters.dynamicentrybox = DefaultParameters.dynamicentrybox or {}
+    
+    --Reset
+    DefaultParameters.dynamicentrybox.reset = Class(DefaultParameterClass)
+    DefaultParameters.dynamicentrybox.reset.bdeletewidgets = false
+end
+
+--GridPanel
+do
+    DefaultParameters.gridpanel = DefaultParameters.gridpanel or {}
+    
+    --AddChildToGrid
+    DefaultParameters.gridpanel.addchildtogrid = Class(DefaultParameterClass)
+    DefaultParameters.gridpanel.addchildtogrid.inrow = 0
+    DefaultParameters.gridpanel.addchildtogrid.incolumn = 0
+end
+
 --ScrollBox
 do
     DefaultParameters.scrollbox = DefaultParameters.scrollbox or {}
@@ -2228,6 +2291,16 @@ do
     DefaultParameters.scrollbox.scrollwidgetintoview = Class(DefaultParameterClass)
     DefaultParameters.scrollbox.scrollwidgetintoview.animatescroll = true
     DefaultParameters.scrollbox.scrollwidgetintoview.scrolldestination = 0 --EDescendantScrollDestination::IntoView
+end
+
+--UniformGridPanel
+do
+    DefaultParameters.uniformgridpanel = DefaultParameters.uniformgridpanel or {}
+    
+    --AddChildToUniformGrid
+    DefaultParameters.uniformgridpanel.addchildtouniformgrid = Class(DefaultParameterClass)
+    DefaultParameters.uniformgridpanel.addchildtouniformgrid.inrow = 0
+    DefaultParameters.uniformgridpanel.addchildtouniformgrid.incolumn = 0
 end
 
 --LevelSequenceActor
@@ -2252,6 +2325,15 @@ do
     DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.interpolationmethod = 1 --EFFTPeakInterpolationMethod::Linear
     DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.windowtype = 2 --EFFTWindowType::Hann
     DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.hopsize = 0.000000
+end
+
+--SubmixEffectReverbFastPreset
+do
+    DefaultParameters.submixeffectreverbfastpreset = DefaultParameters.submixeffectreverbfastpreset or {}
+    
+    --SetSettingsWithReverbEffect
+    DefaultParameters.submixeffectreverbfastpreset.setsettingswithreverbeffect = Class(DefaultParameterClass)
+    DefaultParameters.submixeffectreverbfastpreset.setsettingswithreverbeffect.drylevel = 0.000000
 end
 
 --SubmixEffectReverbPreset
@@ -2324,6 +2406,15 @@ do
     --FindPathToActorSynchronously
     DefaultParameters.navigationsystemv1.findpathtoactorsynchronously = Class(DefaultParameterClass)
     DefaultParameters.navigationsystemv1.findpathtoactorsynchronously.tetherdistance = 50.000000
+end
+
+--RecastNavMesh
+do
+    DefaultParameters.recastnavmesh = DefaultParameters.recastnavmesh or {}
+    
+    --K2_ReplaceAreaInTileBounds
+    DefaultParameters.recastnavmesh.k2_replaceareaintilebounds = Class(DefaultParameterClass)
+    DefaultParameters.recastnavmesh.k2_replaceareaintilebounds.replacelinks = true
 end
 
 --GameplayTask_ClaimResource
@@ -2457,6 +2548,7 @@ do
     DefaultParameters.aitask_moveto.aimoveto.busepathfinding = true
     DefaultParameters.aitask_moveto.aimoveto.blockailogic = true
     DefaultParameters.aitask_moveto.aimoveto.busecontinuosgoaltracking = false
+    DefaultParameters.aitask_moveto.aimoveto.projectgoalonnavigation = 0 --EAIOptionFlag::Type::Default
 end
 
 --BTTask_BlueprintBase
@@ -2669,6 +2761,38 @@ do
     DefaultParameters.achievementwritecallbackproxy.writeachievementprogress = Class(DefaultParameterClass)
     DefaultParameters.achievementwritecallbackproxy.writeachievementprogress.progress = 100.000000
     DefaultParameters.achievementwritecallbackproxy.writeachievementprogress.usertag = 0
+end
+
+--AppleImageUtilsBaseAsyncTaskBlueprintProxy
+do
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy = DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy or {}
+    
+    --CreateProxyObjectForConvertToPNG
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng = Class(DefaultParameterClass)
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng.bwantcolor = true
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng.busegpu = true
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng.scale = 1.000000
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng.rotate = 0 --ETextureRotationDirection::None
+    --CreateProxyObjectForConvertToTIFF
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff = Class(DefaultParameterClass)
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff.bwantcolor = true
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff.busegpu = true
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff.scale = 1.000000
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff.rotate = 0 --ETextureRotationDirection::None
+    --CreateProxyObjectForConvertToHEIF
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif = Class(DefaultParameterClass)
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.quality = 85
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.bwantcolor = true
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.busegpu = true
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.scale = 1.000000
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.rotate = 0 --ETextureRotationDirection::None
+    --CreateProxyObjectForConvertToJPEG
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg = Class(DefaultParameterClass)
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.quality = 85
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.bwantcolor = true
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.busegpu = true
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.scale = 1.000000
+    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.rotate = 0 --ETextureRotationDirection::None
 end
 
 --CableComponent

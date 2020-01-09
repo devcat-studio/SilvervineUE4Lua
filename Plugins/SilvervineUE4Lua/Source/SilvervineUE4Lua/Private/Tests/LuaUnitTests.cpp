@@ -3,6 +3,7 @@
 
 #include "LuaUnitTests.h"
 
+#include "LuaUnitTestUnknownUObjectType.h"
 #include "SilvervineUE4LuaBridge.h"
 
 
@@ -74,6 +75,11 @@ int32 USUE4LuaTestUObject::TestCoroutine(int32 InArg)
 
 void USUE4LuaTestUObject::TestTimer()
 {
+}
+
+USUE4LuaTestUnknownUObjectType* USUE4LuaTestUObject::TestUnknownUObjectType()
+{
+	return const_cast<USUE4LuaTestUnknownUObjectType*>(GetDefault<USUE4LuaTestUnknownUObjectType>());
 }
 
 //=============================================================================================================================

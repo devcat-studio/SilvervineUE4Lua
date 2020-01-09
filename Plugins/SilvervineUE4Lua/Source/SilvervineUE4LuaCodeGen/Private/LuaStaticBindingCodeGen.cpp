@@ -493,8 +493,16 @@ void FSUE4LuaStaticBindingCodeGen::ExportProperty(const FSUE4LuaCodeGenContext& 
 				PropertyCode += TEXT(".Get()");
 			}
 
-			// 예: FSUE4LuaStack::Push(L, CastedSelf->MoveAxis);
-			BodyCodeBuilder.AppendLine(FString::Printf(TEXT("FSUE4LuaStack::Push(L, %s);"), *PropertyCode));
+			if (Property->IsA<UObjectPropertyBase>())
+			{
+				// 예: FSUE4LuaStack::Push(L, (const UObject*)(CastedSelf->ParentActor));
+				BodyCodeBuilder.AppendLine(FString::Printf(TEXT("FSUE4LuaStack::Push(L, (const UObject*)(%s));"), *PropertyCode));
+			}
+			else
+			{
+				// 예: FSUE4LuaStack::Push(L, CastedSelf->MoveAxis);
+				BodyCodeBuilder.AppendLine(FString::Printf(TEXT("FSUE4LuaStack::Push(L, %s);"), *PropertyCode));
+			}
 
 			BodyCodeBuilder.AppendLine(FString::Printf(TEXT("return 1;")));
 		}
@@ -649,10 +657,19 @@ void FSUE4LuaStaticBindingCodeGen::ExportFunction(const FSUE4LuaCodeGenContext& 
 		{
 			int32 ReturnValueCount = 0;
 
-			if (Function->GetReturnProperty() != nullptr)
+			if (auto ReturnProperty = Function->GetReturnProperty())
 			{
-				// 예: FSUE4LuaStack::Push(L, ReturnValue);
-				BodyCodeBuilder.AppendLine(TEXT("FSUE4LuaStack::Push(L, ReturnValue);"));
+				if (ReturnProperty->IsA<UObjectPropertyBase>())
+				{
+					// 예: FSUE4LuaStack::Push(L, (const UObject*)(ReturnValue));
+					BodyCodeBuilder.AppendLine(TEXT("FSUE4LuaStack::Push(L, (const UObject*)(ReturnValue));"));
+				}
+				else
+				{
+					// 예: FSUE4LuaStack::Push(L, ReturnValue);
+					BodyCodeBuilder.AppendLine(TEXT("FSUE4LuaStack::Push(L, ReturnValue);"));
+				}
+
 				++ReturnValueCount;
 			}
 
@@ -665,8 +682,11 @@ void FSUE4LuaStaticBindingCodeGen::ExportFunction(const FSUE4LuaCodeGenContext& 
 				{
 					const TCHAR* PushFuncName = TEXT("Push");
 
-					// 구조체 출력값은 바인딩 함수가 다름
-					if (auto StructParam = Cast<UStructProperty>(ArgInfo.Param))
+					if (auto ObjectProperty = Cast<UObjectPropertyBase>(ArgInfo.Param))
+					{
+						PushFuncName = TEXT("PushUObject");
+					}
+					else if (auto StructParam = Cast<UStructProperty>(ArgInfo.Param))
 					{
 						const bool bStructParamNoExport = StructParam->Struct->StructFlags & STRUCT_NoExport;
 						if (bStructParamNoExport)
