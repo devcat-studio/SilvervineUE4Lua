@@ -4,7 +4,7 @@
 #include "SilvervineUE4Lua.h"
 #include "SilvervineUE4LuaSettings.h"
 
-#include "ModuleManager.h"
+#include "Modules/ModuleManager.h"
 
 #include "LuaBindingRegistry.h"
 #include "LuaLog.h"

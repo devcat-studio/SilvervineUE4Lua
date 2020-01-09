@@ -50,6 +50,7 @@ The following versions of UE4 are supported:
 * 4.21
 * 4.22
 * 4.23
+* 4.24
 
 We have been developing SUE4Lua since version 4.19, so we expect it to work well with older engine versions.
 

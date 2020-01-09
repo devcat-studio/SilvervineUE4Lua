@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "UserWidget.h"
+#include "Blueprint/UserWidget.h"
 
 #include "LuaBindingRegistry.h"
 

@@ -1,7 +1,7 @@
 // SilvervineUE4Lua / devCAT studio
 // Copyright 2016 - 2019. Nexon Korea Corporation. All rights reserved.
 
-#include "LuaStructBinding.h"
+#include "Bindings/LuaStructBinding.h"
 
 #include "LuaLog.h"
 

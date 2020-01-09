@@ -649,6 +649,9 @@ do
     --SetAllPhysicsAngularVelocityInDegrees
     DefaultParameters.primitivecomponent.setallphysicsangularvelocityindegrees = Class(DefaultParameterClass)
     DefaultParameters.primitivecomponent.setallphysicsangularvelocityindegrees.baddtocurrent = false
+    --SetAllPhysicsAngularVelocity
+    DefaultParameters.primitivecomponent.setallphysicsangularvelocity = Class(DefaultParameterClass)
+    DefaultParameters.primitivecomponent.setallphysicsangularvelocity.baddtocurrent = false
     --GetClosestPointOnCollision
     DefaultParameters.primitivecomponent.getclosestpointoncollision = Class(DefaultParameterClass)
     DefaultParameters.primitivecomponent.getclosestpointoncollision.bonename = "None"
@@ -792,6 +795,16 @@ do
     DefaultParameters.meshcomponent.prestreamtextures.cinematictexturegroups = 0
 end
 
+--ParticleSystemComponent
+do
+    DefaultParameters.particlesystemcomponent = DefaultParameters.particlesystemcomponent or {}
+    
+    --SetAutoAttachParams
+    DefaultParameters.particlesystemcomponent.setautoattachparams = Class(DefaultParameterClass)
+    DefaultParameters.particlesystemcomponent.setautoattachparams.socketname = "None"
+    DefaultParameters.particlesystemcomponent.setautoattachparams.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
+end
+
 --SplineComponent
 do
     DefaultParameters.splinecomponent = DefaultParameters.splinecomponent or {}
@@ -884,16 +897,6 @@ do
     --SetClosedLoop
     DefaultParameters.splinecomponent.setclosedloop = Class(DefaultParameterClass)
     DefaultParameters.splinecomponent.setclosedloop.bupdatespline = true
-end
-
---ParticleSystemComponent
-do
-    DefaultParameters.particlesystemcomponent = DefaultParameters.particlesystemcomponent or {}
-    
-    --SetAutoAttachParams
-    DefaultParameters.particlesystemcomponent.setautoattachparams = Class(DefaultParameterClass)
-    DefaultParameters.particlesystemcomponent.setautoattachparams.socketname = "None"
-    DefaultParameters.particlesystemcomponent.setautoattachparams.locationtype = 0 --EAttachLocation::Type::KeepRelativeOffset
 end
 
 --SkinnedMeshComponent
@@ -1004,16 +1007,6 @@ do
     --GetInstancesOverlappingSphere
     DefaultParameters.instancedstaticmeshcomponent.getinstancesoverlappingsphere = Class(DefaultParameterClass)
     DefaultParameters.instancedstaticmeshcomponent.getinstancesoverlappingsphere.bsphereinworldspace = true
-    --BatchUpdateInstancesTransform
-    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransform = Class(DefaultParameterClass)
-    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransform.bworldspace = false
-    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransform.bmarkrenderstatedirty = false
-    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransform.bteleport = false
-    --BatchUpdateInstancesTransforms
-    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransforms = Class(DefaultParameterClass)
-    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransforms.bworldspace = false
-    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransforms.bmarkrenderstatedirty = false
-    DefaultParameters.instancedstaticmeshcomponent.batchupdateinstancestransforms.bteleport = false
     --UpdateInstanceTransform
     DefaultParameters.instancedstaticmeshcomponent.updateinstancetransform = Class(DefaultParameterClass)
     DefaultParameters.instancedstaticmeshcomponent.updateinstancetransform.bworldspace = false
@@ -1138,21 +1131,6 @@ do
     --SetPosition
     DefaultParameters.animsinglenodeinstance.setposition = Class(DefaultParameterClass)
     DefaultParameters.animsinglenodeinstance.setposition.bfirenotifies = true
-end
-
---BlueprintPathsLibrary
-do
-    DefaultParameters.blueprintpathslibrary = DefaultParameters.blueprintpathslibrary or {}
-    
-    --CreateTempFilename
-    DefaultParameters.blueprintpathslibrary.createtempfilename = Class(DefaultParameterClass)
-    DefaultParameters.blueprintpathslibrary.createtempfilename.extension = ".tmp"
-    --GetBaseFilename
-    DefaultParameters.blueprintpathslibrary.getbasefilename = Class(DefaultParameterClass)
-    DefaultParameters.blueprintpathslibrary.getbasefilename.bremovepath = true
-    --GetExtension
-    DefaultParameters.blueprintpathslibrary.getextension = Class(DefaultParameterClass)
-    DefaultParameters.blueprintpathslibrary.getextension.bincludedot = false
 end
 
 --GameplayStatics
@@ -1326,7 +1304,7 @@ do
     --CreatePlayer
     DefaultParameters.gameplaystatics.createplayer = Class(DefaultParameterClass)
     DefaultParameters.gameplaystatics.createplayer.controllerid = -1
-    DefaultParameters.gameplaystatics.createplayer.bspawnplayercontroller = true
+    DefaultParameters.gameplaystatics.createplayer.bspawnpawn = true
     --BeginDeferredActorSpawnFromClass
     DefaultParameters.gameplaystatics.begindeferredactorspawnfromclass = Class(DefaultParameterClass)
     DefaultParameters.gameplaystatics.begindeferredactorspawnfromclass.collisionhandlingoverride = 0 --ESpawnActorCollisionHandlingMethod::Undefined
@@ -1372,18 +1350,6 @@ end
 do
     DefaultParameters.kismetinternationalizationlibrary = DefaultParameters.kismetinternationalizationlibrary or {}
     
-    --GetCultureDisplayName
-    DefaultParameters.kismetinternationalizationlibrary.getculturedisplayname = Class(DefaultParameterClass)
-    DefaultParameters.kismetinternationalizationlibrary.getculturedisplayname.localized = true
-    --GetSuitableCulture
-    DefaultParameters.kismetinternationalizationlibrary.getsuitableculture = Class(DefaultParameterClass)
-    DefaultParameters.kismetinternationalizationlibrary.getsuitableculture.fallbackculture = "en"
-    --GetLocalizedCultures
-    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures = Class(DefaultParameterClass)
-    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures.includegame = true
-    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures.includeengine = false
-    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures.includeeditor = false
-    DefaultParameters.kismetinternationalizationlibrary.getlocalizedcultures.includeadditional = false
     --ClearCurrentAssetGroupCulture
     DefaultParameters.kismetinternationalizationlibrary.clearcurrentassetgroupculture = Class(DefaultParameterClass)
     DefaultParameters.kismetinternationalizationlibrary.clearcurrentassetgroupculture.savetoconfig = false
@@ -1423,9 +1389,26 @@ do
     --MinimumAreaRectangle
     DefaultParameters.kismetmathlibrary.minimumarearectangle = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.minimumarearectangle.bdebugdraw = false
+    --VectorSpringInterp
+    DefaultParameters.kismetmathlibrary.vectorspringinterp = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.vectorspringinterp.mass = 1.000000
     --FloatSpringInterp
     DefaultParameters.kismetmathlibrary.floatspringinterp = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.floatspringinterp.mass = 1.000000
+    --NotEqual_Vector2DVector2D
+    DefaultParameters.kismetmathlibrary.notequal_vector2dvector2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.notequal_vector2dvector2d.errortolerance = 0.000100
+    --EqualEqual_Vector2DVector2D
+    DefaultParameters.kismetmathlibrary.equalequal_vector2dvector2d = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.equalequal_vector2dvector2d.errortolerance = 0.000100
+    --Divide_Vector2DFloat
+    DefaultParameters.kismetmathlibrary.divide_vector2dfloat = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.divide_vector2dfloat.b = 1.000000
+    --NearlyEqual_TransformTransform
+    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform.locationtolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform.rotationtolerance = 0.000100
+    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform.scale3dtolerance = 0.000100
     --TEase
     DefaultParameters.kismetmathlibrary.tease = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.tease.blendexp = 2.000000
@@ -1433,11 +1416,18 @@ do
     --TLerp
     DefaultParameters.kismetmathlibrary.tlerp = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.tlerp.interpmode = 0 --ELerpInterpolationMode::Type::QuatInterp
-    --NearlyEqual_TransformTransform
-    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform.locationtolerance = 0.000100
-    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform.rotationtolerance = 0.000100
-    DefaultParameters.kismetmathlibrary.nearlyequal_transformtransform.scale3dtolerance = 0.000100
+    --HSVToRGB
+    DefaultParameters.kismetmathlibrary.hsvtorgb = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.hsvtorgb.a = 1.000000
+    --MakeColor
+    DefaultParameters.kismetmathlibrary.makecolor = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.makecolor.a = 1.000000
+    --CreateVectorFromYawPitch
+    DefaultParameters.kismetmathlibrary.createvectorfromyawpitch = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.createvectorfromyawpitch.length = 1.000000
+    --Conv_Vector2DToVector
+    DefaultParameters.kismetmathlibrary.conv_vector2dtovector = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.conv_vector2dtovector.z = 0.000000
     --MakeFrameRate
     DefaultParameters.kismetmathlibrary.makeframerate = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.makeframerate.denominator = 1
@@ -1450,39 +1440,6 @@ do
     DefaultParameters.kismetmathlibrary.makedatetime.minute = 0
     DefaultParameters.kismetmathlibrary.makedatetime.second = 0
     DefaultParameters.kismetmathlibrary.makedatetime.millisecond = 0
-    --LinearColor_IsNearEqual
-    DefaultParameters.kismetmathlibrary.linearcolor_isnearequal = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.linearcolor_isnearequal.tolerance = 0.000100
-    --Conv_LinearColorToColor
-    DefaultParameters.kismetmathlibrary.conv_linearcolortocolor = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.conv_linearcolortocolor.inusesrgb = true
-    --HSVToRGB
-    DefaultParameters.kismetmathlibrary.hsvtorgb = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.hsvtorgb.a = 1.000000
-    --LinearColor_SetFromHSV
-    DefaultParameters.kismetmathlibrary.linearcolor_setfromhsv = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.linearcolor_setfromhsv.a = 1.000000
-    --LinearColor_SetRGBA
-    DefaultParameters.kismetmathlibrary.linearcolor_setrgba = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.linearcolor_setrgba.a = 1.000000
-    --MakeColor
-    DefaultParameters.kismetmathlibrary.makecolor = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.makecolor.a = 1.000000
-    --Quat_Normalized
-    DefaultParameters.kismetmathlibrary.quat_normalized = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.quat_normalized.tolerance = 0.000100
-    --Quat_Normalize
-    DefaultParameters.kismetmathlibrary.quat_normalize = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.quat_normalize.tolerance = 0.000100
-    --Quat_IsIdentity
-    DefaultParameters.kismetmathlibrary.quat_isidentity = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.quat_isidentity.tolerance = 0.000100
-    --NotEqual_QuatQuat
-    DefaultParameters.kismetmathlibrary.notequal_quatquat = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.notequal_quatquat.errortolerance = 0.000100
-    --EqualEqual_QuatQuat
-    DefaultParameters.kismetmathlibrary.equalequal_quatquat = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.equalequal_quatquat.tolerance = 0.000100
     --REase
     DefaultParameters.kismetmathlibrary.rease = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.rease.blendexp = 2.000000
@@ -1496,88 +1453,25 @@ do
     --EqualEqual_RotatorRotator
     DefaultParameters.kismetmathlibrary.equalequal_rotatorrotator = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.equalequal_rotatorrotator.errortolerance = 0.000100
-    --Vector4_Normalize3
-    DefaultParameters.kismetmathlibrary.vector4_normalize3 = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vector4_normalize3.tolerance = 0.000000
-    --Vector4_Normal3
-    DefaultParameters.kismetmathlibrary.vector4_normal3 = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vector4_normal3.tolerance = 0.000100
-    --Vector4_IsUnit3
-    DefaultParameters.kismetmathlibrary.vector4_isunit3 = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vector4_isunit3.squaredlenthtolerance = 0.000100
-    --Vector4_IsNearlyZero3
-    DefaultParameters.kismetmathlibrary.vector4_isnearlyzero3 = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vector4_isnearlyzero3.tolerance = 0.000100
-    --NotEqual_Vector4Vector4
-    DefaultParameters.kismetmathlibrary.notequal_vector4vector4 = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.notequal_vector4vector4.errortolerance = 0.000100
-    --EqualEqual_Vector4Vector4
-    DefaultParameters.kismetmathlibrary.equalequal_vector4vector4 = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.equalequal_vector4vector4.errortolerance = 0.000100
-    --VectorSpringInterp
-    DefaultParameters.kismetmathlibrary.vectorspringinterp = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vectorspringinterp.mass = 1.000000
     --VEase
     DefaultParameters.kismetmathlibrary.vease = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.vease.blendexp = 2.000000
     DefaultParameters.kismetmathlibrary.vease.steps = 2
-    --Vector_Normalize
-    DefaultParameters.kismetmathlibrary.vector_normalize = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vector_normalize.tolerance = 0.000000
-    --Vector_Normal2D
-    DefaultParameters.kismetmathlibrary.vector_normal2d = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vector_normal2d.tolerance = 0.000100
-    --Normal
-    DefaultParameters.kismetmathlibrary.normal = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.normal.tolerance = 0.000100
-    --Vector_IsUnit
-    DefaultParameters.kismetmathlibrary.vector_isunit = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vector_isunit.squaredlenthtolerance = 0.000100
-    --Vector_IsUniform
-    DefaultParameters.kismetmathlibrary.vector_isuniform = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vector_isuniform.tolerance = 0.000100
-    --Vector_IsNearlyZero
-    DefaultParameters.kismetmathlibrary.vector_isnearlyzero = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.vector_isnearlyzero.tolerance = 0.000100
     --NotEqual_VectorVector
     DefaultParameters.kismetmathlibrary.notequal_vectorvector = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.notequal_vectorvector.errortolerance = 0.000100
     --EqualEqual_VectorVector
     DefaultParameters.kismetmathlibrary.equalequal_vectorvector = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.equalequal_vectorvector.errortolerance = 0.000100
+    --Divide_VectorVector
+    DefaultParameters.kismetmathlibrary.divide_vectorvector = Class(DefaultParameterClass)
+    DefaultParameters.kismetmathlibrary.divide_vectorvector.b = UE4.Vector.new(1.000000, 1.000000, 1.000000)
     --Divide_VectorInt
     DefaultParameters.kismetmathlibrary.divide_vectorint = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.divide_vectorint.b = 1
     --Divide_VectorFloat
     DefaultParameters.kismetmathlibrary.divide_vectorfloat = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.divide_vectorfloat.b = 1.000000
-    --Divide_VectorVector
-    DefaultParameters.kismetmathlibrary.divide_vectorvector = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.divide_vectorvector.b = UE4.Vector.new(1.000000, 1.000000, 1.000000)
-    --CreateVectorFromYawPitch
-    DefaultParameters.kismetmathlibrary.createvectorfromyawpitch = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.createvectorfromyawpitch.length = 1.000000
-    --Normalize2D
-    DefaultParameters.kismetmathlibrary.normalize2d = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.normalize2d.tolerance = 0.000000
-    --NormalSafe2D
-    DefaultParameters.kismetmathlibrary.normalsafe2d = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.normalsafe2d.tolerance = 0.000000
-    --IsNearlyZero2D
-    DefaultParameters.kismetmathlibrary.isnearlyzero2d = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.isnearlyzero2d.tolerance = 0.000100
-    --NotEqual_Vector2DVector2D
-    DefaultParameters.kismetmathlibrary.notequal_vector2dvector2d = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.notequal_vector2dvector2d.errortolerance = 0.000100
-    --EqualEqual_Vector2DVector2D
-    DefaultParameters.kismetmathlibrary.equalequal_vector2dvector2d = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.equalequal_vector2dvector2d.errortolerance = 0.000100
-    --Divide_Vector2DFloat
-    DefaultParameters.kismetmathlibrary.divide_vector2dfloat = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.divide_vector2dfloat.b = 1.000000
-    --Conv_Vector2DToVector
-    DefaultParameters.kismetmathlibrary.conv_vector2dtovector = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.conv_vector2dtovector.z = 0.000000
     --MakePulsatingValue
     DefaultParameters.kismetmathlibrary.makepulsatingvalue = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.makepulsatingvalue.inpulsespersecond = 1.000000
@@ -1608,10 +1502,6 @@ do
     --Divide_FloatFloat
     DefaultParameters.kismetmathlibrary.divide_floatfloat = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.divide_floatfloat.b = 1.000000
-    --InRange_Int64Int64
-    DefaultParameters.kismetmathlibrary.inrange_int64int64 = Class(DefaultParameterClass)
-    DefaultParameters.kismetmathlibrary.inrange_int64int64.inclusivemin = true
-    DefaultParameters.kismetmathlibrary.inrange_int64int64.inclusivemax = true
     --InRange_IntInt
     DefaultParameters.kismetmathlibrary.inrange_intint = Class(DefaultParameterClass)
     DefaultParameters.kismetmathlibrary.inrange_intint.inclusivemin = true
@@ -1656,7 +1546,6 @@ do
     DefaultParameters.kismetrenderinglibrary.createrendertarget2d.width = 256
     DefaultParameters.kismetrenderinglibrary.createrendertarget2d.height = 256
     DefaultParameters.kismetrenderinglibrary.createrendertarget2d.format = 5 --ETextureRenderTargetFormat::RTF_RGBA16f
-    DefaultParameters.kismetrenderinglibrary.createrendertarget2d.clearcolor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
     --ClearRenderTarget2D
     DefaultParameters.kismetrenderinglibrary.clearrendertarget2d = Class(DefaultParameterClass)
     DefaultParameters.kismetrenderinglibrary.clearrendertarget2d.clearcolor = UE4.LinearColor.new(0.000000, 0.000000, 0.000000, 1.000000)
@@ -1920,14 +1809,6 @@ do
     DefaultParameters.kismetsystemlibrary.linetracesingle.tracecolor = UE4.LinearColor.new(1.000000, 0.000000, 0.000000, 1.000000)
     DefaultParameters.kismetsystemlibrary.linetracesingle.tracehitcolor = UE4.LinearColor.new(0.000000, 1.000000, 0.000000, 1.000000)
     DefaultParameters.kismetsystemlibrary.linetracesingle.drawtime = 5.000000
-    --K2_SetTimer
-    DefaultParameters.kismetsystemlibrary.k2_settimer = Class(DefaultParameterClass)
-    DefaultParameters.kismetsystemlibrary.k2_settimer.initialstartdelay = 0.000000
-    DefaultParameters.kismetsystemlibrary.k2_settimer.initialstartdelayvariance = 0.000000
-    --K2_SetTimerDelegate
-    DefaultParameters.kismetsystemlibrary.k2_settimerdelegate = Class(DefaultParameterClass)
-    DefaultParameters.kismetsystemlibrary.k2_settimerdelegate.initialstartdelay = 0.000000
-    DefaultParameters.kismetsystemlibrary.k2_settimerdelegate.initialstartdelayvariance = 0.000000
     --PrintText
     DefaultParameters.kismetsystemlibrary.printtext = Class(DefaultParameterClass)
     DefaultParameters.kismetsystemlibrary.printtext.intext = INVTEXT("Hello")
@@ -1980,12 +1861,6 @@ do
     DefaultParameters.kismettextlibrary.conv_floattotext.maximumintegraldigits = 324
     DefaultParameters.kismettextlibrary.conv_floattotext.minimumfractionaldigits = 0
     DefaultParameters.kismettextlibrary.conv_floattotext.maximumfractionaldigits = 3
-    --Conv_Int64ToText
-    DefaultParameters.kismettextlibrary.conv_int64totext = Class(DefaultParameterClass)
-    DefaultParameters.kismettextlibrary.conv_int64totext.balwayssign = false
-    DefaultParameters.kismettextlibrary.conv_int64totext.busegrouping = true
-    DefaultParameters.kismettextlibrary.conv_int64totext.minimumintegraldigits = 1
-    DefaultParameters.kismettextlibrary.conv_int64totext.maximumintegraldigits = 324
     --Conv_IntToText
     DefaultParameters.kismettextlibrary.conv_inttotext = Class(DefaultParameterClass)
     DefaultParameters.kismettextlibrary.conv_inttotext.balwayssign = false
@@ -2013,7 +1888,7 @@ do
     --SetSplashScreen
     DefaultParameters.stereolayerfunctionlibrary.setsplashscreen = Class(DefaultParameterClass)
     DefaultParameters.stereolayerfunctionlibrary.setsplashscreen.scale = UE4.Vector2D.new(1.000000, 1.000000)
-    DefaultParameters.stereolayerfunctionlibrary.setsplashscreen.offset = UE4.Vector.new(0.000000, 0.000000, 0.000000)
+    DefaultParameters.stereolayerfunctionlibrary.setsplashscreen.offset = UE4.Vector2D.new(0.000000, 0.000000)
     DefaultParameters.stereolayerfunctionlibrary.setsplashscreen.bshowloadingmovie = false
     DefaultParameters.stereolayerfunctionlibrary.setsplashscreen.bshowonset = false
 end
@@ -2082,15 +1957,6 @@ do
     DefaultParameters.moviescenesequenceplayer.playlooping.numloops = -1
 end
 
---KismetAnimationLibrary
-do
-    DefaultParameters.kismetanimationlibrary = DefaultParameters.kismetanimationlibrary or {}
-    
-    --K2_EndProfilingTimer
-    DefaultParameters.kismetanimationlibrary.k2_endprofilingtimer = Class(DefaultParameterClass)
-    DefaultParameters.kismetanimationlibrary.k2_endprofilingtimer.blog = true
-end
-
 --PlayMontageCallbackProxy
 do
     DefaultParameters.playmontagecallbackproxy = DefaultParameters.playmontagecallbackproxy or {}
@@ -2100,25 +1966,6 @@ do
     DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage.playrate = 1.000000
     DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage.startingposition = 0.000000
     DefaultParameters.playmontagecallbackproxy.createproxyobjectforplaymontage.startingsection = "None"
-end
-
---WidgetAnimationPlayCallbackProxy
-do
-    DefaultParameters.widgetanimationplaycallbackproxy = DefaultParameters.widgetanimationplaycallbackproxy or {}
-    
-    --CreatePlayAnimationTimeRangeProxyObject
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject = Class(DefaultParameterClass)
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.startattime = 0.000000
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.endattime = 0.000000
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.numloopstoplay = 1
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.playmode = 0 --EUMGSequencePlayMode::Type::Forward
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationtimerangeproxyobject.playbackspeed = 1.000000
-    --CreatePlayAnimationProxyObject
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject = Class(DefaultParameterClass)
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject.startattime = 0.000000
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject.numloopstoplay = 1
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject.playmode = 0 --EUMGSequencePlayMode::Type::Forward
-    DefaultParameters.widgetanimationplaycallbackproxy.createplayanimationproxyobject.playbackspeed = 1.000000
 end
 
 --WidgetBlueprintLibrary
@@ -2160,12 +2007,10 @@ do
     DefaultParameters.widgetblueprintlibrary.drawlines = Class(DefaultParameterClass)
     DefaultParameters.widgetblueprintlibrary.drawlines.tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
     DefaultParameters.widgetblueprintlibrary.drawlines.bantialias = true
-    DefaultParameters.widgetblueprintlibrary.drawlines.thickness = 1.000000
     --DrawLine
     DefaultParameters.widgetblueprintlibrary.drawline = Class(DefaultParameterClass)
     DefaultParameters.widgetblueprintlibrary.drawline.tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
     DefaultParameters.widgetblueprintlibrary.drawline.bantialias = true
-    DefaultParameters.widgetblueprintlibrary.drawline.thickness = 1.000000
     --DrawBox
     DefaultParameters.widgetblueprintlibrary.drawbox = Class(DefaultParameterClass)
     DefaultParameters.widgetblueprintlibrary.drawbox.tint = UE4.LinearColor.new(1.000000, 1.000000, 1.000000, 1.000000)
@@ -2206,6 +2051,15 @@ do
     DefaultParameters.widget.hasmousecapturebyuser.pointerindex = -1
 end
 
+--DynamicEntryBox
+do
+    DefaultParameters.dynamicentrybox = DefaultParameters.dynamicentrybox or {}
+    
+    --Reset
+    DefaultParameters.dynamicentrybox.reset = Class(DefaultParameterClass)
+    DefaultParameters.dynamicentrybox.reset.bdeletewidgets = false
+end
+
 --Image
 do
     DefaultParameters.image = DefaultParameters.image or {}
@@ -2231,28 +2085,19 @@ do
     --SetPlaybackSpeed
     DefaultParameters.userwidget.setplaybackspeed = Class(DefaultParameterClass)
     DefaultParameters.userwidget.setplaybackspeed.playbackspeed = 1.000000
-    --PlayAnimationReverse
-    DefaultParameters.userwidget.playanimationreverse = Class(DefaultParameterClass)
-    DefaultParameters.userwidget.playanimationreverse.playbackspeed = 1.000000
-    --PlayAnimationForward
-    DefaultParameters.userwidget.playanimationforward = Class(DefaultParameterClass)
-    DefaultParameters.userwidget.playanimationforward.playbackspeed = 1.000000
-    --PlayAnimationTimeRange
-    DefaultParameters.userwidget.playanimationtimerange = Class(DefaultParameterClass)
-    DefaultParameters.userwidget.playanimationtimerange.startattime = 0.000000
-    DefaultParameters.userwidget.playanimationtimerange.endattime = 0.000000
-    DefaultParameters.userwidget.playanimationtimerange.numloopstoplay = 1
-    DefaultParameters.userwidget.playanimationtimerange.playmode = 0 --EUMGSequencePlayMode::Type::Forward
-    DefaultParameters.userwidget.playanimationtimerange.playbackspeed = 1.000000
+    --PlayAnimationTo
+    DefaultParameters.userwidget.playanimationto = Class(DefaultParameterClass)
+    DefaultParameters.userwidget.playanimationto.startattime = 0.000000
+    DefaultParameters.userwidget.playanimationto.endattime = 0.000000
+    DefaultParameters.userwidget.playanimationto.numloopstoplay = 1
+    DefaultParameters.userwidget.playanimationto.playmode = 0 --EUMGSequencePlayMode::Type::Forward
+    DefaultParameters.userwidget.playanimationto.playbackspeed = 1.000000
     --PlayAnimation
     DefaultParameters.userwidget.playanimation = Class(DefaultParameterClass)
     DefaultParameters.userwidget.playanimation.startattime = 0.000000
     DefaultParameters.userwidget.playanimation.numloopstoplay = 1
     DefaultParameters.userwidget.playanimation.playmode = 0 --EUMGSequencePlayMode::Type::Forward
     DefaultParameters.userwidget.playanimation.playbackspeed = 1.000000
-    --BindToAnimationEvent
-    DefaultParameters.userwidget.bindtoanimationevent = Class(DefaultParameterClass)
-    DefaultParameters.userwidget.bindtoanimationevent.usertag = "None"
     --SetPositionInViewport
     DefaultParameters.userwidget.setpositioninviewport = Class(DefaultParameterClass)
     DefaultParameters.userwidget.setpositioninviewport.bremovedpiscale = true
@@ -2262,25 +2107,6 @@ do
     --AddToViewport
     DefaultParameters.userwidget.addtoviewport = Class(DefaultParameterClass)
     DefaultParameters.userwidget.addtoviewport.zorder = 0
-end
-
---DynamicEntryBox
-do
-    DefaultParameters.dynamicentrybox = DefaultParameters.dynamicentrybox or {}
-    
-    --Reset
-    DefaultParameters.dynamicentrybox.reset = Class(DefaultParameterClass)
-    DefaultParameters.dynamicentrybox.reset.bdeletewidgets = false
-end
-
---GridPanel
-do
-    DefaultParameters.gridpanel = DefaultParameters.gridpanel or {}
-    
-    --AddChildToGrid
-    DefaultParameters.gridpanel.addchildtogrid = Class(DefaultParameterClass)
-    DefaultParameters.gridpanel.addchildtogrid.inrow = 0
-    DefaultParameters.gridpanel.addchildtogrid.incolumn = 0
 end
 
 --ScrollBox
@@ -2293,16 +2119,6 @@ do
     DefaultParameters.scrollbox.scrollwidgetintoview.scrolldestination = 0 --EDescendantScrollDestination::IntoView
 end
 
---UniformGridPanel
-do
-    DefaultParameters.uniformgridpanel = DefaultParameters.uniformgridpanel or {}
-    
-    --AddChildToUniformGrid
-    DefaultParameters.uniformgridpanel.addchildtouniformgrid = Class(DefaultParameterClass)
-    DefaultParameters.uniformgridpanel.addchildtouniformgrid.inrow = 0
-    DefaultParameters.uniformgridpanel.addchildtouniformgrid.incolumn = 0
-end
-
 --LevelSequenceActor
 do
     DefaultParameters.levelsequenceactor = DefaultParameters.levelsequenceactor or {}
@@ -2313,27 +2129,10 @@ do
     --SetBinding
     DefaultParameters.levelsequenceactor.setbinding = Class(DefaultParameterClass)
     DefaultParameters.levelsequenceactor.setbinding.ballowbindingsfromasset = false
-end
-
---AudioMixerBlueprintLibrary
-do
-    DefaultParameters.audiomixerblueprintlibrary = DefaultParameters.audiomixerblueprintlibrary or {}
-    
-    --StartAnalyzingOutput
-    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput = Class(DefaultParameterClass)
-    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.fftsize = 0 --EFFTSize::DefaultSize
-    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.interpolationmethod = 1 --EFFTPeakInterpolationMethod::Linear
-    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.windowtype = 2 --EFFTWindowType::Hann
-    DefaultParameters.audiomixerblueprintlibrary.startanalyzingoutput.hopsize = 0.000000
-end
-
---SubmixEffectReverbFastPreset
-do
-    DefaultParameters.submixeffectreverbfastpreset = DefaultParameters.submixeffectreverbfastpreset or {}
-    
-    --SetSettingsWithReverbEffect
-    DefaultParameters.submixeffectreverbfastpreset.setsettingswithreverbeffect = Class(DefaultParameterClass)
-    DefaultParameters.submixeffectreverbfastpreset.setsettingswithreverbeffect.drylevel = 0.000000
+    --GetSequence
+    DefaultParameters.levelsequenceactor.getsequence = Class(DefaultParameterClass)
+    DefaultParameters.levelsequenceactor.getsequence.bload = false
+    DefaultParameters.levelsequenceactor.getsequence.binitializeplayer = false
 end
 
 --SubmixEffectReverbPreset
@@ -2406,15 +2205,6 @@ do
     --FindPathToActorSynchronously
     DefaultParameters.navigationsystemv1.findpathtoactorsynchronously = Class(DefaultParameterClass)
     DefaultParameters.navigationsystemv1.findpathtoactorsynchronously.tetherdistance = 50.000000
-end
-
---RecastNavMesh
-do
-    DefaultParameters.recastnavmesh = DefaultParameters.recastnavmesh or {}
-    
-    --K2_ReplaceAreaInTileBounds
-    DefaultParameters.recastnavmesh.k2_replaceareaintilebounds = Class(DefaultParameterClass)
-    DefaultParameters.recastnavmesh.k2_replaceareaintilebounds.replacelinks = true
 end
 
 --GameplayTask_ClaimResource
@@ -2548,7 +2338,6 @@ do
     DefaultParameters.aitask_moveto.aimoveto.busepathfinding = true
     DefaultParameters.aitask_moveto.aimoveto.blockailogic = true
     DefaultParameters.aitask_moveto.aimoveto.busecontinuosgoaltracking = false
-    DefaultParameters.aitask_moveto.aimoveto.projectgoalonnavigation = 0 --EAIOptionFlag::Type::Default
 end
 
 --BTTask_BlueprintBase
@@ -2558,40 +2347,6 @@ do
     --SetFinishOnMessageWithId
     DefaultParameters.bttask_blueprintbase.setfinishonmessagewithid = Class(DefaultParameterClass)
     DefaultParameters.bttask_blueprintbase.setfinishonmessagewithid.requestid = -1
-end
-
---ARBlueprintLibrary
-do
-    DefaultParameters.arblueprintlibrary = DefaultParameters.arblueprintlibrary or {}
-    
-    --PinComponentToTraceResult
-    DefaultParameters.arblueprintlibrary.pincomponenttotraceresult = Class(DefaultParameterClass)
-    DefaultParameters.arblueprintlibrary.pincomponenttotraceresult.debugname = "None"
-    --PinComponent
-    DefaultParameters.arblueprintlibrary.pincomponent = Class(DefaultParameterClass)
-    DefaultParameters.arblueprintlibrary.pincomponent.debugname = "None"
-    --DebugDrawPin
-    DefaultParameters.arblueprintlibrary.debugdrawpin = Class(DefaultParameterClass)
-    DefaultParameters.arblueprintlibrary.debugdrawpin.color = UE4.LinearColor.new(1.000000, 1.000000, 0.000000, 0.750000)
-    DefaultParameters.arblueprintlibrary.debugdrawpin.scale = 5.000000
-    DefaultParameters.arblueprintlibrary.debugdrawpin.persistforseconds = 0.000000
-    --DebugDrawTrackedGeometry
-    DefaultParameters.arblueprintlibrary.debugdrawtrackedgeometry = Class(DefaultParameterClass)
-    DefaultParameters.arblueprintlibrary.debugdrawtrackedgeometry.color = UE4.LinearColor.new(1.000000, 1.000000, 0.000000, 0.750000)
-    DefaultParameters.arblueprintlibrary.debugdrawtrackedgeometry.outlinethickness = 5.000000
-    DefaultParameters.arblueprintlibrary.debugdrawtrackedgeometry.persistforseconds = 0.000000
-    --LineTraceTrackedObjects3D
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d = Class(DefaultParameterClass)
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d.btestfeaturepoints = true
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d.btestgroundplane = true
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d.btestplaneextents = true
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects3d.btestplaneboundarypolygon = true
-    --LineTraceTrackedObjects
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects = Class(DefaultParameterClass)
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects.btestfeaturepoints = true
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects.btestgroundplane = true
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects.btestplaneextents = true
-    DefaultParameters.arblueprintlibrary.linetracetrackedobjects.btestplaneboundarypolygon = true
 end
 
 --HeadMountedDisplayFunctionLibrary
@@ -2632,15 +2387,6 @@ do
     --EnumerateAudioCaptureDevices
     DefaultParameters.mediablueprintfunctionlibrary.enumerateaudiocapturedevices = Class(DefaultParameterClass)
     DefaultParameters.mediablueprintfunctionlibrary.enumerateaudiocapturedevices.filter = -1
-end
-
---MediaSoundComponent
-do
-    DefaultParameters.mediasoundcomponent = DefaultParameters.mediasoundcomponent or {}
-    
-    --SetSpectralAnalysisSettings
-    DefaultParameters.mediasoundcomponent.setspectralanalysissettings = Class(DefaultParameterClass)
-    DefaultParameters.mediasoundcomponent.setspectralanalysissettings.infftsize = 2 --EMediaSoundComponentFFTSize::Medium_512
 end
 
 --PaperFlipbook
@@ -2720,6 +2466,15 @@ do
     DefaultParameters.papertilemapcomponent.createnewtilemap.bcreatelayer = true
 end
 
+--EditableMesh
+do
+    DefaultParameters.editablemesh = DefaultParameters.editablemesh or {}
+    
+    --EndModification
+    DefaultParameters.editablemesh.endmodification = Class(DefaultParameterClass)
+    DefaultParameters.editablemesh.endmodification.bfromundo = false
+end
+
 --LevelVariantSetsActor
 do
     DefaultParameters.levelvariantsetsactor = DefaultParameters.levelvariantsetsactor or {}
@@ -2727,18 +2482,6 @@ do
     --GetLevelVariantSets
     DefaultParameters.levelvariantsetsactor.getlevelvariantsets = Class(DefaultParameterClass)
     DefaultParameters.levelvariantsetsactor.getlevelvariantsets.bload = false
-end
-
---KismetProceduralMeshLibrary
-do
-    DefaultParameters.kismetproceduralmeshlibrary = DefaultParameters.kismetproceduralmeshlibrary or {}
-    
-    --CreateGridMeshSplit
-    DefaultParameters.kismetproceduralmeshlibrary.creategridmeshsplit = Class(DefaultParameterClass)
-    DefaultParameters.kismetproceduralmeshlibrary.creategridmeshsplit.gridspacing = 16.000000
-    --CreateGridMeshWelded
-    DefaultParameters.kismetproceduralmeshlibrary.creategridmeshwelded = Class(DefaultParameterClass)
-    DefaultParameters.kismetproceduralmeshlibrary.creategridmeshwelded.gridspacing = 16.000000
 end
 
 --MagicLeapHandTrackingFunctionLibrary
@@ -2763,38 +2506,6 @@ do
     DefaultParameters.achievementwritecallbackproxy.writeachievementprogress.usertag = 0
 end
 
---AppleImageUtilsBaseAsyncTaskBlueprintProxy
-do
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy = DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy or {}
-    
-    --CreateProxyObjectForConvertToPNG
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng = Class(DefaultParameterClass)
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng.bwantcolor = true
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng.busegpu = true
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng.scale = 1.000000
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttopng.rotate = 0 --ETextureRotationDirection::None
-    --CreateProxyObjectForConvertToTIFF
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff = Class(DefaultParameterClass)
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff.bwantcolor = true
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff.busegpu = true
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff.scale = 1.000000
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttotiff.rotate = 0 --ETextureRotationDirection::None
-    --CreateProxyObjectForConvertToHEIF
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif = Class(DefaultParameterClass)
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.quality = 85
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.bwantcolor = true
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.busegpu = true
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.scale = 1.000000
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttoheif.rotate = 0 --ETextureRotationDirection::None
-    --CreateProxyObjectForConvertToJPEG
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg = Class(DefaultParameterClass)
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.quality = 85
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.bwantcolor = true
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.busegpu = true
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.scale = 1.000000
-    DefaultParameters.appleimageutilsbaseasynctaskblueprintproxy.createproxyobjectforconverttojpeg.rotate = 0 --ETextureRotationDirection::None
-end
-
 --CableComponent
 do
     DefaultParameters.cablecomponent = DefaultParameters.cablecomponent or {}
@@ -2802,30 +2513,12 @@ do
     --SetAttachEndTo
     DefaultParameters.cablecomponent.setattachendto = Class(DefaultParameterClass)
     DefaultParameters.cablecomponent.setattachendto.socketname = "None"
-    --SetAttachEndToComponent
-    DefaultParameters.cablecomponent.setattachendtocomponent = Class(DefaultParameterClass)
-    DefaultParameters.cablecomponent.setattachendtocomponent.socketname = "None"
-end
-
---EditableMesh
-do
-    DefaultParameters.editablemesh = DefaultParameters.editablemesh or {}
-    
-    --EndModification
-    DefaultParameters.editablemesh.endmodification = Class(DefaultParameterClass)
-    DefaultParameters.editablemesh.endmodification.bfromundo = false
 end
 
 --OculusFunctionLibrary
 do
     DefaultParameters.oculusfunctionlibrary = DefaultParameters.oculusfunctionlibrary or {}
     
-    --GetGuardianPoints
-    DefaultParameters.oculusfunctionlibrary.getguardianpoints = Class(DefaultParameterClass)
-    DefaultParameters.oculusfunctionlibrary.getguardianpoints.usepawnspace = false
-    --SetColorScaleAndOffset
-    DefaultParameters.oculusfunctionlibrary.setcolorscaleandoffset = Class(DefaultParameterClass)
-    DefaultParameters.oculusfunctionlibrary.setcolorscaleandoffset.bapplytoalllayers = false
     --HideLoadingSplashScreen
     DefaultParameters.oculusfunctionlibrary.hideloadingsplashscreen = Class(DefaultParameterClass)
     DefaultParameters.oculusfunctionlibrary.hideloadingsplashscreen.bclear = false

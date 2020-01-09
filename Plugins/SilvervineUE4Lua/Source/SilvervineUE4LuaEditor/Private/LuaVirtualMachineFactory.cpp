@@ -6,7 +6,7 @@
 #include "ClassViewerFilter.h"
 #include "ClassViewerModule.h"
 #include "Kismet2/SClassPickerDialog.h"
-#include "ModuleManager.h"
+#include "Modules/ModuleManager.h"
 
 #include "SilvervineUE4LuaVirtualMachine.h"
 

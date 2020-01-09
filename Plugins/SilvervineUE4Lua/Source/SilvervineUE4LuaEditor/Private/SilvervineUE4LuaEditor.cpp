@@ -4,7 +4,7 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleInterface.h"
 
-#include "ModuleManager.h"
+#include "Modules/ModuleManager.h"
 
 
 #define LOCTEXT_NAMESPACE "SilvervineUE4LuaEditor"

@@ -9,6 +9,10 @@ public class SUE4LuaSampleTarget : TargetRules
 	{
 		Type = TargetType.Game;
 
-		ExtraModuleNames.AddRange( new string[] { "SUE4LuaSample" } );
+#if UE_4_24_OR_LATER
+        DefaultBuildSettings = BuildSettingsVersion.Latest;
+#endif
+
+        ExtraModuleNames.AddRange( new string[] { "SUE4LuaSample" } );
 	}
 }

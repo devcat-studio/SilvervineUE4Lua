@@ -9,7 +9,6 @@ namespace UnrealBuildTool.Rules
 		{
             PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
             PrivatePCHHeaderFile = "SilvervineUE4LuaEditorPCH.h";
-            bFasterWithoutUnity = true;
 
             PublicIncludePaths.AddRange(new string[]
             {
